@@ -25,9 +25,6 @@ public class CameraManager : MonoBehaviour
     public void CameraRot()
     {
         targetRot = rot.transform.rotation;
-
-
-
     }
 
 
