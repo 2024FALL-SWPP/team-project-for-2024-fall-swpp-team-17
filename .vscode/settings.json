@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "team-project-for-2024-fall-swpp-team-17.sln"
+    "dotnet.defaultSolution": "team-project-for-2024-fall-swpp-ysh.sln"
 }
