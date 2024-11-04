@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotManager : MonoBehaviour
 {
+    public GameObject player;
     Vector3 gravitydir = new Vector3(0, -10f, 0);
     private Rigidbody[] rigidbodies;
     CameraManager cameraManager;
@@ -17,22 +18,29 @@ public class RotManager : MonoBehaviour
     void Update()
     {
 
-        if(AllRest()){
+        if (AllRest())
+        {
 
-            if(Input.GetKeyDown(KeyCode.Alpha1)){
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
                 transform.Rotate(0, 0, -90, Space.World);
+                player.transform.Rotate(0, 0, -90, Space.World);
                 Physics.gravity = Quaternion.Euler(0, 0, -90) * gravitydir;
                 gravitydir = Quaternion.Euler(0, 0, -90) * gravitydir;
                 cameraManager.CameraRot();
             }
-            else if(Input.GetKeyDown(KeyCode.Alpha2)){
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
                 transform.Rotate(0, 0, -180, Space.World);
+                player.transform.Rotate(0, 0, -180, Space.World);
                 Physics.gravity = Quaternion.Euler(0, 0, -180) * gravitydir;
                 gravitydir = Quaternion.Euler(0, 0, -180) * gravitydir;
                 cameraManager.CameraRot();
             }
-            else if(Input.GetKeyDown(KeyCode.Alpha3)){
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
                 transform.Rotate(0, 0, -270, Space.World);
+                player.transform.Rotate(0, 0, -270, Space.World);
                 Physics.gravity = Quaternion.Euler(0, 0, -270) * gravitydir;
                 gravitydir = Quaternion.Euler(0, 0, -270) * gravitydir;
                 cameraManager.CameraRot();
@@ -40,9 +48,12 @@ public class RotManager : MonoBehaviour
         }
     }
 
-    private bool AllRest(){
-        foreach(Rigidbody rb in rigidbodies){
-            if(rb.velocity.magnitude > 0.1f){
+    private bool AllRest()
+    {
+        foreach (Rigidbody rb in rigidbodies)
+        {
+            if (rb.velocity.magnitude > 0.1f)
+            {
                 return false;
             }
         }
