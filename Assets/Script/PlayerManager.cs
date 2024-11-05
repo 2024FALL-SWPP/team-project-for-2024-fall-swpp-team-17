@@ -10,54 +10,48 @@ public class PlayerManager : MonoBehaviour
     public float jumpForce = 1200f;
     private float horizontalInput, verticalInput;
     private Vector3 moveDirection;
-    Transform rot;
+    Transform gravityTransform;
     Rigidbody playerRb;
-    // Start is called before the first frame update
     void Start()
     {
-        rot = GameObject.Find("Rot").transform;
+        gravityTransform = GameObject.Find("GravityManager").transform;
         playerRb = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        moveDirection = rot.transform.rotation * new Vector3(horizontalInput, 0, verticalInput).normalized;
-
+        moveDirection = gravityTransform.rotation * new Vector3(horizontalInput, 0, verticalInput).normalized;
         if (moveDirection.magnitude >= 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection, -Physics.gravity.normalized);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
             //if you want to look like ice...
             //playerRb.velocity += moveDirection * 0.1f;
-
-            
         }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerRb.AddForce(transform.rotation * new Vector3(0, 1, 0) * jumpForce, ForceMode.Impulse);
         }
     }
-
     void FixedUpdate()
     {
         if (moveDirection.magnitude >= 0.1f)
         {
             RaycastHit hit;
             float distance = moveSpeed * Time.fixedDeltaTime * 10;
-
             if (!Physics.Raycast(transform.position, moveDirection, out hit, distance))
             {
                 Vector3 newPosition = transform.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
                 playerRb.MovePosition(newPosition);
-
             }
-
-
-
         }
+    }
+    /// <summary>
+    /// This function rotates the player to align with the gravity.
+    /// </summary>
+    public void PlayerRot()
+    {
+        transform.rotation = gravityTransform.rotation;
     }
 }

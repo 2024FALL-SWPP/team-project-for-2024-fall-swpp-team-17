@@ -2,59 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Do not let the Camera see outside of the hallway.
+
+/// <summary>
+/// This class manages the overall rotation and location of the camera.
+/// Camera rotation due to mouse movement is managed by CameraMouseController.
+/// </summary>
 public class CameraManager : MonoBehaviour
 {
-    GameObject rot;
+    Transform gravityTransform, playerTransform;
     Quaternion targetRot;
-
-    private float followSpeed = 15f;
-    private float sensitivity = 300f;
-    private float clampAngleY = 70f;
-
-    private float rotX;
-    private float rotY;
-
-    public Transform realCam;
-    public Transform objectTofollow;
-    public Vector3 offset = new Vector3(0, 3, -6);
+    public Vector3 offset = new Vector3(0, -3, 6);
+    public float followSpeed = 15f;
 
     void Start()
     {
-        rot = GameObject.Find("Rot");
-
-        Vector3 rotation = transform.localRotation.eulerAngles;
-        rotX = rotation.x;
-        rotY = rotation.y;
-
+        gravityTransform = GameObject.Find("GravityManager").transform;
+        playerTransform = GameObject.Find("Player").transform;
+        targetRot = gravityTransform.rotation;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (targetRot != transform.rotation)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, rot.transform.rotation, 10 * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 10 * Time.deltaTime);
         }
-
-        rotX += -(Input.GetAxis("Mouse Y")) * sensitivity * Time.deltaTime;
-        rotY += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-
-        rotX = Mathf.Clamp(rotX, -clampAngleY, clampAngleY);
-
-        Quaternion rotAngle = Quaternion.Euler(rotX, rotY, 0);
-        realCam.localRotation = rotAngle;
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
-        Vector3 targetPosition = objectTofollow.position + transform.rotation * offset;
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
+        transform.position = playerTransform.position + transform.rotation * offset;
+        // Vector3 targetPostion = playerTransform.position + transform.rotation * offset;
+        // transform.position = Vector3.Lerp(transform.position, targetPostion, Time.deltaTime * followSpeed);
     }
 
+    /// <summary>
+    /// This function is called by GravityManager when the gravity changes.
+    /// It updates targetRot, so that the camera's rotation can smoothly change to the gravity's direction via the Slerp in the Update().
+    /// </summary>
     public void CameraRot()
     {
-        targetRot = rot.transform.rotation;
+        targetRot = gravityTransform.rotation;
     }
-
-
 }
