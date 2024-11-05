@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     public float moveSpeed = 20f;
     public float rotationSpeed = 10f;
-    public float jumpForce = 600f;
+    public float jumpForce = 1200f;
     private float horizontalInput, verticalInput;
     private Vector3 moveDirection;
     Transform rot;

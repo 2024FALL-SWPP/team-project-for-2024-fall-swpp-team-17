@@ -5,13 +5,14 @@ using UnityEngine;
 public class RotManager : MonoBehaviour
 {
     public GameObject player;
-    Vector3 gravitydir = new Vector3(0, -10f, 0);
+    Vector3 gravitydir = new Vector3(0, -35f, 0);
     private Rigidbody[] rigidbodies;
     CameraManager cameraManager;
     void Start()
     {
         rigidbodies = FindObjectsOfType<Rigidbody>();
         cameraManager = FindObjectOfType<CameraManager>();
+        Physics.gravity = gravitydir;
     }
 
     // Update is called once per frame
