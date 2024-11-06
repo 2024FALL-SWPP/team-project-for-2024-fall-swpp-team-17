@@ -79,4 +79,4 @@ crashlytics-build.properties
 # Blender metas
 *.blend.meta
 
-settings.json
+**/.vscode
