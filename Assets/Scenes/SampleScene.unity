@@ -187,7 +187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 160825255f4523240bceea30d09fffb4, type: 3}
       propertyPath: m_Name
-      value: astronaut
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 160825255f4523240bceea30d09fffb4, type: 3}
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 1632044613}
   - component: {fileID: 1632044612}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: CameraRotationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -931,9 +931,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306c30791d9cd54479a9dc428c432551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followSpeed: 15
   realCam: {fileID: 963194228}
   objectTofollow: {fileID: 1851977821}
   offset: {x: 0, y: 5, z: -10}
+  basicRotX: 0
+  basicRotY: 0
+  mouseRotX: 0
+  mouseRotY: 0
 --- !u!4 &1632044613
 Transform:
   m_ObjectHideFlags: 0
@@ -990,27 +995,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1854880407}
-  - component: {fileID: 1854880405}
+  - component: {fileID: 1854880408}
   m_Layer: 0
-  m_Name: Rot
+  m_Name: GravityManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1854880405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854880404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e109103c6c82964f8613106f6b5e595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 147657734}
 --- !u!4 &1854880407
 Transform:
   m_ObjectHideFlags: 0
@@ -1026,3 +1018,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1854880408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854880404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e109103c6c82964f8613106f6b5e595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraManager: {fileID: 0}
