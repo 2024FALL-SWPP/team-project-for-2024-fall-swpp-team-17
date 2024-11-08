@@ -145,3 +145,6 @@ UnityProject/GravitableEscape/.vscode/
 UnityProject/GravitableEscape/Library/
 UnityProject/GravitableEscape/Logs/
 UnityProject/GravitableEscape/UserSettings/
+
+# Exclude long path
+Blender/Background/TestBlender/Library/PackageCache/
