@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class WormholeManager : MonoBehaviour
@@ -7,10 +8,11 @@ public class WormholeManager : MonoBehaviour
     public Transform playerTransform;
     public float triggerDistance = 50.0f;
     public bool triggered = false;
-    public CameraManager cameraManager;
+    public GameManager gameManager;
+    public Vector3 targetPos;
     void Start()
     {
-        cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -18,7 +20,13 @@ public class WormholeManager : MonoBehaviour
         if (!triggered && Vector3.Distance(playerTransform.position, transform.position) < triggerDistance)
         {
             triggered = true;
-            cameraManager.enterWormholeMode(transform);
+            gameManager.startWormhole(gameObject, targetPos);
         }
     }
+
+    public void Reset()
+    {
+        triggered = false;
+    }
+
 }

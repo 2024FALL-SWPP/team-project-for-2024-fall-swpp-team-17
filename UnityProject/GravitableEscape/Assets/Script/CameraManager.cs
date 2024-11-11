@@ -18,7 +18,12 @@ public class CameraManager : MonoBehaviour
     public float followSpeed = 15f;
     public float moveSpeed = 10.0f;
     public int cameraMode = 0; // 0 is default mode
-    private CameraMouseManager cameraMouseManager;
+    CameraMouseManager cameraMouseManager;
+    GameManager gameManager;
+    public float angle = 0.0f;
+    public float spiralRadius = 5.0f;
+    public float spiralSpeed = 5.0f;
+    public float wormholeTriggerDistance = 50.0f;
 
     void Start()
     {
@@ -26,6 +31,7 @@ public class CameraManager : MonoBehaviour
         playerTransform = GameObject.Find("Player").transform;
         targetRot = gravityTransform.rotation;
         cameraMouseManager = GameObject.Find("Main Camera").GetComponent<CameraMouseManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         cameraMode = 0;
     }
 
@@ -52,6 +58,7 @@ public class CameraManager : MonoBehaviour
         transform.position = playerTransform.position + transform.rotation * offset;
     }
 
+
     private void MoveTowardsWormhole()
     {
         if (Vector3.Distance(transform.position, wormhole.position) > 2f)
@@ -60,11 +67,38 @@ public class CameraManager : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime);
             moveSpeed += 30.0f * Time.deltaTime; // 이동 속도 점차 증가
 
-            // 카메라의 시야각을 점차 줄이며 줌인 효과 주기
-            // Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 20.0f, 0.5f * Time.deltaTime);
-
             // 웜홀을 바라보도록 카메라 회전
             transform.LookAt(wormhole);
+        }
+        else
+        {
+            cameraMode = 0;
+            gameManager.exitWormhole();
+        }
+    }
+
+    private void SpiralTowardsWormhole()
+    {
+        if (Vector3.Distance(transform.position, wormhole.position) > 2f)
+        {
+            // 나선형 각도와 반경 계산
+            angle += spiralSpeed * Time.deltaTime;
+
+            // 나선형 반경 계산
+            float radius = spiralRadius * Mathf.Lerp(1, 0, Vector3.Distance(transform.position, wormhole.position) / wormholeTriggerDistance);
+
+            // 나선형 위치 계산
+            Vector3 offset = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * radius;
+            Vector3 nextPosition = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime) + offset;
+
+            // 카메라 위치와 회전 적용
+            transform.position = nextPosition;
+            transform.LookAt(wormhole);
+        }
+        else
+        {
+            cameraMode = 0;
+            gameManager.exitWormhole();
         }
     }
 
