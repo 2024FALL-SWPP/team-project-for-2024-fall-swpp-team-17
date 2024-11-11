@@ -17,7 +17,7 @@ public class CameraManager : MonoBehaviour
     public Vector3 offset = new Vector3(0, -3, 6);
     public float followSpeed = 15f;
     public float moveSpeed = 10.0f;
-    public int cameraMode = 0; // 0 is default mode
+    public int cameraMode = 0; // 0 is default mode, 1 is wormhole mode
     CameraMouseManager cameraMouseManager;
     GameManager gameManager;
 
@@ -32,7 +32,8 @@ public class CameraManager : MonoBehaviour
     }
 
     /// <summary>
-    /// This function updates camera rotation
+    /// This function updates camera rotation and position according to the mode.
+    /// 0: default mode, 1: wormhole animation mode
     /// </summary>
     void Update()
     {
@@ -45,7 +46,6 @@ public class CameraManager : MonoBehaviour
                 SpiralTowardsWormhole();
                 break;
         }
-
     }
 
     private void FollowPlayer()
@@ -58,6 +58,11 @@ public class CameraManager : MonoBehaviour
     public float spiralAngle = 0.0f;
     public float spiralRadius;
     public float distanceToWormhole;
+
+    /// <summary>
+    /// Updates camera's position to spiral towards the wormhole.
+    /// can be used in mode 1.
+    /// </summary>
     // TODO: alter constants on main scene
     private void SpiralTowardsWormhole()
     {
@@ -65,17 +70,34 @@ public class CameraManager : MonoBehaviour
         {
             spiralAngle += 15.0f * Time.deltaTime;
             distanceToWormhole = Vector3.Distance(transform.position, wormhole.position);
-            spiralRadius = distanceToWormhole / 100.0f; // 반경은 목표에 가까워질수록 줄어듬
+            spiralRadius = distanceToWormhole / 100.0f;
             Vector3 spiralOffest = new Vector3(
                 Mathf.Cos(spiralAngle) * spiralRadius,
                 Mathf.Sin(spiralAngle) * spiralRadius,
                 0);
 
-            // 가속하며 웜홀로 이동
             transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime) + spiralOffest;
-            moveSpeed += 2.0f * Time.deltaTime; // 이동 속도 점차 증가
+            moveSpeed += 2.0f * Time.deltaTime;
 
-            // 웜홀을 바라보도록 카메라 회전
+            transform.LookAt(wormhole);
+        }
+        else
+        {
+            cameraMode = 0;
+            gameManager.exitWormhole();
+        }
+    }
+
+    /// <summary>
+    /// Accelerates towards wormhole. can be used in mode 1.
+    /// </summary>
+    private void MoveTowardsWormhole()
+    {
+        if (Vector3.Distance(transform.position, wormhole.position) > 2f)
+        {
+            transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime);
+            moveSpeed += 2.0f * Time.deltaTime;
+
             transform.LookAt(wormhole);
         }
         else
