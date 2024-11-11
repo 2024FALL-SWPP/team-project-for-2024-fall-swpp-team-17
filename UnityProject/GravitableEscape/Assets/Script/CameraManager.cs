@@ -20,10 +20,6 @@ public class CameraManager : MonoBehaviour
     public int cameraMode = 0; // 0 is default mode
     CameraMouseManager cameraMouseManager;
     GameManager gameManager;
-    public float angle = 0.0f;
-    public float spiralRadius = 5.0f;
-    public float spiralSpeed = 5.0f;
-    public float wormholeTriggerDistance = 50.0f;
 
     void Start()
     {
@@ -46,7 +42,7 @@ public class CameraManager : MonoBehaviour
                 FollowPlayer();
                 break;
             case 1:
-                MoveTowardsWormhole();
+                SpiralTowardsWormhole();
                 break;
         }
 
@@ -59,13 +55,25 @@ public class CameraManager : MonoBehaviour
     }
 
 
-    private void MoveTowardsWormhole()
+    public float spiralAngle = 0.0f;
+    public float spiralRadius;
+    public float distanceToWormhole;
+    // TODO: alter constants on main scene
+    private void SpiralTowardsWormhole()
     {
         if (Vector3.Distance(transform.position, wormhole.position) > 2f)
         {
+            spiralAngle += 15.0f * Time.deltaTime;
+            distanceToWormhole = Vector3.Distance(transform.position, wormhole.position);
+            spiralRadius = distanceToWormhole / 100.0f; // 반경은 목표에 가까워질수록 줄어듬
+            Vector3 spiralOffest = new Vector3(
+                Mathf.Cos(spiralAngle) * spiralRadius,
+                Mathf.Sin(spiralAngle) * spiralRadius,
+                0);
+
             // 가속하며 웜홀로 이동
-            transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime);
-            moveSpeed += 30.0f * Time.deltaTime; // 이동 속도 점차 증가
+            transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime) + spiralOffest;
+            moveSpeed += 2.0f * Time.deltaTime; // 이동 속도 점차 증가
 
             // 웜홀을 바라보도록 카메라 회전
             transform.LookAt(wormhole);
@@ -77,30 +85,6 @@ public class CameraManager : MonoBehaviour
         }
     }
 
-    private void SpiralTowardsWormhole()
-    {
-        if (Vector3.Distance(transform.position, wormhole.position) > 2f)
-        {
-            // 나선형 각도와 반경 계산
-            angle += spiralSpeed * Time.deltaTime;
-
-            // 나선형 반경 계산
-            float radius = spiralRadius * Mathf.Lerp(1, 0, Vector3.Distance(transform.position, wormhole.position) / wormholeTriggerDistance);
-
-            // 나선형 위치 계산
-            Vector3 offset = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * radius;
-            Vector3 nextPosition = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime) + offset;
-
-            // 카메라 위치와 회전 적용
-            transform.position = nextPosition;
-            transform.LookAt(wormhole);
-        }
-        else
-        {
-            cameraMode = 0;
-            gameManager.exitWormhole();
-        }
-    }
 
     /// <summary>
     /// This function is called by GravityManager when the gravity changes.

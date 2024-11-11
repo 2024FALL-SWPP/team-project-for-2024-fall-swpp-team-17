@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     /// <param name="targetPos">position to move after animation</param>
     public void startWormhole(GameObject wormhole, Vector3 targetPos)
     {
+        player.SetActive(false);
         wormholeTargetPos = targetPos;
         cameraManager.enterWormholeMode(wormhole.transform);
         this.wormhole = wormhole;
@@ -37,7 +38,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void exitWormhole()
     {
+        player.SetActive(true);
         wormhole.GetComponent<WormholeManager>().Reset();
         player.transform.position = wormholeTargetPos;
+        // cameramanger switches mode to 0 before calling this
     }
 }
