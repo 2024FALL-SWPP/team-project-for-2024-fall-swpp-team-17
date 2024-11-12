@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8576523940130671108}
   - component: {fileID: 8972595648815467436}
   m_Layer: 0
-  m_Name: thron
+  m_Name: thorn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
