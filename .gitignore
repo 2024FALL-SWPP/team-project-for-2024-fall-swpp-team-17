@@ -148,3 +148,4 @@ UnityProject/GravitableEscape/UserSettings/
 
 # Exclude long path
 Blender/Background/TestBlender/Library/
+Blender/**/Library/
