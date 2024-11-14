@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,12 +11,13 @@ public class CameraMouseManager : MonoBehaviour
     private float mouseRotX, mouseRotY;
     private float sensitivity = 300f;
     private float clampAngleY = 70f;
+    private bool mouseEnabled;
     void Start()
     {
-        mouseRotX = 0;
-        mouseRotY = 0;
+        SetMouseControl(true);
     }
     /// <summary>
+    /// The Main Camera's position is identical to the CamerManager's, but its local rotation is altered by mouse movement.
     /// This function resets the rotation if mouse left button is clicked.
     /// Also, it retrieves the mouse's location and alters the localRotation of the Main Camera accordingly.
     /// Since the Main Camera object is a child of the CameraManager object, 
@@ -23,17 +25,28 @@ public class CameraMouseManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) ResetMouseControl();
+
+        if (mouseEnabled)
         {
-            mouseRotX = 0;
-            mouseRotY = 0;
+            mouseRotX += -Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+            mouseRotY += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+
+            float totalRotX = Mathf.Clamp(mouseRotX, -clampAngleY, clampAngleY);
+            float totalRotY = mouseRotY;
+            transform.localRotation = Quaternion.Euler(totalRotX, totalRotY, 0);
         }
+    }
 
-        mouseRotX += -Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
-        mouseRotY += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+    public void SetMouseControl(bool enable)
+    {
+        ResetMouseControl();
+        mouseEnabled = enable;
+    }
 
-        float totalRotX = Mathf.Clamp(mouseRotX, -clampAngleY, clampAngleY);
-        float totalRotY = mouseRotY;
-        transform.localRotation = Quaternion.Euler(totalRotX, totalRotY, 0);
+    private void ResetMouseControl()
+    {
+        mouseRotX = 0;
+        mouseRotY = 0;
     }
 }

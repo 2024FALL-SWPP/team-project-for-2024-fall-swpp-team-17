@@ -54,4 +54,5 @@ public class PlayerManager : MonoBehaviour
     {
         transform.rotation = gravityTransform.rotation;
     }
+
 }
