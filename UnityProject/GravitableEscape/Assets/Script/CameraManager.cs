@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,6 +59,11 @@ public class CameraManager : MonoBehaviour
     public float spiralAngle = 0.0f;
     public float spiralRadius;
     public float distanceToWormhole;
+    public float spiralSpeed = 15.0f;
+    public float spiralRadiusDenom = 100.0f;
+    public float moveSpeedNum = 2.0f;
+    public float minRad = 0.5f;
+
 
     /// <summary>
     /// Updates camera's position to spiral towards the wormhole.
@@ -68,16 +74,17 @@ public class CameraManager : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, wormhole.position) > 2f)
         {
-            spiralAngle += 15.0f * Time.deltaTime;
+            spiralAngle += spiralSpeed * Time.deltaTime;
             distanceToWormhole = Vector3.Distance(transform.position, wormhole.position);
-            spiralRadius = distanceToWormhole / 100.0f;
+            spiralRadius = Mathf.Min(minRad, distanceToWormhole / spiralRadiusDenom);
             Vector3 spiralOffest = new Vector3(
                 Mathf.Cos(spiralAngle) * spiralRadius,
                 Mathf.Sin(spiralAngle) * spiralRadius,
                 0);
 
             transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime) + spiralOffest;
-            moveSpeed += 2.0f * Time.deltaTime;
+            // moveSpeed += moveSpeedNum * 0.0001f * Time.deltaTime;
+            moveSpeed = moveSpeedNum;
 
             transform.LookAt(wormhole);
         }
