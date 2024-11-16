@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
+using OurGame;
 
 // TODO: Do not let the Camera see outside of the hallway.
 
@@ -9,7 +11,7 @@ using UnityEngine.Android;
 /// This class manages the overall rotation and location of the camera.
 /// Camera rotation due to mouse movement is managed by CameraMouseController.
 /// </summary>
-public class CameraManager : MonoBehaviour
+public class CameraManager : MonoBehaviour, GravityObserver
 {
     Transform gravityTransform, playerTransform;
     public Transform wormhole;
@@ -18,6 +20,7 @@ public class CameraManager : MonoBehaviour
     public float followSpeed = 15f;
     public float moveSpeed = 10.0f;
     public int cameraMode = 0; // 0 is default mode, 1 is wormhole mode
+    private GameState gameState;
     CameraMouseManager cameraMouseManager;
     GameManager gameManager;
 
@@ -37,12 +40,12 @@ public class CameraManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        switch (cameraMode)
+        switch (gameState)
         {
-            case 0:
+            case GameState.Playing:
                 FollowPlayer();
                 break;
-            case 1:
+            case GameState.WormholeEffect:
                 SpiralTowardsWormhole();
                 break;
         }
@@ -55,9 +58,11 @@ public class CameraManager : MonoBehaviour
     }
 
 
-    public float spiralAngle = 0.0f;
-    public float spiralRadius;
-    public float distanceToWormhole;
+    float spiralAngle = 0.0f, spiralRadius, distanceToWormhole;
+    public float spiralSpeed = 15.0f;
+    public float spiralRadiusDenom = 25.0f;
+    public float moveSpeedNum = 2.5f;
+    public float minRad = 0.5f;
 
     /// <summary>
     /// Updates camera's position to spiral towards the wormhole.
@@ -66,24 +71,24 @@ public class CameraManager : MonoBehaviour
     // TODO: alter constants on main scene
     private void SpiralTowardsWormhole()
     {
-        if (Vector3.Distance(transform.position, wormhole.position) > 2f)
+        if (Vector3.Distance(transform.position, wormhole.position) > 1f)
         {
-            spiralAngle += 15.0f * Time.deltaTime;
+            spiralAngle += spiralSpeed * Time.deltaTime;
             distanceToWormhole = Vector3.Distance(transform.position, wormhole.position);
-            spiralRadius = distanceToWormhole / 100.0f;
+            spiralRadius = Mathf.Min(minRad, distanceToWormhole / spiralRadiusDenom);
             Vector3 spiralOffest = new Vector3(
                 Mathf.Cos(spiralAngle) * spiralRadius,
                 Mathf.Sin(spiralAngle) * spiralRadius,
                 0);
 
             transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime) + spiralOffest;
-            moveSpeed += 2.0f * Time.deltaTime;
+            moveSpeed = moveSpeedNum;
 
             transform.LookAt(wormhole);
         }
         else
         {
-            cameraMode = 0;
+            exitWormholeMode();
             gameManager.exitWormhole();
         }
     }
@@ -97,36 +102,30 @@ public class CameraManager : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime);
             moveSpeed += 2.0f * Time.deltaTime;
-
             transform.LookAt(wormhole);
         }
         else
         {
-            cameraMode = 0;
+            exitWormholeMode();
             gameManager.exitWormhole();
         }
     }
 
-
-    /// <summary>
-    /// This function is called by GravityManager when the gravity changes.
-    /// It updates targetRot, so that the camera's rotation can smoothly change to the gravity's direction via the Slerp in the Update().
-    /// </summary>
-    public void CameraRot()
-    {
-        targetRot = gravityTransform.rotation;
-    }
-
-    public void SwitchMode(int mode)
-    {
-        cameraMouseManager.SetMouseControl(false);
-        cameraMode = mode;
-    }
-
     public void enterWormholeMode(Transform wormhole)
     {
+        gameState = GameState.WormholeEffect;
         cameraMouseManager.SetMouseControl(false);
-        cameraMode = 1;
         this.wormhole = wormhole;
+    }
+
+    public void exitWormholeMode()
+    {
+        gameState = GameState.Playing;
+        cameraMouseManager.SetMouseControl(true);
+    }
+
+    public void OnNotify(Quaternion gravityRot)
+    {
+        targetRot = gravityRot;
     }
 }

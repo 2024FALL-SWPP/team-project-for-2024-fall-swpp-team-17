@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class WormholeManager : MonoBehaviour
 {
-    public Transform playerTransform;
-    public float triggerDistance = 50.0f;
-    public bool triggered = false;
+    // public bool triggered = false;
     public GameManager gameManager;
     public Vector3 targetPos;
     void Start()
@@ -17,16 +15,19 @@ public class WormholeManager : MonoBehaviour
 
     void Update()
     {
-        if (!triggered && Vector3.Distance(playerTransform.position, transform.position) < triggerDistance)
+    }
+
+    // public void Reset()
+    // {
+    //     triggered = false;
+    // }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            triggered = true;
+            //triggered = true;
             gameManager.startWormhole(gameObject, targetPos);
         }
     }
-
-    public void Reset()
-    {
-        triggered = false;
-    }
-
 }
