@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OurGame;
 
 public class GameManager : MonoBehaviour
 {
     public CameraManager cameraManager;
-    public GameObject player, wormhole;
+    public GameObject player;
     public Vector3 wormholeTargetPos;
+    public GameState gameState;
     void Start()
     {
         cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
         player = GameObject.Find("Player");
+        gameState = GameState.Playing;
     }
 
     // Update is called once per frame
@@ -30,7 +33,7 @@ public class GameManager : MonoBehaviour
         player.SetActive(false);
         wormholeTargetPos = targetPos;
         cameraManager.enterWormholeMode(wormhole.transform);
-        this.wormhole = wormhole;
+        // this.wormhole = wormhole;
     }
 
     /// <summary>
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour
     public void exitWormhole()
     {
         player.SetActive(true);
-        wormhole.GetComponent<WormholeManager>().Reset();
+        // wormhole.GetComponent<WormholeManager>().Reset();
         player.transform.position = wormholeTargetPos;
         // cameramanger switches mode to 0 before calling this
     }

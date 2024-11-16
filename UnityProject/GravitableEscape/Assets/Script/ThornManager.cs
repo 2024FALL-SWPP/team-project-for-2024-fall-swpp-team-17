@@ -32,31 +32,32 @@ public class ThornManager : MonoBehaviour
     public Vector3 n;
     private ContactPoint[] contacts = new ContactPoint[10];
     private float lastCollisionTime = -100.0f;
+    public bool isUpward;
+
+    /// <summary>
+    /// Checks if player collided with the pointy part of the thorn, calls playerManager.ThornDamage() if so.
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (Time.time - lastCollisionTime >= 3.0f)
+            isUpward = false;
+            int cnt = collision.GetContacts(contacts);
+            for (int i = 0; i < cnt; i++)
             {
-                playerManager.TakeDamage();
+                ContactPoint contact = contacts[i];
+                n = contact.normal;
+                if (Vector3.Dot(contact.normal, Vector3.up) < -0.9f)
+                {
+                    isUpward = true;
+                }
+            }
+            if (isUpward && (Time.time - lastCollisionTime >= 3.0f))
+            {
+                playerManager.ThornDamage();
                 lastCollisionTime = Time.time;
             }
-
-            // bool isUpward = false;
-            // int cnt = collision.GetContacts(contacts);
-            // for (int i = 0; i < cnt; i++)
-            // {
-            //     ContactPoint contact = contacts[i];
-            //     n = contact.normal;
-            //     if (Vector3.Dot(contact.normal, Vector3.up) < -0.9f)
-            //     {
-            //         isUpward = true;
-            //     }
-            // }
-            // if (isUpward)
-            // {
-            //     playerManager.TakeDamage();
-            // }
         }
     }
 }

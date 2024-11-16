@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using OurGame;
 using UnityEngine;
 
 /// <summary>
@@ -12,13 +14,15 @@ public class GravityManager : MonoBehaviour
 {
     public Vector3 initGravity = new Vector3(0, -35f, 0);
     private Rigidbody[] rigidbodies;
-    CameraManager cameraManager;
-    PlayerManager playerManager;
+    Subject<GravityObserver, Quaternion> gravityObs;
     void Start()
     {
         rigidbodies = FindObjectsOfType<Rigidbody>();
-        cameraManager = FindObjectOfType<CameraManager>();
-        playerManager = FindObjectOfType<PlayerManager>();
+        CameraManager cameraManager = FindObjectOfType<CameraManager>();
+        PlayerManager playerManager = FindObjectOfType<PlayerManager>();
+        gravityObs = new Subject<GravityObserver, Quaternion>();
+        gravityObs.AddObserver(cameraManager);
+        gravityObs.AddObserver(playerManager);
         Physics.gravity = initGravity;
     }
     /// <summary>
@@ -42,9 +46,10 @@ public class GravityManager : MonoBehaviour
     {
         transform.Rotate(0, 0, angle, Space.World);
         Physics.gravity = Quaternion.Euler(0, 0, angle) * Physics.gravity;
-        cameraManager.CameraRot();
-        playerManager.PlayerRot();
+        gravityObs.NotifyObservers(transform.rotation);
     }
+
+
     /// <summary>
     /// This function checks whether all rigidbodies are at rest.
     /// </summary>
@@ -57,5 +62,4 @@ public class GravityManager : MonoBehaviour
         }
         return true;
     }
-
 }

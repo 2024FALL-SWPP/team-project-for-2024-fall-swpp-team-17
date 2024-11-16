@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using OurGame;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, GravityObserver
 {
     public int life = 5;
     public float moveSpeed = 20f;
@@ -32,15 +33,12 @@ public class PlayerManager : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection, -Physics.gravity.normalized);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-            //if you want to look like ice...
-            //playerRb.velocity += moveDirection * 0.1f;
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerRb.AddForce(transform.rotation * new Vector3(0, 1, 0) * jumpForce, ForceMode.Impulse);
         }
     }
-    public bool a, b, c;
     void FixedUpdate()
     {
         if (moveDirection.magnitude >= 0.1f)
@@ -48,9 +46,6 @@ public class PlayerManager : MonoBehaviour
             Vector3 footPosition = transform.position + Vector3.down * height / 3;
             Vector3 headPosition = transform.position + Vector3.up * height / 3;
             float distance = moveSpeed * Time.fixedDeltaTime * 10;
-            a = ObstacleInPath(transform.position, moveDirection, distance);
-            b = ObstacleInPath(footPosition, moveDirection, distance);
-            c = ObstacleInPath(headPosition, moveDirection, distance);
             if (!ObstacleInPath(transform.position, moveDirection, distance)
             && !ObstacleInPath(footPosition, moveDirection, distance)
             && !ObstacleInPath(headPosition, moveDirection, distance))
@@ -58,8 +53,6 @@ public class PlayerManager : MonoBehaviour
                 Vector3 newPosition = transform.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
                 playerRb.MovePosition(newPosition);
             }
-            // Vector3 newPosition = transform.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
-            // playerRb.MovePosition(newPosition);
         }
     }
 
@@ -70,18 +63,14 @@ public class PlayerManager : MonoBehaviour
         else return false;
     }
 
-
-    /// <summary>
-    /// This function rotates the player to align with the gravity.
-    /// </summary>
-    public void PlayerRot()
+    public void OnNotify(Quaternion gravityRot)
     {
-        transform.rotation = gravityTransform.rotation;
+        transform.rotation = gravityRot;
     }
 
-    public void TakeDamage()
+    public void ThornDamage()
     {
+        // TODO: Animation
         life--;
     }
-
 }
