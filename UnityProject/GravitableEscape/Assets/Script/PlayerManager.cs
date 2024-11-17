@@ -28,15 +28,14 @@ public class PlayerManager : MonoBehaviour, GravityObserver
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        moveDirection = gravityTransform.rotation * new Vector3(horizontalInput, 0, verticalInput).normalized;
-        if (moveDirection.magnitude >= 0.1f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDirection, -Physics.gravity.normalized);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-        }
+
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        Vector3 right = transform.TransformDirection(Vector3.right);
+        moveDirection = forward * verticalInput + right * horizontalInput;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerRb.AddForce(transform.rotation * new Vector3(0, 1, 0) * jumpForce, ForceMode.Impulse);
+            playerRb.AddForce(new Vector3(0, 1, 0) * jumpForce, ForceMode.Impulse);
         }
     }
     void FixedUpdate()

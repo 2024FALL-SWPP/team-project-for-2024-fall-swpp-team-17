@@ -46,7 +46,7 @@ public class GravityManager : MonoBehaviour
     {
         transform.Rotate(0, 0, angle, Space.World);
         Physics.gravity = Quaternion.Euler(0, 0, angle) * Physics.gravity;
-        gravityObs.NotifyObservers(transform.rotation);
+        //gravityObs.NotifyObservers(transform.rotation);
     }
 
 
