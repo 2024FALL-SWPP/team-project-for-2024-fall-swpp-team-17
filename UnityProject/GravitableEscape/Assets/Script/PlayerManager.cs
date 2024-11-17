@@ -16,12 +16,14 @@ public class PlayerManager : MonoBehaviour, GravityObserver
     Rigidbody playerRb;
     BoxCollider playerCollider;
     float height;
+    bool isground;
     void Start()
     {
         gravityTransform = GameObject.Find("GravityManager").transform;
         playerRb = GetComponent<Rigidbody>();
         playerCollider = GetComponent<BoxCollider>();
         height = playerCollider.size.y;
+        isground = true;
     }
 
     void Update()
@@ -33,8 +35,9 @@ public class PlayerManager : MonoBehaviour, GravityObserver
         Vector3 right = transform.TransformDirection(Vector3.right);
         moveDirection = forward * verticalInput + right * horizontalInput;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isground)
         {
+            isground = false;
             playerRb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
     }
@@ -42,16 +45,25 @@ public class PlayerManager : MonoBehaviour, GravityObserver
     {
         if (moveDirection.magnitude >= 0.1f)
         {
-            Vector3 footPosition = transform.position + Vector3.down * height / 3;
-            Vector3 headPosition = transform.position + Vector3.up * height / 3;
+            Vector3 footPosition = transform.position + Vector3.down * height / 2.5f;
+            Vector3 headPosition = transform.position + Vector3.up * height / 2.5f;
             float distance = moveSpeed * Time.fixedDeltaTime * 10;
             if (!ObstacleInPath(transform.position, moveDirection, distance)
             && !ObstacleInPath(footPosition, moveDirection, distance)
             && !ObstacleInPath(headPosition, moveDirection, distance))
             {
-                Vector3 newPosition = transform.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
-                playerRb.MovePosition(newPosition);
+                transform.position = transform.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
+
             }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isground = true;
+
         }
     }
 
