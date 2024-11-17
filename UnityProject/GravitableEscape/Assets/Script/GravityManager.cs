@@ -21,7 +21,6 @@ public class GravityManager : MonoBehaviour
         CameraManager cameraManager = FindObjectOfType<CameraManager>();
         PlayerManager playerManager = FindObjectOfType<PlayerManager>();
         gravityObs = new Subject<GravityObserver, Quaternion>();
-        gravityObs.AddObserver(cameraManager);
         gravityObs.AddObserver(playerManager);
         Physics.gravity = initGravity;
     }
@@ -46,7 +45,7 @@ public class GravityManager : MonoBehaviour
     {
         transform.Rotate(0, 0, angle, Space.World);
         Physics.gravity = Quaternion.Euler(0, 0, angle) * Physics.gravity;
-        gravityObs.NotifyObservers(transform.rotation);
+        //gravityObs.NotifyObservers(transform.rotation);
     }
 
 
