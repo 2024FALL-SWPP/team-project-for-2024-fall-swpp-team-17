@@ -26,11 +26,10 @@ public class CameraManager : MonoBehaviour
     private float mouseRotX, mouseRotY;
     private float sensitivity = 3f;
 
-    public Transform cube;
     void Start()
     {
         gravityTransform = GameObject.Find("GravityManager").transform;
-        playerTransform = GameObject.Find("Player").transform;
+        playerTransform = GameObject.FindWithTag("Player").transform;
         cameraMouseManager = GameObject.Find("Main Camera").GetComponent<CameraMouseManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 

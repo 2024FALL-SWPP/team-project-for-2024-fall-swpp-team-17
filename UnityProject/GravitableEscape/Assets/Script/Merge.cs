@@ -10,7 +10,6 @@ public class Merge : MonoBehaviour
     void Start()
     {
         gravityTransform = GameObject.Find("GravityManager").transform;
-        this.transform.Rotate(0, 0, 180, Space.World);
     }
 
     // Update is called once per frame
