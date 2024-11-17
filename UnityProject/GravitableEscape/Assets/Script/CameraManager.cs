@@ -55,10 +55,33 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+    private Vector3 savedSphericalCoordinates;
+    private bool isShiftPressedLastFrame = false;
+    private float targetDistance;
     private void UpdateCameraPosition()
     {
 
         if (Input.GetMouseButtonDown(0)) ResetMouseControl();
+
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        if (scrollInput != 0)
+        {
+            targetDistance = Mathf.Clamp(distance - scrollInput * 10f, 15f, 25f); // 범위 제한: 15~20
+        }
+        distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * 100f);
+
+
+        bool isShiftPressed = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+
+        if (isShiftPressed && !isShiftPressedLastFrame)
+        {
+            savedSphericalCoordinates = sphericalCoordinates;
+        }
+
+        if (!isShiftPressed && isShiftPressedLastFrame)
+        {
+            sphericalCoordinates = savedSphericalCoordinates;
+        }
 
         mouseRotX += -Input.GetAxisRaw("Mouse X") * sensitivity * Time.deltaTime;
         mouseRotY += Input.GetAxisRaw("Mouse Y") * sensitivity * Time.deltaTime;
@@ -66,17 +89,38 @@ public class CameraManager : MonoBehaviour
         sphericalCoordinates.x += mouseRotX * rotationSpeed * Time.deltaTime;
         sphericalCoordinates.y = Mathf.Clamp(sphericalCoordinates.y + mouseRotY * rotationSpeed * Time.deltaTime, 0.5f, Mathf.PI - 1.5f);
 
-        Vector3 center = playerTransform.localPosition;
 
         float x = distance * Mathf.Cos(sphericalCoordinates.x) * Mathf.Sin(sphericalCoordinates.y);
         float y = distance * Mathf.Cos(sphericalCoordinates.y);
         float z = distance * Mathf.Sin(sphericalCoordinates.x) * Mathf.Sin(sphericalCoordinates.y);
 
-        Vector3 newPosition = center + new Vector3(x, y, z);
-        transform.localPosition = newPosition;
+        Vector3 center = playerTransform.localPosition;
+        Vector3 desiredLocalPosition = center + new Vector3(x, y, z);
+
+        Vector3 centerWorld = transform.parent.TransformPoint(center);
+        Vector3 desiredWorldPosition = transform.parent.TransformPoint(desiredLocalPosition);
+
+
+        Ray ray = new Ray(centerWorld, desiredWorldPosition - centerWorld);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, distance))
+        {
+            Vector3 hitLocalPosition = playerTransform.parent.InverseTransformPoint(hit.point);
+            transform.localPosition = hitLocalPosition - (desiredLocalPosition - center) * 0.5f;
+        }
+        else
+        {
+            transform.localPosition = desiredLocalPosition;
+        }
+
+
         transform.LookAt(playerTransform.position + playerTransform.up * 5, playerTransform.up);
 
-        UpdatePlayerRotation();
+        if (!isShiftPressed)
+            UpdatePlayerRotation();
+
+        isShiftPressedLastFrame = isShiftPressed;
 
     }
 
