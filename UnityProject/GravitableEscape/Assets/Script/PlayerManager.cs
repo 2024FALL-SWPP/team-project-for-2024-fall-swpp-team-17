@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerRb.AddForce(new Vector3(0, 1, 0) * jumpForce, ForceMode.Impulse);
+            playerRb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
     }
     void FixedUpdate()
