@@ -27,6 +27,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver
         height = playerCollider.size.y;
         isground = true;
         animator = GetComponent<Animator>();
+        animator.applyRootMotion = false;
     }
 
     void Update()
