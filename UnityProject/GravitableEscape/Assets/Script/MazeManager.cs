@@ -8,7 +8,6 @@ public class MazeManager : PuzzleInterface
     private Vector3 startPos;
     private Vector3 targetRot = new Vector3(0f, 90f, 0f);
     private float rotationSpeed = 30f;
-    private bool isActive = false;
     private bool isCleared = false;
 
     // Start is called before the first frame update
@@ -29,25 +28,12 @@ public class MazeManager : PuzzleInterface
         }
     }
 
-    public void ActivatePuzzle()
-    {
-        if (!isActive)
-        {
-            PuzzleStart();
-        }
-        else
-        {
-            PuzzleReset();
-        }
-    }
-
-    void PuzzleStart()
+    public void PuzzleStart()
     {
         keyBox.SetActive(true);
-        isActive = true;
     }
 
-    void PuzzleReset()
+    public void PuzzleReset()
     {
         StartCoroutine(ResetBox());
     }

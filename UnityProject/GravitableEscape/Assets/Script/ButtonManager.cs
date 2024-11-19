@@ -55,9 +55,14 @@ public class ButtonManager : MonoBehaviour
     {
         if (firstActivation)
         {
+            mazeManager.PuzzleStart();
             firstActivation = false;
         }
-        mazeManager.ActivatePuzzle();
+        else
+        {
+            mazeManager.PuzzleReset();
+        }
+        
         timer = 0f;
     }
 
