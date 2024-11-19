@@ -69,7 +69,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver
             && !ObstacleInPath(headPosition, moveDirection, distance))
             {
                 transform.position = transform.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
-
             }
         }
         else
