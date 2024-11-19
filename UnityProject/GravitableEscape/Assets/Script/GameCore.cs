@@ -44,26 +44,15 @@ namespace OurGame
 
     public interface GameOverObserver : Observer<bool> { }
 
-    public class Player
+    public interface IPlayerManager
     {
-        private int life;
-        public Player(int initialLife)
-        {
-            life = initialLife;
-        }
-        public int Life
-        {
-            get { return life; }
-        }
-        public void ModifyLife(int amount)
-        {
-            life += amount;
-        }
+        public void ModifyLife(int amount);
+        public int GetLife();
     }
 
     public abstract class HazardManager : MonoBehaviour
     {
         protected int damage;
-        protected abstract void HarmPlayer(Player player);
+        protected abstract void HarmPlayer(IPlayerManager player);
     }
 }

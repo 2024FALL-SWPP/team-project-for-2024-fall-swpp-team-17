@@ -39,7 +39,7 @@ public class ThornManager : HazardManager
         {
             if (IsCollisionUpward(collision) && (Time.time - lastCollisionTime >= 3.0f))
             {
-                Player player = collision.gameObject.GetComponent<PlayerManager>().player;
+                PlayerManager player = collision.gameObject.GetComponent<PlayerManager>();
                 HarmPlayer(player);
                 lastCollisionTime = Time.time;
             }
@@ -61,7 +61,7 @@ public class ThornManager : HazardManager
         return isUpward;
     }
 
-    protected override void HarmPlayer(Player player)
+    protected override void HarmPlayer(IPlayerManager player)
     {
         player.ModifyLife(-damage);
     }

@@ -4,9 +4,9 @@ using OurGame;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
-public class PlayerManager : MonoBehaviour, GravityObserver
+public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager
 {
-    // public int life = 5;
+    private int life = 5;
     public float moveSpeed = 20f;
     public float rotationSpeed = 10f;
     public float jumpForce = 1200f;
@@ -19,11 +19,9 @@ public class PlayerManager : MonoBehaviour, GravityObserver
     bool isground;
     Quaternion targetRotation;
     private Animator animator;
-    public Player player;
-    // TODO: move player's properties to the Player class
+    // TODO: move player's properties to the Player
     void Start()
     {
-        player = new Player(5);
         gravityTransform = GameObject.Find("GravityManager").transform;
         playerRb = GetComponent<Rigidbody>();
         playerCollider = GetComponent<BoxCollider>();
@@ -31,6 +29,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver
         isground = true;
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
+        life = 5;
     }
 
     void Update()
@@ -106,6 +105,16 @@ public class PlayerManager : MonoBehaviour, GravityObserver
     public void OnNotify(Quaternion gravityRot)
     {
         transform.rotation = gravityRot;
+    }
+
+    public void ModifyLife(int amount)
+    {
+        //TODO: check if game over
+        life += amount;
+    }
+    public int GetLife()
+    {
+        return life;
     }
 
 }

@@ -16,6 +16,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lifeText.text = $"Life: {playerManager.player.Life}";
+        lifeText.text = $"Life: {playerManager.GetLife()}";
     }
 }
