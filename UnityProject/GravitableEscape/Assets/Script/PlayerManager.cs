@@ -6,7 +6,7 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerManager : MonoBehaviour, GravityObserver
 {
-    public int life = 5;
+    // public int life = 5;
     public float moveSpeed = 20f;
     public float rotationSpeed = 10f;
     public float jumpForce = 1200f;
@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver
     Quaternion targetRotation;
     private Animator animator;
     public Player player;
+    // TODO: move player's properties to the Player class
     void Start()
     {
         player = new Player(5);
@@ -107,9 +108,4 @@ public class PlayerManager : MonoBehaviour, GravityObserver
         transform.rotation = gravityRot;
     }
 
-    public void ThornDamage()
-    {
-        // TODO: Animation
-        life--;
-    }
 }

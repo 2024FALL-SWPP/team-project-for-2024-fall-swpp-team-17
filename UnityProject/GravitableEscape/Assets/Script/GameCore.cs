@@ -51,6 +51,10 @@ namespace OurGame
         {
             life = initialLife;
         }
+        public int Life
+        {
+            get { return life; }
+        }
         public void ModifyLife(int amount)
         {
             life += amount;
