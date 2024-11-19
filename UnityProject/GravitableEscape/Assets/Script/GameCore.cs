@@ -40,23 +40,26 @@ namespace OurGame
         void OnNotify(NotifyType data);
     }
 
-    public interface GravityObserver : Observer<Quaternion>
-    {
-        void OnNotify(Quaternion gravityRot);
-    }
+    public interface GravityObserver : Observer<Quaternion> { }
 
-    public abstract class Player
+    public interface GameOverObserver : Observer<bool> { }
+
+    public class Player
     {
-        protected int life;
+        private int life;
+        public Player(int initialLife)
+        {
+            life = initialLife;
+        }
         public void ModifyLife(int amount)
         {
             life += amount;
         }
     }
-    abstract class Hazard
+
+    public abstract class HazardManager : MonoBehaviour
     {
-        // protected Player player;
         protected int damage;
-        public abstract void HarmPlayer();
+        protected abstract void HarmPlayer(Player player);
     }
 }

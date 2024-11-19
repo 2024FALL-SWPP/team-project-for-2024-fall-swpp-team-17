@@ -18,10 +18,11 @@ public class PlayerManager : MonoBehaviour, GravityObserver
     float height;
     bool isground;
     Quaternion targetRotation;
-
     private Animator animator;
+    public Player player;
     void Start()
     {
+        player = new Player(5);
         gravityTransform = GameObject.Find("GravityManager").transform;
         playerRb = GetComponent<Rigidbody>();
         playerCollider = GetComponent<BoxCollider>();
