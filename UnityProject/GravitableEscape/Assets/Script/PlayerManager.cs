@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour, GravityObserver
     BoxCollider playerCollider;
     float height;
     bool isground;
+
+    private Animator animator;
     void Start()
     {
         gravityTransform = GameObject.Find("GravityManager").transform;
@@ -24,27 +26,41 @@ public class PlayerManager : MonoBehaviour, GravityObserver
         playerCollider = GetComponent<BoxCollider>();
         height = playerCollider.size.y;
         isground = true;
+        animator = GetComponent<Animator>();
+        animator.applyRootMotion = false;
     }
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
 
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        moveDirection = forward * verticalInput + right * horizontalInput;
-
-        if (Input.GetKeyDown(KeyCode.Space) && isground)
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-            isground = false;
-            playerRb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            moveDirection = new Vector3(0, 0, 0);
         }
+        else
+        {
+            moveDirection = forward * verticalInput + right * horizontalInput;
+
+            if (Input.GetKeyDown(KeyCode.Space) && isground)
+            {
+                isground = false;
+                animator.SetBool("Jump_b", true);
+                playerRb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            }
+        }
+
     }
     void FixedUpdate()
     {
         if (moveDirection.magnitude >= 0.1f)
         {
+            animator.SetBool("Static_b", false);
+            animator.SetFloat("Speed_f", 0.3f);
+
             Vector3 footPosition = transform.position + Vector3.down * height / 2.5f;
             Vector3 headPosition = transform.position + Vector3.up * height / 2.5f;
             float distance = moveSpeed * Time.fixedDeltaTime * 10;
@@ -56,6 +72,11 @@ public class PlayerManager : MonoBehaviour, GravityObserver
 
             }
         }
+        else
+        {
+            animator.SetBool("Static_b", true);
+            animator.SetFloat("Speed_f", 0);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -63,7 +84,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver
         if (collision.gameObject.CompareTag("ground"))
         {
             isground = true;
-
+            animator.SetBool("Jump_b", false);
         }
     }
 
