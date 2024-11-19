@@ -16,6 +16,7 @@ public class CameraManager : MonoBehaviour
     public float moveSpeed = 10.0f;
     private GameState gameState;
     GameManager gameManager;
+    PlayerManager playerManager;
 
     public float distance = 15.0f;
     public float rotationSpeed = 5f;
@@ -26,6 +27,7 @@ public class CameraManager : MonoBehaviour
     void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         distance = 15.0f;
         sphericalCoordinates = new Vector3(0, 0, distance);
@@ -91,7 +93,12 @@ public class CameraManager : MonoBehaviour
 
         transform.LookAt(playerTransform.position + playerTransform.up * 5, playerTransform.up);
         if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
-            UpdatePlayerRotation();
+        {
+            Vector3 directionToCamera = transform.localPosition - playerTransform.localPosition;
+            directionToCamera.y = 0;
+            Quaternion targetRot = Quaternion.LookRotation(-directionToCamera);
+            playerManager.UpdateRotation(targetRot);
+        }
     }
 
     private Vector3 ShiftToFront(Vector3 desiredLocalPosition, Vector3 center)
@@ -116,16 +123,6 @@ public class CameraManager : MonoBehaviour
         float y = distance * Mathf.Cos(sphericalCoordinates.y);
         float z = distance * Mathf.Sin(sphericalCoordinates.x) * Mathf.Sin(sphericalCoordinates.y);
         return new Vector3(x, y, z);
-    }
-
-    private void UpdatePlayerRotation()
-    {
-        Vector3 directionToCamera = transform.localPosition - playerTransform.localPosition;
-        directionToCamera.y = 0;
-
-        Quaternion targetRotation = Quaternion.LookRotation(-directionToCamera);
-
-        playerTransform.localRotation = Quaternion.Slerp(playerTransform.localRotation, targetRotation, Time.deltaTime * 1000);
     }
 
     private void ResetMouseControl()

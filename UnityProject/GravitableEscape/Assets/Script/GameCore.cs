@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime;
 using UnityEngine;
 
 namespace OurGame
@@ -42,5 +43,20 @@ namespace OurGame
     public interface GravityObserver : Observer<Quaternion>
     {
         void OnNotify(Quaternion gravityRot);
+    }
+
+    public abstract class Player
+    {
+        protected int life;
+        public void ModifyLife(int amount)
+        {
+            life += amount;
+        }
+    }
+    abstract class Hazard
+    {
+        // protected Player player;
+        protected int damage;
+        public abstract void HarmPlayer();
     }
 }

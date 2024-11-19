@@ -27,9 +27,6 @@ public class ThornManager : MonoBehaviour
         rb.MovePosition(fixedPosition);
     }
 
-    public int foo = 0;
-    public int bar = 0;
-    public Vector3 n;
     private ContactPoint[] contacts = new ContactPoint[10];
     private float lastCollisionTime = -100.0f;
     public bool isUpward;
@@ -47,7 +44,6 @@ public class ThornManager : MonoBehaviour
             for (int i = 0; i < cnt; i++)
             {
                 ContactPoint contact = contacts[i];
-                n = contact.normal;
                 if (Vector3.Dot(contact.normal, Vector3.up) < -0.9f)
                 {
                     isUpward = true;

@@ -17,6 +17,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver
     BoxCollider playerCollider;
     float height;
     bool isground;
+    Quaternion targetRotation;
 
     private Animator animator;
     void Start()
@@ -53,6 +54,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver
             }
         }
 
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, Time.deltaTime * 1000);
     }
     void FixedUpdate()
     {
@@ -76,6 +78,11 @@ public class PlayerManager : MonoBehaviour, GravityObserver
             animator.SetBool("Static_b", true);
             animator.SetFloat("Speed_f", 0);
         }
+    }
+
+    public void UpdateRotation(Quaternion targetRot)
+    {
+        targetRotation = targetRot;
     }
 
     private void OnCollisionEnter(Collision collision)
