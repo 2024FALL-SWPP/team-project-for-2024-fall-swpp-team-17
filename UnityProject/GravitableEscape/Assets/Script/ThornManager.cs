@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using OurGame;
 using UnityEngine;
 
-public class ThornManager : MonoBehaviour
+public class ThornManager : HazardManager
 {
-    PlayerManager playerManager;
     Rigidbody rb;
     Vector3 fixedPosition;
     // Start is called before the first frame update
     void Start()
     {
-        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
-        rb = GetComponent<Rigidbody>();
+        damage = 1;
         fixedPosition = transform.position;
-        rb.isKinematic = true;
     }
 
     // Update is called once per frame
@@ -24,12 +22,9 @@ public class ThornManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(fixedPosition);
+        transform.position = fixedPosition;
     }
 
-    public int foo = 0;
-    public int bar = 0;
-    public Vector3 n;
     private ContactPoint[] contacts = new ContactPoint[10];
     private float lastCollisionTime = -100.0f;
     public bool isUpward;
@@ -42,22 +37,32 @@ public class ThornManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            isUpward = false;
-            int cnt = collision.GetContacts(contacts);
-            for (int i = 0; i < cnt; i++)
+            if (IsCollisionUpward(collision) && (Time.time - lastCollisionTime >= 3.0f))
             {
-                ContactPoint contact = contacts[i];
-                n = contact.normal;
-                if (Vector3.Dot(contact.normal, Vector3.up) < -0.9f)
-                {
-                    isUpward = true;
-                }
-            }
-            if (isUpward && (Time.time - lastCollisionTime >= 3.0f))
-            {
-                playerManager.ThornDamage();
+                PlayerManager player = collision.gameObject.GetComponent<PlayerManager>();
+                HarmPlayer(player);
                 lastCollisionTime = Time.time;
             }
         }
+    }
+
+    bool IsCollisionUpward(Collision collision)
+    {
+        bool isUpward = false;
+        int cnt = collision.GetContacts(contacts);
+        for (int i = 0; i < cnt; i++)
+        {
+            ContactPoint contact = contacts[i];
+            if (Vector3.Dot(contact.normal, Vector3.up) < -0.9f)
+            {
+                isUpward = true;
+            }
+        }
+        return isUpward;
+    }
+
+    protected override void HarmPlayer(IPlayerManager player)
+    {
+        player.ModifyLife(-damage);
     }
 }

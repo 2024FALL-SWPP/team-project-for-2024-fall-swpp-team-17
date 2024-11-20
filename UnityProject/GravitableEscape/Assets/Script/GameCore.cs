@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime;
 using UnityEngine;
 
 namespace OurGame
@@ -39,8 +40,19 @@ namespace OurGame
         void OnNotify(NotifyType data);
     }
 
-    public interface GravityObserver : Observer<Quaternion>
+    public interface GravityObserver : Observer<Quaternion> { }
+
+    public interface GameOverObserver : Observer<bool> { }
+
+    public interface IPlayerManager
     {
-        void OnNotify(Quaternion gravityRot);
+        public void ModifyLife(int amount);
+        public int GetLife();
+    }
+
+    public abstract class HazardManager : MonoBehaviour
+    {
+        protected int damage;
+        protected abstract void HarmPlayer(IPlayerManager player);
     }
 }

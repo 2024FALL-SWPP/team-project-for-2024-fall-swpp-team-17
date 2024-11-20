@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.Android;
 using OurGame;
 
-// TODO: Do not let the Camera see outside of the hallway.
 
 /// <summary>
 /// This class manages the overall rotation and location of the camera.
@@ -13,14 +12,13 @@ using OurGame;
 /// </summary>
 public class CameraManager : MonoBehaviour
 {
-    Transform gravityTransform, playerTransform;
-    public Transform wormhole;
+    Transform playerTransform;
     public float moveSpeed = 10.0f;
     private GameState gameState;
-    CameraMouseManager cameraMouseManager;
     GameManager gameManager;
+    PlayerManager playerManager;
 
-    private float distance = 15.0f;
+    public float distance = 15.0f;
     public float rotationSpeed = 5f;
     private Vector3 sphericalCoordinates;
     private float mouseRotX, mouseRotY;
@@ -28,14 +26,12 @@ public class CameraManager : MonoBehaviour
 
     void Start()
     {
-        gravityTransform = GameObject.Find("GravityManager").transform;
         playerTransform = GameObject.FindWithTag("Player").transform;
-        cameraMouseManager = GameObject.Find("Main Camera").GetComponent<CameraMouseManager>();
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-
+        distance = 15.0f;
         sphericalCoordinates = new Vector3(0, 0, distance);
         UpdateCameraPosition();
-
     }
 
     /// <summary>
@@ -57,12 +53,13 @@ public class CameraManager : MonoBehaviour
 
     private Vector3 savedSphericalCoordinates;
     private bool isShiftPressedLastFrame = false;
-    private float targetDistance;
+    private float targetDistance = 15.0f;
     private void UpdateCameraPosition()
     {
-
+        // Reset rotation when mouse button is pressed;
         if (Input.GetMouseButtonDown(0)) ResetMouseControl();
 
+        // Alter distance with mouse scrollwheel
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
         if (scrollInput != 0)
         {
@@ -70,17 +67,17 @@ public class CameraManager : MonoBehaviour
         }
         distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * 100f);
 
-
-        bool isShiftPressed = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-
-        if (isShiftPressed && !isShiftPressedLastFrame)
+        // Handles shift key interactions to toggle spherical coordinate updates and player rotation.
+        // Player can brouse around pressing shift key and come back when shift key is unpressed.
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             savedSphericalCoordinates = sphericalCoordinates;
         }
 
-        if (!isShiftPressed && isShiftPressedLastFrame)
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
         {
             sphericalCoordinates = savedSphericalCoordinates;
+            ResetMouseControl();
         }
 
         mouseRotX += -Input.GetAxisRaw("Mouse X") * sensitivity * Time.deltaTime;
@@ -89,51 +86,43 @@ public class CameraManager : MonoBehaviour
         sphericalCoordinates.x += mouseRotX * rotationSpeed * Time.deltaTime;
         sphericalCoordinates.y = Mathf.Clamp(sphericalCoordinates.y + mouseRotY * rotationSpeed * Time.deltaTime, 0.5f, Mathf.PI - 1.5f);
 
-
-        float x = distance * Mathf.Cos(sphericalCoordinates.x) * Mathf.Sin(sphericalCoordinates.y);
-        float y = distance * Mathf.Cos(sphericalCoordinates.y);
-        float z = distance * Mathf.Sin(sphericalCoordinates.x) * Mathf.Sin(sphericalCoordinates.y);
-
         Vector3 center = playerTransform.localPosition;
-        Vector3 desiredLocalPosition = center + new Vector3(x, y, z);
+        Vector3 desiredLocalPosition = center + SphericalToEuclidian(sphericalCoordinates);
 
+        transform.localPosition = ShiftToFront(desiredLocalPosition, center);
+
+        transform.LookAt(playerTransform.position + playerTransform.up * 5, playerTransform.up);
+        if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+        {
+            Vector3 directionToCamera = transform.localPosition - playerTransform.localPosition;
+            directionToCamera.y = 0;
+            Quaternion targetRot = Quaternion.LookRotation(-directionToCamera);
+            playerManager.UpdateRotation(targetRot);
+        }
+    }
+
+    private Vector3 ShiftToFront(Vector3 desiredLocalPosition, Vector3 center)
+    {
         Vector3 centerWorld = transform.parent.TransformPoint(center);
         Vector3 desiredWorldPosition = transform.parent.TransformPoint(desiredLocalPosition);
-
-
+        Vector3 shiftedLocalPosition = desiredLocalPosition;
         Ray ray = new Ray(centerWorld, desiredWorldPosition - centerWorld);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, distance))
         {
             Vector3 hitLocalPosition = playerTransform.parent.InverseTransformPoint(hit.point);
-            transform.localPosition = hitLocalPosition - (desiredLocalPosition - center) * 0.5f;
+            shiftedLocalPosition = hitLocalPosition - (desiredLocalPosition - center) * 0.5f;
         }
-        else
-        {
-            transform.localPosition = desiredLocalPosition;
-        }
-
-
-        transform.LookAt(playerTransform.position + playerTransform.up * 5, playerTransform.up);
-
-        if (!isShiftPressed)
-            UpdatePlayerRotation();
-
-        isShiftPressedLastFrame = isShiftPressed;
-
+        return shiftedLocalPosition;
     }
 
-    private void UpdatePlayerRotation()
+    private Vector3 SphericalToEuclidian(Vector3 sphericalCoordinates)
     {
-        Vector3 directionToCamera = transform.localPosition - playerTransform.localPosition;
-        directionToCamera.y = 0;
-
-        Quaternion targetRotation = Quaternion.LookRotation(-directionToCamera);
-
-        playerTransform.localRotation = Quaternion.Slerp(playerTransform.localRotation, targetRotation, Time.deltaTime * 1000);
-
-
+        float x = distance * Mathf.Cos(sphericalCoordinates.x) * Mathf.Sin(sphericalCoordinates.y);
+        float y = distance * Mathf.Cos(sphericalCoordinates.y);
+        float z = distance * Mathf.Sin(sphericalCoordinates.x) * Mathf.Sin(sphericalCoordinates.y);
+        return new Vector3(x, y, z);
     }
 
     private void ResetMouseControl()
@@ -143,7 +132,7 @@ public class CameraManager : MonoBehaviour
     }
 
 
-
+    public Transform wormhole;
     float spiralAngle = 0.0f, spiralRadius, distanceToWormhole;
     public float spiralSpeed = 15.0f;
     public float spiralRadiusDenom = 25.0f;
@@ -200,13 +189,11 @@ public class CameraManager : MonoBehaviour
     public void enterWormholeMode(Transform wormhole)
     {
         gameState = GameState.WormholeEffect;
-        cameraMouseManager.SetMouseControl(false);
         this.wormhole = wormhole;
     }
 
     public void exitWormholeMode()
     {
         gameState = GameState.Playing;
-        cameraMouseManager.SetMouseControl(true);
     }
 }
