@@ -13,7 +13,6 @@ using OurGame;
 public class oldCameraManager : MonoBehaviour
 {
     Transform playerTransform;
-    public float moveSpeed = 10.0f;
     private GameState gameState;
     GameManager gameManager;
     PlayerManager playerManager;
@@ -138,6 +137,8 @@ public class oldCameraManager : MonoBehaviour
     public float spiralRadiusDenom = 25.0f;
     public float moveSpeedNum = 2.5f;
     public float minRad = 0.5f;
+    public float moveSpeed = 10.0f;
+
 
     /// <summary>
     /// Updates camera's position to spiral towards the wormhole.

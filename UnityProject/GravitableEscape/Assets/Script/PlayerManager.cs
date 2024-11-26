@@ -4,7 +4,7 @@ using UnityEngine;
 using OurGame;
 using UnityEngine.Scripting.APIUpdating;
 
-public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager
+public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, GameStateObserver
 {
     public float moveSpeed = 5f;
     public Rigidbody rb;
@@ -39,7 +39,14 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager
         // TODO: check game state
         RotatePlayer();
         JumpPlayer();
-        MovePlayer(); // Move to FixedUpdate to prevent going through walls?
+    }
+
+    /// <summary>
+    /// Moving player is here to prevent going through walls
+    /// </summary>
+    void FixedUpdate()
+    {
+        MovePlayer();
     }
 
     /// <summary>
@@ -121,17 +128,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager
     }
 
     /// <summary>
-    /// Update targetGravityRot when gravity is changed.
-    /// Player's rotation is altered so that it is standing up facing front.
-    /// </summary>
-    /// <param name="rot">how gravity is changed. should be multiplied to original rotation</param>
-    public void OnNotify(Quaternion rot)
-    {
-        targetGravityRot = targetGravityRot * rot;
-        transform.rotation = targetGravityRot;
-    }
-
-    /// <summary>
     /// check if ground is touched, update isGround
     /// </summary>
     /// <param name="collision"></param>
@@ -147,6 +143,38 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager
     {
         life += amount;
     }
-}
 
-//TODO: IPlayerManager, hazard, wormhole
+    public void Teleport(Vector3 targetPos)
+    {
+        transform.position = targetPos;
+        transform.rotation = targetGravityRot;
+    }
+
+    /// <summary>
+    /// Update targetGravityRot when gravity is changed.
+    /// Player's rotation is altered so that it is standing up facing front.
+    /// </summary>
+    /// <param name="rot">how gravity is changed. should be multiplied to original rotation</param>
+    public void OnNotify<GravityObserver>(Quaternion rot)
+    {
+        targetGravityRot = targetGravityRot * rot;
+        transform.rotation = targetGravityRot;
+    }
+
+    public void OnNotify<GameStateObserver>(GameState gs)
+    {
+        switch (gs)
+        {
+            case GameState.Playing:
+                gameObject.SetActive(true);
+                break;
+            case GameState.WormholeEffect:
+                gameObject.SetActive(false);
+                break;
+            case GameState.Fainted:
+                gameObject.SetActive(true);
+                break;
+        }
+    }
+
+}

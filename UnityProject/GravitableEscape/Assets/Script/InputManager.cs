@@ -6,19 +6,24 @@ using UnityEngine;
 public class InputManager : MonoBehaviour, GravityObserver
 {
     private float mouseSensitivity = 200f;
-    public float yaw, pitch, savedYaw, savedPitch;
+    public float yaw, pitch, savedYaw, savedPitch, mouseX, mouseY;
 
     // Start is called before the first frame update
     void Start()
     {
+        yaw = 0;
+        pitch = 0;
+        mouseX = 0;
+        mouseY = 0;
         Cursor.lockState = CursorLockMode.Locked; // Don't show mouse
     }
 
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // TODO: Fix for first 1 sec?
+        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         yaw += mouseX;
         pitch -= mouseY;
@@ -36,7 +41,7 @@ public class InputManager : MonoBehaviour, GravityObserver
         }
     }
 
-    public void OnNotify(Quaternion rot)
+    public void OnNotify<GravityObserver>(Quaternion rot)
     {
         yaw = 0;
         pitch = 0;

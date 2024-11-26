@@ -34,18 +34,19 @@ namespace OurGame
         {
             foreach (Observer<NotifyType> observer in observers)
             {
-                observer.OnNotify(data);
+                observer.OnNotify<Observer>(data);
             }
         }
     }
     public interface Observer<NotifyType>
     {
-        void OnNotify(NotifyType data);
+        void OnNotify<Observer>(NotifyType data);
     }
 
     public interface GravityObserver : Observer<Quaternion> { }
 
     public interface GameOverObserver : Observer<bool> { }
+    public interface GameStateObserver : Observer<GameState> { }
 
     public interface IPlayerManager
     {

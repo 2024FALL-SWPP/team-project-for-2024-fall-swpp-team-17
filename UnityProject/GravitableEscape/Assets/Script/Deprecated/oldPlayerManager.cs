@@ -4,7 +4,7 @@ using OurGame;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
-public class oldPlayerManager : MonoBehaviour, GravityObserver
+public class oldPlayerManager : MonoBehaviour
 {
     private int life = 5;
     public float moveSpeed = 20f;

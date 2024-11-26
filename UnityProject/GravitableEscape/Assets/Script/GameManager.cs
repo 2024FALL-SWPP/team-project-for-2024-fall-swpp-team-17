@@ -6,14 +6,21 @@ using OurGame;
 public class GameManager : MonoBehaviour
 {
     public CameraManager cameraManager;
-    public GameObject player;
+    public PlayerManager playerManager;
     public Vector3 wormholeTargetPos;
-    public GameState gameState;
+    public GameState gameState; // TODO: make this singleton?
+    Subject<GameStateObserver, GameState> gameStateObs;
     void Start()
     {
         // cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
-        player = GameObject.Find("Player");
         gameState = GameState.Playing;
+
+        gameStateObs = new Subject<GameStateObserver, GameState>();
+        cameraManager = FindObjectOfType<CameraManager>();
+        playerManager = FindObjectOfType<PlayerManager>();
+        gameStateObs.AddObserver(cameraManager);
+        gameStateObs.AddObserver(playerManager);
+        gameStateObs.NotifyObservers(gameState);
     }
 
     // Update is called once per frame
@@ -28,22 +35,23 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <param name="wormhole">transform of the wormhole object</param>
     /// <param name="targetPos">position to move after animation</param>
-    public void startWormhole(GameObject wormhole, Vector3 targetPos)
+    public void startWormhole(Transform wormhole, Vector3 targetPos)
     {
-        player.SetActive(false);
         wormholeTargetPos = targetPos;
-        // cameraManager.enterWormholeMode(wormhole.transform);
-        // this.wormhole = wormhole;
+        cameraManager.SetWormhole(wormhole);
+        gameState = GameState.WormholeEffect;
+        gameStateObs.NotifyObservers(gameState);
     }
 
+    public bool foo = false;
     /// <summary>
     /// This function is called when the animation warping into the wormhole ends.
     /// </summary>
     public void exitWormhole()
     {
-        player.SetActive(true);
-        // wormhole.GetComponent<WormholeManager>().Reset();
-        player.transform.position = wormholeTargetPos;
-        // cameramanger switches mode to 0 before calling this
+        foo = true;
+        playerManager.Teleport(wormholeTargetPos);
+        gameState = GameState.Playing;
+        gameStateObs.NotifyObservers(gameState);
     }
 }
