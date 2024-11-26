@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Runtime;
 using UnityEngine;
 
+// enum, Class, Interfaces used throughout the entire game is defined in this file
+
 namespace OurGame
 {
     public enum GameState
     {
         Playing,
-        WormholeEffect
+        WormholeEffect,
+        Fainted
     }
     class Subject<Observer, NotifyType>
     {
@@ -46,8 +49,8 @@ namespace OurGame
 
     public interface IPlayerManager
     {
+        int Life { get; }
         public void ModifyLife(int amount);
-        public int GetLife();
     }
 
     public abstract class HazardManager : MonoBehaviour

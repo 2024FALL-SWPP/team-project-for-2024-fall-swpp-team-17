@@ -1,199 +1,77 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Android;
+using System.Net.Http.Headers;
 using OurGame;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
 
-
-/// <summary>
-/// This class manages the overall rotation and location of the camera.
-/// Camera rotation due to mouse movement is managed by CameraMouseController.
-/// </summary>
-public class CameraManager : MonoBehaviour
+public class CameraManager : MonoBehaviour, GravityObserver
 {
-    Transform playerTransform;
-    public float moveSpeed = 10.0f;
-    private GameState gameState;
-    GameManager gameManager;
-    PlayerManager playerManager;
-
-    public float distance = 15.0f;
-    public float rotationSpeed = 5f;
-    private Vector3 sphericalCoordinates;
-    private float mouseRotX, mouseRotY;
-    private float sensitivity = 3f;
+    public Transform player; // target to follow. Player in our case
+    public float mouseSensitivity = 100f;
+    public float distance = 10f; // distance to target
+    private float targetDistance = 10f;
+    public float height = 5f; // height from target
+    Quaternion gravityRot, targetGravityRot;
+    public InputManager inputManager;
+    Vector3 targetPosition;
 
     void Start()
     {
-        playerTransform = GameObject.FindWithTag("Player").transform;
-        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        distance = 15.0f;
-        sphericalCoordinates = new Vector3(0, 0, distance);
-        UpdateCameraPosition();
+        inputManager = FindObjectOfType<InputManager>();
+        gravityRot = Quaternion.identity;
+        targetGravityRot = Quaternion.identity;
     }
 
-    /// <summary>
-    /// This function updates camera rotation and position according to the mode.
-    /// 0: default mode, 1: wormhole animation mode
-    /// </summary>
-    void Update()
+
+    void LateUpdate()
     {
-        switch (gameState)
-        {
-            case GameState.Playing:
-                UpdateCameraPosition();
-                break;
-            case GameState.WormholeEffect:
-                SpiralTowardsWormhole();
-                break;
-        }
+        ScrollDistance();
+        RotateCamera();
+        FollowPlayer();
+        ShiftToFront();
+        transform.position = targetPosition;
     }
 
-    private Vector3 savedSphericalCoordinates;
-    private bool isShiftPressedLastFrame = false;
-    private float targetDistance = 15.0f;
-    private void UpdateCameraPosition()
+    void ScrollDistance()
     {
-        // Reset rotation when mouse button is pressed;
-        if (Input.GetMouseButtonDown(0)) ResetMouseControl();
-
-        // Alter distance with mouse scrollwheel
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
         if (scrollInput != 0)
         {
-            targetDistance = Mathf.Clamp(distance - scrollInput * 10f, 15f, 25f); // 범위 제한: 15~20
+            targetDistance = Mathf.Clamp(distance - scrollInput * 10f, 5f, 20f);
         }
         distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * 100f);
+    }
 
-        // Handles shift key interactions to toggle spherical coordinate updates and player rotation.
-        // Player can brouse around pressing shift key and come back when shift key is unpressed.
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+    void RotateCamera()
+    {
+        gravityRot = Quaternion.Slerp(gravityRot, targetGravityRot, Time.deltaTime * 10);
+        transform.rotation = gravityRot * Quaternion.Euler(inputManager.pitch, inputManager.yaw, 0);
+    }
+
+    void FollowPlayer()
+    {
+        targetPosition = player.position - transform.forward * distance + transform.up * height;
+    }
+
+    void ShiftToFront()
+    {
+        Vector3 directionToTarget = player.position - targetPosition;
+        float distanceToTarget = Vector3.Distance(targetPosition, player.position);
+        if (Physics.Raycast(targetPosition, directionToTarget, out RaycastHit hit, distanceToTarget))
         {
-            savedSphericalCoordinates = sphericalCoordinates;
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
-        {
-            sphericalCoordinates = savedSphericalCoordinates;
-            ResetMouseControl();
-        }
-
-        mouseRotX += -Input.GetAxisRaw("Mouse X") * sensitivity * Time.deltaTime;
-        mouseRotY += Input.GetAxisRaw("Mouse Y") * sensitivity * Time.deltaTime;
-
-        sphericalCoordinates.x += mouseRotX * rotationSpeed * Time.deltaTime;
-        sphericalCoordinates.y = Mathf.Clamp(sphericalCoordinates.y + mouseRotY * rotationSpeed * Time.deltaTime, 0.5f, Mathf.PI - 1.5f);
-
-        Vector3 center = playerTransform.localPosition;
-        Vector3 desiredLocalPosition = center + SphericalToEuclidian(sphericalCoordinates);
-
-        transform.localPosition = ShiftToFront(desiredLocalPosition, center);
-
-        transform.LookAt(playerTransform.position + playerTransform.up * 5, playerTransform.up);
-        if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
-        {
-            Vector3 directionToCamera = transform.localPosition - playerTransform.localPosition;
-            directionToCamera.y = 0;
-            Quaternion targetRot = Quaternion.LookRotation(-directionToCamera);
-            playerManager.UpdateRotation(targetRot);
+            if (hit.collider.gameObject.name != "astronaut")
+            {
+                float distanceObstToTarget = Vector3.Distance(hit.point, player.position);
+                float shiftedDistance = distance * (distanceObstToTarget / distanceToTarget) * 0.9f;
+                targetPosition = player.position - transform.forward * shiftedDistance + transform.up * height;
+            }
         }
     }
 
-    private Vector3 ShiftToFront(Vector3 desiredLocalPosition, Vector3 center)
+    public void OnNotify(Quaternion rot)
     {
-        Vector3 centerWorld = transform.parent.TransformPoint(center);
-        Vector3 desiredWorldPosition = transform.parent.TransformPoint(desiredLocalPosition);
-        Vector3 shiftedLocalPosition = desiredLocalPosition;
-        Ray ray = new Ray(centerWorld, desiredWorldPosition - centerWorld);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, distance))
-        {
-            Vector3 hitLocalPosition = playerTransform.parent.InverseTransformPoint(hit.point);
-            shiftedLocalPosition = hitLocalPosition - (desiredLocalPosition - center) * 0.5f;
-        }
-        return shiftedLocalPosition;
-    }
-
-    private Vector3 SphericalToEuclidian(Vector3 sphericalCoordinates)
-    {
-        float x = distance * Mathf.Cos(sphericalCoordinates.x) * Mathf.Sin(sphericalCoordinates.y);
-        float y = distance * Mathf.Cos(sphericalCoordinates.y);
-        float z = distance * Mathf.Sin(sphericalCoordinates.x) * Mathf.Sin(sphericalCoordinates.y);
-        return new Vector3(x, y, z);
-    }
-
-    private void ResetMouseControl()
-    {
-        mouseRotX = 0;
-        mouseRotY = 0;
-    }
-
-
-    public Transform wormhole;
-    float spiralAngle = 0.0f, spiralRadius, distanceToWormhole;
-    public float spiralSpeed = 15.0f;
-    public float spiralRadiusDenom = 25.0f;
-    public float moveSpeedNum = 2.5f;
-    public float minRad = 0.5f;
-
-    /// <summary>
-    /// Updates camera's position to spiral towards the wormhole.
-    /// can be used in mode 1.
-    /// </summary>
-    // TODO: alter constants on main scene
-    private void SpiralTowardsWormhole()
-    {
-        if (Vector3.Distance(transform.position, wormhole.position) > 1f)
-        {
-            spiralAngle += spiralSpeed * Time.deltaTime;
-            distanceToWormhole = Vector3.Distance(transform.position, wormhole.position);
-            spiralRadius = Mathf.Min(minRad, distanceToWormhole / spiralRadiusDenom);
-            Vector3 spiralOffest = new Vector3(
-                Mathf.Cos(spiralAngle) * spiralRadius,
-                Mathf.Sin(spiralAngle) * spiralRadius,
-                0);
-
-            transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime) + spiralOffest;
-            moveSpeed = moveSpeedNum;
-
-            transform.LookAt(wormhole);
-        }
-        else
-        {
-            exitWormholeMode();
-            gameManager.exitWormhole();
-        }
-    }
-
-    /// <summary>
-    /// Accelerates towards wormhole. can be used in mode 1.
-    /// </summary>
-    private void MoveTowardsWormhole()
-    {
-        if (Vector3.Distance(transform.position, wormhole.position) > 2f)
-        {
-            transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime);
-            moveSpeed += 2.0f * Time.deltaTime;
-            transform.LookAt(wormhole);
-        }
-        else
-        {
-            exitWormholeMode();
-            gameManager.exitWormhole();
-        }
-    }
-
-    public void enterWormholeMode(Transform wormhole)
-    {
-        gameState = GameState.WormholeEffect;
-        this.wormhole = wormhole;
-    }
-
-    public void exitWormholeMode()
-    {
-        gameState = GameState.Playing;
+        targetGravityRot = targetGravityRot * rot;
     }
 }

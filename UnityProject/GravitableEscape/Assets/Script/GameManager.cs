@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameState gameState;
     void Start()
     {
-        cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
+        // cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
         player = GameObject.Find("Player");
         gameState = GameState.Playing;
     }
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         player.SetActive(false);
         wormholeTargetPos = targetPos;
-        cameraManager.enterWormholeMode(wormhole.transform);
+        // cameraManager.enterWormholeMode(wormhole.transform);
         // this.wormhole = wormhole;
     }
 
