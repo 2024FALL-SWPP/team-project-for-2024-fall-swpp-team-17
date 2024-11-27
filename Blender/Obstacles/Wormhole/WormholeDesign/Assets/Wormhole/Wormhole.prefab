@@ -4854,7 +4854,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 108022650250726453}
+  - component: {fileID: 3983741189510627086}
   m_Layer: 0
   m_Name: Wormhole
   m_TagString: Untagged
@@ -4862,7 +4862,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &108022650250726453
+--- !u!4 &3983741189510627086
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9724,7 +9724,7 @@ Transform:
   m_Children:
   - {fileID: 108022649830443065}
   - {fileID: 108022651362937992}
-  m_Father: {fileID: 108022650250726453}
+  m_Father: {fileID: 3983741189510627086}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &108022650530400992
