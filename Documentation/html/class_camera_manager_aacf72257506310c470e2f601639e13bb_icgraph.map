@@ -1,0 +1,7 @@
+<map id="CameraManager.SetWormhole" name="CameraManager.SetWormhole">
+<area shape="rect" id="Node000001" title="Sets wormhole position so that the camera can spiral towards that position." alt="" coords="494,13,692,38"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#af309d006c0dd25e85cb855a2dae8aac0" title="This function is called by WormholeManager when player is close enough to the wormhole...." alt="" coords="253,13,446,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="478,28,446,28,446,23,478,23"/>
+<area shape="rect" id="Node000003" href="$class_wormhole_manager.html#ac5d6a5110598363f9acaffa075ef66fb" title=" " alt="" coords="5,5,205,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,28,205,28,205,23,237,23"/>
+</map>

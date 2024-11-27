@@ -1,0 +1,5 @@
+<map id="OurGame.IPlayerManager" name="OurGame.IPlayerManager">
+<area shape="rect" id="Node000001" title="Interface of PlayerManager." alt="" coords="5,5,178,31"/>
+<area shape="rect" id="Node000002" href="$class_player_manager.html" title="This class handles movement(+ jump), life, blinking(when revived)" alt="" coords="37,79,146,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,46,94,79,89,79,89,46"/>
+</map>

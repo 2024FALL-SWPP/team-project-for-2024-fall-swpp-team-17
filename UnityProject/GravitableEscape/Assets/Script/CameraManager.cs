@@ -6,7 +6,11 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-
+/// <summary>
+/// This class manages camera movement and rotation.
+/// In most cases it follows the player and roates using mouse input.
+/// It has some special effects like spiraling towards wormhole.
+/// </summary>
 public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
 {
     public Transform player; // target to follow. Player in our case

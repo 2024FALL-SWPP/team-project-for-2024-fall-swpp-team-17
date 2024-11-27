@@ -1,0 +1,7 @@
+<map id="PlayerManager.SetMaterialsOpaque" name="PlayerManager.SetMaterialsOpaque">
+<area shape="rect" id="Node000001" title=" " alt="" coords="395,5,579,46"/>
+<area shape="rect" id="Node000002" href="$class_player_manager.html#ab9a870f3904eb0b72c8b61535eae5f41" title="Make player blink translucent, opaque to show that player revived." alt="" coords="207,13,347,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="380,28,347,28,347,23,380,23"/>
+<area shape="rect" id="Node000003" href="$class_player_manager.html#a845f49f829496d56defe86c77e03fa12" title=" " alt="" coords="5,13,159,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,28,159,28,159,23,191,23"/>
+</map>

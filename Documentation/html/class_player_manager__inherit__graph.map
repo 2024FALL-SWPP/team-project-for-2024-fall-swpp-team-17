@@ -1,0 +1,15 @@
+<map id="PlayerManager" name="PlayerManager">
+<area shape="rect" id="Node000001" title="This class handles movement(+ jump), life, blinking(when revived)" alt="" coords="214,153,322,178"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,117,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,108,233,150,232,155,109,113"/>
+<area shape="rect" id="Node000003" href="$interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="140,79,256,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,114,258,150,254,154,218,117"/>
+<area shape="rect" id="Node000004" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="118,5,279,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="201,46,201,79,196,79,196,46"/>
+<area shape="rect" id="Node000005" href="$interface_our_game_1_1_i_player_manager.html" title="Interface of PlayerManager." alt="" coords="281,79,393,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="317,117,281,154,277,150,313,114"/>
+<area shape="rect" id="Node000006" href="$interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="418,79,558,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="437,112,306,155,304,150,435,107"/>
+<area shape="rect" id="Node000007" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="406,5,570,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="490,46,490,79,485,79,485,46"/>
+</map>

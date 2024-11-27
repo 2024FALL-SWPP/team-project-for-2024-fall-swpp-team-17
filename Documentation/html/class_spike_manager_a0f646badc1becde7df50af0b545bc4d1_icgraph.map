@@ -1,0 +1,5 @@
+<map id="SpikeManager.HarmPlayer" name="SpikeManager.HarmPlayer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="228,13,404,38"/>
+<area shape="rect" id="Node000002" href="$class_spike_manager.html#a5e0d2bc0d0bffef862183531283ae4fe" title="Checks if player collided with the pointy part of the thorn, calls playerManager.ThornDamage() if so." alt="" coords="5,5,180,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,28,180,28,180,23,212,23"/>
+</map>

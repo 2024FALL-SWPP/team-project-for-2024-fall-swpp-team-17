@@ -1,0 +1,9 @@
+<map id="MazeBoxManager.PuzzleCleared" name="MazeBoxManager.PuzzleCleared">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,220,56"/>
+<area shape="rect" id="Node000002" href="$class_button_manager.html#ad10532db93280a68f2d89f7d3b8e1c57" title=" " alt="" coords="272,5,440,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,30,256,26,257,31,221,35"/>
+<area shape="rect" id="Node000004" href="$class_maze_manager.html#a643c86ae79700676762ce33a0d3bb157" title=" " alt="" coords="268,55,445,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="221,51,252,55,252,60,220,57"/>
+<area shape="rect" id="Node000003" href="$class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title=" " alt="" coords="493,5,691,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,16,478,16,478,21,441,21"/>
+</map>

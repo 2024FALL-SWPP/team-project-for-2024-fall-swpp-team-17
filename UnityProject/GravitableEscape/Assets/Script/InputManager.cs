@@ -5,8 +5,8 @@ using UnityEngine;
 
 /// <summary>
 /// This class handles mouse location input.
-/// It fetches mouse's x, y location and 
-/// CameraManager, PlayerManager uses this script's yaw, pitch to 
+/// It fetches mouse's x, y location and updates yaw, pitch. 
+/// CameraManager, PlayerManager uses this script's yaw, pitch to calculate its rotation. 
 /// </summary>
 public class InputManager : MonoBehaviour, GravityObserver
 {

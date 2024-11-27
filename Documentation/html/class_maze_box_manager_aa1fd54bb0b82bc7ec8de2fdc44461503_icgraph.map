@@ -1,0 +1,5 @@
+<map id="MazeBoxManager.PuzzleCleared" name="MazeBoxManager.PuzzleCleared">
+<area shape="rect" id="Node000001" title=" " alt="" coords="250,13,464,38"/>
+<area shape="rect" id="Node000002" href="$class_maze_box_manager.html#a009e1f3e3bffb37ce8397b4249d238d5" title=" " alt="" coords="5,5,202,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,28,202,28,202,23,234,23"/>
+</map>

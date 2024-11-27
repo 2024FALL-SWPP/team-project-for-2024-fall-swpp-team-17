@@ -1,0 +1,5 @@
+<map id="SpikeManager.HarmPlayer" name="SpikeManager.HarmPlayer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,182,31"/>
+<area shape="rect" id="Node000002" href="$interface_our_game_1_1_i_player_manager.html#ae77c42d315249e5699d6d4e853b95fae" title=" " alt="" coords="230,5,465,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,16,214,16,214,21,182,21"/>
+</map>

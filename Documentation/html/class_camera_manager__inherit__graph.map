@@ -1,0 +1,13 @@
+<map id="CameraManager" name="CameraManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="140,153,257,178"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,117,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,110,176,150,174,154,97,115"/>
+<area shape="rect" id="Node000003" href="$interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="140,79,256,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,120,201,152,196,152,196,120"/>
+<area shape="rect" id="Node000004" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="108,5,270,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="195,46,199,78,194,79,190,46"/>
+<area shape="rect" id="Node000005" href="$interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="288,79,428,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="319,114,227,155,225,150,316,109"/>
+<area shape="rect" id="Node000006" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="294,5,458,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="372,47,364,79,359,78,367,45"/>
+</map>

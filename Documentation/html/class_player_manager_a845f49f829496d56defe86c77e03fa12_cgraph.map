@@ -1,0 +1,13 @@
+<map id="PlayerManager.Update" name="PlayerManager.Update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,94,159,120"/>
+<area shape="rect" id="Node000002" href="$class_player_manager.html#ab9a870f3904eb0b72c8b61535eae5f41" title="Make player blink translucent, opaque to show that player revived." alt="" coords="230,45,370,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,91,225,72,226,77,143,96"/>
+<area shape="rect" id="Node000005" href="$class_player_manager.html#a8324909e9c590f59f13337269916c0a1" title="Gets Spacekey input and makes player jump. Double jump is prevented using isGround tag." alt="" coords="210,94,390,120"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="159,104,194,104,194,110,159,110"/>
+<area shape="rect" id="Node000006" href="$class_player_manager.html#af3d0dd4df03b895baf60bd3b7c51ce1b" title="Rotate player to the direction of movement when it moves(has WASD input). The direction is determined..." alt="" coords="207,144,394,169"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="143,118,226,137,225,142,142,123"/>
+<area shape="rect" id="Node000003" href="$class_player_manager.html#a21c84b51229c3d1ef22ac9eb012152fb" title=" " alt="" coords="442,5,626,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="371,45,426,38,427,43,371,51"/>
+<area shape="rect" id="Node000004" href="$class_player_manager.html#a679429196e9711ac69b307c6956a0078" title=" " alt="" coords="442,71,626,111"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="371,65,427,73,426,78,371,70"/>
+</map>

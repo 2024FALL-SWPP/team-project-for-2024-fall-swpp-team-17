@@ -1,0 +1,7 @@
+<map id="GravityManager.Update" name="GravityManager.Update">
+<area shape="rect" id="Node000001" title="This function checks if every rigidbody object is at rest, and if so, alters gravity according to the..." alt="" coords="5,31,164,56"/>
+<area shape="rect" id="Node000002" href="$class_gravity_manager.html#a33c1d1eee3dd22f27b8d5c67cf26d139" title="This function checks whether all rigidbodies are at rest." alt="" coords="226,5,386,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,32,210,26,211,32,164,37"/>
+<area shape="rect" id="Node000003" href="$class_gravity_manager.html#a81de2fa0a53574ebdf91b13d9269bcf5" title="This function rotates this object, Physics.gravity, camera, player." alt="" coords="212,55,400,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,49,196,53,196,58,164,55"/>
+</map>

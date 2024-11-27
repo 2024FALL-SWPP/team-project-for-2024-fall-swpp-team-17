@@ -1,0 +1,5 @@
+<map id="PlayerManager.RotatePlayer" name="PlayerManager.RotatePlayer">
+<area shape="rect" id="Node000001" title="Rotate player to the direction of movement when it moves(has WASD input). The direction is determined..." alt="" coords="207,5,394,31"/>
+<area shape="rect" id="Node000002" href="$class_player_manager.html#a845f49f829496d56defe86c77e03fa12" title=" " alt="" coords="5,5,159,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,21,159,21,159,16,191,16"/>
+</map>

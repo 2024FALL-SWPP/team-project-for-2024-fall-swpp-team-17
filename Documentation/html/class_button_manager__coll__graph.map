@@ -1,0 +1,10 @@
+<map id="ButtonManager" name="ButtonManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="12,244,121,270"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,47,69,244,63,244,59,47"/>
+<area shape="rect" id="Node000004" href="$class_puzzle_interface.html" title=" " alt="" coords="82,80,194,106"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="87,40,128,78,124,82,83,44"/>
+<area shape="rect" id="Node000003" href="$class_maze_manager.html" title=" " alt="" coords="84,155,187,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,195,78,245,74,242,114,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="140,122,139,155,133,155,135,121"/>
+</map>
