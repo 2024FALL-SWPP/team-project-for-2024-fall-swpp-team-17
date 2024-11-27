@@ -39,6 +39,7 @@ public class GravityManager : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Alpha3)) RotateAngle(-270);
         }
     }
+
     /// <summary>
     /// This function rotates this object, Physics.gravity, camera, player.
     /// </summary>
@@ -48,7 +49,6 @@ public class GravityManager : MonoBehaviour
         Physics.gravity = Quaternion.Euler(0, 0, angle) * Physics.gravity;
         gravityChange.NotifyObservers(Quaternion.Euler(0, 0, angle));
     }
-
 
     /// <summary>
     /// This function checks whether all rigidbodies are at rest.

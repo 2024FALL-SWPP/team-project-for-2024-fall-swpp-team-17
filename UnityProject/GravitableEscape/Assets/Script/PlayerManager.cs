@@ -114,7 +114,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
             animator.SetBool("Static_b", true);
             animator.SetFloat("Speed_f", 0);
         }
-
     }
 
     /// <summary>
@@ -206,7 +205,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
             material.renderQueue = 3000;
 
             Color color = material.color;
-            color.a = 0.5f;
+            color.a = 0.7f;
             renderer.material.color = color;
         }
     }
@@ -268,7 +267,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
             revived = true;
         }
         if (amount > 0) life += amount;
-
     }
 
     /// <summary>
