@@ -3,31 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using OurGame;
 using UnityEngine.Scripting.APIUpdating;
+using System.Xml.Serialization;
 
 public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, GameStateObserver
 {
-    public float moveSpeed = 5f;
     public Rigidbody rb;
-    private Vector3 moveDirection;
-    Quaternion targetGravityRot = Quaternion.identity; // Target rotation for gravity changes
-    public InputManager inputManager;
-    private float height;
-    bool isGround;
     private Animator animator;
-    public int life;
-    Vector3 forwardDirction;
+    // public Renderer renderer;
+    public Color originalColor, transparentColor;
+    public InputManager inputManager;
     public float jumpForce = 1200f;
+    public float moveSpeed = 20f;
+    private Vector3 moveDirection;
+    private Quaternion targetGravityRot = Quaternion.identity; // Target rotation for gravity changes. Direction of player facing forward in gravity
+    public BoxCollider boxCollider;
+    public float height;
+    private bool isGround;
+    GameState gameState;
+    public int life;
     public int Life
     {
         get { return life; }
     }
+    public float lastDamageTime = -100f;
+    public bool revived = false;
+    public bool isTransparent = false;
 
     void Start()
     {
         inputManager = FindObjectOfType<InputManager>();
         rb = GetComponent<Rigidbody>();
+        // renderer = GetComponent<Renderer>();
+        // originalColor = renderer.material.color;
+        // transparentColor = originalColor;
+        // transparentColor.a = 0.5f;
         rb.freezeRotation = true; // Freeze rotation so that Rigidbody does not control rotation
-        height = GetComponent<BoxCollider>().size.y;
+        boxCollider = GetComponent<BoxCollider>();
+        height = boxCollider.size.y;
         isGround = true;
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
@@ -37,9 +49,44 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     void Update()
     {
         // TODO: check game state
-        RotatePlayer();
-        JumpPlayer();
+        switch (gameState)
+        {
+            case GameState.Playing:
+                RotatePlayer();
+                JumpPlayer();
+                break;
+            default:
+                break;
+        }
+
+        if (revived)
+        {
+            // Blink();
+        }
+
     }
+
+    // void Blink()
+    // {
+    //     float time = Time.time - lastDamageTime;
+    //     if ((time % 1) < 0.5f && !isTransparent)
+    //     {
+    //         renderer.material.color = transparentColor;
+    //         isTransparent = true;
+    //     }
+    //     else if ((time % 1) > 0.5f && isTransparent)
+    //     {
+    //         renderer.material.color = originalColor;
+    //         isTransparent = false;
+    //     }
+    //     if (time > 3.0f)
+    //     {
+    //         renderer.material.color = originalColor;
+    //         revived = false;
+    //         isTransparent = false;
+    //     }
+
+    // }
 
     /// <summary>
     /// Moving player is here to prevent going through walls
@@ -88,26 +135,30 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
 
             // Update roatation and position to player
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+
+            // Apply animation
+            animator.SetBool("Static_b", false);
+            animator.SetFloat("Speed_f", 0.3f);
         }
         else
         {
             // Stop movement if there is no input
             moveDirection = Vector3.zero;
+
+            // Apply animation
+            animator.SetBool("Static_b", true);
+            animator.SetFloat("Speed_f", 0);
         }
 
     }
 
+    public bool a, b, c, d, e, f;
     /// <summary>
     /// Check if there are obstacles and move player in the moveDirection
     /// </summary>
     void MovePlayer()
     {
-        Vector3 footPosition = transform.position + Vector3.down * height / 2.5f;
-        Vector3 headPosition = transform.position + Vector3.up * height / 2.5f;
-        float distance = moveSpeed * Time.fixedDeltaTime * 10;
-        if (!ObstacleInPath(transform.position, moveDirection, distance)
-        && !ObstacleInPath(footPosition, moveDirection, distance)
-        && !ObstacleInPath(headPosition, moveDirection, distance))
+        if (!ObstacleInPath())
         {
             rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
         }
@@ -120,11 +171,34 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     /// <param name="direction">direction to check if there is an obstacle</param>
     /// <param name="distance">distance(bound) to check if there is an obstacle</param>
     /// <returns></returns>
-    bool ObstacleInPath(Vector3 origin, Vector3 direction, float distance)
+    bool ObstacleInPath()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(origin, direction, out hit, distance)) return true;
-        else return false;
+        float distance = moveSpeed * Time.fixedDeltaTime * 10;
+        Vector3 footPosition = transform.position - transform.up * height;
+        Vector3 headPosition = transform.position + transform.up * height;
+        Vector3[] positions = new Vector3[] { transform.position, footPosition, headPosition };
+        Vector3 leftDirection = Vector3.Cross(moveDirection, transform.up);
+        Vector3 rightDirection = -Vector3.Cross(moveDirection, transform.up);
+        Vector3[] directions = new Vector3[] { moveDirection, leftDirection, rightDirection };
+        for (int i = 0; i < positions.Length; i++)
+        {
+            Vector3 direction = directions[i];
+            for (int j = 0; j < positions.Length; j++)
+            {
+                Vector3 origin = positions[j];
+                RaycastHit hit;
+                if (Physics.Raycast(origin, direction, out hit, distance))
+                {
+                    Debug.DrawRay(origin, direction * distance, Color.red);
+                    return true;
+                }
+                else
+                {
+                    Debug.DrawRay(origin, direction * distance, Color.green);
+                }
+            }
+        }
+        return false;
     }
 
     /// <summary>
@@ -141,9 +215,17 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     }
     public void ModifyLife(int amount)
     {
-        life += amount;
+        if ((amount < 0) && !revived)
+        {
+            life += amount;
+        }
+
     }
 
+    /// <summary>
+    /// Move player to targetPos. Used in wormhole
+    /// </summary>
+    /// <param name="targetPos">position to teleport</param>
     public void Teleport(Vector3 targetPos)
     {
         transform.position = targetPos;
@@ -163,15 +245,13 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
 
     public void OnNotify<GameStateObserver>(GameState gs)
     {
+        gameState = gs;
         switch (gs)
         {
-            case GameState.Playing:
-                gameObject.SetActive(true);
-                break;
             case GameState.WormholeEffect:
                 gameObject.SetActive(false);
                 break;
-            case GameState.Fainted:
+            default:
                 gameObject.SetActive(true);
                 break;
         }

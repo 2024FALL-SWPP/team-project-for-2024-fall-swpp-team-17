@@ -22,6 +22,7 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
 
     void Start()
     {
+        player = GameObject.FindWithTag("Player").transform;
         inputManager = FindObjectOfType<InputManager>();
         gameManager = FindObjectOfType<GameManager>();
         gravityRot = Quaternion.identity;

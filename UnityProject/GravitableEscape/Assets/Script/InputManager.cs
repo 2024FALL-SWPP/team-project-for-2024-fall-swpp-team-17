@@ -15,7 +15,7 @@ public class InputManager : MonoBehaviour, GravityObserver
         pitch = 0;
         mouseX = 0;
         mouseY = 0;
-        Cursor.lockState = CursorLockMode.Locked; // Don't show mouse
+        // Cursor.lockState = CursorLockMode.Locked; // Don't show mouse
     }
 
     // Update is called once per frame
