@@ -305,6 +305,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6036054162782294133, guid: 878d4bef90d35f34eb37f9015ce4dcbc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036054162782294133, guid: 878d4bef90d35f34eb37f9015ce4dcbc, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -2273,6 +2277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initGravity: {x: 0, y: -35, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1969120940
 GameObject:
   m_ObjectHideFlags: 0

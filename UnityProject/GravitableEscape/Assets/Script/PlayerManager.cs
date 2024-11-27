@@ -1,32 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
-using OurGame;
 using UnityEngine;
+using OurGame;
 using UnityEngine.Scripting.APIUpdating;
 
-public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager
+public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, GameStateObserver
 {
-    private int life = 5;
-    public float moveSpeed = 20f;
-    public float rotationSpeed = 10f;
-    public float jumpForce = 1200f;
-    private float horizontalInput, verticalInput;
+    public float moveSpeed = 5f;
+    public Rigidbody rb;
     private Vector3 moveDirection;
-    Transform gravityTransform;
-    Rigidbody playerRb;
-    BoxCollider playerCollider;
-    float height;
-    bool isground;
-    Quaternion targetRotation;
+    Quaternion targetGravityRot = Quaternion.identity; // Target rotation for gravity changes
+    public InputManager inputManager;
+    private float height;
+    bool isGround;
     private Animator animator;
-    // TODO: move player's properties to the Player
+    public int life;
+    Vector3 forwardDirction;
+    public float jumpForce = 1200f;
+    public int Life
+    {
+        get { return life; }
+    }
+
     void Start()
     {
-        gravityTransform = GameObject.Find("GravityManager").transform;
-        playerRb = GetComponent<Rigidbody>();
-        playerCollider = GetComponent<BoxCollider>();
-        height = playerCollider.size.y;
-        isground = true;
+        inputManager = FindObjectOfType<InputManager>();
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true; // Freeze rotation so that Rigidbody does not control rotation
+        height = GetComponent<BoxCollider>().size.y;
+        isGround = true;
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
         life = 5;
@@ -34,67 +36,90 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager
 
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-        {
-            moveDirection = new Vector3(0, 0, 0);
-        }
-        else
-        {
-            moveDirection = forward * verticalInput + right * horizontalInput;
-
-            if (Input.GetKeyDown(KeyCode.Space) && isground)
-            {
-                isground = false;
-                animator.SetBool("Jump_b", true);
-                playerRb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-            }
-        }
-
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, Time.deltaTime * 1000);
+        // TODO: check game state
+        RotatePlayer();
+        JumpPlayer();
     }
+
+    /// <summary>
+    /// Moving player is here to prevent going through walls
+    /// </summary>
     void FixedUpdate()
     {
-        if (moveDirection.magnitude >= 0.1f)
-        {
-            animator.SetBool("Static_b", false);
-            animator.SetFloat("Speed_f", 0.3f);
+        MovePlayer();
+    }
 
-            Vector3 footPosition = transform.position + Vector3.down * height / 2.5f;
-            Vector3 headPosition = transform.position + Vector3.up * height / 2.5f;
-            float distance = moveSpeed * Time.fixedDeltaTime * 10;
-            if (!ObstacleInPath(transform.position, moveDirection, distance)
-            && !ObstacleInPath(footPosition, moveDirection, distance)
-            && !ObstacleInPath(headPosition, moveDirection, distance))
-            {
-                transform.position = transform.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
-            }
+    /// <summary>
+    /// Gets Spacekey input and makes player jump.
+    /// Double jump is prevented using isGround tag.
+    /// </summary>
+    void JumpPlayer()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
+        {
+            isGround = false;
+            animator.SetBool("Jump_b", true);
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    /// <summary>
+    /// Rotate player to the direction of movement when it moves(has WASD input).
+    /// The direction is determined by the mouse input and keybord input(WASD keys)
+    /// </summary>
+    void RotatePlayer()
+    {
+        // Handle input
+        float horizontal = Input.GetAxis("Horizontal"); // Get horizontal input (A, D)
+        float vertical = Input.GetAxis("Vertical");     // Get vertical input (W, S)
+        Vector3 inputDirection = new Vector3(horizontal, 0, vertical).normalized;
+
+        if (inputDirection.magnitude > 0.1f)
+        {
+            // Define directions considering gravity and mouse input
+            Quaternion rotation = targetGravityRot * Quaternion.Euler(0, inputManager.yaw, 0);
+            Vector3 forward = rotation * Vector3.forward;
+            Vector3 right = rotation * Vector3.right;
+            Vector3 up = rotation * Vector3.up;
+
+            // Merge directions above and keybord input
+            moveDirection = forward * inputDirection.z + right * inputDirection.x;
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection, up);
+
+            // Update roatation and position to player
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
         else
         {
-            animator.SetBool("Static_b", true);
-            animator.SetFloat("Speed_f", 0);
+            // Stop movement if there is no input
+            moveDirection = Vector3.zero;
         }
+
     }
 
-    public void UpdateRotation(Quaternion targetRot)
+    /// <summary>
+    /// Check if there are obstacles and move player in the moveDirection
+    /// </summary>
+    void MovePlayer()
     {
-        targetRotation = targetRot;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("ground"))
+        Vector3 footPosition = transform.position + Vector3.down * height / 2.5f;
+        Vector3 headPosition = transform.position + Vector3.up * height / 2.5f;
+        float distance = moveSpeed * Time.fixedDeltaTime * 10;
+        if (!ObstacleInPath(transform.position, moveDirection, distance)
+        && !ObstacleInPath(footPosition, moveDirection, distance)
+        && !ObstacleInPath(headPosition, moveDirection, distance))
         {
-            isground = true;
-            animator.SetBool("Jump_b", false);
+            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
         }
     }
 
+    /// <summary>
+    /// Checks if there is an obstacle from origin, in direction, within distance
+    /// </summary>
+    /// <param name="origin">position of origin(player)</param>
+    /// <param name="direction">direction to check if there is an obstacle</param>
+    /// <param name="distance">distance(bound) to check if there is an obstacle</param>
+    /// <returns></returns>
     bool ObstacleInPath(Vector3 origin, Vector3 direction, float distance)
     {
         RaycastHit hit;
@@ -102,19 +127,54 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager
         else return false;
     }
 
-    public void OnNotify(Quaternion gravityRot)
+    /// <summary>
+    /// check if ground is touched, update isGround
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionEnter(Collision collision)
     {
-        transform.rotation = gravityRot;
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isGround = true;
+            animator.SetBool("Jump_b", false);
+        }
     }
-
     public void ModifyLife(int amount)
     {
-        //TODO: check if game over
         life += amount;
     }
-    public int GetLife()
+
+    public void Teleport(Vector3 targetPos)
     {
-        return life;
+        transform.position = targetPos;
+        transform.rotation = targetGravityRot;
+    }
+
+    /// <summary>
+    /// Update targetGravityRot when gravity is changed.
+    /// Player's rotation is altered so that it is standing up facing front.
+    /// </summary>
+    /// <param name="rot">how gravity is changed. should be multiplied to original rotation</param>
+    public void OnNotify<GravityObserver>(Quaternion rot)
+    {
+        targetGravityRot = targetGravityRot * rot;
+        transform.rotation = targetGravityRot;
+    }
+
+    public void OnNotify<GameStateObserver>(GameState gs)
+    {
+        switch (gs)
+        {
+            case GameState.Playing:
+                gameObject.SetActive(true);
+                break;
+            case GameState.WormholeEffect:
+                gameObject.SetActive(false);
+                break;
+            case GameState.Fainted:
+                gameObject.SetActive(true);
+                break;
+        }
     }
 
 }

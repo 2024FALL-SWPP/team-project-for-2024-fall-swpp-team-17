@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 488258894634994786}
   - component: {fileID: 2387562739371620520}
   - component: {fileID: 7480773941698586435}
-  - component: {fileID: 2263990594128573}
+  - component: {fileID: 5792335125876194595}
   m_Layer: 0
   m_Name: SpikeBoardTrap
   m_TagString: Untagged
@@ -100,7 +100,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22.668863, y: 2.317376, z: 22.668863}
   m_Center: {x: 0.0000014305114, y: 0.83382434, z: -0.0000019073485}
---- !u!114 &2263990594128573
+--- !u!114 &5792335125876194595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4189103951722551677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc10eccfa93c740e08a86253ed55273e, type: 3}
+  m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isUpward: 0
