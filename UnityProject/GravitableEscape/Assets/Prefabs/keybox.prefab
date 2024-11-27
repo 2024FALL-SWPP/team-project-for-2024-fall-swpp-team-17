@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2874812779096130442}
   - component: {fileID: 4094196974515059258}
   - component: {fileID: 2655138138870351814}
+  - component: {fileID: 1056871770}
   m_Layer: 0
   m_Name: keybox
   m_TagString: Untagged
@@ -131,8 +132,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3333335, y: 2.3333335, z: 2.3333335}
-  m_Center: {x: -0.000000059604645, y: 0.000000059604645, z: -0.000000059604645}
+  m_Size: {x: 2.4021144, y: 2.4193077, z: 2.3333335}
+  m_Center: {x: 0.017195046, y: 0.008597672, z: -0.000000074505806}
 --- !u!54 &2655138138870351814
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,3 +150,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1056871770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4388087742708900447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8925ebd1a7454c0c8bcbe4f12769b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazeManager: {fileID: 0}
+  buttonManager: {fileID: 0}
