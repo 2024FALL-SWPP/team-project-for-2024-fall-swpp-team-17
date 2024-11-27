@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2185959036953162753}
   - component: {fileID: 2185959036953162752}
-  - component: {fileID: 2185959036953162758}
+  - component: {fileID: 693174913}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -48,7 +48,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.47005, y: 1.1223812, z: 4.475586}
   m_Center: {x: 0.021707177, y: 0.0122385025, z: -0.048950195}
---- !u!114 &2185959036953162758
+--- !u!114 &693174913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2185959036953162755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daf6f32cb7f0c354e9d4067cf3fcabb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 430311e6d3d8743b7aa5e6e38d5a81ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mazeManager: {fileID: 0}

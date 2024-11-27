@@ -129,7 +129,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22.668863, y: 2.317376, z: 22.668863}
   m_Center: {x: 0.0000014305114, y: 0.83382434, z: -0.0000019073485}
---- !u!114 &8469807217017538118
+--- !u!114 &1708361600995240101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,12 +138,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8740261025894653313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc10eccfa93c740e08a86253ed55273e, type: 3}
+  m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foo: 0
-  bar: 0
-  n: {x: 0, y: 0, z: 0}
+  isUpward: 0
+--- !u!114 &4942950720766638996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740261025894653313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   isUpward: 0
 --- !u!1001 &8469807216115117213
 PrefabInstance:
@@ -241,7 +251,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22.668863, y: 2.317376, z: 22.668863}
   m_Center: {x: 0.0000014305114, y: 0.83382434, z: -0.0000019073485}
---- !u!114 &8469807215724402943
+--- !u!114 &6907545510257889337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,10 +260,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8740261024954438092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc10eccfa93c740e08a86253ed55273e, type: 3}
+  m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foo: 0
-  bar: 0
-  n: {x: 0, y: 0, z: 0}
+  isUpward: 0
+--- !u!114 &698679233272784185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740261024954438092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   isUpward: 0

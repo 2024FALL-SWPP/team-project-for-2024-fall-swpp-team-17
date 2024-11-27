@@ -1201,30 +1201,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 826504090434200912, guid: 33c887dceff774e49ab6812f3b0dfbaa, type: 3}
   m_PrefabInstance: {fileID: 1016741026}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1056871759 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4388087742708900447, guid: b400db92728dbe74888387057db4613f, type: 3}
-  m_PrefabInstance: {fileID: 4854266739231291943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1056871764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4012230221973993701, guid: b400db92728dbe74888387057db4613f, type: 3}
   m_PrefabInstance: {fileID: 4854266739231291943}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1056871765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056871759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0cbb13bff128e44bcf9ceea84bae02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mazeManager: {fileID: 0}
-  buttonManager: {fileID: 0}
 --- !u!1001 &1061751611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2034,7 +2015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665981663}
-  - component: {fileID: 1665981665}
+  - component: {fileID: 1665981664}
   m_Layer: 0
   m_Name: SimpleMaze
   m_TagString: Untagged
@@ -2060,7 +2041,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1665981665
+--- !u!114 &1665981664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2069,7 +2050,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1665981662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94697555328ee82458ad93a83ee109dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a0e8fcc0aec24b02a126beef8b6678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   keyBox: {fileID: 0}
@@ -2176,7 +2157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1865375880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2978,10 +2959,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 638792150}
     m_Modifications:
-    - target: {fileID: 8469807215724402931, guid: 3af7b940b320b11428210f821f15cd5e, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8469807216322774060, guid: 3af7b940b320b11428210f821f15cd5e, type: 3}
       propertyPath: m_Name
       value: Spike2
