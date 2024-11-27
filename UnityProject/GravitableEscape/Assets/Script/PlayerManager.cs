@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     private Vector3 moveDirection;
     private Quaternion targetGravityRot = Quaternion.identity; // Target rotation for gravity changes. Direction of player facing forward in gravity
     public BoxCollider boxCollider;
-    public float height;
+    private float height;
     private bool isGround;
     GameState gameState;
     public int life;
@@ -30,7 +30,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     public float lastDamageTime = -100f;
     public bool revived = false;
     public bool isTransparent = false;
-    public Color color;
 
     void Start()
     {
