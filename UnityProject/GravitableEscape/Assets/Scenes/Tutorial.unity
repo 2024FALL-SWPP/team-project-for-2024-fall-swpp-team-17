@@ -2169,9 +2169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraManager: {fileID: 0}
-  player: {fileID: 0}
+  playerManager: {fileID: 0}
   wormholeTargetPos: {x: 0, y: 0, z: 0}
   gameState: 0
+  foo: 0
 --- !u!4 &1913982108
 Transform:
   m_ObjectHideFlags: 0
@@ -2277,7 +2278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initGravity: {x: 0, y: -35, z: 0}
-  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1969120940
 GameObject:
   m_ObjectHideFlags: 0
