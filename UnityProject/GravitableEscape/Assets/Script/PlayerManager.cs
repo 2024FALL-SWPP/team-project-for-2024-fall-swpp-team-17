@@ -5,12 +5,14 @@ using OurGame;
 using UnityEngine.Scripting.APIUpdating;
 using System.Xml.Serialization;
 
+/// <summary>
+/// This class handles movement(+ jump), life, blinking(when revived)
+/// </summary>
 public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, GameStateObserver
 {
     public Rigidbody rb;
     private Animator animator;
-    // public Renderer renderer;
-    public Color originalColor, transparentColor;
+    public Renderer[] renderers;
     public InputManager inputManager;
     public float jumpForce = 1200f;
     public float moveSpeed = 20f;
@@ -28,15 +30,12 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     public float lastDamageTime = -100f;
     public bool revived = false;
     public bool isTransparent = false;
+    public Color color;
 
     void Start()
     {
         inputManager = FindObjectOfType<InputManager>();
         rb = GetComponent<Rigidbody>();
-        // renderer = GetComponent<Renderer>();
-        // originalColor = renderer.material.color;
-        // transparentColor = originalColor;
-        // transparentColor.a = 0.5f;
         rb.freezeRotation = true; // Freeze rotation so that Rigidbody does not control rotation
         boxCollider = GetComponent<BoxCollider>();
         height = boxCollider.size.y;
@@ -44,11 +43,12 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
         life = 5;
+        renderers = GetComponentsInChildren<Renderer>();
     }
 
     void Update()
     {
-        // TODO: check game state
+        // TODO: Add animation according to GameState
         switch (gameState)
         {
             case GameState.Playing:
@@ -58,35 +58,11 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
             default:
                 break;
         }
-
         if (revived)
         {
-            // Blink();
+            Blink();
         }
-
     }
-
-    // void Blink()
-    // {
-    //     float time = Time.time - lastDamageTime;
-    //     if ((time % 1) < 0.5f && !isTransparent)
-    //     {
-    //         renderer.material.color = transparentColor;
-    //         isTransparent = true;
-    //     }
-    //     else if ((time % 1) > 0.5f && isTransparent)
-    //     {
-    //         renderer.material.color = originalColor;
-    //         isTransparent = false;
-    //     }
-    //     if (time > 3.0f)
-    //     {
-    //         renderer.material.color = originalColor;
-    //         revived = false;
-    //         isTransparent = false;
-    //     }
-
-    // }
 
     /// <summary>
     /// Moving player is here to prevent going through walls
@@ -96,19 +72,9 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         MovePlayer();
     }
 
-    /// <summary>
-    /// Gets Spacekey input and makes player jump.
-    /// Double jump is prevented using isGround tag.
-    /// </summary>
-    void JumpPlayer()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)
-        {
-            isGround = false;
-            animator.SetBool("Jump_b", true);
-            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-        }
-    }
+
+    // PLAYER BASIC MOVEMENT SCRIPTS
+    // Rotate, Move, Blink, Jump
 
     /// <summary>
     /// Rotate player to the direction of movement when it moves(has WASD input).
@@ -152,7 +118,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
 
     }
 
-    public bool a, b, c, d, e, f;
     /// <summary>
     /// Check if there are obstacles and move player in the moveDirection
     /// </summary>
@@ -173,7 +138,8 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     /// <returns></returns>
     bool ObstacleInPath()
     {
-        float distance = moveSpeed * Time.fixedDeltaTime * 10;
+        float d = moveSpeed * Time.fixedDeltaTime;
+        float[] distances = new float[] { d * 10, d * 5, d * 5 };
         Vector3 footPosition = transform.position - transform.up * height;
         Vector3 headPosition = transform.position + transform.up * height;
         Vector3[] positions = new Vector3[] { transform.position, footPosition, headPosition };
@@ -183,6 +149,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         for (int i = 0; i < positions.Length; i++)
         {
             Vector3 direction = directions[i];
+            float distance = distances[i];
             for (int j = 0; j < positions.Length; j++)
             {
                 Vector3 origin = positions[j];
@@ -202,6 +169,81 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     }
 
     /// <summary>
+    /// Make player blink translucent, opaque to show that player revived
+    /// </summary>
+    void Blink()
+    {
+        float time = Time.time - lastDamageTime;
+        if ((time % 1) < 0.5f && !isTransparent)
+        {
+            SetMaterialsTranslucent();
+            isTransparent = true;
+        }
+        else if ((time % 1) > 0.5f && isTransparent)
+        {
+            SetMaterialsOpaque();
+            isTransparent = false;
+        }
+        if (time > 3.0f)
+        {
+            SetMaterialsOpaque();
+            revived = false;
+            isTransparent = false;
+        }
+    }
+
+    private void SetMaterialsTranslucent()
+    {
+        foreach (Renderer renderer in renderers)
+        {
+            Material material = renderer.material;
+            material.SetFloat("_Mode", 3); // Transparent mode
+            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            material.SetInt("_ZWrite", 0);
+            material.DisableKeyword("_ALPHATEST_ON");
+            material.EnableKeyword("_ALPHABLEND_ON");
+            material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            material.renderQueue = 3000;
+
+            Color color = material.color;
+            color.a = 0.5f;
+            renderer.material.color = color;
+        }
+    }
+
+    private void SetMaterialsOpaque()
+    {
+        foreach (Renderer renderer in renderers)
+        {
+            Material material = renderer.material;
+            material.SetFloat("_Mode", 0); // Opaque 모드
+            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+            material.SetInt("_ZWrite", 1);
+            material.DisableKeyword("_ALPHATEST_ON");
+            material.DisableKeyword("_ALPHABLEND_ON");
+            material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            material.renderQueue = -1;
+        }
+    }
+
+    /// <summary>
+    /// Gets Spacekey input and makes player jump.
+    /// Double jump is prevented using isGround tag.
+    /// </summary>
+    void JumpPlayer()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
+        {
+            isGround = false;
+            animator.SetBool("Jump_b", true);
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+
+    /// <summary>
     /// check if ground is touched, update isGround
     /// </summary>
     /// <param name="collision"></param>
@@ -213,12 +255,20 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
             animator.SetBool("Jump_b", false);
         }
     }
+
+    /// <summary>
+    /// Called by obstacles, energy boosters? to modify life
+    /// </summary>
+    /// <param name="amount">if positive life is increased, if negative life is decreased</param>
     public void ModifyLife(int amount)
     {
         if ((amount < 0) && !revived)
         {
             life += amount;
+            lastDamageTime = Time.time;
+            revived = true;
         }
+        if (amount > 0) life += amount;
 
     }
 
@@ -243,6 +293,11 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         transform.rotation = targetGravityRot;
     }
 
+    /// <summary>
+    /// SetActive to false when player is spiraling towards wormhole
+    /// </summary>
+    /// <typeparam name="GameStateObserver"></typeparam>
+    /// <param name="gs">global game state after modification</param>
     public void OnNotify<GameStateObserver>(GameState gs)
     {
         gameState = gs;

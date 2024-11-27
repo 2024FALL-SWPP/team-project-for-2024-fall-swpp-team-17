@@ -13,17 +13,17 @@ public class GravityManager : MonoBehaviour
 {
     public Vector3 initGravity = new Vector3(0, -35f, 0);
     private Rigidbody[] rigidbodies;
-    Subject<GravityObserver, Quaternion> gravityObs;
+    Subject<GravityObserver, Quaternion> gravityChange;
     void Start()
     {
         rigidbodies = FindObjectsOfType<Rigidbody>();
         CameraManager cameraManager = FindObjectOfType<CameraManager>();
         PlayerManager playerManager = FindObjectOfType<PlayerManager>();
         InputManager inputManager = FindObjectOfType<InputManager>();
-        gravityObs = new Subject<GravityObserver, Quaternion>();
-        gravityObs.AddObserver(playerManager);
-        gravityObs.AddObserver(cameraManager);
-        gravityObs.AddObserver(inputManager);
+        gravityChange = new Subject<GravityObserver, Quaternion>();
+        gravityChange.AddObserver(playerManager);
+        gravityChange.AddObserver(cameraManager);
+        gravityChange.AddObserver(inputManager);
         Physics.gravity = initGravity;
     }
     /// <summary>
@@ -46,7 +46,7 @@ public class GravityManager : MonoBehaviour
     void RotateAngle(int angle)
     {
         Physics.gravity = Quaternion.Euler(0, 0, angle) * Physics.gravity;
-        gravityObs.NotifyObservers(Quaternion.Euler(0, 0, angle));
+        gravityChange.NotifyObservers(Quaternion.Euler(0, 0, angle));
     }
 
 

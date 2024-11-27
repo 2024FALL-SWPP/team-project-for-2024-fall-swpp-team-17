@@ -9,18 +9,17 @@ public class GameManager : MonoBehaviour
     public PlayerManager playerManager;
     public Vector3 wormholeTargetPos;
     public GameState gameState; // TODO: make this singleton?
-    Subject<GameStateObserver, GameState> gameStateObs;
+    Subject<GameStateObserver, GameState> gameStateChange;
     void Start()
     {
-        // cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
         gameState = GameState.Playing;
 
-        gameStateObs = new Subject<GameStateObserver, GameState>();
+        gameStateChange = new Subject<GameStateObserver, GameState>();
         cameraManager = FindObjectOfType<CameraManager>();
         playerManager = FindObjectOfType<PlayerManager>();
-        gameStateObs.AddObserver(cameraManager);
-        gameStateObs.AddObserver(playerManager);
-        gameStateObs.NotifyObservers(gameState);
+        gameStateChange.AddObserver(cameraManager);
+        gameStateChange.AddObserver(playerManager);
+        gameStateChange.NotifyObservers(gameState);
     }
 
     // Update is called once per frame
@@ -40,7 +39,7 @@ public class GameManager : MonoBehaviour
         wormholeTargetPos = targetPos;
         cameraManager.SetWormhole(wormhole);
         gameState = GameState.WormholeEffect;
-        gameStateObs.NotifyObservers(gameState);
+        gameStateChange.NotifyObservers(gameState);
     }
 
     public bool foo = false;
@@ -52,6 +51,6 @@ public class GameManager : MonoBehaviour
         foo = true;
         playerManager.Teleport(wormholeTargetPos);
         gameState = GameState.Playing;
-        gameStateObs.NotifyObservers(gameState);
+        gameStateChange.NotifyObservers(gameState);
     }
 }
