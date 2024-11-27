@@ -360,6 +360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerAndCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6846938827735557350, guid: 878d4bef90d35f34eb37f9015ce4dcbc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1862013518}
     - target: {fileID: 6846938827735557351, guid: 878d4bef90d35f34eb37f9015ce4dcbc, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.09
@@ -1147,8 +1151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0cbb13bff128e44bcf9ceea84bae02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazeManager: {fileID: 0}
-  buttonManager: {fileID: 0}
 --- !u!1001 &1061751611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1951,7 +1953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94697555328ee82458ad93a83ee109dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyBox: {fileID: 0}
 --- !u!1 &1766452165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2037,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 826504090434200912, guid: 33c887dceff774e49ab6812f3b0dfbaa, type: 3}
   m_PrefabInstance: {fileID: 1061751611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1862013518 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6381477437613034191, guid: 878d4bef90d35f34eb37f9015ce4dcbc, type: 3}
+  m_PrefabInstance: {fileID: 265628821}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1865375879
 GameObject:

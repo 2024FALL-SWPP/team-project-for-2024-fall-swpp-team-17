@@ -142,6 +142,20 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     public void ModifyLife(int amount)
     {
         life += amount;
+        if (life < 0){
+            animator.SetBool("Death_b", true);
+        }
+        else if (amount < 0 && life > 0)
+        {
+            animator.SetBool("Faint_b", true);
+            StartCoroutine(ResetFaintAnimation());
+        }
+    }
+
+    private IEnumerator ResetFaintAnimation()
+    {
+    yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length); // wait for animation playtime
+    animator.SetBool("Faint_b", false); // reset faint
     }
 
     public void Teleport(Vector3 targetPos)

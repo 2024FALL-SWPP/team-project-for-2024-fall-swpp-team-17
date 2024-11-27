@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   rb: {fileID: 0}
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 1481169812}
   life: 0
   jumpForce: 1200
 --- !u!1 &43079667
@@ -2069,8 +2069,8 @@ MonoBehaviour:
   player: {fileID: 33227483}
   mouseSensitivity: 100
   height: 5
-  inputManager: {fileID: 0}
-  gameManager: {fileID: 0}
+  inputManager: {fileID: 1481169812}
+  gameManager: {fileID: 1913982107}
   wormhole: {fileID: 0}
   spiralSpeed: 15
   spiralRadiusDenom: 25
@@ -2841,6 +2841,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f74ce9ef0521389429f35bf25780218b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 000573a84d56ea94b85f09a1ff900309, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f74ce9ef0521389429f35bf25780218b, type: 3}
 --- !u!1 &2030528633
