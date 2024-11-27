@@ -27,7 +27,7 @@ public class WormholeManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //triggered = true;
-            gameManager.startWormhole(gameObject, targetPos);
+            gameManager.startWormhole(transform, targetPos);
         }
     }
 }

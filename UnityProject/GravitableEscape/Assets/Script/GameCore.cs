@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Runtime;
 using UnityEngine;
 
+// enum, Class, Interfaces used throughout the entire game is defined in this file
+
 namespace OurGame
 {
     public enum GameState
     {
         Playing,
-        WormholeEffect
+        WormholeEffect,
+        Fainted
     }
     class Subject<Observer, NotifyType>
     {
@@ -31,23 +34,24 @@ namespace OurGame
         {
             foreach (Observer<NotifyType> observer in observers)
             {
-                observer.OnNotify(data);
+                observer.OnNotify<Observer>(data);
             }
         }
     }
     public interface Observer<NotifyType>
     {
-        void OnNotify(NotifyType data);
+        void OnNotify<Observer>(NotifyType data);
     }
 
     public interface GravityObserver : Observer<Quaternion> { }
 
     public interface GameOverObserver : Observer<bool> { }
+    public interface GameStateObserver : Observer<GameState> { }
 
     public interface IPlayerManager
     {
+        int Life { get; }
         public void ModifyLife(int amount);
-        public int GetLife();
     }
 
     public abstract class HazardManager : MonoBehaviour

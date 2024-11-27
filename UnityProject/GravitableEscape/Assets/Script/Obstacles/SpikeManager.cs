@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using OurGame;
 using UnityEngine;
 
-public class ThornManager : HazardManager
+public class SpikeManager : HazardManager
 {
     Rigidbody rb;
     Vector3 fixedPosition;

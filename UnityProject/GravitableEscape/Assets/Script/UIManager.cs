@@ -10,12 +10,12 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+        // playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        lifeText.text = $"Life: {playerManager.GetLife()}";
+        // lifeText.text = $"Life: {playerManager.GetLife()}";
     }
 }
