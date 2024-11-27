@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6846938826483488012}
   - component: {fileID: -4498268697227176037}
+  - component: {fileID: 1812470944}
   m_Layer: 0
   m_Name: PlayerAndCamera
   m_TagString: Untagged
@@ -35,6 +36,18 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-4498268697227176037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6846938826483488013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b791073a6018547b9634691462f88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1812470944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306c30791d9cd54479a9dc428c432551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wormhole: {fileID: 0}
   moveSpeed: 10
+  distance: 15
   rotationSpeed: 5
+  wormhole: {fileID: 0}
   spiralSpeed: 15
   spiralRadiusDenom: 25
   moveSpeedNum: 2.5
@@ -269,7 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6254915b8bdac14e98eecede06a3660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 5
   moveSpeed: 20
   rotationSpeed: 10
   jumpForce: 1200
