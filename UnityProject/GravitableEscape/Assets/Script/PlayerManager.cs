@@ -47,7 +47,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
 
     void Update()
     {
-        // TODO: Add animation according to GameState
         switch (gameState)
         {
             case GameState.Playing:
@@ -68,13 +67,21 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     /// </summary>
     void FixedUpdate()
     {
-        MovePlayer();
+        switch (gameState)
+        {
+            case GameState.Playing:
+                MovePlayer();
+                break;
+            default:
+                break;
+        }
     }
 
 
     // PLAYER BASIC MOVEMENT SCRIPTS
     // Rotate, Move, Blink, Jump
 
+    // ROTATE
     /// <summary>
     /// Rotate player to the direction of movement when it moves(has WASD input).
     /// The direction is determined by the mouse input and keybord input(WASD keys)
@@ -116,6 +123,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         }
     }
 
+    // MOVE
     /// <summary>
     /// Check if there are obstacles and move player in the moveDirection
     /// </summary>
@@ -154,18 +162,19 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
                 RaycastHit hit;
                 if (Physics.Raycast(origin, direction, out hit, distance))
                 {
-                    Debug.DrawRay(origin, direction * distance, Color.red);
+                    Debug.DrawRay(origin, direction * distance, Color.red); // DEBUG
                     return true;
                 }
                 else
                 {
-                    Debug.DrawRay(origin, direction * distance, Color.green);
+                    Debug.DrawRay(origin, direction * distance, Color.green); // DEBUG
                 }
             }
         }
         return false;
     }
 
+    // BLINK
     /// <summary>
     /// Make player blink translucent, opaque to show that player revived
     /// </summary>
@@ -226,6 +235,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         }
     }
 
+    // JUMP
     /// <summary>
     /// Gets Spacekey input and makes player jump.
     /// Double jump is prevented using isGround tag.
@@ -240,7 +250,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         }
     }
 
-
     /// <summary>
     /// check if ground is touched, update isGround
     /// </summary>
@@ -254,6 +263,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         }
     }
 
+    // CALLED BY OTHER SCRIPTS
     /// <summary>
     /// Called by obstacles, energy boosters? to modify life
     /// </summary>
