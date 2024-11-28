@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OurGame;
 
-public class MazeManager : PuzzleInterface
+public class MazeManager : MonoBehaviour, PuzzleInterface
 {
     public GameObject keyBox;
     private Vector3 startPos;
