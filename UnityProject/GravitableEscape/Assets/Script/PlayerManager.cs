@@ -132,6 +132,11 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         if (!ObstacleInPath())
         {
             rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+            animator.SetFloat("Speed_f", moveDirection.magnitude * moveSpeed);
+        }
+        else
+        {
+            animator.SetFloat("Speed_f", 0f);
         }
     }
 
