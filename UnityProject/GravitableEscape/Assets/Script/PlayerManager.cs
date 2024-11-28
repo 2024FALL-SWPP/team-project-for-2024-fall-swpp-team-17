@@ -260,13 +260,29 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     /// <param name="amount">if positive life is increased, if negative life is decreased</param>
     public void ModifyLife(int amount)
     {
-        if ((amount < 0) && !revived)
+        if (!revived)
         {
             life += amount;
-            lastDamageTime = Time.time;
-            revived = true;
+            if (amount < 0)
+            {
+                animator.SetBool("Faint_b", true);
+                StartCoroutine(ResetFaintAnimation());
+            }
         }
-        if (amount > 0) life += amount;
+
+        if (life < 0)
+        {
+            life = 0;
+            animator.SetBool("Death_b", true);
+        }
+    }
+
+    private IEnumerator ResetFaintAnimation()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length); // wait for animation playtime
+        animator.SetBool("Faint_b", false); // reset faint
+        lastDamageTime = Time.time;
+        revived = true;
     }
 
     /// <summary>
