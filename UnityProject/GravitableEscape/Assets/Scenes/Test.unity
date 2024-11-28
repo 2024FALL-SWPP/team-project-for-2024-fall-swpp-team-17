@@ -294,8 +294,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.9186683, z: 1}
-  m_Center: {x: 0, y: 0.17317745, z: 0}
+  m_Size: {x: 1, y: 2.785684, z: 1}
+  m_Center: {x: 0, y: 1.4065222, z: 0}
 --- !u!114 &33227488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   moveSpeed: 20
   rb: {fileID: 0}
   inputManager: {fileID: 1481169812}
-  life: 0
+  life: 5
   jumpForce: 1200
 --- !u!1 &43079667
 GameObject:
@@ -2844,7 +2844,11 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: f74ce9ef0521389429f35bf25780218b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 000573a84d56ea94b85f09a1ff900309, type: 2}
+      objectReference: {fileID: 9100000, guid: ae87c11f46298c0428acd5c068b78056, type: 2}
+    - target: {fileID: 5866666021909216657, guid: f74ce9ef0521389429f35bf25780218b, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f74ce9ef0521389429f35bf25780218b, type: 3}
 --- !u!1 &2030528633

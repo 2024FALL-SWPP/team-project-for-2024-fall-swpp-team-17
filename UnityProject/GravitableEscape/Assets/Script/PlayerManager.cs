@@ -39,6 +39,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         // TODO: check game state
         RotatePlayer();
         JumpPlayer();
+        
     }
 
     /// <summary>
@@ -110,6 +111,11 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         && !ObstacleInPath(headPosition, moveDirection, distance))
         {
             rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+            animator.SetFloat("Speed_f", moveDirection.magnitude * moveSpeed);
+        }
+        else
+        {
+            animator.SetFloat("Speed_f", 0f);
         }
     }
 
