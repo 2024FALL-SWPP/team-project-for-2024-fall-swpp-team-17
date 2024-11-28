@@ -1,0 +1,14 @@
+<map id="MazeBoxManager" name="MazeBoxManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,333,132,358"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="50,5,162,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,40,23,61,13,75,10,92,10,258,14,280,25,300,54,330,50,334,21,303,9,282,5,258,5,92,8,73,19,58,50,35"/>
+<area shape="rect" id="Node000004" href="$class_puzzle_interface.html" title=" " alt="" coords="50,80,162,106"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="108,46,108,80,103,80,103,46"/>
+<area shape="rect" id="Node000005" href="$class_button_manager.html" title=" " alt="" coords="179,244,288,270"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="138,39,158,57,176,79,200,124,217,170,234,243,229,244,212,172,195,126,172,82,154,61,134,43"/>
+<area shape="rect" id="Node000003" href="$class_maze_manager.html" title=" " alt="" coords="54,155,158,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,196,84,245,76,293,72,333,67,332,70,293,79,243,93,195"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="113,195,127,218,151,235,179,245,178,250,149,239,123,222,109,197"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="108,121,108,155,103,155,103,121"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="198,280,93,334,90,330,196,275"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="MazeBoxManager.OnCollisionEnter" name="MazeBoxManager.OnCollisionEnter">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,202,64"/>
+<area shape="rect" id="Node000002" href="$class_maze_box_manager.html#aa1fd54bb0b82bc7ec8de2fdc44461503" title=" " alt="" coords="250,31,464,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,41,234,41,234,46,202,46"/>
+<area shape="rect" id="Node000003" href="$class_button_manager.html#ad10532db93280a68f2d89f7d3b8e1c57" title=" " alt="" coords="516,5,685,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,30,501,26,501,31,465,35"/>
+<area shape="rect" id="Node000005" href="$class_maze_manager.html#a643c86ae79700676762ce33a0d3bb157" title=" " alt="" coords="512,55,689,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="465,51,497,55,496,60,464,57"/>
+<area shape="rect" id="Node000004" href="$class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title=" " alt="" coords="737,5,936,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="685,16,722,16,722,21,685,21"/>
+</map>

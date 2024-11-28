@@ -1,0 +1,7 @@
+<map id="DoorMovementManager.StartMoving" name="DoorMovementManager.StartMoving">
+<area shape="rect" id="Node000001" title=" " alt="" coords="506,5,697,46"/>
+<area shape="rect" id="Node000002" href="$class_stage_clear_manager.html#a8cb942efa5bc1b3c63666783beb39ee6" title=" " alt="" coords="260,13,458,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="490,28,458,28,458,23,490,23"/>
+<area shape="rect" id="Node000003" href="$class_stage_clear_manager.html#a71b7cb582f22af7e0461d17544631bf1" title=" " alt="" coords="5,5,212,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="244,28,212,28,212,23,244,23"/>
+</map>

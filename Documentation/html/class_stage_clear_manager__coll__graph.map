@@ -1,0 +1,8 @@
+<map id="StageClearManager" name="StageClearManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,184,142,210"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="12,5,124,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,47,76,184,70,184,66,47"/>
+<area shape="rect" id="Node000003" href="$class_door_movement_manager.html" title=" " alt="" coords="89,80,250,106"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="99,38,154,78,151,82,95,42"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,119,87,185,83,182,146,116"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="PlayerManager.Teleport" name="PlayerManager.Teleport">
+<area shape="rect" id="Node000001" title="Move player to targetPos. Used in wormhole." alt="" coords="727,13,885,38"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#ac53809f79e07da77e7d0d21007bd522c" title="This function is called when the animation warping into the wormhole ends." alt="" coords="491,13,679,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="712,28,680,28,680,23,712,23"/>
+<area shape="rect" id="Node000003" href="$class_camera_manager.html#a304c6f9a244891659352ef0a2035c55f" title="Updates camera&#39;s position to spiral towards the wormhole." alt="" coords="241,5,443,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="475,28,443,28,443,23,475,23"/>
+<area shape="rect" id="Node000004" href="$class_camera_manager.html#abf863525e8696a70ffbc4d35ae251276" title="Checks gameState and does appropriate camera movement." alt="" coords="5,13,193,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="225,28,193,28,193,23,225,23"/>
+</map>

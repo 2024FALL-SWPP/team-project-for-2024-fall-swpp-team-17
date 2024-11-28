@@ -1,0 +1,5 @@
+<map id="StageClearManager.DoorOpen" name="StageClearManager.DoorOpen">
+<area shape="rect" id="Node000001" title=" " alt="" coords="260,13,458,38"/>
+<area shape="rect" id="Node000002" href="$class_stage_clear_manager.html#a71b7cb582f22af7e0461d17544631bf1" title=" " alt="" coords="5,5,212,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,28,212,28,212,23,244,23"/>
+</map>

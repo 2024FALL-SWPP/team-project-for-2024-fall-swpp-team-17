@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using OurGame;
 using UnityEngine;
 
+/// <summary>
+/// This class handles mouse location input.
+/// It fetches mouse's x, y location and updates yaw, pitch. 
+/// CameraManager, PlayerManager uses this script's yaw, pitch to calculate its rotation. 
+/// </summary>
 public class InputManager : MonoBehaviour, GravityObserver
 {
     private float mouseSensitivity = 200f;
-    public float yaw, pitch, savedYaw, savedPitch, mouseX, mouseY;
+    public float yaw, pitch, scrollInput;
+    private float mouseX, mouseY, savedYaw, savedPitch;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +45,15 @@ public class InputManager : MonoBehaviour, GravityObserver
             yaw = savedYaw;
             pitch = savedPitch;
         }
+
+        scrollInput = Input.GetAxis("Mouse ScrollWheel");
     }
 
+    /// <summary>
+    /// Resets pitch, yaw to 0 when gravity changes
+    /// </summary>
+    /// <typeparam name="GravityObserver"></typeparam>
+    /// <param name="rot"></param>
     public void OnNotify<GravityObserver>(Quaternion rot)
     {
         yaw = 0;

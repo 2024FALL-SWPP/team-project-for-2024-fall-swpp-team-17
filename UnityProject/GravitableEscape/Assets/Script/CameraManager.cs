@@ -6,6 +6,11 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// This class manages camera movement and rotation.
+/// In most cases it follows the player and roates using mouse input.
+/// It has some special effects like spiraling towards wormhole.
+/// </summary>
 public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
 {
     public Transform player; // target to follow. Player in our case
@@ -22,6 +27,7 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
 
     void Start()
     {
+        player = GameObject.FindWithTag("Player").transform;
         inputManager = FindObjectOfType<InputManager>();
         gameManager = FindObjectOfType<GameManager>();
         gravityRot = Quaternion.identity;
@@ -29,6 +35,9 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
     }
 
 
+    /// <summary>
+    /// Checks gameState and does appropriate camera movement
+    /// </summary>
     void LateUpdate()
     {
         switch (gameState)
@@ -49,12 +58,14 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
 
     }
 
+    /// <summary>
+    /// This function alters distance to reflect mouse scroll input
+    /// </summary>
     void ScrollDistance()
     {
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        if (scrollInput != 0)
+        if (inputManager.scrollInput != 0)
         {
-            targetDistance = Mathf.Clamp(distance - scrollInput * 10f, 5f, 25f);
+            targetDistance = Mathf.Clamp(distance - inputManager.scrollInput * 10f, 5f, 25f);
         }
         distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * 10f);
     }
@@ -70,6 +81,10 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
         targetPosition = player.position - transform.forward * distance + transform.up * height;
     }
 
+    /// <summary>
+    /// When there is an obstacle between the camera and player, this function shifts the camera to be in front of the obstacle, so that the camera can see the player.
+    /// This also prevents the camera from seeing outside of the corridors.
+    /// </summary>
     void ShiftToFront()
     {
         Vector3 directionToTarget = player.position - targetPosition;
@@ -94,9 +109,7 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
 
     /// <summary>
     /// Updates camera's position to spiral towards the wormhole.
-    /// can be used in mode 1.
     /// </summary>
-    // TODO: alter constants on main scene
     private void SpiralTowardsWormhole()
     {
         if (Vector3.Distance(transform.position, wormhole.position) > 1f)
@@ -120,6 +133,10 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
         }
     }
 
+    /// <summary>
+    /// Sets wormhole position so that the camera can spiral towards that position
+    /// </summary>
+    /// <param name="wh">Transform of the wormhole</param>
     public void SetWormhole(Transform wh)
     {
         wormhole = wh;

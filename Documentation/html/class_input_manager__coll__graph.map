@@ -1,0 +1,9 @@
+<map id="InputManager" name="InputManager">
+<area shape="rect" id="Node000001" title="This class handles mouse location input. It fetches mouse&#39;s x, y location and CameraManager,..." alt="" coords="79,153,179,178"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,117,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,114,119,150,116,154,81,118"/>
+<area shape="rect" id="Node000003" href="$interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="140,79,256,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,117,143,154,139,150,175,114"/>
+<area shape="rect" id="Node000004" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="118,5,279,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="201,46,201,79,196,79,196,46"/>
+</map>

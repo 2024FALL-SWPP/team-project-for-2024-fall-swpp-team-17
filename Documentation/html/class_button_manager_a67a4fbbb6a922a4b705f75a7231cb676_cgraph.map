@@ -1,0 +1,9 @@
+<map id="ButtonManager.EnoughPress" name="ButtonManager.EnoughPress">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,196,56"/>
+<area shape="rect" id="Node000002" href="$class_maze_manager.html#a81afbac9083c6cd0ffa995c3118c8544" title=" " alt="" coords="244,5,425,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,31,228,27,228,32,196,36"/>
+<area shape="rect" id="Node000004" href="$class_maze_manager.html#ad0a75a398197dd476a1ea6343324e0d7" title=" " alt="" coords="247,55,422,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="196,51,232,54,231,60,196,56"/>
+<area shape="rect" id="Node000003" href="$class_maze_manager.html#a129705d255d23acbf68d1ad176792a66" title=" " alt="" coords="473,5,637,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,16,457,16,457,21,426,21"/>
+</map>

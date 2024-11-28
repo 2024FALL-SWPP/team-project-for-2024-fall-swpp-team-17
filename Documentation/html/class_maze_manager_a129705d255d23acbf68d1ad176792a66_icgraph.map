@@ -1,0 +1,9 @@
+<map id="MazeManager.ResetBox" name="MazeManager.ResetBox">
+<area shape="rect" id="Node000001" title=" " alt="" coords="675,5,840,31"/>
+<area shape="rect" id="Node000002" href="$class_maze_manager.html#a81afbac9083c6cd0ffa995c3118c8544" title=" " alt="" coords="446,5,627,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="660,21,628,21,628,16,660,16"/>
+<area shape="rect" id="Node000003" href="$class_button_manager.html#a67a4fbbb6a922a4b705f75a7231cb676" title=" " alt="" coords="208,5,398,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="431,21,399,21,399,16,431,16"/>
+<area shape="rect" id="Node000004" href="$class_button_manager.html#ac004763936bf3b2e121d7eb9a2f51471" title=" " alt="" coords="5,5,160,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="192,21,160,21,160,16,192,16"/>
+</map>

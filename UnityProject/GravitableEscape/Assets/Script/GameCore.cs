@@ -4,15 +4,24 @@ using System.Runtime;
 using UnityEngine;
 
 // enum, Class, Interfaces used throughout the entire game is defined in this file
-
 namespace OurGame
 {
+    /// <summary>
+    /// The global state of the whole game
+    /// GameManager holds the state and observers get notified when it is changed
+    /// </summary>
     public enum GameState
     {
         Playing,
         WormholeEffect,
         Fainted
     }
+
+    /// <summary>
+    /// The subject to notify observers (e.g. gravity change, gamestate change, etc)
+    /// </summary>
+    /// <typeparam name="Observer">type of Observers to notify the event</typeparam>
+    /// <typeparam name="NotifyType">type of OnNotify's parameter</typeparam>
     class Subject<Observer, NotifyType>
     {
         private List<Observer<NotifyType>> observers = new List<Observer<NotifyType>>();
@@ -38,6 +47,11 @@ namespace OurGame
             }
         }
     }
+
+    /// <summary>
+    /// Interface to be used when making the actual Observer interface
+    /// </summary>
+    /// <typeparam name="NotifyType">Type of data to hand to the observer classes</typeparam>
     public interface Observer<NotifyType>
     {
         void OnNotify<Observer>(NotifyType data);
@@ -48,12 +62,18 @@ namespace OurGame
     public interface GameOverObserver : Observer<bool> { }
     public interface GameStateObserver : Observer<GameState> { }
 
+    /// <summary>
+    /// Interface of PlayerManager
+    /// </summary>
     public interface IPlayerManager
     {
         int Life { get; }
         public void ModifyLife(int amount);
     }
 
+    /// <summary>
+    /// Abstract class of hazards, which can harm the player(i.e. decrease its life)
+    /// </summary>
     public abstract class HazardManager : MonoBehaviour
     {
         protected int damage;

@@ -1,0 +1,5 @@
+<map id="GameManager.exitWormhole" name="GameManager.exitWormhole">
+<area shape="rect" id="Node000001" title="This function is called when the animation warping into the wormhole ends." alt="" coords="5,5,194,31"/>
+<area shape="rect" id="Node000002" href="$class_player_manager.html#ad179460e0d4c8e8ef72b449b781e99f4" title="Move player to targetPos. Used in wormhole." alt="" coords="242,5,399,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,16,226,16,226,21,194,21"/>
+</map>
