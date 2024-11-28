@@ -62,6 +62,13 @@ namespace OurGame
     public interface GameOverObserver : Observer<bool> { }
     public interface GameStateObserver : Observer<GameState> { }
 
+    public interface PuzzleInterface
+    {
+        void PuzzleStart();
+        void PuzzleReset();
+        void PuzzleClear();
+    }
+
     /// <summary>
     /// Interface of PlayerManager
     /// </summary>

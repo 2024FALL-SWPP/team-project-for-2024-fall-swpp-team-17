@@ -4856,7 +4856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 108022650250726453}
   - component: {fileID: 1003678451}
-  - component: {fileID: 1003678452}
+  - component: {fileID: 1003678456}
   m_Layer: 0
   m_Name: Wormhole
   m_TagString: Untagged
@@ -4891,9 +4891,9 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1003678452
+--- !u!114 &1003678456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4902,11 +4902,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 108022650250726454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5cbda2f4509243348315e6afb089788, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d502caf188fc4bed89adc7bb353248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  targetPos: {x: 0, y: 0, z: 10}
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!1 &108022650363467395
 GameObject:
   m_ObjectHideFlags: 0
