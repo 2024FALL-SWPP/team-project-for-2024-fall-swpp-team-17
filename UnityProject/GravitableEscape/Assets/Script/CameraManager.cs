@@ -52,10 +52,26 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
             case GameState.WormholeEffect:
                 SpiralTowardsWormhole();
                 break;
+            case GameState.Gameover:
+                GameOverCameraMove();
+                break;
             default:
                 break;
         }
 
+    }
+    /// <summary>
+    /// This function is called when the game enters the gameover state
+    /// </summary>
+    void GameOverCameraMove()
+    {
+        float radius = 15.0f;
+        float speed = 1.5f;
+        float angle = Time.time * speed;
+        Vector3 offset = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle)) * radius;
+        gravityRot = targetGravityRot;
+        transform.position = player.position + gravityRot * offset + gravityRot * new Vector3(0, 10, 0);
+        transform.LookAt(player, -Physics.gravity);
     }
 
     /// <summary>

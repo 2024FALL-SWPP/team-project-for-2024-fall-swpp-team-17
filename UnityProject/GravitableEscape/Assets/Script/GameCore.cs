@@ -14,6 +14,8 @@ namespace OurGame
     {
         Playing,
         WormholeEffect,
+        Gameover,
+        stun,
         Fainted
     }
 

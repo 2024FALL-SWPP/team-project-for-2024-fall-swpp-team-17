@@ -39,7 +39,7 @@ public class SpikeManager : HazardManager
         {
             if (IsCollisionUpward(collision) && (Time.time - lastCollisionTime >= 3.0f))
             {
-                PlayerManager player = collision.gameObject.GetComponent<PlayerManager>();
+                GameManager player = FindObjectOfType<GameManager>();
                 HarmPlayer(player);
                 lastCollisionTime = Time.time;
             }

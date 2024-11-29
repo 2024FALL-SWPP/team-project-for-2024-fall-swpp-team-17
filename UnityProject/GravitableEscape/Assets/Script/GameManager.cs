@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using OurGame;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IPlayerManager
 {
     public CameraManager cameraManager;
     public PlayerManager playerManager;
+    public UIManager uIManager;
     public Vector3 wormholeTargetPos;
     public GameState gameState; // TODO: make this singleton?
     Subject<GameStateObserver, GameState> gameStateChange;
@@ -17,8 +19,10 @@ public class GameManager : MonoBehaviour
         gameStateChange = new Subject<GameStateObserver, GameState>();
         cameraManager = FindObjectOfType<CameraManager>();
         playerManager = FindObjectOfType<PlayerManager>();
+        uIManager = FindObjectOfType<UIManager>();
         gameStateChange.AddObserver(cameraManager);
         gameStateChange.AddObserver(playerManager);
+        gameStateChange.AddObserver(uIManager);
         gameStateChange.NotifyObservers(gameState);
     }
 
@@ -52,5 +56,46 @@ public class GameManager : MonoBehaviour
         playerManager.Teleport(wormholeTargetPos);
         gameState = GameState.Playing;
         gameStateChange.NotifyObservers(gameState);
+    }
+
+    // CALLED BY OTHER SCRIPTS
+    /// <summary>
+    /// Called by obstacles, energy boosters? to modify life
+    /// </summary>
+    /// <param name="amount">if positive life is increased, if negative life is decreased</param>
+    private int life = 1;
+    public int Life
+    {
+        get { return life; }
+    }
+    public void ModifyLife(int amount)
+    {
+        life += amount;
+
+        if (life <= 0)
+        {
+            life = 0;
+            gameState = GameState.Gameover;
+            gameStateChange.NotifyObservers(gameState);
+        }
+
+        playerManager.ModLife(amount);
+    }
+
+    /// <summary>
+    /// do Pause and change button color
+    /// </summary>
+    public void Puase()
+    {
+        if (Time.timeScale == 0)
+        {
+            uIManager.ChangePauseColorBlack();
+            Time.timeScale = 1;
+        }
+        else
+        {
+            uIManager.ChangePauseColorRed();
+            Time.timeScale = 0;
+        }
     }
 }
