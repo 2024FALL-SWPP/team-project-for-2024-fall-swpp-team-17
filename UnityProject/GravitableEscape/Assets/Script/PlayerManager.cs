@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 /// <summary>
 /// This class handles movement(+ jump), life, blinking(when revived)
 /// </summary>
-public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, GameStateObserver
+public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
 {
     public Rigidbody rb;
     private Animator animator;
@@ -22,11 +22,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     private float height;
     private bool isGround;
     GameState gameState;
-    public int life;
-    public int Life
-    {
-        get { return life; }
-    }
     public float lastDamageTime = -100f;
     public bool revived = false;
     public bool isTransparent = false;
@@ -41,7 +36,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         isGround = true;
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
-        life = 5;
         renderers = GetComponentsInChildren<Renderer>();
     }
 
@@ -53,10 +47,15 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
                 RotatePlayer();
                 JumpPlayer();
                 break;
+            case GameState.Gameover:
+                // TODO
+                break;
+            case GameState.stun:
+                break;
             default:
                 break;
         }
-        if (revived)
+        if (revived && gameState != GameState.Gameover)
         {
             Blink();
         }
@@ -186,6 +185,16 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
     void Blink()
     {
         float time = Time.time - lastDamageTime;
+        float stuntime = Time.time - lastDamageTime;
+        if (stuntime < 1.0f) // do not move until 1 second pass
+        {
+            gameState = GameState.stun;
+        }
+        else
+        {
+            gameState = GameState.Playing;
+        }
+
         if ((time % 1) < 0.5f && !isTransparent)
         {
             SetMaterialsTranslucent();
@@ -268,27 +277,19 @@ public class PlayerManager : MonoBehaviour, GravityObserver, IPlayerManager, Gam
         }
     }
 
-    // CALLED BY OTHER SCRIPTS
     /// <summary>
-    /// Called by obstacles, energy boosters? to modify life
+    /// called when Gamenamager call ModifyLife
     /// </summary>
-    /// <param name="amount">if positive life is increased, if negative life is decreased</param>
-    public void ModifyLife(int amount)
+    /// <param name="amount"></param>
+    public void ModLife(int amount)
     {
-        if (!revived)
+        if (amount < 0)
         {
-            life += amount;
-            if (amount < 0)
+            animator.SetBool("Faint_b", true);
+            if (gameState != GameState.Gameover)
             {
-                animator.SetBool("Faint_b", true);
                 StartCoroutine(ResetFaintAnimation());
             }
-        }
-
-        if (life < 0)
-        {
-            life = 0;
-            animator.SetBool("Death_b", true);
         }
     }
 
