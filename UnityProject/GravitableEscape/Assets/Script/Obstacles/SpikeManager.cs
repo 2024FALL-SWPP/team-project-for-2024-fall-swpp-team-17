@@ -26,7 +26,6 @@ public class SpikeManager : HazardManager
     }
 
     private ContactPoint[] contacts = new ContactPoint[10];
-    private float lastCollisionTime = -100.0f;
     public bool isUpward;
 
     /// <summary>
@@ -37,11 +36,10 @@ public class SpikeManager : HazardManager
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (IsCollisionUpward(collision) && (Time.time - lastCollisionTime >= 3.0f))
+            if (IsCollisionUpward(collision))
             {
                 GameManager player = FindObjectOfType<GameManager>();
                 HarmPlayer(player);
-                lastCollisionTime = Time.time;
             }
         }
     }

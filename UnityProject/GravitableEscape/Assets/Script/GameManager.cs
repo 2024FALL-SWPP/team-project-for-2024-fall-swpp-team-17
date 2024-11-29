@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using OurGame;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour, IPlayerManager
 {
@@ -63,23 +64,28 @@ public class GameManager : MonoBehaviour, IPlayerManager
     /// Called by obstacles, energy boosters? to modify life
     /// </summary>
     /// <param name="amount">if positive life is increased, if negative life is decreased</param>
-    private int life = 1;
+    private int life = 2;
     public int Life
     {
         get { return life; }
     }
+    private float lastCollisionTime = -100.0f;
     public void ModifyLife(int amount)
     {
-        life += amount;
-
-        if (life <= 0)
+        if (Time.time - lastCollisionTime >= 10.0f)
         {
-            life = 0;
-            gameState = GameState.Gameover;
-            gameStateChange.NotifyObservers(gameState);
-        }
+            lastCollisionTime = Time.time;
+            life += amount;
 
-        playerManager.ModLife(amount);
+            if (life <= 0)
+            {
+                life = 0;
+                gameState = GameState.Gameover;
+                gameStateChange.NotifyObservers(gameState);
+            }
+
+            playerManager.ModLife(amount);
+        }
     }
 
     /// <summary>
@@ -97,5 +103,6 @@ public class GameManager : MonoBehaviour, IPlayerManager
             uIManager.ChangePauseColorRed();
             Time.timeScale = 0;
         }
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }
