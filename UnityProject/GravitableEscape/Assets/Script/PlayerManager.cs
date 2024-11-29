@@ -238,7 +238,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         foreach (Renderer renderer in renderers)
         {
             Material material = renderer.material;
-            material.SetFloat("_Mode", 0); // Opaque ëª¨ë“œ
+            material.SetFloat("_Mode", 0); // Opaque ¸ðµå
             material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
             material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
             material.SetInt("_ZWrite", 1);
@@ -283,19 +283,21 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     /// <param name="amount"></param>
     public void ModLife(int amount)
     {
-        if (amount < 0)
+        if (gameState == GameState.Gameover)
+        {
+            animator.SetBool("Death_b", true);
+        }
+        else if (amount < 0)
         {
             animator.SetBool("Faint_b", true);
-            if (gameState != GameState.Gameover)
-            {
-                StartCoroutine(ResetFaintAnimation());
-            }
+            StartCoroutine(ResetFaintAnimation());
         }
     }
 
     private IEnumerator ResetFaintAnimation()
     {
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length); // wait for animation playtime
+        yield return new WaitForSeconds(0.5f);
         animator.SetBool("Faint_b", false); // reset faint
         lastDamageTime = Time.time;
         revived = true;
