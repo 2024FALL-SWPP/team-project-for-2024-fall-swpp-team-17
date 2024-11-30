@@ -107,15 +107,27 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
     {
         Vector3 directionToTarget = player.position - targetPosition;
         float distanceToTarget = Vector3.Distance(targetPosition, player.position);
-        if (Physics.Raycast(targetPosition, directionToTarget, out RaycastHit hit, distanceToTarget))
+        Ray ray = new Ray(targetPosition, directionToTarget);
+        RaycastHit[] hits = Physics.RaycastAll(ray, distanceToTarget);
+        foreach (RaycastHit hit in hits)
         {
-            if (hit.collider.gameObject.tag != "Player")
+            if (hit.collider.gameObject.tag == "Wall")
             {
                 float distanceObstToTarget = Vector3.Distance(hit.point, player.position);
                 float shiftedDistance = distance * (distanceObstToTarget / distanceToTarget) * 0.5f;
                 targetPosition = player.position - transform.forward * shiftedDistance + transform.up * height;
             }
         }
+        // if (Physics.Raycast(targetPosition, directionToTarget, out RaycastHit hit, distanceToTarget))
+        // {
+        //     go = hit.collider.gameObject;
+        //     if (hit.collider.gameObject.tag == "ground")
+        //     {
+        //         float distanceObstToTarget = Vector3.Distance(hit.point, player.position);
+        //         float shiftedDistance = distance * (distanceObstToTarget / distanceToTarget) * 0.5f;
+        //         targetPosition = player.position - transform.forward * shiftedDistance + transform.up * height;
+        //     }
+        // }
     }
 
     float spiralAngle = 0.0f, spiralRadius, distanceToWormhole;
