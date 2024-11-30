@@ -25,7 +25,7 @@ public class ButtonManager : MonoBehaviour
     {
         redButton = transform.Find("redbutton");
         greenButton = transform.Find("greenbutton");
-        mazeManager = GameObject.Find("SimpleMaze").GetComponent<MazeManager>();
+        mazeManager = FindObjectOfType<MazeManager>();
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class ButtonManager : MonoBehaviour
         {
             mazeManager.PuzzleReset();
         }
-        
+
         timer = 0f;
     }
 
@@ -85,7 +85,7 @@ public class ButtonManager : MonoBehaviour
             {
                 isPressed = false;
             }
-        }       
+        }
     }
 
     private bool IsPlayerUpward(Collision collision)
