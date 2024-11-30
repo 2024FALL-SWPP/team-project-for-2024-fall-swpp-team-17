@@ -2863,7 +2863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de095fdf5e5a24f5a8b76cbf775add73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!54 &1820936325
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3866,10 +3865,6 @@ PrefabInstance:
     - target: {fileID: 4894929124415367562, guid: 52c096ac9bd2314478a6e9edfabc8549, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894929124415367562, guid: 52c096ac9bd2314478a6e9edfabc8549, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5234758050275767088, guid: 52c096ac9bd2314478a6e9edfabc8549, type: 3}
       propertyPath: m_RootOrder

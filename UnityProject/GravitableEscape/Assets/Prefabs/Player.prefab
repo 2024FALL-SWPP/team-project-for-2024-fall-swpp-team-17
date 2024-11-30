@@ -1931,7 +1931,7 @@ MonoBehaviour:
   jumpForce: 1200
   moveSpeed: 20
   boxCollider: {fileID: 0}
-  lastDamageTime: -100
+  revivedTime: -100
   revived: 0
   isTransparent: 0
 --- !u!1 &4943693829936673406
