@@ -15,8 +15,8 @@ namespace OurGame
         Playing,
         WormholeEffect,
         Gameover,
-        stun,
-        Fainted
+        Stun,
+        Revived
     }
 
     /// <summary>
@@ -74,7 +74,7 @@ namespace OurGame
     /// <summary>
     /// Interface of PlayerManager
     /// </summary>
-    public interface IPlayerManager
+    public interface ILifeManager
     {
         int Life { get; }
         public void ModifyLife(int amount);
@@ -86,6 +86,6 @@ namespace OurGame
     public abstract class HazardManager : MonoBehaviour
     {
         protected int damage;
-        protected abstract void HarmPlayer(IPlayerManager player);
+        protected abstract void HarmPlayer(ILifeManager gameManager);
     }
 }

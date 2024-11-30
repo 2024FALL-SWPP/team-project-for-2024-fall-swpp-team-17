@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using OurGame;
 using UnityEngine;
 
-public class SpikeManager : HazardManager
+public class HeavyObjectManager : HazardManager
 {
-    Vector3 fixedPosition;
-    GameManager gameManager;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
         damage = 1;
-        fixedPosition = transform.position;
         gameManager = FindObjectOfType<GameManager>();
     }
 
@@ -19,11 +17,6 @@ public class SpikeManager : HazardManager
     void Update()
     {
 
-    }
-
-    void FixedUpdate()
-    {
-        transform.position = fixedPosition;
     }
 
     /// <summary>
@@ -34,29 +27,31 @@ public class SpikeManager : HazardManager
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (IsCollisionUpward(collision))
+            if (IsCollisionHead(collision))
             {
                 HarmPlayer(gameManager);
             }
         }
     }
 
-    bool IsCollisionUpward(Collision collision)
+    private bool IsCollisionHead(Collision collision)
     {
         ContactPoint[] contacts = new ContactPoint[10];
-        bool isUpward = false;
+        Vector3 playerUp = collision.gameObject.transform.up;
+        Vector3 playerPos = collision.gameObject.transform.position;
+        bool isHead = false;
         int cnt = collision.GetContacts(contacts);
         for (int i = 0; i < cnt; i++)
         {
             ContactPoint contact = contacts[i];
-            if (Vector3.Dot(contact.normal, transform.up) < -0.9f)
+            Vector3 direction = contact.point - playerPos;
+            if (Vector3.Dot(direction, playerUp) > 0f)
             {
-                isUpward = true;
+                isHead = true;
             }
         }
-        return isUpward;
+        return isHead;
     }
-
     protected override void HarmPlayer(ILifeManager gm)
     {
         gameManager.ModifyLife(-damage);

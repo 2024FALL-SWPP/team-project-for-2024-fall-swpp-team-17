@@ -43,6 +43,8 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
         switch (gameState)
         {
             case GameState.Playing:
+            case GameState.Stun:
+            case GameState.Revived:
                 ScrollDistance();
                 RotateCamera();
                 FollowPlayer();

@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     private Animator animator;
     public Renderer[] renderers;
     public InputManager inputManager;
-    public float jumpForce = 1200f;
+    public float jumpForce = 1500f;
     public float moveSpeed = 20f;
     private Vector3 moveDirection;
     private Quaternion targetGravityRot = Quaternion.identity; // Target rotation for gravity changes. Direction of player facing forward in gravity
@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     private float height;
     private bool isGround;
     GameState gameState;
-    public float lastDamageTime = -100f;
+    public float revivedTime = -100f;
     public bool revived = false;
     public bool isTransparent = false;
 
@@ -47,17 +47,18 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
                 RotatePlayer();
                 JumpPlayer();
                 break;
+            case GameState.Revived:
+                RotatePlayer();
+                JumpPlayer();
+                Blink();
+                break;
             case GameState.Gameover:
                 // TODO
                 break;
-            case GameState.stun:
+            case GameState.Stun:
                 break;
             default:
                 break;
-        }
-        if (revived && gameState != GameState.Gameover)
-        {
-            Blink();
         }
     }
 
@@ -69,6 +70,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         switch (gameState)
         {
             case GameState.Playing:
+            case GameState.Revived:
                 MovePlayer();
                 break;
             default:
@@ -184,16 +186,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     /// </summary>
     void Blink()
     {
-        float time = Time.time - lastDamageTime;
-        float stuntime = Time.time - lastDamageTime;
-        if (stuntime < 1.0f) // do not move until 1 second pass
-        {
-            gameState = GameState.stun;
-        }
-        else
-        {
-            gameState = GameState.Playing;
-        }
+        float time = Time.time - revivedTime;
 
         if ((time % 1) < 0.5f && !isTransparent)
         {
@@ -238,7 +231,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         foreach (Renderer renderer in renderers)
         {
             Material material = renderer.material;
-            material.SetFloat("_Mode", 0); // Opaque ¸ðµå
+            material.SetFloat("_Mode", 0); // Opaque ï¿½ï¿½ï¿½
             material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
             material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
             material.SetInt("_ZWrite", 1);
@@ -278,32 +271,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     }
 
     /// <summary>
-    /// called when Gamenamager call ModifyLife
-    /// </summary>
-    /// <param name="amount"></param>
-    public void ModLife(int amount)
-    {
-        if (gameState == GameState.Gameover)
-        {
-            animator.SetBool("Death_b", true);
-        }
-        else if (amount < 0)
-        {
-            animator.SetBool("Faint_b", true);
-            StartCoroutine(ResetFaintAnimation());
-        }
-    }
-
-    private IEnumerator ResetFaintAnimation()
-    {
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length); // wait for animation playtime
-        yield return new WaitForSeconds(0.5f);
-        animator.SetBool("Faint_b", false); // reset faint
-        lastDamageTime = Time.time;
-        revived = true;
-    }
-
-    /// <summary>
     /// Move player to targetPos. Used in wormhole
     /// </summary>
     /// <param name="targetPos">position to teleport</param>
@@ -337,10 +304,26 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
             case GameState.WormholeEffect:
                 gameObject.SetActive(false);
                 break;
+            case GameState.Gameover:
+                animator.SetBool("Death_b", true);
+                break;
+            case GameState.Stun:
+                animator.SetBool("Faint_b", true);
+                StartCoroutine(ResetStunAnimation());
+                break;
+            case GameState.Revived:
+                revivedTime = Time.time;
+                // animator.SetBool("Faint_b", false);
+                break;
             default:
                 gameObject.SetActive(true);
                 break;
         }
+    }
+    private IEnumerator ResetStunAnimation()
+    {
+        yield return new WaitForSeconds(1.5f);
+        animator.SetBool("Faint_b", false); // reset faint
     }
 
 }
