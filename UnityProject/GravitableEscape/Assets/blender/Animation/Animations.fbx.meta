@@ -17,12 +17,14 @@ ModelImporter:
     removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'Body_jnt' : position error =
+      7.425900 mm\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Body_jnt' has translation animation that
-      will be discarded.\n"
+    animationImportWarnings: "\nClip 'Character|Character|Character|Character|Take
+      001|BaseLayer' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Body_jnt'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -43,7 +45,7 @@ ModelImporter:
       lastFrame: 45
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: 0.16
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -72,7 +74,7 @@ ModelImporter:
       lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: 0.16
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -101,7 +103,7 @@ ModelImporter:
       lastFrame: 99
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: 0.16
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -130,7 +132,7 @@ ModelImporter:
       lastFrame: 547
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: 0.16
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -159,7 +161,7 @@ ModelImporter:
       lastFrame: 608
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: 0.16
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -188,7 +190,7 @@ ModelImporter:
       lastFrame: 970
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: 0.16
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -246,7 +248,7 @@ ModelImporter:
       lastFrame: 491
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: 0.16
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
