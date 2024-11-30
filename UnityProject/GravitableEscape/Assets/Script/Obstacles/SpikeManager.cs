@@ -18,7 +18,6 @@ public class SpikeManager : HazardManager
     // Update is called once per frame
     void Update()
     {
-
     }
 
     void FixedUpdate()
@@ -27,7 +26,7 @@ public class SpikeManager : HazardManager
     }
 
     /// <summary>
-    /// Checks if player collided with the pointy part of the thorn, calls playerManager.ThornDamage() if so.
+    /// checks conditions and harms player
     /// </summary>
     /// <param name="collision"></param>
     private void OnCollisionStay(Collision collision)
@@ -41,6 +40,11 @@ public class SpikeManager : HazardManager
         }
     }
 
+    /// <summary>
+    /// whether collision is on the pointy part of spike
+    /// </summary>
+    /// <param name="collision"></param>
+    /// <returns></returns>
     bool IsCollisionUpward(Collision collision)
     {
         ContactPoint[] contacts = new ContactPoint[10];

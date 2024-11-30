@@ -103,6 +103,10 @@ public class GameManager : MonoBehaviour, ILifeManager
         }
     }
 
+    /// <summary>
+    /// Change player state Stun(2sec) -> Revived(3sec) -> Playing
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator HarmCoroutine()
     {
         gameState = GameState.Stun;

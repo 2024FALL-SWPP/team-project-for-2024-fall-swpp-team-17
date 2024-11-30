@@ -15,8 +15,8 @@ namespace OurGame
         Playing,
         WormholeEffect,
         Gameover,
-        Stun,
-        Revived
+        Stun, // Player fainted and can't move
+        Revived // After fainting, player revived and can move, but can't get damage
     }
 
     /// <summary>

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using OurGame;
@@ -16,42 +17,51 @@ public class HeavyObjectManager : HazardManager
     // Update is called once per frame
     void Update()
     {
-
     }
 
     /// <summary>
-    /// Checks if player collided with the pointy part of the thorn, calls playerManager.ThornDamage() if so.
+    /// checks if player is crushed below this object and harms player
     /// </summary>
     /// <param name="collision"></param>
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (IsCollisionHead(collision))
+            if (IsCrushed(collision))
             {
                 HarmPlayer(gameManager);
             }
         }
     }
 
-    private bool IsCollisionHead(Collision collision)
+    /// <summary>
+    /// whether collision is crushing player
+    /// </summary>
+    /// <remarks>
+    /// Checks 1. if collision location is player's head and 2. if collision's direction was vertical
+    /// Need to check second condition because if player walks to an object that is taller than itself and collides, the collision location can be head, but the player isn't crushed.
+    /// <param name="collision"></param>
+    /// <returns></returns>
+    private bool IsCrushed(Collision collision)
     {
         ContactPoint[] contacts = new ContactPoint[10];
         Vector3 playerUp = collision.gameObject.transform.up;
         Vector3 playerPos = collision.gameObject.transform.position;
-        bool isHead = false;
+        bool isCrushed = false;
         int cnt = collision.GetContacts(contacts);
         for (int i = 0; i < cnt; i++)
         {
             ContactPoint contact = contacts[i];
-            Vector3 direction = contact.point - playerPos;
-            if (Vector3.Dot(direction, playerUp) > 0f)
+            bool isLocationHead = Vector3.Dot(contact.point - playerPos, playerUp) > 0f;
+            bool isCollisionVertical = Math.Abs(Vector3.Dot(contact.normal, playerUp)) > 0.5f;
+            if (isLocationHead && isCollisionVertical)
             {
-                isHead = true;
+                isCrushed = true;
             }
         }
-        return isHead;
+        return isCrushed;
     }
+
     protected override void HarmPlayer(ILifeManager gm)
     {
         gameManager.ModifyLife(-damage);

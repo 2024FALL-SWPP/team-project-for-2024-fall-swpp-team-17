@@ -53,7 +53,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
                 Blink();
                 break;
             case GameState.Gameover:
-                // TODO
                 break;
             case GameState.Stun:
                 break;
@@ -322,7 +321,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     }
     private IEnumerator ResetStunAnimation()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.5f); // Even though gameState is stil Stun, want player to stand up little earlier
         animator.SetBool("Faint_b", false); // reset faint
     }
 
