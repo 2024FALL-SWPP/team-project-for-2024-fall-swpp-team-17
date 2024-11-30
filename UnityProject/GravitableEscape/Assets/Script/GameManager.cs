@@ -4,8 +4,10 @@ using UnityEngine;
 using OurGame;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Diagnostics;
+using Unity.VisualScripting;
 
-public class GameManager : MonoBehaviour, IPlayerManager
+public class GameManager : MonoBehaviour, ILifeManager
 {
     public CameraManager cameraManager;
     public PlayerManager playerManager;
@@ -47,13 +49,11 @@ public class GameManager : MonoBehaviour, IPlayerManager
         gameStateChange.NotifyObservers(gameState);
     }
 
-    public bool foo = false;
     /// <summary>
     /// This function is called when the animation warping into the wormhole ends.
     /// </summary>
     public void exitWormhole()
     {
-        foo = true;
         playerManager.Teleport(wormholeTargetPos);
         gameState = GameState.Playing;
         gameStateChange.NotifyObservers(gameState);
@@ -64,28 +64,59 @@ public class GameManager : MonoBehaviour, IPlayerManager
     /// Called by obstacles, energy boosters? to modify life
     /// </summary>
     /// <param name="amount">if positive life is increased, if negative life is decreased</param>
-    private int life = 2;
+    public int life = 5;
     public int Life
     {
         get { return life; }
     }
-    private float lastCollisionTime = -100.0f;
+    // private float lastHarmTime = -100.0f;
     public void ModifyLife(int amount)
     {
-        if (Time.time - lastCollisionTime >= 10.0f)
+        if (amount < 0) // harm
         {
-            lastCollisionTime = Time.time;
-            life += amount;
-
-            if (life <= 0)
+            if (gameState == GameState.Playing)
             {
-                life = 0;
-                gameState = GameState.Gameover;
-                gameStateChange.NotifyObservers(gameState);
+                life += amount;
+                if (life <= 0)
+                {
+                    life = 0;
+                    gameState = GameState.Gameover;
+                    gameStateChange.NotifyObservers(gameState);
+                }
+                else
+                {
+                    StartCoroutine(HarmCoroutine());
+                }
             }
-
-            playerManager.ModLife(amount);
         }
+        else // energy
+        {
+            switch (gameState)
+            {
+                case GameState.Playing:
+                case GameState.Revived:
+                    life += amount;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Change player state Stun(2sec) -> Revived(3sec) -> Playing
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator HarmCoroutine()
+    {
+        gameState = GameState.Stun;
+        gameStateChange.NotifyObservers(gameState);
+        yield return new WaitForSeconds(2f);
+        gameState = GameState.Revived;
+        gameStateChange.NotifyObservers(gameState);
+        yield return new WaitForSeconds(3f);
+        gameState = GameState.Playing;
+        gameStateChange.NotifyObservers(gameState);
     }
 
     /// <summary>

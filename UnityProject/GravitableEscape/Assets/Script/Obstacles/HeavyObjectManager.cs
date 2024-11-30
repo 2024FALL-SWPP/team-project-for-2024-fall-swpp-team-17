@@ -1,17 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using OurGame;
 using UnityEngine;
 
-public class SpikeManager : HazardManager
+public class HeavyObjectManager : HazardManager
 {
-    Vector3 fixedPosition;
-    GameManager gameManager;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
         damage = 1;
-        fixedPosition = transform.position;
         gameManager = FindObjectOfType<GameManager>();
     }
 
@@ -20,20 +19,15 @@ public class SpikeManager : HazardManager
     {
     }
 
-    void FixedUpdate()
-    {
-        transform.position = fixedPosition;
-    }
-
     /// <summary>
-    /// checks conditions and harms player
+    /// checks if player is crushed below this object and harms player
     /// </summary>
     /// <param name="collision"></param>
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (IsCollisionUpward(collision))
+            if (IsCrushed(collision))
             {
                 HarmPlayer(gameManager);
             }
@@ -41,24 +35,31 @@ public class SpikeManager : HazardManager
     }
 
     /// <summary>
-    /// whether collision is on the pointy part of spike
+    /// whether collision is crushing player
     /// </summary>
+    /// <remarks>
+    /// Checks 1. if collision location is player's head and 2. if collision's direction was vertical
+    /// Need to check second condition because if player walks to an object that is taller than itself and collides, the collision location can be head, but the player isn't crushed.
     /// <param name="collision"></param>
     /// <returns></returns>
-    bool IsCollisionUpward(Collision collision)
+    private bool IsCrushed(Collision collision)
     {
         ContactPoint[] contacts = new ContactPoint[10];
-        bool isUpward = false;
+        Vector3 playerUp = collision.gameObject.transform.up;
+        Vector3 playerPos = collision.gameObject.transform.position;
+        bool isCrushed = false;
         int cnt = collision.GetContacts(contacts);
         for (int i = 0; i < cnt; i++)
         {
             ContactPoint contact = contacts[i];
-            if (Vector3.Dot(contact.normal, transform.up) < -0.9f)
+            bool isLocationHead = Vector3.Dot(contact.point - playerPos, playerUp) > 0f;
+            bool isCollisionVertical = Math.Abs(Vector3.Dot(contact.normal, playerUp)) > 0.5f;
+            if (isLocationHead && isCollisionVertical)
             {
-                isUpward = true;
+                isCrushed = true;
             }
         }
-        return isUpward;
+        return isCrushed;
     }
 
     protected override void HarmPlayer(ILifeManager gm)

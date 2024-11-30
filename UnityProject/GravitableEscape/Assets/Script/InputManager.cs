@@ -10,7 +10,8 @@ using UnityEngine;
 /// </summary>
 public class InputManager : MonoBehaviour, GravityObserver
 {
-    private float mouseSensitivity = 200f;
+    private float xSensitivity = 300f;
+    private float ySensitivity = 200f;
     public float yaw, pitch, scrollInput;
     private float mouseX, mouseY, savedYaw, savedPitch;
 
@@ -28,8 +29,8 @@ public class InputManager : MonoBehaviour, GravityObserver
     void Update()
     {
         // TODO: Fix for first 1 sec?
-        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X") * xSensitivity * Time.deltaTime;
+        mouseY = Input.GetAxis("Mouse Y") * ySensitivity * Time.deltaTime;
 
         yaw += mouseX;
         pitch -= mouseY;
