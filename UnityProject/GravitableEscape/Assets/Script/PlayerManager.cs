@@ -150,7 +150,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     bool ObstacleInPath()
     {
         float d = moveSpeed * Time.fixedDeltaTime;
-        float[] distances = new float[] { d * 10, d * 5, d * 5 };
+        float[] distances = new float[] { d * 10, d * 3, d * 3 };
         Vector3 footPosition = transform.position - transform.up * height;
         Vector3 headPosition = transform.position + transform.up * height;
         Vector3[] positions = new Vector3[] { transform.position, footPosition, headPosition };
@@ -262,7 +262,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("Wall"))
         {
             isGround = true;
             animator.SetBool("Jump_b", false);

@@ -9,9 +9,11 @@ using UnityEngine;
 /// When number keys 1, 2, 3 are pushed, it rotates the gravity of the scene appropriately.
 /// Objects that need to change direction to align with gravity (player, camera, etc.) are notified via observer pattern.
 /// </summary>
-public class GravityManager : MonoBehaviour
+public class GravityManager : MonoBehaviour, GameStateObserver
 {
     public Vector3 initGravity = new Vector3(0, -35f, 0);
+    public float lastChangeTime = -100f;
+    private GameState gameState;
     private Rigidbody[] rigidbodies;
     Subject<GravityObserver, Quaternion> gravityChange;
     void Start()
@@ -32,11 +34,14 @@ public class GravityManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (AllRest())
+        switch (gameState)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) RotateAngle(-90);
-            else if (Input.GetKeyDown(KeyCode.Alpha2)) RotateAngle(-180);
-            else if (Input.GetKeyDown(KeyCode.Alpha3)) RotateAngle(-270);
+            case GameState.Playing:
+            case GameState.Revived:
+                if (Input.GetKeyDown(KeyCode.Alpha1)) RotateAngle(-90);
+                else if (Input.GetKeyDown(KeyCode.Alpha2)) RotateAngle(-180);
+                else if (Input.GetKeyDown(KeyCode.Alpha3)) RotateAngle(-270);
+                break;
         }
     }
 
@@ -46,8 +51,12 @@ public class GravityManager : MonoBehaviour
     /// <param name="angle">angle to rotate</param>
     void RotateAngle(int angle)
     {
-        Physics.gravity = Quaternion.Euler(0, 0, angle) * Physics.gravity;
-        gravityChange.NotifyObservers(Quaternion.Euler(0, 0, angle));
+        if (Time.time - lastChangeTime > 0.5f)
+        {
+            Physics.gravity = Quaternion.Euler(0, 0, angle) * Physics.gravity;
+            gravityChange.NotifyObservers(Quaternion.Euler(0, 0, angle));
+            lastChangeTime = Time.time;
+        }
     }
 
     /// <summary>
@@ -61,5 +70,9 @@ public class GravityManager : MonoBehaviour
             if (rb.velocity.magnitude > 0.1f) return false;
         }
         return true;
+    }
+    public void OnNotify<GameStateObserver>(GameState gs)
+    {
+        gameState = gs;
     }
 }
