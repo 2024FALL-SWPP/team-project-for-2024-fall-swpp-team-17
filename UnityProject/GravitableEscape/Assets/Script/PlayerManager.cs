@@ -325,4 +325,13 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         animator.SetBool("Faint_b", false); // reset faint
     }
 
+
+    /// <summary>
+    /// Returns player's position.
+    /// </summary>
+    /// <returns></returns>
+    public Vector3 GetPlayerPos(){
+        return transform.position;
+    }
+
 }
