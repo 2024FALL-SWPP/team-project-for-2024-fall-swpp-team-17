@@ -51,6 +51,11 @@ public class UIManager : MonoBehaviour, GameStateObserver
         }
     }
 
+    /// <summary>
+    /// smooth health bar update, not concrete
+    /// </summary>
+    /// <param name="targetValue"></param>
+    /// <returns></returns>
     private IEnumerator SmoothHealthBarUpdate(float targetValue)
     {
         float currentValue = healthBar.value;
@@ -129,7 +134,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// do Pause and change button color
+    /// do Pause
     /// </summary>
     public void Pause()
     {
@@ -141,12 +146,18 @@ public class UIManager : MonoBehaviour, GameStateObserver
         EventSystem.current.SetSelectedGameObject(null);
     }
 
+    /// <summary>
+    /// do resume when pause
+    /// </summary>
     public void Resume()
     {
         Time.timeScale = 1;
         menu.SetActive(false);
     }
 
+    /// <summary>
+    /// do restart when pause
+    /// </summary>
     public void Restart()
     {
         Time.timeScale = 1;

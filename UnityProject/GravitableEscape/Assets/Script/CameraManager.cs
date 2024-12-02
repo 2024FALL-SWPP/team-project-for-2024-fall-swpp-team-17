@@ -25,7 +25,7 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
     private GameState gameState;
     public Transform wormhole = null;
 
-    private AudioSource bgmAudioSource;
+    private AudioSource bgmAudioSource; // bgm audio source
     private bool isbgmPlaying = true;
 
     void Start()
@@ -186,7 +186,9 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
         gameState = gs;
     }
 
-
+    /// <summary>
+    /// on/off bgm
+    /// </summary>
     public void ToggleBGM()
     {
         if (isbgmPlaying)
