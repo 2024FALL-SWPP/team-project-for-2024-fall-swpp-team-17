@@ -26,6 +26,8 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     public bool revived = false;
     public bool isTransparent = false;
 
+    private AudioSource landing;
+
     void Start()
     {
         inputManager = FindObjectOfType<InputManager>();
@@ -37,6 +39,8 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
         renderers = GetComponentsInChildren<Renderer>();
+        landing = GetComponent<AudioSource>();
+        landing.Pause();
     }
 
     void Update()
@@ -264,8 +268,13 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     {
         if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("Wall"))
         {
+            if (!isGround)
+            {
+                landing.Play();
+            }
             isGround = true;
             animator.SetBool("Jump_b", false);
+
         }
     }
 
@@ -330,7 +339,8 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     /// Returns player's position.
     /// </summary>
     /// <returns></returns>
-    public Vector3 GetPlayerPos(){
+    public Vector3 GetPlayerPos()
+    {
         return transform.position;
     }
 
