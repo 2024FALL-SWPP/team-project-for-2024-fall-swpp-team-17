@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6678913810329632644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6678913810329632646}
+  - component: {fileID: 6678913810329632647}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6678913810329632646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6678913810329632644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6678913810329632647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6678913810329632644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf88f646ce0947469ecdefc32d5de89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMessages:
+  - Move your mouse to change camera angle.
+  - Get poked and you'll lose your life a bit. Be careful... but if you do get priked,
+    you can escape during your revival -when you kinda get transparent).
+  - You can change gravity with keys 1, 2, and 3. Try those keys to avoid the wall.
+  - Heavy objects - you don't wanna get hit. Be careful when changing gravity!
+  - Wormholes will suck you up and send u to random positions.
+  - Sometimes, a maze will block your way. Move the key around with gratvity to solve
+    it.
+  - You've made it to the end of the tutorial! Doors will open as you approach them...
+  zoneBounds:
+  - -20
+  - 25
+  - 30
+  - 90
+  - 130
+  - 180
+  - 190
+  - 260
+  - 275
+  - 330
+  - 345
+  - 370
+  - 415
+  - 470

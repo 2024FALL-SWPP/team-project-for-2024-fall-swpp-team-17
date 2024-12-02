@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour, GameStateObserver
     private GameState gameState;
     public TextMeshProUGUI gameOverText;
     public Button pauseButton;
+    public TextMeshProUGUI tutorialMessageText;
+    private Coroutine typingCoroutine;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,11 @@ public class UIManager : MonoBehaviour, GameStateObserver
         healthBar.value = gameManager.Life;
         gameOverText.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
+
+        if (tutorialMessageText != null)
+        {
+            tutorialMessageText.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -68,6 +76,53 @@ public class UIManager : MonoBehaviour, GameStateObserver
                 break;
         }
     }
+
+
+    /// <summary>
+    /// Displays tutorial message with a typing effect, based on player position.
+    /// </summary>
+    /// <param name="message">message for a specific zone</param>
+    public void ShowTutorialMessage(string message)
+    {
+        if (tutorialMessageText == null)
+        {
+            return;
+        }
+
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+
+        typingCoroutine = StartCoroutine(TypeMessage(message));
+    }
+
+    /// <summary>
+    /// Hides tutorial message based on player position.
+    /// </summary>
+    public void HideTutorialMessage()
+    {
+        if (tutorialMessageText != null)
+        {
+            tutorialMessageText.gameObject.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Triggers typing effect.
+    /// </summary>
+    private IEnumerator TypeMessage(string message)
+    {
+        tutorialMessageText.text = "";
+        tutorialMessageText.gameObject.SetActive(true);
+
+        foreach (char letter in message.ToCharArray())
+        {
+            tutorialMessageText.text += letter;
+            yield return new WaitForSeconds(0.025f);
+        }
+    }
+
 
 }
 
