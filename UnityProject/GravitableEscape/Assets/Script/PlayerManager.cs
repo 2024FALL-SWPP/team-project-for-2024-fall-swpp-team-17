@@ -171,8 +171,15 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
                 RaycastHit hit;
                 if (Physics.Raycast(origin, direction, out hit, distance))
                 {
-                    Debug.DrawRay(origin, direction * distance, Color.red); // DEBUG
-                    return true;
+                    if (hit.collider.gameObject.tag == "Wormhole")
+                    {
+                        Debug.DrawRay(origin, direction * distance, Color.green); // DEBUG
+                    }
+                    else
+                    {
+                        Debug.DrawRay(origin, direction * distance, Color.red); // DEBUG
+                        return true;
+                    }
                 }
                 else
                 {
@@ -182,7 +189,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         }
         return false;
     }
-
     // BLINK
     /// <summary>
     /// Make player blink translucent, opaque to show that player revived
