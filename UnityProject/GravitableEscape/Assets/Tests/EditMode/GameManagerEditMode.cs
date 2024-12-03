@@ -115,4 +115,32 @@ public class GameManagerEditMode
         Assert.AreEqual(expectedState2, gameManager.gameState, $"Game state should be {expectedState2} after modification.");
     }
 
+    [Test]
+    public void ModifyLife_IncreaseLife()
+    {
+        // Arrange: Set initial life
+        gameManager.ModifyLife(0); // Ensure initial setup
+        Assert.AreEqual(5, gameManager.Life, "Initial life is not correctly set.");
+
+        // Act: Increase life
+        gameManager.ModifyLife(3);
+
+        // Assert: Check life
+        Assert.AreEqual(8, gameManager.Life, "Life should increase by the specified amount.");
+    }
+
+    [Test]
+    public void ModifyLife_NoEffect_WhenNotPlaying()
+    {
+        // Arrange: Set initial life and change game state
+        gameManager.ModifyLife(0); // Ensure initial setup
+        gameManager.gameState = GameState.Gameover;
+
+        // Act: Attempt to modify life while not in Playing state
+        gameManager.ModifyLife(3); // Positive life increase
+        gameManager.ModifyLife(-3); // Negative life decrease
+
+        // Assert: Check life remains unchanged
+        Assert.AreEqual(5, gameManager.Life, "Life should not change when game state is not Playing.");
+    }
 }
