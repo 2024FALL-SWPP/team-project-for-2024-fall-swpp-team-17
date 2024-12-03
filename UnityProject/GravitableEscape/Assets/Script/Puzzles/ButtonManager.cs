@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OurGame;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -18,14 +19,16 @@ public class ButtonManager : MonoBehaviour
     private Transform redButton;
     private Transform greenButton;
 
-    public MazeManager mazeManager;
+    private PuzzleInterface puzzleInterface;
+
+    public GameObject puzzle;
 
     // Start is called before the first frame update
     void Start()
     {
         redButton = transform.Find("redbutton");
         greenButton = transform.Find("greenbutton");
-        mazeManager = FindObjectOfType<MazeManager>();
+        puzzleInterface = puzzle.GetComponent <PuzzleInterface>();
     }
 
     // Update is called once per frame
@@ -55,12 +58,12 @@ public class ButtonManager : MonoBehaviour
     {
         if (firstActivation)
         {
-            mazeManager.PuzzleStart();
+            puzzleInterface.PuzzleStart();
             firstActivation = false;
         }
         else
         {
-            mazeManager.PuzzleReset();
+            puzzleInterface.PuzzleReset();
         }
 
         timer = 0f;

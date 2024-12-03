@@ -69,6 +69,7 @@ namespace OurGame
         void PuzzleStart();
         void PuzzleReset();
         void PuzzleClear();
+        void GetUnlockSignal(int lockID);
     }
 
     /// <summary>
