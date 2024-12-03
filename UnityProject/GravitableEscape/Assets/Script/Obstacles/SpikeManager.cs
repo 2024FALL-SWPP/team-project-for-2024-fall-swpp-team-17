@@ -7,12 +7,16 @@ public class SpikeManager : HazardManager
 {
     Vector3 fixedPosition;
     GameManager gameManager;
+
+    private AudioSource spike;
     // Start is called before the first frame update
     void Start()
     {
         damage = 1;
         fixedPosition = transform.position;
         gameManager = FindObjectOfType<GameManager>();
+        spike = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -36,6 +40,10 @@ public class SpikeManager : HazardManager
             if (IsCollisionUpward(collision))
             {
                 HarmPlayer(gameManager);
+                if (gameManager.GetGameState() == GameState.Stun)
+                {
+                    spike.Play();
+                }
             }
         }
     }
