@@ -24,7 +24,7 @@ namespace OurGame
     /// </summary>
     /// <typeparam name="Observer">type of Observers to notify the event</typeparam>
     /// <typeparam name="NotifyType">type of OnNotify's parameter</typeparam>
-    class Subject<Observer, NotifyType>
+    public class Subject<Observer, NotifyType>
     {
         private List<Observer<NotifyType>> observers = new List<Observer<NotifyType>>();
         public void AddObserver(Observer<NotifyType> observer)
@@ -151,4 +151,22 @@ namespace OurGame
             return count;
         }
     }
+
+    public class MockCameraManager : CameraManager, GameStateObserver, GravityObserver
+    {
+        new public void OnNotify<GravityObserver>(Quaternion rot) { }
+        new public void OnNotify<GameStateObserver>(GameState gs) { }
+    }
+    public class MockPlayerManager : PlayerManager, GameStateObserver, GravityObserver
+    {
+        new public void OnNotify<GravityObserver>(Quaternion rot) { }
+        new public void OnNotify<GameStateObserver>(GameState gs) { }
+    }
+
+    public class MockUIManager : UIManager, GameStateObserver
+    {
+        new public void OnNotify<GameStateObserver>(GameState gs) { }
+    }
+
+
 }

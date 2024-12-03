@@ -10,6 +10,7 @@ public class HeavyObjectEditMode
     private GameObject heavyObject;
     private GameObject playerObject;
     private HeavyObjectManager heavyObjectManager;
+    private PlayerManager playerManager;
 
     [SetUp]
     public void Setup()
@@ -19,6 +20,7 @@ public class HeavyObjectEditMode
         heavyObjectManager = heavyObject.AddComponent<HeavyObjectManager>();
 
         playerObject = new GameObject("Player");
+        playerManager = playerObject.AddComponent<PlayerManager>();
         playerObject.tag = "Player";
         playerObject.transform.position = Vector3.zero;
         playerObject.transform.up = Vector3.up;
@@ -49,40 +51,301 @@ public class HeavyObjectEditMode
         Assert.IsTrue(result, "Collision at player's head with vertical direction should be considered as crushed.");
     }
 
+    [Test]
+    public void Collision_HeadHorizontal_IsCrushed_False()
+    {
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position + Vector3.up, // Head collision
+                normal = Vector3.right // Vertical collision
+            }
+        };
 
-    // [Test]
-    // public void Collision_FootVertical_IsCrushed_False()
-    // {
-    //     // 충돌 지점: 플레이어 발, 방향: 수직
-    //     MockContactPoint contact = new MockContactPoint
-    //     {
-    //         point = playerObject.transform.position - Vector3.up, // 발 위치
-    //         normal = -Vector3.up // 수직 방향
-    //     };
+        var collisionMock = new MockCollision(playerObject, mockContacts);
 
-    //     MockContactPoint[] contacts = { contact };
-    //     var collisionMock = new CollisionMock(playerObject, contacts);
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Collision at player's head with horizontal direction should not be considered as crushed.");
+    }
 
-    //     bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
-    //     Assert.IsFalse(result, "Collision at player's foot with vertical direction should not be considered as crushed.");
-    // }
+    [Test]
+    public void Collision_FootVertical_IsCrushed_False()
+    {
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position - Vector3.up, // Foot collision
+                normal = -Vector3.up // Vertical collision
+            }
+        };
 
-    // [Test]
-    // public void Collision_HeadHorizontal_IsCrushed_False()
-    // {
-    //     // 충돌 지점: 플레이어 머리, 방향: 가로
-    //     ContactPoint contact = new ContactPoint
-    //     {
-    //         point = playerObject.transform.position + Vector3.up, // 머리 위치
-    //         normal = Vector3.right // 가로 방향
-    //     };
+        var collisionMock = new MockCollision(playerObject, mockContacts);
 
-    //     ContactPoint[] contacts = { contact };
-    //     var collisionMock = new CollisionMock(playerObject, contacts);
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Collision at player's foot with vertical direction should not be considered as crushed.");
+    }
 
-    //     bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
-    //     Assert.IsFalse(result, "Collision at player's head with horizontal direction should not be considered as crushed.");
-    // }
+    [Test]
+    public void Collision_FootHorizontal_IsCrushed_False()
+    {
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position - Vector3.up, // Foot collision
+                normal = -Vector3.right // Horizontal collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Collision at player's foot with horizontal direction should not be considered as crushed.");
+    }
+
+
+    [Test]
+    public void Gravity1_Collision_HeadVertical_IsCrushed_True()
+    {
+        // Change gravity as if key 1 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -90));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position + Vector3.right, // Head collision
+                normal = Vector3.right // Vertical collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsTrue(result, "Gravity Change1 - Collision at player's head with verical direction should be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity1_Collision_HeadHorizontal_IsCrushed_False()
+    {
+        // Change gravity as if key 1 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -90));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position + Vector3.right, // Head collision
+                normal = Vector3.up // Horizontal collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Gravity Change1 - Collision at player's head with horizontal direction should not be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity1_Collision_FootVertical_IsCrushed_False()
+    {
+        // Change gravity as if key 1 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -90));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position - Vector3.right, // Foot collision
+                normal = Vector3.right // Vertical collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Gravity Change1 - Collision at player's foot with vertical direction should not be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity1_Collision_FootHorizontal_IsCrushed_False()
+    {
+        // Change gravity as if key 1 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -90));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position - Vector3.right, // Foot collision
+                normal = Vector3.up // Horizontal collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Gravity Change1 - Collision at player's foot with horizontal direction should not be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity2_Collision_HeadVertical_IsCrushed_True()
+    {
+        // Change gravity as if key 2 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -180));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position - Vector3.up, // Head collision
+                normal = Vector3.up // Vertical collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsTrue(result, "Gravity Change2 - Collision at player's head with vertical direction should be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity2_Collision_HeadHorizontal_IsCrushed_False()
+    {
+        // Change gravity as if key 2 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -180));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position - Vector3.up, // Head collision
+                normal = -Vector3.right // Horizontal collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Gravity Change2 - Collision at player's head with horizontal direction should not be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity2_Collision_FootVertical_IsCrushed_False()
+    {
+        // Change gravity as if key 2 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -180));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position + Vector3.up, // Foot collision
+                normal = Vector3.up // Vertical collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Gravity Change2 - Collision at player's foot with vertical direction should not be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity2_Collision_FootHorizontal_IsCrushed_False()
+    {
+        // Change gravity as if key 2 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -180));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position + Vector3.up, // Foot collision
+                normal = Vector3.right // Horizontal collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Gravity Change2 - Collision at player's foot with horizontal direction should not be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity3_Collision_HeadVertical_IsCrushed_True()
+    {
+        // Change gravity as if key 3 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -270));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position - Vector3.right, // Head collision
+                normal = -Vector3.right // Vertical collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsTrue(result, "Gravity Change3 - Collision at player's head with verical direction should be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity3_Collision_HeadHorizontal_IsCrushed_False()
+    {
+        // Change gravity as if key 3 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -270));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position - Vector3.right, // Head collision
+                normal = -Vector3.up // Horizontal collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Gravity Change3 - Collision at player's head with horizontal direction should not be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity3_Collision_FootVertical_IsCrushed_False()
+    {
+        // Change gravity as if key 3 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -270));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position + Vector3.right, // Foot collision
+                normal = -Vector3.right // Vertical collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Gravity Change3 - Collision at player's foot with vertical direction should not be considered as crushed.");
+    }
+
+    [Test]
+    public void Gravity3_Collision_FootHorizontal_IsCrushed_False()
+    {
+        // Change gravity as if key 3 is pressed
+        playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -270));
+        var mockContacts = new List<MockContactPoint>
+        {
+            new MockContactPoint
+            {
+                point = playerObject.transform.position + Vector3.right, // Foot collision
+                normal = -Vector3.up // Horizontal collision
+            }
+        };
+
+        var collisionMock = new MockCollision(playerObject, mockContacts);
+
+        bool result = InvokeIsCrushed(heavyObjectManager, collisionMock);
+        Assert.IsFalse(result, "Gravity Change3 - Collision at player's foot with horizontal direction should not be considered as crushed.");
+    }
+
 
     private bool InvokeIsCrushed(HeavyObjectManager manager, MockCollision collision)
     {
