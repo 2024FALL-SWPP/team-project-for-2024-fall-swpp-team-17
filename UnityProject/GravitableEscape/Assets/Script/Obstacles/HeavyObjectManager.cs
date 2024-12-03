@@ -27,7 +27,8 @@ public class HeavyObjectManager : HazardManager
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (IsCrushed(collision))
+            IMyCollision mycol = new CollisionWrapper(collision);
+            if (IsCrushed(mycol))
             {
                 HarmPlayer(gameManager);
             }
@@ -42,16 +43,16 @@ public class HeavyObjectManager : HazardManager
     /// Need to check second condition because if player walks to an object that is taller than itself and collides, the collision location can be head, but the player isn't crushed.
     /// <param name="collision"></param>
     /// <returns></returns>
-    private bool IsCrushed(Collision collision)
+    private bool IsCrushed(IMyCollision collision)
     {
-        ContactPoint[] contacts = new ContactPoint[10];
+        MockContactPoint[] contacts = new MockContactPoint[10];
         Vector3 playerUp = collision.gameObject.transform.up;
         Vector3 playerPos = collision.gameObject.transform.position;
         bool isCrushed = false;
         int cnt = collision.GetContacts(contacts);
         for (int i = 0; i < cnt; i++)
         {
-            ContactPoint contact = contacts[i];
+            MockContactPoint contact = contacts[i];
             bool isLocationHead = Vector3.Dot(contact.point - playerPos, playerUp) > 0f;
             bool isCollisionVertical = Math.Abs(Vector3.Dot(contact.normal, playerUp)) > 0.5f;
             if (isLocationHead && isCollisionVertical)

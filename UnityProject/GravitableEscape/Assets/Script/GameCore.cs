@@ -88,4 +88,67 @@ namespace OurGame
         protected int damage;
         protected abstract void HarmPlayer(ILifeManager gameManager);
     }
+
+    // Wrapper Classes for Testing
+    public struct MockContactPoint
+    {
+        public Vector3 point;
+        public Vector3 normal;
+
+        public MockContactPoint(Vector3 point, Vector3 normal)
+        {
+            this.point = point;
+            this.normal = normal;
+        }
+    }
+
+    public interface IMyCollision
+    {
+        GameObject gameObject { get; }
+        int GetContacts(MockContactPoint[] contactArray);
+    }
+
+    public class CollisionWrapper : IMyCollision
+    {
+        private readonly Collision collision;
+
+        public CollisionWrapper(Collision collision)
+        {
+            this.collision = collision;
+        }
+
+        public GameObject gameObject => collision.gameObject;
+
+        public int GetContacts(MockContactPoint[] contactArray)
+        {
+            int count = Mathf.Min(contactArray.Length, collision.contactCount);
+            for (int i = 0; i < count; i++)
+            {
+                var contact = collision.GetContact(i);
+                contactArray[i] = new MockContactPoint(contact.point, contact.normal);
+            }
+            return count;
+        }
+    }
+
+    public class MockCollision : IMyCollision
+    {
+        private readonly GameObject mockGameObject;
+        private readonly List<MockContactPoint> mockContacts;
+        public MockCollision(GameObject mockGameObject, List<MockContactPoint> mockContacts)
+        {
+            this.mockGameObject = mockGameObject;
+            this.mockContacts = mockContacts;
+        }
+        public GameObject gameObject => mockGameObject;
+        public int GetContacts(MockContactPoint[] contactArray)
+        {
+            int count = Mathf.Min(contactArray.Length, mockContacts.Count);
+            for (int i = 0; i < count; i++)
+            {
+                contactArray[i] = mockContacts[i];
+            }
+            return count;
+        }
+    }
 }
