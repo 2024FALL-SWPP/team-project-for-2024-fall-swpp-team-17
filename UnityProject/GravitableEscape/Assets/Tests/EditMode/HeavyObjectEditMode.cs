@@ -15,7 +15,6 @@ public class HeavyObjectEditMode
     [SetUp]
     public void Setup()
     {
-        // 테스트를 위한 GameObject 생성
         heavyObject = new GameObject("HeavyObject");
         heavyObjectManager = heavyObject.AddComponent<HeavyObjectManager>();
 
@@ -36,9 +35,9 @@ public class HeavyObjectEditMode
     [Test]
     public void Collision_HeadVertical_IsCrushed_True()
     {
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position + Vector3.up, // Head collision
                 normal = -Vector3.up // Vertical collision
@@ -54,9 +53,9 @@ public class HeavyObjectEditMode
     [Test]
     public void Collision_HeadHorizontal_IsCrushed_False()
     {
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position + Vector3.up, // Head collision
                 normal = Vector3.right // Vertical collision
@@ -72,9 +71,9 @@ public class HeavyObjectEditMode
     [Test]
     public void Collision_FootVertical_IsCrushed_False()
     {
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position - Vector3.up, // Foot collision
                 normal = -Vector3.up // Vertical collision
@@ -90,9 +89,9 @@ public class HeavyObjectEditMode
     [Test]
     public void Collision_FootHorizontal_IsCrushed_False()
     {
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position - Vector3.up, // Foot collision
                 normal = -Vector3.right // Horizontal collision
@@ -111,9 +110,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 1 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -90));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position + Vector3.right, // Head collision
                 normal = Vector3.right // Vertical collision
@@ -131,9 +130,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 1 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -90));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position + Vector3.right, // Head collision
                 normal = Vector3.up // Horizontal collision
@@ -151,9 +150,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 1 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -90));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position - Vector3.right, // Foot collision
                 normal = Vector3.right // Vertical collision
@@ -171,9 +170,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 1 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -90));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position - Vector3.right, // Foot collision
                 normal = Vector3.up // Horizontal collision
@@ -191,9 +190,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 2 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -180));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position - Vector3.up, // Head collision
                 normal = Vector3.up // Vertical collision
@@ -211,9 +210,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 2 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -180));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position - Vector3.up, // Head collision
                 normal = -Vector3.right // Horizontal collision
@@ -231,9 +230,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 2 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -180));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position + Vector3.up, // Foot collision
                 normal = Vector3.up // Vertical collision
@@ -251,9 +250,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 2 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -180));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position + Vector3.up, // Foot collision
                 normal = Vector3.right // Horizontal collision
@@ -271,9 +270,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 3 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -270));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position - Vector3.right, // Head collision
                 normal = -Vector3.right // Vertical collision
@@ -291,9 +290,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 3 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -270));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position - Vector3.right, // Head collision
                 normal = -Vector3.up // Horizontal collision
@@ -311,9 +310,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 3 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -270));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position + Vector3.right, // Foot collision
                 normal = -Vector3.right // Vertical collision
@@ -331,9 +330,9 @@ public class HeavyObjectEditMode
     {
         // Change gravity as if key 3 is pressed
         playerManager.OnNotify<GravityObserver>(Quaternion.Euler(0, 0, -270));
-        var mockContacts = new List<MockContactPoint>
+        var mockContacts = new List<MyContactPoint>
         {
-            new MockContactPoint
+            new MyContactPoint
             {
                 point = playerObject.transform.position + Vector3.right, // Foot collision
                 normal = -Vector3.up // Horizontal collision

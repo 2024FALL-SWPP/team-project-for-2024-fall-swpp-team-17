@@ -90,12 +90,12 @@ namespace OurGame
     }
 
     // Wrapper Classes for Testing
-    public struct MockContactPoint
+    public struct MyContactPoint
     {
         public Vector3 point;
         public Vector3 normal;
 
-        public MockContactPoint(Vector3 point, Vector3 normal)
+        public MyContactPoint(Vector3 point, Vector3 normal)
         {
             this.point = point;
             this.normal = normal;
@@ -105,7 +105,7 @@ namespace OurGame
     public interface IMyCollision
     {
         GameObject gameObject { get; }
-        int GetContacts(MockContactPoint[] contactArray);
+        int GetContacts(MyContactPoint[] contactArray);
     }
 
     public class CollisionWrapper : IMyCollision
@@ -119,13 +119,13 @@ namespace OurGame
 
         public GameObject gameObject => collision.gameObject;
 
-        public int GetContacts(MockContactPoint[] contactArray)
+        public int GetContacts(MyContactPoint[] contactArray)
         {
             int count = Mathf.Min(contactArray.Length, collision.contactCount);
             for (int i = 0; i < count; i++)
             {
                 var contact = collision.GetContact(i);
-                contactArray[i] = new MockContactPoint(contact.point, contact.normal);
+                contactArray[i] = new MyContactPoint(contact.point, contact.normal);
             }
             return count;
         }
@@ -134,14 +134,14 @@ namespace OurGame
     public class MockCollision : IMyCollision
     {
         private readonly GameObject mockGameObject;
-        private readonly List<MockContactPoint> mockContacts;
-        public MockCollision(GameObject mockGameObject, List<MockContactPoint> mockContacts)
+        private readonly List<MyContactPoint> mockContacts;
+        public MockCollision(GameObject mockGameObject, List<MyContactPoint> mockContacts)
         {
             this.mockGameObject = mockGameObject;
             this.mockContacts = mockContacts;
         }
         public GameObject gameObject => mockGameObject;
-        public int GetContacts(MockContactPoint[] contactArray)
+        public int GetContacts(MyContactPoint[] contactArray)
         {
             int count = Mathf.Min(contactArray.Length, mockContacts.Count);
             for (int i = 0; i < count; i++)

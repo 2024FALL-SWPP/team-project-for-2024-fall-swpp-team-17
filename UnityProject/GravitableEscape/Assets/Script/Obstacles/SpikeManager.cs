@@ -33,7 +33,8 @@ public class SpikeManager : HazardManager
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (IsCollisionUpward(collision))
+            IMyCollision mycol = new CollisionWrapper(collision);
+            if (IsCollisionUpward(mycol))
             {
                 HarmPlayer(gameManager);
             }
@@ -45,14 +46,14 @@ public class SpikeManager : HazardManager
     /// </summary>
     /// <param name="collision"></param>
     /// <returns></returns>
-    bool IsCollisionUpward(Collision collision)
+    bool IsCollisionUpward(IMyCollision collision)
     {
-        ContactPoint[] contacts = new ContactPoint[10];
+        MyContactPoint[] contacts = new MyContactPoint[10];
         bool isUpward = false;
         int cnt = collision.GetContacts(contacts);
         for (int i = 0; i < cnt; i++)
         {
-            ContactPoint contact = contacts[i];
+            MyContactPoint contact = contacts[i];
             if (Vector3.Dot(contact.normal, transform.up) < -0.9f)
             {
                 isUpward = true;

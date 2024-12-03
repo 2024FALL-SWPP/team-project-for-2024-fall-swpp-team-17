@@ -45,14 +45,14 @@ public class HeavyObjectManager : HazardManager
     /// <returns></returns>
     private bool IsCrushed(IMyCollision collision)
     {
-        MockContactPoint[] contacts = new MockContactPoint[10];
+        MyContactPoint[] contacts = new MyContactPoint[10];
         Vector3 playerUp = collision.gameObject.transform.up;
         Vector3 playerPos = collision.gameObject.transform.position;
         bool isCrushed = false;
         int cnt = collision.GetContacts(contacts);
         for (int i = 0; i < cnt; i++)
         {
-            MockContactPoint contact = contacts[i];
+            MyContactPoint contact = contacts[i];
             bool isLocationHead = Vector3.Dot(contact.point - playerPos, playerUp) > 0f;
             bool isCollisionVertical = Math.Abs(Vector3.Dot(contact.normal, playerUp)) > 0.5f;
             if (isLocationHead && isCollisionVertical)
