@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using OurGame;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
 using System.Diagnostics;
 using Unity.VisualScripting;
 
@@ -124,22 +123,10 @@ public class GameManager : MonoBehaviour, ILifeManager
         gameStateChange.NotifyObservers(gameState);
     }
 
-    /// <summary>
-    /// do Pause and change button color
-    /// </summary>
-    public void Puase()
+    public GameState GetGameState()
     {
-        if (Time.timeScale == 0)
-        {
-            uIManager.ChangePauseColorBlack();
-            Time.timeScale = 1;
-        }
-        else
-        {
-            uIManager.ChangePauseColorRed();
-            Time.timeScale = 0;
-        }
-        EventSystem.current.SetSelectedGameObject(null);
+        return gameState;
     }
+
 
 }

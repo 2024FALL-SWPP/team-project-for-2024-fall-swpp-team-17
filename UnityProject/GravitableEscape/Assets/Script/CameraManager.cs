@@ -25,6 +25,9 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
     private GameState gameState;
     public Transform wormhole = null;
 
+    private AudioSource bgmAudioSource; // bgm audio source
+    private bool isbgmPlaying = true;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -32,6 +35,7 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
         gameManager = FindObjectOfType<GameManager>();
         gravityRot = Quaternion.identity;
         targetGravityRot = Quaternion.identity;
+        bgmAudioSource = GetComponent<AudioSource>();
     }
 
 
@@ -180,5 +184,21 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
     public void OnNotify<GameStateObserver>(GameState gs)
     {
         gameState = gs;
+    }
+
+    /// <summary>
+    /// on/off bgm
+    /// </summary>
+    public void ToggleBGM()
+    {
+        if (isbgmPlaying)
+        {
+            bgmAudioSource.Pause();
+        }
+        else
+        {
+            bgmAudioSource.Play();
+        }
+        isbgmPlaying = !isbgmPlaying;
     }
 }

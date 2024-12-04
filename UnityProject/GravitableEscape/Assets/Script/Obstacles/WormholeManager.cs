@@ -7,9 +7,12 @@ public class WormholeManager : MonoBehaviour
 {
     public GameManager gameManager;
     public Vector3 targetPos;
+    private AudioSource wormholl;
+
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        wormholl = GetComponent<AudioSource>();
     }
 
     void Update()

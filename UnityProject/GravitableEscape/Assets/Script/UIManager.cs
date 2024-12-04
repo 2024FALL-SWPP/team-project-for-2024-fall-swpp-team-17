@@ -4,10 +4,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using OurGame;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour, GameStateObserver
 {
-    public TextMeshProUGUI lifeText;
     public Slider healthBar;
     private GameManager gameManager;
     private GameState gameState;
@@ -15,6 +16,8 @@ public class UIManager : MonoBehaviour, GameStateObserver
     public Button pauseButton;
     public TextMeshProUGUI tutorialMessageText;
     private Coroutine typingCoroutine;
+    public GameObject menu;
+    private bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
         healthBar.value = gameManager.Life;
         gameOverText.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
+        menu.SetActive(false);
 
         if (tutorialMessageText != null)
         {
@@ -33,29 +37,35 @@ public class UIManager : MonoBehaviour, GameStateObserver
     // Update is called once per frame
     void Update()
     {
-        // lifeText.text = $"Life: {playerManager.GetLife()}";
-        healthBar.value = gameManager.Life;
+        if (healthBar.value != gameManager.Life)
+        {
+            StartCoroutine(SmoothHealthBarUpdate(gameManager.Life));
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (!isPaused)
+            {
+                Pause();
+            }
+        }
     }
 
     /// <summary>
-    /// change button color
+    /// smooth health bar update, not concrete
     /// </summary>
-    /// <param name="button"></param>
-    /// <param name="color"></param>
-    private void ChangeButtonTextColor(Button button, Color color)
+    /// <param name="targetValue"></param>
+    /// <returns></returns>
+    private IEnumerator SmoothHealthBarUpdate(float targetValue)
     {
-        TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
-        buttonText.color = color;
-    }
-
-    public void ChangePauseColorRed()
-    {
-        ChangeButtonTextColor(pauseButton, Color.red);
-    }
-
-    public void ChangePauseColorBlack()
-    {
-        ChangeButtonTextColor(pauseButton, Color.black);
+        float currentValue = healthBar.value;
+        while (Mathf.Abs(currentValue - targetValue) > 0.01f)
+        {
+            currentValue = Mathf.Lerp(currentValue, targetValue, Time.deltaTime * 2f);
+            healthBar.value = currentValue;
+            yield return null;
+        }
+        healthBar.value = targetValue;
     }
 
     /// <summary>
@@ -121,6 +131,37 @@ public class UIManager : MonoBehaviour, GameStateObserver
             tutorialMessageText.text += letter;
             yield return new WaitForSeconds(0.025f);
         }
+    }
+
+    /// <summary>
+    /// do Pause
+    /// </summary>
+    public void Pause()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            menu.SetActive(true);
+        }
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    /// <summary>
+    /// do resume when pause
+    /// </summary>
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        menu.SetActive(false);
+    }
+
+    /// <summary>
+    /// do restart when pause
+    /// </summary>
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
