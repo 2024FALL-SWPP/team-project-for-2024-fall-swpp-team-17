@@ -29,6 +29,7 @@ public class SpikeManager : HazardManager
         transform.position = fixedPosition;
     }
 
+    private float lastSoundTime = -10f;
     /// <summary>
     /// checks conditions and harms player
     /// </summary>
@@ -40,8 +41,9 @@ public class SpikeManager : HazardManager
             if (IsCollisionUpward(collision))
             {
                 HarmPlayer(gameManager);
-                if (gameManager.GetGameState() == GameState.Stun)
+                if (gameManager.GetGameState() == GameState.Stun && (Time.time - lastSoundTime > 2f))
                 {
+                    lastSoundTime = Time.time;
                     spike.Play();
                 }
             }

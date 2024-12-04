@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!4 &8214695139601549115 stripped
@@ -211,6 +215,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
       propertyPath: m_Name
       value: SpikeBoardTrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
