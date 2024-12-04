@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494646744540132 stripped
@@ -144,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738114624141662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
@@ -221,6 +224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494646074984282 stripped
@@ -253,7 +260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738114220924384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
@@ -330,6 +336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494645637451129 stripped
@@ -362,7 +372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738113584191427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
@@ -439,6 +448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494645672870281 stripped
@@ -471,7 +484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738113548311347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
@@ -548,6 +560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494645562472023 stripped
@@ -580,7 +596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738113490300141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
@@ -657,6 +672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494645930298513 stripped
@@ -689,7 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738113256281643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
@@ -766,6 +784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494645150726973 stripped
@@ -798,7 +820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738112829022599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
@@ -875,6 +896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494645350199398 stripped
@@ -907,7 +932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738112755837660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
@@ -984,6 +1008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494645371137861 stripped
@@ -1016,7 +1044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738112776779263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
@@ -1093,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBoardTrap (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 775b4d54efe1440049c623201a01e734, type: 3}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775b4d54efe1440049c623201a01e734, type: 3}
 --- !u!1 &1274494645387737915 stripped
@@ -1125,7 +1156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpward: 0
 --- !u!4 &1937738112726294913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 775b4d54efe1440049c623201a01e734, type: 3}
