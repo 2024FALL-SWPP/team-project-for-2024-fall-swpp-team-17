@@ -11,9 +11,12 @@ public class MazeManager : MonoBehaviour, PuzzleInterface
     private float rotationSpeed = 30f;
     private bool isCleared = false;
 
+    public ButtonManager buttonManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        buttonManager = GameObject.Find("Button").GetComponent<ButtonManager>();
         Transform keyBoxTransform = transform.Find("keybox");
         keyBox = keyBoxTransform.gameObject;
         startPos = keyBoxTransform.position;
@@ -39,8 +42,15 @@ public class MazeManager : MonoBehaviour, PuzzleInterface
         StartCoroutine(ResetBox());
     }
 
+    public void GetUnlockSignal(int lockID)
+    {
+        
+        PuzzleClear();
+    }
+
     public void PuzzleClear()
     {
+        buttonManager.FixButton();
         isCleared = true;
     }
 

@@ -1017,28 +1017,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 826504090434200912, guid: 33c887dceff774e49ab6812f3b0dfbaa, type: 3}
   m_PrefabInstance: {fileID: 1016741026}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1056871759 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4388087742708900447, guid: b400db92728dbe74888387057db4613f, type: 3}
-  m_PrefabInstance: {fileID: 4854266739231291943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1056871764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4012230221973993701, guid: b400db92728dbe74888387057db4613f, type: 3}
   m_PrefabInstance: {fileID: 4854266739231291943}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1056871765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056871759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0cbb13bff128e44bcf9ceea84bae02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1061751611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1489,8 +1472,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1271069403}
   - component: {fileID: 1271069404}
+  - component: {fileID: 1271069405}
   m_Layer: 0
-  m_Name: clear
+  m_Name: lock
   m_TagString: Clear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1524,6 +1508,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.12706184, y: 3.550528, z: 3.4377747}
   m_Center: {x: -1.017829, y: -0.0005040169, z: -4.041519}
+--- !u!114 &1271069405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271069402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87f0b5af040d7a42a4e194b75d31e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle: {fileID: 1665981662}
 --- !u!4 &1304571873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2120777546032177015, guid: e58941e8ed18348449e2e9733788b80e, type: 3}
@@ -1842,6 +1839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyBox: {fileID: 0}
+  buttonManager: {fileID: 0}
 --- !u!1001 &1748829491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1896,6 +1894,10 @@ PrefabInstance:
     - target: {fileID: 3307132406415994896, guid: 52c096ac9bd2314478a6e9edfabc8549, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157250585391656012, guid: 52c096ac9bd2314478a6e9edfabc8549, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 360
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52c096ac9bd2314478a6e9edfabc8549, type: 3}
@@ -2302,6 +2304,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1431855834246455593, guid: 1554c662c42c1e14cb385db5df146cfd, type: 3}
+      propertyPath: puzzle
+      value: 
+      objectReference: {fileID: 1665981662}
     - target: {fileID: 2185959036953162753, guid: 1554c662c42c1e14cb385db5df146cfd, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2516,26 +2522,6 @@ PrefabInstance:
     - target: {fileID: 4012230221973993701, guid: b400db92728dbe74888387057db4613f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094196974515059258, guid: b400db92728dbe74888387057db4613f, type: 3}
-      propertyPath: m_Size.x
-      value: 2.4021144
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094196974515059258, guid: b400db92728dbe74888387057db4613f, type: 3}
-      propertyPath: m_Size.y
-      value: 2.4193077
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094196974515059258, guid: b400db92728dbe74888387057db4613f, type: 3}
-      propertyPath: m_Center.x
-      value: 0.017195046
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094196974515059258, guid: b400db92728dbe74888387057db4613f, type: 3}
-      propertyPath: m_Center.y
-      value: 0.008597672
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094196974515059258, guid: b400db92728dbe74888387057db4613f, type: 3}
-      propertyPath: m_Center.z
-      value: -0.000000074505806
       objectReference: {fileID: 0}
     - target: {fileID: 4388087742708900447, guid: b400db92728dbe74888387057db4613f, type: 3}
       propertyPath: m_Name
