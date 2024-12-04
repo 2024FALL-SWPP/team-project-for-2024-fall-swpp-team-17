@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour, ILifeManager
     /// Called by obstacles, energy boosters? to modify life
     /// </summary>
     /// <param name="amount">if positive life is increased, if negative life is decreased</param>
-    public int life = 5;
+    private int life = 5;
     public int Life
     {
         get { return life; }

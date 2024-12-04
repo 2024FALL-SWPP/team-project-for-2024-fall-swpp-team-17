@@ -24,7 +24,7 @@ namespace OurGame
     /// </summary>
     /// <typeparam name="Observer">type of Observers to notify the event</typeparam>
     /// <typeparam name="NotifyType">type of OnNotify's parameter</typeparam>
-    class Subject<Observer, NotifyType>
+    public class Subject<Observer, NotifyType>
     {
         private List<Observer<NotifyType>> observers = new List<Observer<NotifyType>>();
         public void AddObserver(Observer<NotifyType> observer)
@@ -89,4 +89,85 @@ namespace OurGame
         protected int damage;
         protected abstract void HarmPlayer(ILifeManager gameManager);
     }
+
+    // Wrapper Classes for Testing
+    public struct MyContactPoint
+    {
+        public Vector3 point;
+        public Vector3 normal;
+
+        public MyContactPoint(Vector3 point, Vector3 normal)
+        {
+            this.point = point;
+            this.normal = normal;
+        }
+    }
+
+    public interface IMyCollision
+    {
+        GameObject gameObject { get; }
+        int GetContacts(MyContactPoint[] contactArray);
+    }
+
+    public class CollisionWrapper : IMyCollision
+    {
+        private readonly Collision collision;
+
+        public CollisionWrapper(Collision collision)
+        {
+            this.collision = collision;
+        }
+
+        public GameObject gameObject => collision.gameObject;
+
+        public int GetContacts(MyContactPoint[] contactArray)
+        {
+            int count = Mathf.Min(contactArray.Length, collision.contactCount);
+            for (int i = 0; i < count; i++)
+            {
+                var contact = collision.GetContact(i);
+                contactArray[i] = new MyContactPoint(contact.point, contact.normal);
+            }
+            return count;
+        }
+    }
+
+    public class MockCollision : IMyCollision
+    {
+        private readonly GameObject mockGameObject;
+        private readonly List<MyContactPoint> mockContacts;
+        public MockCollision(GameObject mockGameObject, List<MyContactPoint> mockContacts)
+        {
+            this.mockGameObject = mockGameObject;
+            this.mockContacts = mockContacts;
+        }
+        public GameObject gameObject => mockGameObject;
+        public int GetContacts(MyContactPoint[] contactArray)
+        {
+            int count = Mathf.Min(contactArray.Length, mockContacts.Count);
+            for (int i = 0; i < count; i++)
+            {
+                contactArray[i] = mockContacts[i];
+            }
+            return count;
+        }
+    }
+
+    public class MockCameraManager : CameraManager, GameStateObserver, GravityObserver
+    {
+        new public void OnNotify<GravityObserver>(Quaternion rot) { }
+        new public void OnNotify<GameStateObserver>(GameState gs) { }
+    }
+    public class MockPlayerManager : PlayerManager, GameStateObserver, GravityObserver
+    {
+        new public void OnNotify<GravityObserver>(Quaternion rot) { }
+        new public void OnNotify<GameStateObserver>(GameState gs) { }
+    }
+
+    public class MockUIManager : UIManager, GameStateObserver
+    {
+        new public void OnNotify<GameStateObserver>(GameState gs) { }
+    }
+
+
 }
