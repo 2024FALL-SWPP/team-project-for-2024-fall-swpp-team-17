@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     private Coroutine typingCoroutine;
     public GameObject menu;
     private bool isPaused = false;
+    public GameObject messagebox;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
         {
             tutorialMessageText.gameObject.SetActive(false);
         }
+        messagebox.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -115,6 +117,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
         if (tutorialMessageText != null)
         {
             tutorialMessageText.gameObject.SetActive(false);
+            messagebox.gameObject.SetActive(false);
         }
     }
 
@@ -123,6 +126,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     /// </summary>
     private IEnumerator TypeMessage(string message)
     {
+        messagebox.gameObject.SetActive(true);
         tutorialMessageText.text = "";
         tutorialMessageText.gameObject.SetActive(true);
 
