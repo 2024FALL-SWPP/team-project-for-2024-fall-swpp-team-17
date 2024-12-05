@@ -2420,6 +2420,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 37231682336361314, guid: dccfd1f1c9aba2c41b528a1949d5f05a, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 37231682336361314, guid: dccfd1f1c9aba2c41b528a1949d5f05a, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 37231682336361314, guid: dccfd1f1c9aba2c41b528a1949d5f05a, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 37231682443149357, guid: dccfd1f1c9aba2c41b528a1949d5f05a, type: 3}
       propertyPath: m_Name
       value: UI_tutorial
