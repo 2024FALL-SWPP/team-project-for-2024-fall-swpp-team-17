@@ -26,7 +26,10 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     public bool revived = false;
     public bool isTransparent = false;
 
-    private AudioSource landing;
+    private AudioSource[] audioSources;
+    public AudioSource landing;
+    public AudioSource step;
+    public AudioSource pipe;
 
     void Start()
     {
@@ -39,8 +42,10 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
         renderers = GetComponentsInChildren<Renderer>();
-        landing = GetComponent<AudioSource>();
-        landing.Pause();
+        audioSources = GetComponents<AudioSource>();
+        landing = audioSources[0];
+        step = audioSources[1];
+        pipe = audioSources[2];
     }
 
     void Update()
@@ -124,6 +129,8 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
             // Apply animation
             animator.SetBool("Static_b", true);
             animator.SetFloat("Speed_f", 0);
+
+            step.Pause();
         }
     }
 
@@ -137,6 +144,10 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         {
             rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
             animator.SetFloat("Speed_f", moveDirection.magnitude * moveSpeed);
+            if (!step.isPlaying && moveDirection.magnitude > 0.1f)
+            {
+                step.Play();
+            }
         }
         else
         {
@@ -276,7 +287,14 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         {
             if (!isGround)
             {
-                landing.Play();
+                if (collision.gameObject.name.StartsWith("Pipe"))
+                {
+                    pipe.Play();
+                }
+                else
+                {
+                    landing.Play();
+                }
             }
             isGround = true;
             animator.SetBool("Jump_b", false);
