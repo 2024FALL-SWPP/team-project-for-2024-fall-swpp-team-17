@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 653931230}
   - component: {fileID: 653931229}
   - component: {fileID: 653931228}
+  - component: {fileID: 364013659}
   m_Layer: 5
   m_Name: main menu
   m_TagString: Untagged
@@ -121,7 +122,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 653931229}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 59316935077697592}
+        m_TargetAssemblyTypeName: UIManager, Scripts
+        m_MethodName: LoadMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &364013659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653931226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6020c520052864ab384d938ae521ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300014, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  activeSprite: {fileID: 21300024, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  pushedSprite: {fileID: 21300016, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
 --- !u!1 &663364514
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +611,7 @@ GameObject:
   - component: {fileID: 1480213275}
   - component: {fileID: 1480213274}
   - component: {fileID: 1480213273}
+  - component: {fileID: 1652364762}
   m_Layer: 5
   m_Name: resume
   m_TagString: Untagged
@@ -705,6 +734,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1652364762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480213271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6020c520052864ab384d938ae521ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300014, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  activeSprite: {fileID: 21300024, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  pushedSprite: {fileID: 21300016, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
 --- !u!1 &1631192073
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +761,7 @@ GameObject:
   - component: {fileID: 1631192077}
   - component: {fileID: 1631192076}
   - component: {fileID: 1631192075}
+  - component: {fileID: 109500084}
   m_Layer: 5
   m_Name: restart
   m_TagString: Untagged
@@ -839,6 +884,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &109500084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631192073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6020c520052864ab384d938ae521ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300014, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  activeSprite: {fileID: 21300024, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  pushedSprite: {fileID: 21300016, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
 --- !u!1 &1794624217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,6 +1498,7 @@ GameObject:
   - component: {fileID: 4879699799202764260}
   - component: {fileID: 6828513324152555465}
   - component: {fileID: 8390378548040015370}
+  - component: {fileID: 746337592}
   m_Layer: 5
   m_Name: bgm
   m_TagString: Untagged
@@ -1560,6 +1621,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &746337592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146645884471210965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6020c520052864ab384d938ae521ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300014, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  activeSprite: {fileID: 21300024, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  pushedSprite: {fileID: 21300016, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
 --- !u!1 &2566617242631789604
 GameObject:
   m_ObjectHideFlags: 0

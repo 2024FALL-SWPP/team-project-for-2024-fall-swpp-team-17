@@ -168,6 +168,11 @@ public class UIManager : MonoBehaviour, GameStateObserver
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
 
 }
 
