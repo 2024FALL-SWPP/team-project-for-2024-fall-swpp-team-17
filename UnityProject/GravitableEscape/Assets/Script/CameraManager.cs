@@ -13,17 +13,18 @@ using UnityEngine.UIElements;
 /// </summary>
 public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
 {
-    public Transform player; // target to follow. Player in our case
-    public float mouseSensitivity = 100f;
+    Transform player; // target to follow. Player in our case
     private float distance = 15f; // distance to target
     private float targetDistance = 15f;
-    public float height = 5f; // height from target
+    float height = 5f; // height from target
     Quaternion gravityRot, targetGravityRot;
-    public InputManager inputManager;
-    public GameManager gameManager;
+    InputManager inputManager;
+    GameManager gameManager;
     Vector3 targetPosition;
-    private GameState gameState;
-    public Transform wormhole = null;
+    GameState gameState;
+    Transform wormhole = null;
+    Vector3 boundsMin, boundsMax;
+    public float corridors_z_min, corridors_z_max;
 
     private AudioSource bgmAudioSource; // bgm audio source
     private bool isbgmPlaying = true;
@@ -36,6 +37,8 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
         gravityRot = Quaternion.identity;
         targetGravityRot = Quaternion.identity;
         bgmAudioSource = GetComponent<AudioSource>();
+        boundsMin = new Vector3(-15f, -15f, corridors_z_min);
+        boundsMax = new Vector3(15f, 15f, corridors_z_max);
     }
 
 
@@ -109,19 +112,19 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
     /// </summary>
     void ShiftToFront()
     {
-        Vector3 directionToTarget = player.position - targetPosition;
-        float distanceToTarget = Vector3.Distance(targetPosition, player.position);
-        Ray ray = new Ray(targetPosition, directionToTarget);
-        RaycastHit[] hits = Physics.RaycastAll(ray, distanceToTarget);
-        foreach (RaycastHit hit in hits)
-        {
-            if (hit.collider.gameObject.tag == "Wall")
-            {
-                float distanceObstToTarget = Vector3.Distance(hit.point, player.position);
-                float shiftedDistance = distance * (distanceObstToTarget / distanceToTarget) * 0.5f;
-                targetPosition = player.position - transform.forward * shiftedDistance + transform.up * height;
-            }
-        }
+        // Vector3 directionToTarget = player.position - targetPosition;
+        // float distanceToTarget = Vector3.Distance(targetPosition, player.position);
+        // Ray ray = new Ray(targetPosition, directionToTarget);
+        // RaycastHit[] hits = Physics.RaycastAll(ray, distanceToTarget);
+        // foreach (RaycastHit hit in hits)
+        // {
+        //     if (hit.collider.gameObject.tag == "Wall")
+        //     {
+        //         float distanceObstToTarget = Vector3.Distance(hit.point, player.position);
+        //         float shiftedDistance = distance * (distanceObstToTarget / distanceToTarget) * 0.5f;
+        //         targetPosition = player.position - transform.forward * shiftedDistance + transform.up * height;
+        //     }
+        // }
         // if (Physics.Raycast(targetPosition, directionToTarget, out RaycastHit hit, distanceToTarget))
         // {
         //     go = hit.collider.gameObject;
@@ -132,14 +135,20 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
         //         targetPosition = player.position - transform.forward * shiftedDistance + transform.up * height;
         //     }
         // }
+
+        targetPosition = new Vector3(
+            Mathf.Clamp(targetPosition.x, boundsMin.x, boundsMax.x),
+            Mathf.Clamp(targetPosition.y, boundsMin.y, boundsMax.y),
+            Mathf.Clamp(targetPosition.z, boundsMin.z, boundsMax.z)
+        );
     }
 
     float spiralAngle = 0.0f, spiralRadius, distanceToWormhole;
-    public float spiralSpeed = 15.0f;
-    public float spiralRadiusDenom = 25.0f;
-    public float moveSpeedNum = 2.5f;
-    public float minRad = 0.5f;
-    public float moveSpeed = 10.0f;
+    float spiralSpeed = 15.0f;
+    float spiralRadiusDenom = 25.0f;
+    float moveSpeedNum = 2.5f;
+    float minRad = 0.5f;
+    float moveSpeed = 10.0f;
 
     /// <summary>
     /// Updates camera's position to spiral towards the wormhole.
