@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7853105314384231626}
   - component: {fileID: 5937129652306454431}
   m_Layer: 0
-  m_Name: collider3
+  m_Name: Pipe
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 8565184980822670582}
   - component: {fileID: 7435645091420495510}
   m_Layer: 0
-  m_Name: collider2
+  m_Name: Pipe
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 8227560522976783793}
   - component: {fileID: 7449156965190758705}
   m_Layer: 0
-  m_Name: collider4
+  m_Name: Pipe
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 453390566529421751}
   - component: {fileID: 4417441060379261989}
   m_Layer: 0
-  m_Name: collider1
+  m_Name: Pipe
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 3476447792926619158}
   - component: {fileID: 8424408433383503322}
   m_Layer: 0
-  m_Name: collider5
+  m_Name: Pipe
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

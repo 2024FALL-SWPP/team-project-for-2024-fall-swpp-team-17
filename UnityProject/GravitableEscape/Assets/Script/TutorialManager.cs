@@ -47,7 +47,7 @@ public class TutorialManager : MonoBehaviour
                 break;
             }
         }
-        
+
         if (newMessage != currentMessage)
         {
             currentMessage = newMessage;
