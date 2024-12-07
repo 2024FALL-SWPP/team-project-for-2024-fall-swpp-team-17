@@ -14,11 +14,11 @@ public class UIManager : MonoBehaviour, GameStateObserver
     private GameState gameState;
     public TextMeshProUGUI gameOverText;
     public Button pauseButton;
-    public TextMeshProUGUI tutorialMessageText;
+    public TextMeshProUGUI hintMessageText;
     private Coroutine typingCoroutine;
     public GameObject menu;
     private bool isPaused = false;
-    public GameObject messagebox;
+    public GameObject hintMessagebox;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +29,11 @@ public class UIManager : MonoBehaviour, GameStateObserver
         pauseButton.gameObject.SetActive(true);
         menu.SetActive(false);
 
-        if (tutorialMessageText != null)
+        if (hintMessageText != null)
         {
-            tutorialMessageText.gameObject.SetActive(false);
+            hintMessageText.gameObject.SetActive(false);
         }
-        messagebox.gameObject.SetActive(false);
+        hintMessagebox.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -91,12 +91,12 @@ public class UIManager : MonoBehaviour, GameStateObserver
 
 
     /// <summary>
-    /// Displays tutorial message with a typing effect, based on player position.
+    /// Displays hint message with a typing effect, based on player position.
     /// </summary>
     /// <param name="message">message for a specific zone</param>
-    public void ShowTutorialMessage(string message)
+    public void ShowMessage(string message)
     {
-        if (tutorialMessageText == null)
+        if (hintMessageText == null)
         {
             return;
         }
@@ -110,14 +110,14 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// Hides tutorial message based on player position.
+    /// Hides hint message based on player position.
     /// </summary>
-    public void HideTutorialMessage()
+    public void HideMessage()
     {
-        if (tutorialMessageText != null)
+        if (hintMessageText != null)
         {
-            tutorialMessageText.gameObject.SetActive(false);
-            messagebox.gameObject.SetActive(false);
+            hintMessageText.gameObject.SetActive(false);
+            hintMessagebox.gameObject.SetActive(false);
         }
     }
 
@@ -126,13 +126,13 @@ public class UIManager : MonoBehaviour, GameStateObserver
     /// </summary>
     private IEnumerator TypeMessage(string message)
     {
-        messagebox.gameObject.SetActive(true);
-        tutorialMessageText.text = "";
-        tutorialMessageText.gameObject.SetActive(true);
+        hintMessagebox.gameObject.SetActive(true);
+        hintMessageText.text = "";
+        hintMessageText.gameObject.SetActive(true);
 
         foreach (char letter in message.ToCharArray())
         {
-            tutorialMessageText.text += letter;
+            hintMessageText.text += letter;
             yield return new WaitForSeconds(0.025f);
         }
     }

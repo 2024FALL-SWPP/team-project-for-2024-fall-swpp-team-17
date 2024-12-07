@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialManager : MonoBehaviour
+public class MessageManager : MonoBehaviour
 {
     private PlayerManager playerManager;
     private GameManager gameManager;
@@ -21,7 +21,7 @@ public class TutorialManager : MonoBehaviour
 
         if (zoneMessages.Length * 2 != zoneBounds.Length)
         {
-            Debug.LogError("Incompatible array size btw tutorial ZoneMessages and ZoneBounds.");
+            Debug.LogError("Incompatible array size btw MessageManager's ZoneMessages and ZoneBounds.");
         }
 
     }
@@ -29,7 +29,7 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameManager.isTutorialScene)
+        if (!gameManager.isMessageRequiredScene)
         {
             return;
         }
@@ -54,11 +54,11 @@ public class TutorialManager : MonoBehaviour
 
             if (string.IsNullOrEmpty(currentMessage))
             {
-                uiManager.HideTutorialMessage();
+                uiManager.HideMessage();
             }
             else
             {
-                uiManager.ShowTutorialMessage(currentMessage);
+                uiManager.ShowMessage(currentMessage);
             }
         }
 
