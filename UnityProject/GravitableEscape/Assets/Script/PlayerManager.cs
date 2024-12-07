@@ -165,14 +165,18 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     bool ObstacleInPath()
     {
         float d = moveSpeed * Time.fixedDeltaTime;
-        float[] distances = new float[] { d * 10, d * 3, d * 3 };
-        Vector3 footPosition = transform.position - transform.up * height;
-        Vector3 headPosition = transform.position + transform.up * height;
-        Vector3[] positions = new Vector3[] { transform.position, footPosition, headPosition };
-        Vector3 leftDirection = Vector3.Cross(moveDirection, transform.up);
-        Vector3 rightDirection = -Vector3.Cross(moveDirection, transform.up);
+        float[] distances = new float[] { d * 10, d * 5, d * 5 };
+        Vector3 footPosition = transform.position - transform.up * height * 1.4f;
+        Vector3 lowerPosition1 = transform.position - transform.up * height * 1.0f;
+        Vector3 lowerPosition2 = transform.position - transform.up * height * 0.5f;
+        Vector3 upperPosition1 = transform.position + transform.up * height * 0.5f;
+        Vector3 upperPosition2 = transform.position + transform.up * height * 1.0f;
+        Vector3 headPosition = transform.position + transform.up * height * 1.4f;
+        Vector3[] positions = new Vector3[] { transform.position, footPosition, lowerPosition1, lowerPosition2, upperPosition1, upperPosition2, headPosition };
+        Vector3 leftDirection = Vector3.Cross(moveDirection, transform.up) + moveDirection;
+        Vector3 rightDirection = -Vector3.Cross(moveDirection, transform.up) + moveDirection;
         Vector3[] directions = new Vector3[] { moveDirection, leftDirection, rightDirection };
-        for (int i = 0; i < positions.Length; i++)
+        for (int i = 0; i < directions.Length; i++)
         {
             Vector3 direction = directions[i];
             float distance = distances[i];
