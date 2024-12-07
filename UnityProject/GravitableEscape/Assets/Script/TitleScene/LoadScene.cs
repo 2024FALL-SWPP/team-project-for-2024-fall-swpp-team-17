@@ -13,15 +13,15 @@ public class LoadScene : MonoBehaviour
 
     public void LoadTutorial()
     {
-        SceneManager.LoadScene("TutorialUITest"); // TODO: Change to Tutorial
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void LoadStage1()
     {
-        SceneManager.LoadScene("Stage1-1"); // TODO: Change to Tutorial
+        SceneManager.LoadScene("Stage1-1");
     }
     public void LoadStage2()
     {
-        SceneManager.LoadScene("Stage2-1"); // TODO: Change to Tutorial
+        SceneManager.LoadScene("Stage2-1");
     }
 }

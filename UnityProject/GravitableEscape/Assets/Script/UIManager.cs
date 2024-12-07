@@ -170,6 +170,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
 
     public void LoadMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
     }
 
