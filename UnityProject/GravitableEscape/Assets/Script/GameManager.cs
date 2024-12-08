@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour, ILifeManager
     Subject<GameStateObserver, GameState> gameStateChange;
     public bool isMessageRequiredScene; // Checks if message ui should be active
 
+    private int life = 5;
+
     void Start()
     {
         gameState = GameState.Playing;
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour, ILifeManager
         gameStateChange.AddObserver(uIManager);
         gameStateChange.NotifyObservers(gameState);
 
+        UpdateLife();
+        
         isMessageRequiredScene = SceneManager.GetActiveScene().name == "Tutorial";
     }
 
@@ -62,12 +66,45 @@ public class GameManager : MonoBehaviour, ILifeManager
         gameStateChange.NotifyObservers(gameState);
     }
 
+    // check whether the life need to be fully charged
+    // scene index(1: tutorial, 2: 1-1, 5: 2-1)
+    private bool isNewStage()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if ((currentSceneIndex == 1) || (currentSceneIndex == 2) || (currentSceneIndex == 5))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    // save life information
+    private void SaveLifeInfo(int lifeInformation)
+    {
+        PlayerPrefs.SetInt("Life",  lifeInformation);
+        PlayerPrefs.Save();
+    }
+    // called when new Scene loaded
+    private void UpdateLife()
+    {
+        if (isNewStage())
+        {
+            life = 5;
+            SaveLifeInfo(5);
+        }
+        else
+        {
+            life = PlayerPrefs.GetInt("Life");
+        }
+    }
+
     // CALLED BY OTHER SCRIPTS
     /// <summary>
     /// Called by obstacles, energy boosters? to modify life
     /// </summary>
-    /// <param name="amount">if positive life is increased, if negative life is decreased</param>
-    private int life = 5;
+    /// <param name="amount">if positive life is increased, if negative life is decreased</param>    
     public int Life
     {
         get { return life; }
@@ -80,6 +117,7 @@ public class GameManager : MonoBehaviour, ILifeManager
             if (gameState == GameState.Playing)
             {
                 life += amount;
+                SaveLifeInfo(life);
                 if (life <= 0)
                 {
                     life = 0;
@@ -99,6 +137,7 @@ public class GameManager : MonoBehaviour, ILifeManager
                 case GameState.Playing:
                 case GameState.Revived:
                     life += amount;
+                    SaveLifeInfo(life);
                     break;
                 default:
                     break;
