@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+    public void LoadTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
     public void LoadMenu()
     {
         SceneManager.LoadScene("Menu");
@@ -23,5 +27,9 @@ public class LoadScene : MonoBehaviour
     public void LoadStage2()
     {
         SceneManager.LoadScene("Stage2-1");
+    }
+    public void LoadEnding()
+    {
+        SceneManager.LoadScene("Ending");
     }
 }
