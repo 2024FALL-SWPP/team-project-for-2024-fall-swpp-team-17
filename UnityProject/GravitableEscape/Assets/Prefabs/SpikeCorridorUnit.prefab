@@ -1502,13 +1502,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeFace
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8525720394978074648, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7186770556041307445, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
 --- !u!4 &7051513549584527243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 418088524713248556, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
   m_PrefabInstance: {fileID: 7210645058677483687}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7680839252152071473 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1046675561973489046, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
+  m_PrefabInstance: {fileID: 7210645058677483687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3635412027344759934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7680839252152071473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7210645058740235046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1779,13 +1801,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeFace (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8525720394978074648, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7186770556041307445, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
 --- !u!4 &7051513547853605101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 418088524713248556, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
   m_PrefabInstance: {fileID: 7210645059091853249}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7680839250754630231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1046675561973489046, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
+  m_PrefabInstance: {fileID: 7210645059091853249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1194633851884023153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7680839250754630231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7210645059093524292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1918,13 +1962,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeFace (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8525720394978074648, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7186770556041307445, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
 --- !u!4 &7051513548392104772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 418088524713248556, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
   m_PrefabInstance: {fileID: 7210645059634938984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7680839251297327614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1046675561973489046, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
+  m_PrefabInstance: {fileID: 7210645059634938984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5358613822277080507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7680839251297327614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7210645059635797631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2333,13 +2399,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeFace (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8525720394978074648, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7186770556041307445, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
 --- !u!4 &7051513548285949879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 418088524713248556, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
   m_PrefabInstance: {fileID: 7210645060059361435}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7680839251402976525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1046675561973489046, guid: c7f0d4a37a4e71746adc3aeea660324a, type: 3}
+  m_PrefabInstance: {fileID: 7210645060059361435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &858442966698064975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7680839251402976525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f604bc7bc0e4546d1b0f6ca8a09ebd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7210645060069931866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2476,6 +2564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FluorescentLamp_R
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dd9e381978077114f9961eeab933c831, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd9e381978077114f9961eeab933c831, type: 3}
 --- !u!4 &6994045528950406103 stripped
@@ -2549,6 +2641,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0ff8f94ae5a8fdf4397eab9c405ea4d1, type: 3}
       propertyPath: m_Name
       value: FluorescentLamp_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ff8f94ae5a8fdf4397eab9c405ea4d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff8f94ae5a8fdf4397eab9c405ea4d1, type: 3}
@@ -2701,6 +2797,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: efc942313f5125c4db12740876dd2f69, type: 3}
       propertyPath: m_Name
       value: LampBottom_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: efc942313f5125c4db12740876dd2f69, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efc942313f5125c4db12740876dd2f69, type: 3}
