@@ -10,6 +10,7 @@ public class GlitchyTextEffect : MonoBehaviour
     private bool isGlitching = false;
     private RectTransform textRectTransform; // RectTransform for position manipulation
     private Vector3 originalPosition;
+    private bool originalBold;
 
 
     private void Start()

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour, ILifeManager
     public Vector3 wormholeTargetPos;
     public GameState gameState; // TODO: make this singleton?
     Subject<GameStateObserver, GameState> gameStateChange;
-    public bool isTutorialScene; // Checks if tutorial ui should be active
+    public bool isMessageRequiredScene; // Checks if message ui should be active
 
     void Start()
     {
@@ -29,8 +29,7 @@ public class GameManager : MonoBehaviour, ILifeManager
         gameStateChange.AddObserver(uIManager);
         gameStateChange.NotifyObservers(gameState);
 
-        isTutorialScene = SceneManager.GetActiveScene().name == "TutorialUITest";
-        UnityEngine.Debug.Log("GM.Start() ... isTutorialScene: " + isTutorialScene);
+        isMessageRequiredScene = SceneManager.GetActiveScene().name == "Tutorial";
     }
 
     // Update is called once per frame
