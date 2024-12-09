@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour, GameStateObserver
     public GameObject menu;
     private bool isPaused = false;
     public GameObject hintMessagebox;
+    public Button restartButton;
+    public Button mainMenuButton;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,8 @@ public class UIManager : MonoBehaviour, GameStateObserver
         gameManager = FindObjectOfType<GameManager>();
         healthBar.value = gameManager.Life;
         gameOverText.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
         menu.SetActive(false);
 
@@ -82,6 +86,9 @@ public class UIManager : MonoBehaviour, GameStateObserver
         {
             case GameState.Gameover:
                 gameOverText.gameObject.SetActive(true);
+                restartButton.gameObject.SetActive(true);
+                mainMenuButton.gameObject.SetActive(true);
+                pauseButton.gameObject.SetActive(false);
                 break;
             default:
 
