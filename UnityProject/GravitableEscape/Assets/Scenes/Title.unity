@@ -728,6 +728,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 0}
+--- !u!1 &840503961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 840503963}
+  - component: {fileID: 840503962}
+  m_Layer: 0
+  m_Name: ShootingStarSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &840503962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840503961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231fb242fd7ddad4eb7e4ce4554480e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingStarPrefab: {fileID: 1698162368}
+--- !u!4 &840503963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840503961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1698162372}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1013079331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1078,6 +1124,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1698162368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8158508480850437133, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+  m_PrefabInstance: {fileID: 8158508480398738125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1698162372 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+  m_PrefabInstance: {fileID: 8158508480398738125}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1973659866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1325,3 +1381,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &8158508480398738125
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 840503963}
+    m_Modifications:
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9786461
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.10058192
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.07042823
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.16484837
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437133, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_Name
+      value: ShootingStar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158508480850437133, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
