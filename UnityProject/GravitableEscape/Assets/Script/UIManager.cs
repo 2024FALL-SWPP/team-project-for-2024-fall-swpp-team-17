@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour, GameStateObserver
     public Button restartButton;
     public Button mainMenuButton;
 
+    public GameObject gravityDirectionMessage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,11 @@ public class UIManager : MonoBehaviour, GameStateObserver
             hintMessageText.gameObject.SetActive(false);
         }
         hintMessagebox.gameObject.SetActive(false);
+        
+        if (gravityDirectionMessage != null)
+        {
+            gravityDirectionMessage.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -143,6 +150,24 @@ public class UIManager : MonoBehaviour, GameStateObserver
             yield return new WaitForSeconds(0.025f);
         }
     }
+
+    public void ShowGravityDirections()
+    {
+        if (gravityDirectionMessage != null)
+        {
+            gravityDirectionMessage.SetActive(true);
+        }
+    }
+
+    public void HideGravityDirections()
+    {
+        if (gravityDirectionMessage != null)
+        {
+            gravityDirectionMessage.SetActive(false);
+        }
+    }
+
+
 
     /// <summary>
     /// do Pause

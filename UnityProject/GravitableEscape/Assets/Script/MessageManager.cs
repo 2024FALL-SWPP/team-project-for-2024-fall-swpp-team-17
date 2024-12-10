@@ -12,7 +12,9 @@ public class MessageManager : MonoBehaviour
     public float[] zoneBounds; // z positions of [start1, end1, start2, end2, ...]
     private string currentMessage = null;
 
-    // Start is called before the first frame update
+    public float gravityMessageStartZ;
+    public float gravityMessageEndZ;
+
     void Start()
     {
         playerManager = FindObjectOfType<PlayerManager>();
@@ -23,10 +25,8 @@ public class MessageManager : MonoBehaviour
         {
             Debug.LogError("Incompatible array size btw MessageManager's ZoneMessages and ZoneBounds.");
         }
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!gameManager.isMessageRequiredScene)
@@ -60,6 +60,16 @@ public class MessageManager : MonoBehaviour
             {
                 uiManager.ShowMessage(currentMessage);
             }
+        }
+
+        // Check if gravity-change instructions should be shown
+        if (playerZ >= gravityMessageStartZ && playerZ <= gravityMessageEndZ)
+        {
+            uiManager.ShowGravityDirections();
+        }
+        else
+        {
+            uiManager.HideGravityDirections();
         }
 
     }
