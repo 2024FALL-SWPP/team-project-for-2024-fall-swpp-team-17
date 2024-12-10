@@ -17,7 +17,6 @@ public class UIManager : MonoBehaviour, GameStateObserver
     public TextMeshProUGUI hintMessageText;
     private Coroutine typingCoroutine;
     public GameObject menu;
-    private bool isPaused = false;
     public GameObject hintMessagebox;
     public Button restartButton;
     public Button mainMenuButton;
@@ -50,7 +49,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (!isPaused)
+            if (gameState != GameState.Paused)
             {
                 Pause();
             }
@@ -149,6 +148,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     /// </summary>
     public void Pause()
     {
+        gameManager.Pause(); // change gameState in gameManager, gameState of UIManager is changed when OnNotify is called
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
@@ -162,6 +162,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     /// </summary>
     public void Resume()
     {
+        gameManager.Resume();
         Time.timeScale = 1;
         menu.SetActive(false);
     }

@@ -5,12 +5,14 @@ using OurGame;
 using UnityEngine.SceneManagement;
 using System.Diagnostics;
 using Unity.VisualScripting;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour, ILifeManager
 {
     public CameraManager cameraManager;
     public PlayerManager playerManager;
     public UIManager uIManager;
+    public GravityManager gravityManager;
     public Vector3 wormholeTargetPos;
     public GameState gameState; // TODO: make this singleton?
     Subject<GameStateObserver, GameState> gameStateChange;
@@ -26,13 +28,15 @@ public class GameManager : MonoBehaviour, ILifeManager
         cameraManager = FindObjectOfType<CameraManager>();
         playerManager = FindObjectOfType<PlayerManager>();
         uIManager = FindObjectOfType<UIManager>();
+        gravityManager = FindObjectOfType<GravityManager>();
         gameStateChange.AddObserver(cameraManager);
         gameStateChange.AddObserver(playerManager);
         gameStateChange.AddObserver(uIManager);
+        gameStateChange.AddObserver(gravityManager);
         gameStateChange.NotifyObservers(gameState);
 
         UpdateLife();
-        
+
         isMessageRequiredScene = SceneManager.GetActiveScene().name == "Tutorial";
     }
 
@@ -83,7 +87,7 @@ public class GameManager : MonoBehaviour, ILifeManager
     // save life information
     private void SaveLifeInfo(int lifeInformation)
     {
-        PlayerPrefs.SetInt("Life",  lifeInformation);
+        PlayerPrefs.SetInt("Life", lifeInformation);
         PlayerPrefs.Save();
     }
     // called when new Scene loaded
@@ -164,6 +168,18 @@ public class GameManager : MonoBehaviour, ILifeManager
     public GameState GetGameState()
     {
         return gameState;
+    }
+
+    public void Pause()
+    {
+        gameState = GameState.Paused;
+        gameStateChange.NotifyObservers(gameState);
+    }
+
+    public void Resume()
+    {
+        gameState = GameState.Playing;
+        gameStateChange.NotifyObservers(gameState);
     }
 
 
