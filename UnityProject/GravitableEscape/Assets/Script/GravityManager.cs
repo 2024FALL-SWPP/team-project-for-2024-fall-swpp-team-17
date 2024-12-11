@@ -37,6 +37,10 @@ public class GravityManager : MonoBehaviour, GameStateObserver
         switch (gameState)
         {
             case GameState.Playing:
+                if (Input.GetKeyDown(KeyCode.Alpha1)) RotateAngle(-90);
+                else if (Input.GetKeyDown(KeyCode.Alpha2)) RotateAngle(-180);
+                else if (Input.GetKeyDown(KeyCode.Alpha3)) RotateAngle(-270);
+                break;
             case GameState.Revived:
                 if (Input.GetKeyDown(KeyCode.Alpha1)) RotateAngle(-90);
                 else if (Input.GetKeyDown(KeyCode.Alpha2)) RotateAngle(-180);
