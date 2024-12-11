@@ -2942,10 +2942,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 638792150}
     m_Modifications:
-    - target: {fileID: 8469807215724402931, guid: 3af7b940b320b11428210f821f15cd5e, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8469807216322774060, guid: 3af7b940b320b11428210f821f15cd5e, type: 3}
       propertyPath: m_Name
       value: Spike2
