@@ -13,6 +13,7 @@ namespace OurGame
     public enum GameState
     {
         Playing,
+        Paused,
         WormholeEffect,
         Gameover,
         Stun, // Player fainted and can't move
