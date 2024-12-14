@@ -7,9 +7,12 @@ public class PlatformManager : MonoBehaviour
     public GameObject[] platformGroupA;
     public GameObject[] platformGroupB;
 
-    private float activeInterval = 5f;
-    private float inactiveInterval = 3f;
-    private float inactiveAlpha = 0.3f;
+    private float activeInterval = 4.0f;
+    private float cautionInterval = 1.0f;
+    private float inactiveInterval = 3.0f;
+
+    private float inactiveAlpha = 0.0f;
+    private float cautionAlpha = 0.3f;
     private float activeAlpha = 1.0f;
 
     private bool isGroupAActive = true;
@@ -36,6 +39,8 @@ public class PlatformManager : MonoBehaviour
             {
                 SetPlatformGroup(platformGroupA, activeAlpha, true);
                 yield return new WaitForSeconds(activeInterval);
+                SetPlatformGroup(platformGroupA, cautionAlpha, true);
+                yield return new WaitForSeconds(cautionInterval);
             }
             else
             {
@@ -56,6 +61,8 @@ public class PlatformManager : MonoBehaviour
             {
                 SetPlatformGroup(platformGroupB, activeAlpha, true);
                 yield return new WaitForSeconds(activeInterval);
+                SetPlatformGroup(platformGroupB, cautionAlpha, true);
+                yield return new WaitForSeconds(cautionInterval);
             }
             else
             {
@@ -71,14 +78,32 @@ public class PlatformManager : MonoBehaviour
     {
         foreach(GameObject platform in platformGroup)
         {
-            SetAlpha(platform, alpha);
+            ChangePlatformVisual(platform, alpha);
             SetCollider(platform, isCollider);
         }
     }
 
-    private void SetAlpha(GameObject platform, float alpha)
+    private void ChangePlatformVisual(GameObject platform, float alpha)
     {
         Renderer renderer = platform.GetComponent<Renderer>();
+        if (alpha == 0.0f)
+        {
+            renderer.enabled = false;
+        }
+        else if (alpha == 1.0f)
+        {
+            renderer.enabled = true;
+            SetAlpha(renderer, alpha);
+        }
+        else
+        {
+            SetAlpha(renderer, alpha);
+        }
+        
+    }
+
+    private void SetAlpha(Renderer renderer, float alpha)
+    {
         Color color = renderer.material.color;
         color.a = alpha;
         renderer.material.color = color;
