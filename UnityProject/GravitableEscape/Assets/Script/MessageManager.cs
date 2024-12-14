@@ -8,25 +8,37 @@ public class MessageManager : MonoBehaviour
     private GameManager gameManager;
     private UIManager uiManager;
 
-    public string[] zoneMessages;
-    public float[] zoneBounds; // z positions of [start1, end1, start2, end2, ...]
+    [System.Serializable]
+    public class Zone
+    {
+        public string message;
+        public float startZ;
+        public float endZ;
+    }
+
+    public Zone[] zones;
+
     private string currentMessage = null;
 
-    // Start is called before the first frame update
+    public float gravityMessageStartZ;
+    public float gravityMessageEndZ;
+
     void Start()
     {
         playerManager = FindObjectOfType<PlayerManager>();
         gameManager = FindObjectOfType<GameManager>();
         uiManager = FindObjectOfType<UIManager>();
 
-        if (zoneMessages.Length * 2 != zoneBounds.Length)
+        // Optional validation to ensure all zones have valid bounds
+        foreach (var zone in zones)
         {
-            Debug.LogError("Incompatible array size btw MessageManager's ZoneMessages and ZoneBounds.");
+            if (zone.startZ > zone.endZ)
+            {
+                Debug.LogError("Invalid zone bounds: startZ is greater than endZ.");
+            }
         }
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!gameManager.isMessageRequiredScene)
@@ -39,11 +51,11 @@ public class MessageManager : MonoBehaviour
 
         string newMessage = null;
 
-        for (int i = 0; i < zoneMessages.Length; i++)
+        foreach (var zone in zones)
         {
-            if (playerZ >= zoneBounds[i * 2] && playerZ <= zoneBounds[i * 2 + 1])
+            if (playerZ >= zone.startZ && playerZ <= zone.endZ)
             {
-                newMessage = zoneMessages[i];
+                newMessage = zone.message;
                 break;
             }
         }
@@ -62,5 +74,14 @@ public class MessageManager : MonoBehaviour
             }
         }
 
+        // Check if gravity-change instructions should be shown
+        if (playerZ >= gravityMessageStartZ && playerZ <= gravityMessageEndZ)
+        {
+            uiManager.ShowGravityDirections();
+        }
+        else
+        {
+            uiManager.HideGravityDirections();
+        }
     }
 }
