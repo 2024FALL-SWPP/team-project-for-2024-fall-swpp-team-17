@@ -209,7 +209,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: oxygen_tank (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 729862565, guid: e4ffe3d95ff51764694fa353bc1b4330, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4ffe3d95ff51764694fa353bc1b4330, type: 3}
 --- !u!1001 &226666995
 PrefabInstance:
@@ -2969,7 +2970,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: oxygen_tank
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 729862565, guid: e4ffe3d95ff51764694fa353bc1b4330, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4ffe3d95ff51764694fa353bc1b4330, type: 3}
 --- !u!1001 &1623032233
 PrefabInstance:
@@ -3568,7 +3570,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: oxygen_tank (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 729862565, guid: e4ffe3d95ff51764694fa353bc1b4330, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4ffe3d95ff51764694fa353bc1b4330, type: 3}
 --- !u!1 &1989960445
 GameObject:
