@@ -11,6 +11,7 @@ public class MessageManager : MonoBehaviour
     [System.Serializable]
     public class Zone
     {
+        [TextArea]
         public string message;
         public float startZ;
         public float endZ;

@@ -144,7 +144,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         {
             rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
             animator.SetFloat("Speed_f", moveDirection.magnitude * moveSpeed);
-            if (!step.isPlaying && moveDirection.magnitude > 0.1f)
+            if (!step.isPlaying && moveDirection.magnitude > 0.1f && isGround)
             {
                 step.Play();
             }
@@ -276,6 +276,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             isGround = false;
+            step.Pause();
             animator.SetBool("Jump_b", true);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
@@ -287,7 +288,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("Wall") || collision.gameObject.name.StartsWith("Spike"))
         {
             if (!isGround)
             {
