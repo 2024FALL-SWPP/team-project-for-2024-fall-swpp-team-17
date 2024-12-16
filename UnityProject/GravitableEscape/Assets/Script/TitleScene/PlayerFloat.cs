@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerFloat : MonoBehaviour
 {
-    private Vector3 boundsMin = new Vector3(-80f, -50f, 110f); // Minimum bounds
-    private Vector3 boundsMax = new Vector3(80f, 55f, 110f);  // Maximum bounds
+    private Vector3 boundsMin = new Vector3(-80f, -50f, 100f); // Minimum bounds
+    private Vector3 boundsMax = new Vector3(80f, 55f, 100f);  // Maximum bounds
     private Vector3 initialVelocity = new Vector3(20f, 20f, 0f); // Initial velocity
     private Vector3 velocity;
     private Vector3 rotationVelocity;
