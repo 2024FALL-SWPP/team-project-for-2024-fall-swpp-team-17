@@ -357,9 +357,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0bef02aabaeb4ba5b2744ccd339a8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundsMin: {x: -120, y: -70, z: 110}
-  boundsMax: {x: 120, y: 70, z: 110}
-  initialVelocity: {x: 20, y: 20, z: 0}
+--- !u!65 &466875980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466875976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3914716, y: 2.8116963, z: 1}
+  m_Center: {x: -0.03641568, y: -0.0045505255, z: 0}
 --- !u!1 &516155568
 GameObject:
   m_ObjectHideFlags: 0

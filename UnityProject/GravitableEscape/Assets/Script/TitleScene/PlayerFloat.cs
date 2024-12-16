@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class PlayerFloat : MonoBehaviour
 {
-    public Vector3 boundsMin = new Vector3(-5f, -5f, 0f); // Minimum bounds
-    public Vector3 boundsMax = new Vector3(5f, 5f, 0f);  // Maximum bounds
-    public Vector3 initialVelocity = new Vector3(2f, 2f, 0f); // Initial velocity
+    private Vector3 boundsMin = new Vector3(-80f, -50f, 110f); // Minimum bounds
+    private Vector3 boundsMax = new Vector3(80f, 55f, 110f);  // Maximum bounds
+    private Vector3 initialVelocity = new Vector3(20f, 20f, 0f); // Initial velocity
     private Vector3 velocity;
-    private Transform cameraTransform;
+    private Vector3 rotationVelocity;
 
     private void Start()
     {
         // Set the initial velocity
         velocity = initialVelocity;
-        cameraTransform = Camera.main.transform;
+        SetRandomRotation();
     }
 
     private void Update()
@@ -53,6 +53,25 @@ public class PlayerFloat : MonoBehaviour
                 Mathf.Clamp(transform.position.z, boundsMin.z, boundsMax.z)
             );
         }
-        // transform.LookAt(cameraTransform);
+
+        transform.Rotate(rotationVelocity * Time.deltaTime);
+
+
+    }
+
+    private void OnMouseDown()
+    {
+        SetRandomRotation();
+    }
+
+
+    private void SetRandomRotation()
+    {
+        float maxRotationSpeed = 150f;
+        rotationVelocity = new Vector3(
+            Random.Range(-maxRotationSpeed, maxRotationSpeed),
+            Random.Range(-maxRotationSpeed, maxRotationSpeed),
+            Random.Range(-maxRotationSpeed, maxRotationSpeed)
+        );
     }
 }
