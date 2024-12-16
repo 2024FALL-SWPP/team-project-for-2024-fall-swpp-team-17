@@ -529,8 +529,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -638,10 +638,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gravitable Escape
+  m_text: GRAVITABLE ESCAPE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5cd216a5a90ef0b4390b3f7d7b4c510b, type: 2}
-  m_sharedMaterial: {fileID: -2717955679148677469, guid: 5cd216a5a90ef0b4390b3f7d7b4c510b, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: a2a6162566f2149a784950c022ab0436, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
