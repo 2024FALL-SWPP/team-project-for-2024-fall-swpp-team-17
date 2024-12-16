@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour, ILifeManager
     private bool isNewStage()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if ((currentSceneIndex == 1) || (currentSceneIndex == 2) || (currentSceneIndex == 5))
+        if ((currentSceneIndex == 2) || (currentSceneIndex == 3) || (currentSceneIndex == 6))
         {
             return true;
         }

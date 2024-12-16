@@ -57,7 +57,7 @@ public class InputManager : MonoBehaviour, GravityObserver
     /// <param name="rot"></param>
     public void OnNotify<GravityObserver>(Quaternion rot)
     {
-        yaw = 0;
-        pitch = 0;
+        // yaw = 0;
+        // pitch = 0;
     }
 }
