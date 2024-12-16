@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SpawnShootingStars : MonoBehaviour
 {
-    
+
     public GameObject shootingStarPrefab;
-    private float spawnInterval = 2.5f; // Time between spawns
+    private float spawnInterval = 4.0f; // Time between spawns
     private static SpawnShootingStars instance;
 
 
@@ -58,7 +58,7 @@ public class SpawnShootingStars : MonoBehaviour
         rb.useGravity = false;
         float fallSpeed = 10f;
         rb.velocity = new Vector3(-fallSpeed, -fallSpeed, 0f);
-        
+
         star.transform.rotation = Quaternion.Euler(10f, 10f, 15f);
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
