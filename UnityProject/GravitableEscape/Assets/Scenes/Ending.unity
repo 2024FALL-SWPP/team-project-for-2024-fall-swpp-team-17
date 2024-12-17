@@ -290,8 +290,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1625538014}
-        m_TargetAssemblyTypeName: LoadScene, Scripts
+      - m_Target: {fileID: 1625538016}
+        m_TargetAssemblyTypeName: LoadNextSceneManager, Scripts
         m_MethodName: LoadTitle
         m_Mode: 1
         m_Arguments:
@@ -440,8 +440,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1625538014}
-        m_TargetAssemblyTypeName: LoadScene, Scripts
+      - m_Target: {fileID: 1625538016}
+        m_TargetAssemblyTypeName: LoadNextSceneManager, Scripts
         m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
@@ -1116,7 +1116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1625538015}
-  - component: {fileID: 1625538014}
+  - component: {fileID: 1625538016}
   m_Layer: 0
   m_Name: LoadSceneManager
   m_TagString: Untagged
@@ -1124,18 +1124,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1625538014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625538013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fea2bcaed18c49bdbe690c339e24669, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1625538015
 Transform:
   m_ObjectHideFlags: 0
@@ -1151,6 +1139,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1625538016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625538013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92150dd54cbc7f54bb3b7c1338178046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1912366720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bb544402cf340354d9226835b5a83e7b, type: 3}

@@ -62,6 +62,14 @@ public class LoadNextSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    public void Load1()
+    {
+        SceneManager.LoadScene("Stage1-1");
+    }
+    public void Load2()
+    {
+        SceneManager.LoadScene("Stage2-1");
+    }
 
 
 }
