@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour, ILifeManager
     Subject<GameStateObserver, GameState> gameStateChange;
     public bool isMessageRequiredScene; // Checks if message ui should be active
 
-    private int life = 5;
+    private int life;
+    private int beginningLife;
 
     void Start()
     {
@@ -90,6 +91,12 @@ public class GameManager : MonoBehaviour, ILifeManager
         PlayerPrefs.SetInt("Life", lifeInformation);
         PlayerPrefs.Save();
     }
+
+    public void ResetLife()
+    {
+        SaveLifeInfo(beginningLife);
+    }
+
     // called when new Scene loaded
     private void UpdateLife()
     {
@@ -102,6 +109,7 @@ public class GameManager : MonoBehaviour, ILifeManager
         {
             life = PlayerPrefs.GetInt("Life");
         }
+        beginningLife = life;
     }
 
     // CALLED BY OTHER SCRIPTS

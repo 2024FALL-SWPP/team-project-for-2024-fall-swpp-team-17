@@ -1407,18 +1407,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50
       objectReference: {fileID: 0}
@@ -1458,17 +1446,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 8158508480850437129, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8158508480850437133, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
       propertyPath: m_Name
       value: ShootingStar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8158508480850437133, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6050b60a05b72cd49b0f3553b827d507, type: 3}

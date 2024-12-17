@@ -199,6 +199,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     public void Restart()
     {
         Time.timeScale = 1;
+        gameManager.ResetLife();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

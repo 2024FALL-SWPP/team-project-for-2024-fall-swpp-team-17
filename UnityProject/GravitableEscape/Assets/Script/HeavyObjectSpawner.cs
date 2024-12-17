@@ -37,6 +37,7 @@ public class HeavyObjectSpawner : MonoBehaviour
         // above player's head
         Vector3 spawnPosition = player.position + player.up * 15.0f + player.forward * 5.0f;
 
+
         spawnedBox = Instantiate(boxPrefab, spawnPosition, Quaternion.identity);
     }
 }
