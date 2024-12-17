@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
             hintMessageText.gameObject.SetActive(false);
         }
         hintMessagebox.gameObject.SetActive(false);
-        
+
         if (gravityDirectionMessage != null)
         {
             gravityDirectionMessage.SetActive(false);
@@ -204,7 +204,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     public void LoadMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Title");
     }
 
 
