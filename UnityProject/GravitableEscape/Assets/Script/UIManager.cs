@@ -95,6 +95,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
                 restartButton.gameObject.SetActive(true);
                 mainMenuButton.gameObject.SetActive(true);
                 pauseButton.gameObject.SetActive(false);
+                HideMessage();
                 break;
             default:
 
