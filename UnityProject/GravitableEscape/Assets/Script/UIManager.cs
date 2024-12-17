@@ -22,11 +22,13 @@ public class UIManager : MonoBehaviour, GameStateObserver
     public Button mainMenuButton;
 
     public GameObject gravityDirectionMessage;
+    private LoadNextSceneManager loadNextSceneManager;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        loadNextSceneManager = FindObjectOfType<LoadNextSceneManager>();
         healthBar.value = gameManager.Life;
         gameOverText.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
@@ -199,14 +201,13 @@ public class UIManager : MonoBehaviour, GameStateObserver
     public void Restart()
     {
         Time.timeScale = 1;
-        gameManager.ResetLife();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        loadNextSceneManager.CurrentRestart();
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Title");
+        loadNextSceneManager.LoadTitle();
     }
 
 
