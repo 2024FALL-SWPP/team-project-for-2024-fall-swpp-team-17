@@ -10,8 +10,8 @@ using UnityEngine;
 /// </summary>
 public class InputManager : MonoBehaviour, GravityObserver
 {
-    private float xSensitivity = 150f;
-    private float ySensitivity = 150f;
+    private float xSensitivity = 100f;
+    private float ySensitivity = 100f;
     public float yaw, pitch, scrollInput;
     private float mouseX, mouseY, savedYaw, savedPitch;
 
