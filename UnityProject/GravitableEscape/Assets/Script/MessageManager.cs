@@ -20,6 +20,8 @@ public class MessageManager : MonoBehaviour
     public Zone[] zones;
 
     private string currentMessage = null;
+    private bool isDelayTriggered = false;
+    private bool hasMessageShown = false;
 
     public float gravityMessageStartZ;
     public float gravityMessageEndZ;
@@ -57,17 +59,24 @@ public class MessageManager : MonoBehaviour
             if (playerZ >= zone.startZ && playerZ <= zone.endZ)
             {
                 newMessage = zone.message;
+                if (playerZ <= -80 && !isDelayTriggered && !hasMessageShown)
+                {
+                    isDelayTriggered = true;
+                    hasMessageShown = true;
+                    StartCoroutine(CallUIManagerAfterDelay(newMessage));
+                }
                 break;
             }
         }
 
-        if (newMessage != currentMessage)
+        if (newMessage != currentMessage && !isDelayTriggered)
         {
             currentMessage = newMessage;
 
             if (string.IsNullOrEmpty(currentMessage))
             {
                 uiManager.HideMessage();
+                hasMessageShown = false;
             }
             else
             {
@@ -84,5 +93,13 @@ public class MessageManager : MonoBehaviour
         {
             uiManager.HideGravityDirections();
         }
+
+    }
+
+    IEnumerator CallUIManagerAfterDelay(string currentMessage)
+    {
+        yield return new WaitForSeconds(1.5f);
+        uiManager.ShowMessage(currentMessage);
+        isDelayTriggered = false;
     }
 }
