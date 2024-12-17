@@ -7,11 +7,14 @@ using UnityEngine;
 public class HeavyObjectManager : HazardManager
 {
     private GameManager gameManager;
+    private AudioSource audioSource;
+    private bool hasPlayedSound = false;
     // Start is called before the first frame update
     void Start()
     {
         damage = 1;
         gameManager = FindObjectOfType<GameManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,15 +26,28 @@ public class HeavyObjectManager : HazardManager
     /// checks if player is crushed below this object and harms player
     /// </summary>
     /// <param name="collision"></param>
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             IMyCollision mycol = new CollisionWrapper(collision);
             if (IsCrushed(mycol))
             {
+                if (!hasPlayedSound)
+                {
+                    audioSource.Play();
+                    hasPlayedSound = true;
+                }
                 HarmPlayer(gameManager);
             }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            hasPlayedSound = false;
         }
     }
 
