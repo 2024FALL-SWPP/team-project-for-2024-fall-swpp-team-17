@@ -107,35 +107,10 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
     }
 
     /// <summary>
-    /// When there is an obstacle between the camera and player, this function shifts the camera to be in front of the obstacle, so that the camera can see the player.
-    /// This also prevents the camera from seeing outside of the corridors.
+    /// When the camera is outside the corridor, this function shifts the camera to be in front of the wall, so that the camera can see the player.
     /// </summary>
     void ShiftToFront()
     {
-        // Vector3 directionToTarget = player.position - targetPosition;
-        // float distanceToTarget = Vector3.Distance(targetPosition, player.position);
-        // Ray ray = new Ray(targetPosition, directionToTarget);
-        // RaycastHit[] hits = Physics.RaycastAll(ray, distanceToTarget);
-        // foreach (RaycastHit hit in hits)
-        // {
-        //     if (hit.collider.gameObject.tag == "Wall")
-        //     {
-        //         float distanceObstToTarget = Vector3.Distance(hit.point, player.position);
-        //         float shiftedDistance = distance * (distanceObstToTarget / distanceToTarget) * 0.5f;
-        //         targetPosition = player.position - transform.forward * shiftedDistance + transform.up * height;
-        //     }
-        // }
-        // if (Physics.Raycast(targetPosition, directionToTarget, out RaycastHit hit, distanceToTarget))
-        // {
-        //     go = hit.collider.gameObject;
-        //     if (hit.collider.gameObject.tag == "ground")
-        //     {
-        //         float distanceObstToTarget = Vector3.Distance(hit.point, player.position);
-        //         float shiftedDistance = distance * (distanceObstToTarget / distanceToTarget) * 0.5f;
-        //         targetPosition = player.position - transform.forward * shiftedDistance + transform.up * height;
-        //     }
-        // }
-
         targetPosition = new Vector3(
             Mathf.Clamp(targetPosition.x, boundsMin.x, boundsMax.x),
             Mathf.Clamp(targetPosition.y, boundsMin.y, boundsMax.y),
