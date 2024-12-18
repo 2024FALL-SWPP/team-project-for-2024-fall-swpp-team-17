@@ -1676,6 +1676,7 @@ MonoBehaviour:
   hintMessagebox: {fileID: 2927183}
   restartButton: {fileID: 5408618037924833279}
   mainMenuButton: {fileID: 9126397834019559534}
+  loadScene: {fileID: 0}
   gravityDirectionMessage: {fileID: 1442008846}
 --- !u!114 &1567482273145476598
 MonoBehaviour:
@@ -1959,7 +1960,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoadScene, Scripts
-        m_MethodName: LoadStage2
+        m_MethodName: LoadStage1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

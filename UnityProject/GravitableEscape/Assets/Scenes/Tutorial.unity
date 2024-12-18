@@ -562,6 +562,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 59316935077697592, guid: 5d53074d6ff1521448c12a867e592853, type: 3}
+      propertyPath: loadScene
+      value: 
+      objectReference: {fileID: 1729472539}
     - target: {fileID: 59316935077697593, guid: 5d53074d6ff1521448c12a867e592853, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -662,6 +666,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1729472539}
+    - target: {fileID: 5408618037924833279, guid: 5d53074d6ff1521448c12a867e592853, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadTutorial
+      objectReference: {fileID: 0}
     - target: {fileID: 9126397834019559534, guid: 5d53074d6ff1521448c12a867e592853, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4801,6 +4809,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 389232962}
     m_Modifications:
+    - target: {fileID: 1264095, guid: 5c00378d8f6d42f4183e4cbe2323a290, type: 3}
+      propertyPath: loadScene
+      value: 
+      objectReference: {fileID: 1729472539}
+    - target: {fileID: 597763968, guid: 5c00378d8f6d42f4183e4cbe2323a290, type: 3}
+      propertyPath: loadScene
+      value: 
+      objectReference: {fileID: 1729472539}
+    - target: {fileID: 1195660742, guid: 5c00378d8f6d42f4183e4cbe2323a290, type: 3}
+      propertyPath: loadScene
+      value: 
+      objectReference: {fileID: 1729472539}
+    - target: {fileID: 1845044636, guid: 5c00378d8f6d42f4183e4cbe2323a290, type: 3}
+      propertyPath: loadScene
+      value: 
+      objectReference: {fileID: 1729472539}
     - target: {fileID: 3465464903527408304, guid: 5c00378d8f6d42f4183e4cbe2323a290, type: 3}
       propertyPath: m_RootOrder
       value: 12

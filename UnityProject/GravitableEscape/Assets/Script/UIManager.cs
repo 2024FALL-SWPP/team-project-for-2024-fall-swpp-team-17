@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using OurGame;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour, GameStateObserver
 {
@@ -20,6 +19,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     public GameObject hintMessagebox;
     public Button restartButton;
     public Button mainMenuButton;
+    public LoadScene loadScene;
 
     public GameObject gravityDirectionMessage;
 
@@ -200,13 +200,13 @@ public class UIManager : MonoBehaviour, GameStateObserver
     {
         Time.timeScale = 1;
         gameManager.ResetLife();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        loadScene.ReloadScene();
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Title");
+        loadScene.LoadTitle();
     }
 
 
