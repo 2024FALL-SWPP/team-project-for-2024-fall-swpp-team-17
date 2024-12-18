@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class LoadScene : MonoBehaviour
 {
     public void LoadTitle()
@@ -31,5 +30,22 @@ public class LoadScene : MonoBehaviour
     public void LoadEnding()
     {
         SceneManager.LoadScene("Ending");
+    }
+
+    public void LoadNextScene()
+    {
+        Debug.Log("good");
+        SceneManager.LoadScene(GetNextSceneIndex());
+    }
+
+    private int GetNextSceneIndex()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        return currentSceneIndex + 1;
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
