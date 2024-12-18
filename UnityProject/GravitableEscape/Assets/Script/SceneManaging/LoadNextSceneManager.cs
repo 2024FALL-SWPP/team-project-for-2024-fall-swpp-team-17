@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LoadNextSceneManager : MonoBehaviour
 {
+    public LoadScene loadScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +22,8 @@ public class LoadNextSceneManager : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            SceneManager.LoadScene(GetNextSceneIndex());
+            Debug.Log("collision");
+            loadScene.LoadNextScene();
         }
-    }
-
-    private int GetNextSceneIndex()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        return currentSceneIndex + 1;
     }
 }
