@@ -171,7 +171,7 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
     }
 
     /// <summary>
-    /// on/off bgm
+    /// Turns on/off bgm
     /// </summary>
     public void ToggleBGM()
     {

@@ -14,9 +14,8 @@ public class GameManager : MonoBehaviour, ILifeManager
     public UIManager uIManager;
     public GravityManager gravityManager;
     public Vector3 wormholeTargetPos;
-    public GameState gameState; // TODO: make this singleton?
+    public GameState gameState;
     Subject<GameStateObserver, GameState> gameStateChange;
-    public bool isMessageRequiredScene; // Checks if message ui should be active
 
     private int life;
     private int beginningLife;
@@ -36,15 +35,7 @@ public class GameManager : MonoBehaviour, ILifeManager
         gameStateChange.AddObserver(gravityManager);
         gameStateChange.NotifyObservers(gameState);
 
-        UpdateLife();
-
-        isMessageRequiredScene = SceneManager.GetActiveScene().name == "Tutorial";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        InitializeLife();
     }
 
     /// <summary>
@@ -71,24 +62,14 @@ public class GameManager : MonoBehaviour, ILifeManager
         gameStateChange.NotifyObservers(gameState);
     }
 
-    // check whether the life need to be fully charged
-    // scene index(1: tutorial, 2: 1-1, 5: 2-1)
-    private bool isNewStage()
+
+    /// <summary>
+    /// This function saves life to PlayerPrefs
+    /// </summary>
+    /// <param name="life">life to save in PlayrePrefs</param>
+    private void SaveLifeInfo(int life)
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if ((currentSceneIndex == 2) || (currentSceneIndex == 3) || (currentSceneIndex == 6))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    // save life information
-    private void SaveLifeInfo(int lifeInformation)
-    {
-        PlayerPrefs.SetInt("Life", lifeInformation);
+        PlayerPrefs.SetInt("Life", life);
         PlayerPrefs.Save();
     }
 
@@ -97,10 +78,17 @@ public class GameManager : MonoBehaviour, ILifeManager
         SaveLifeInfo(beginningLife);
     }
 
-    // called when new Scene loaded
-    private void UpdateLife()
+    /// <summary>
+    /// This function is called when a new scene is loaded to initialize life
+    /// </summary>
+    /// <remarks>
+    /// checks whether the life need to be fully charged (life is fully charged only on first scenes of each stage)
+    /// </remarks>
+    private void InitializeLife()
     {
-        if (isNewStage())
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        // scene index(2: tutorial, 3: 1-1, : 2-1)
+        if ((currentSceneIndex == 2) || (currentSceneIndex == 3) || (currentSceneIndex == 6))
         {
             life = 5;
             SaveLifeInfo(5);
@@ -113,15 +101,16 @@ public class GameManager : MonoBehaviour, ILifeManager
     }
 
     // CALLED BY OTHER SCRIPTS
-    /// <summary>
-    /// Called by obstacles, energy boosters? to modify life
-    /// </summary>
-    /// <param name="amount">if positive life is increased, if negative life is decreased</param>    
+
     public int Life
     {
         get { return life; }
     }
-    // private float lastHarmTime = -100.0f;
+
+    /// <summary>
+    /// Called by obstacles to modify life
+    /// </summary>
+    /// <param name="amount">if positive life is increased, if negative life is decreased</param>    
     public void ModifyLife(int amount)
     {
         if (amount < 0) // harm
@@ -173,22 +162,33 @@ public class GameManager : MonoBehaviour, ILifeManager
         gameStateChange.NotifyObservers(gameState);
     }
 
+    /// <summary>
+    /// Used when adding an GameStateObserver is inefficient in terms of performance
+    /// </summary>
+    /// <remarks>
+    /// For example, SpikeManager only needs the gameState when it has to decide whether to play the sound or not.
+    /// It is inefficient for all spikes to track the gameState.
+    /// <returns></returns>
     public GameState GetGameState()
     {
         return gameState;
     }
 
+    /// <summary>
+    /// This function is called by UIManager to set the gamestate to Paused
+    /// </summary>
     public void Pause()
     {
         gameState = GameState.Paused;
         gameStateChange.NotifyObservers(gameState);
     }
 
+    /// <summary>
+    /// This function is called by UIManager to set the gamestate to Playing
+    /// </summary>
     public void Resume()
     {
         gameState = GameState.Playing;
         gameStateChange.NotifyObservers(gameState);
     }
-
-
 }

@@ -14,11 +14,9 @@ public class GravityManager : MonoBehaviour, GameStateObserver
     public Vector3 initGravity = new Vector3(0, -35f, 0);
     public float lastChangeTime = -100f;
     private GameState gameState;
-    private Rigidbody[] rigidbodies;
     Subject<GravityObserver, Quaternion> gravityChange;
     void Start()
     {
-        rigidbodies = FindObjectsOfType<Rigidbody>();
         CameraManager cameraManager = FindObjectOfType<CameraManager>();
         PlayerManager playerManager = FindObjectOfType<PlayerManager>();
         gravityChange = new Subject<GravityObserver, Quaternion>();
@@ -26,8 +24,9 @@ public class GravityManager : MonoBehaviour, GameStateObserver
         gravityChange.AddObserver(cameraManager);
         Physics.gravity = initGravity;
     }
+
     /// <summary>
-    /// This function checks if every rigidbody object is at rest, 
+    /// This function checks if the gameState is Playing, 
     /// and if so, alters gravity according to the input key.
     /// </summary>
     void Update()
@@ -48,9 +47,9 @@ public class GravityManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// This function rotates this object, Physics.gravity, camera, player.
+    /// This function rotates the gravity, and notifies GravityObservers.
     /// </summary>
-    /// <param name="angle">angle to rotate</param>
+    /// <param name="angle">amount to rotate</param>
     void RotateAngle(int angle)
     {
         if (Time.time - lastChangeTime > 0.5f)
@@ -61,18 +60,6 @@ public class GravityManager : MonoBehaviour, GameStateObserver
         }
     }
 
-    /// <summary>
-    /// This function checks whether all rigidbodies are at rest.
-    /// </summary>
-    /// <returns>true if all rigidbodies are at rest, false if not</returns>
-    private bool AllRest()
-    {
-        foreach (Rigidbody rb in rigidbodies)
-        {
-            if (rb.velocity.magnitude > 0.1f) return false;
-        }
-        return true;
-    }
     public void OnNotify<GameStateObserver>(GameState gs)
     {
         gameState = gs;

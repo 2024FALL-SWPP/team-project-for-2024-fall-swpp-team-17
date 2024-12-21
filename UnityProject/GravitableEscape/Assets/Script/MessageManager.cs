@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MessageManager : MonoBehaviour
 {
@@ -25,9 +26,12 @@ public class MessageManager : MonoBehaviour
 
     public float gravityMessageStartZ;
     public float gravityMessageEndZ;
+    public bool isMessageRequiredScene;
 
     void Start()
     {
+        isMessageRequiredScene = SceneManager.GetActiveScene().name == "Tutorial";
+
         playerManager = FindObjectOfType<PlayerManager>();
         gameManager = FindObjectOfType<GameManager>();
         uiManager = FindObjectOfType<UIManager>();
@@ -44,7 +48,7 @@ public class MessageManager : MonoBehaviour
 
     void Update()
     {
-        if (!gameManager.isMessageRequiredScene)
+        if (!isMessageRequiredScene)
         {
             return;
         }

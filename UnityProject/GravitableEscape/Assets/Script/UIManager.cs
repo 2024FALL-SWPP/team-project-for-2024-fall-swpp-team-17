@@ -23,7 +23,6 @@ public class UIManager : MonoBehaviour, GameStateObserver
 
     public GameObject gravityDirectionMessage;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -46,7 +45,6 @@ public class UIManager : MonoBehaviour, GameStateObserver
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (healthBar.value != gameManager.Life)
@@ -151,6 +149,9 @@ public class UIManager : MonoBehaviour, GameStateObserver
         }
     }
 
+    /// <summary>
+    /// Shows gravity information 1, 2, 3 on screen.
+    /// </summary>
     public void ShowGravityDirections()
     {
         if (gravityDirectionMessage != null)
@@ -159,6 +160,9 @@ public class UIManager : MonoBehaviour, GameStateObserver
         }
     }
 
+    /// <summary>
+    /// Hides gravity information 1, 2, 3 on screen.
+    /// </summary>
     public void HideGravityDirections()
     {
         if (gravityDirectionMessage != null)
@@ -167,10 +171,8 @@ public class UIManager : MonoBehaviour, GameStateObserver
         }
     }
 
-
-
     /// <summary>
-    /// do Pause
+    /// This function is envoked when pause button is clicked in the UI
     /// </summary>
     public void Pause()
     {
@@ -184,7 +186,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// do resume when pause
+    /// This function is envoked when resume button is clicked after pause in the UI
     /// </summary>
     public void Resume()
     {
@@ -194,7 +196,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// do restart when pause
+    /// This function is envoked when restart button is clicked after pause in the UI
     /// </summary>
     public void Restart()
     {
@@ -203,12 +205,13 @@ public class UIManager : MonoBehaviour, GameStateObserver
         loadScene.ReloadScene();
     }
 
+    /// <summary>
+    /// This function is envoked when menu button is clicked after pause in the UI
+    /// </summary>
     public void LoadMenu()
     {
         Time.timeScale = 1;
         loadScene.LoadTitle();
     }
-
-
 }
 
