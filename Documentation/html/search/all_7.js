@@ -1,7 +1,19 @@
 var searchData=
 [
-  ['harmplayer_0',['HarmPlayer',['../class_our_game_1_1_hazard_manager.html#a330c5b0b801ec862fff669da21f19543',1,'OurGame.HazardManager.HarmPlayer()'],['../class_spike_manager.html#a0f646badc1becde7df50af0b545bc4d1',1,'SpikeManager.HarmPlayer()']]],
-  ['hazardmanager_1',['HazardManager',['../class_our_game_1_1_hazard_manager.html',1,'OurGame']]],
-  ['height_2',['height',['../class_camera_manager.html#a59294b6c234ef35f4e3a1400f516b6b2',1,'CameraManager.height'],['../class_player_manager.html#addf53521ccf5370d289658d92595230d',1,'PlayerManager.height']]],
-  ['heightdifference_3',['heightDifference',['../class_button_manager.html#a4cc67587b4a1f0418554872b4c1bd5f8',1,'ButtonManager']]]
+  ['harmcoroutine_0',['HarmCoroutine',['../class_game_manager.html#a8fc676f0946b9d9f8b0c39f098319e63',1,'GameManager']]],
+  ['harmplayer_1',['HarmPlayer',['../class_our_game_1_1_hazard_manager.html#a4324e615c5444e0abd6c10783d1b95d2',1,'OurGame.HazardManager.HarmPlayer()'],['../class_heavy_object_manager.html#a839526e5f3e96e9c4479d73197f304b8',1,'HeavyObjectManager.HarmPlayer()'],['../class_spike_manager.html#a1b178464f502d13c4d58027f1f3adea4',1,'SpikeManager.HarmPlayer()']]],
+  ['hasmessageshown_2',['hasMessageShown',['../class_message_manager.html#afdd9c64fe0babbb39e006b237141542a',1,'MessageManager']]],
+  ['hasplayedsound_3',['hasPlayedSound',['../class_heavy_object_manager.html#a648b853fce911e9e5039813ca6d55515',1,'HeavyObjectManager']]],
+  ['hazardmanager_4',['HazardManager',['../class_our_game_1_1_hazard_manager.html',1,'OurGame']]],
+  ['healthbar_5',['healthBar',['../class_u_i_manager.html#a669c6922c48858598d40b51aa8f568a9',1,'UIManager']]],
+  ['heavyobjectmanager_6',['HeavyObjectManager',['../class_heavy_object_manager.html',1,'']]],
+  ['heavyobjectmanager_2ecs_7',['HeavyObjectManager.cs',['../_heavy_object_manager_8cs.html',1,'']]],
+  ['heavyobjectspawner_8',['HeavyObjectSpawner',['../class_heavy_object_spawner.html',1,'']]],
+  ['heavyobjectspawner_2ecs_9',['HeavyObjectSpawner.cs',['../_heavy_object_spawner_8cs.html',1,'']]],
+  ['height_10',['height',['../class_camera_manager.html#a59294b6c234ef35f4e3a1400f516b6b2',1,'CameraManager.height'],['../class_player_manager.html#addf53521ccf5370d289658d92595230d',1,'PlayerManager.height']]],
+  ['heightdifference_11',['heightDifference',['../class_button_manager.html#a4cc67587b4a1f0418554872b4c1bd5f8',1,'ButtonManager']]],
+  ['hidegravitydirections_12',['HideGravityDirections',['../class_u_i_manager.html#a82064e62a1b00081547029a4938b9174',1,'UIManager']]],
+  ['hidemessage_13',['HideMessage',['../class_u_i_manager.html#a5b0b9c5ccef6041ee103625fa45c5f20',1,'UIManager']]],
+  ['hintmessagebox_14',['hintMessagebox',['../class_u_i_manager.html#a835a42b375e44027298f6f7fba7f65fe',1,'UIManager']]],
+  ['hintmessagetext_15',['hintMessageText',['../class_u_i_manager.html#aa520549597596a2dd5235f69fd27aeca',1,'UIManager']]]
 ];

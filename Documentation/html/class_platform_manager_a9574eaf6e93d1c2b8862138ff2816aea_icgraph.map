@@ -1,0 +1,5 @@
+<map id="PlatformManager.GroupBToggle" name="PlatformManager.GroupBToggle">
+<area shape="rect" id="Node000001" title="Toggles the states of platform group B cyclically." alt="" coords="205,5,410,31"/>
+<area shape="rect" id="Node000002" href="$class_platform_manager.html#aba295fca640d4a02abaf5d452fdff9bf" title=" " alt="" coords="5,5,157,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,21,157,21,157,16,190,16"/>
+</map>

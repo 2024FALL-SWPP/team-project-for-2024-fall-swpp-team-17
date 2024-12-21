@@ -1,0 +1,10 @@
+<map id="PlatformManager.SetPlatformGroup" name="PlatformManager.SetPlatformGroup">
+<area shape="rect" id="Node000001" title="Sets the visual and collision state of a platform group." alt="" coords="458,23,650,64"/>
+<area shape="rect" id="Node000002" href="$class_platform_manager.html#a1b3e17be37ea55e6120ce2f8e55b74f5" title="Toggles the states of platform group A cyclically." alt="" coords="205,5,410,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="442,35,410,31,410,26,443,29"/>
+<area shape="rect" id="Node000004" href="$class_platform_manager.html#a9574eaf6e93d1c2b8862138ff2816aea" title="Toggles the states of platform group B cyclically." alt="" coords="205,55,410,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="443,57,411,60,410,55,442,52"/>
+<area shape="rect" id="Node000003" href="$class_platform_manager.html#aba295fca640d4a02abaf5d452fdff9bf" title=" " alt="" coords="5,31,157,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="190,34,158,38,157,32,189,29"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="189,58,157,54,158,49,190,52"/>
+</map>

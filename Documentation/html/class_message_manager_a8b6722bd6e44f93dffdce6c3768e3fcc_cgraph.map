@@ -1,0 +1,16 @@
+<map id="MessageManager.Update" name="MessageManager.Update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,121,175,146"/>
+<area shape="rect" id="Node000002" href="$class_message_manager.html#ad9d5cc886b60dd807e5781738e553f6d" title="Triggers the UI manager to show a message after a delay." alt="" coords="227,5,441,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,118,162,91,222,62,253,49,255,54,224,67,165,96,115,123"/>
+<area shape="rect" id="Node000003" href="$class_u_i_manager.html#a071806b73c6620385ce08d55e1b0ebd6" title="Displays a hint message with a typing effect." alt="" coords="493,42,667,68"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="158,118,222,106,477,66,478,72,223,111,159,123"/>
+<area shape="rect" id="Node000005" href="$class_u_i_manager.html#a82064e62a1b00081547029a4938b9174" title="Hides gravity directions from the screen." alt="" coords="226,121,442,146"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="175,131,210,131,210,136,175,136"/>
+<area shape="rect" id="Node000006" href="$class_u_i_manager.html#a5b0b9c5ccef6041ee103625fa45c5f20" title="Hides the hint message." alt="" coords="250,170,418,196"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="158,145,252,164,251,169,157,150"/>
+<area shape="rect" id="Node000007" href="$class_u_i_manager.html#ac79a2f58ab9dbde2cbb016e427043c2f" title="Shows gravity directions (1, 2, 3) on the screen." alt="" coords="223,220,445,245"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="112,145,161,176,224,206,243,212,241,217,222,211,159,180,109,149"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="442,36,478,40,477,45,441,41"/>
+<area shape="rect" id="Node000004" href="$class_u_i_manager.html#a3f0a96174c6b5cd0212d86301359b7f3" title="Displays a message character by character with a typing effect." alt="" coords="715,42,885,68"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="668,52,700,52,700,58,668,58"/>
+</map>

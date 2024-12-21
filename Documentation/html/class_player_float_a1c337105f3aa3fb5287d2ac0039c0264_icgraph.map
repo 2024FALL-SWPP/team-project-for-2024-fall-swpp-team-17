@@ -1,0 +1,7 @@
+<map id="PlayerFloat.SetRandomRotation" name="PlayerFloat.SetRandomRotation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="235,31,444,56"/>
+<area shape="rect" id="Node000002" href="$class_player_float.html#a22074a3554a21bb541c1ee4922993372" title=" " alt="" coords="5,5,187,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,34,187,30,187,25,219,28"/>
+<area shape="rect" id="Node000003" href="$class_player_float.html#a399401adf3e81d22dc173bd5e066be17" title=" " alt="" coords="36,55,156,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,58,156,64,156,59,219,53"/>
+</map>

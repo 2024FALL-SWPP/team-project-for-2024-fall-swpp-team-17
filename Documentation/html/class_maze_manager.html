@@ -93,16 +93,19 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">MazeManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the logic for a maze puzzle, including key box activation, resetting, and puzzle completion.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for MazeManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_maze_manager__inherit__graph.png" border="0" usemap="#a_maze_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_maze_manager_inherit__map" id="a_maze_manager_inherit__map">
-<area shape="rect" title=" " alt="" coords="10,153,113,178"/>
-<area shape="rect" href="class_puzzle_interface.html" title=" " alt="" coords="5,79,118,105"/>
-<area shape="poly" title=" " alt="" coords="64,120,64,152,59,152,59,120"/>
-<area shape="rect" title=" " alt="" coords="6,5,117,31"/>
-<area shape="poly" title=" " alt="" coords="64,46,64,79,59,79,59,46"/>
+<area shape="rect" title="Manages the logic for a maze puzzle, including key box activation, resetting, and puzzle completion." alt="" coords="77,79,181,105"/>
+<area shape="rect" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" title=" " alt="" coords="85,40,119,77,116,80,81,44"/>
+<area shape="rect" href="interface_our_game_1_1_puzzle_interface.html" title="Interface for puzzles, defining the basic lifecycle methods." alt="" coords="141,5,253,31"/>
+<area shape="poly" title=" " alt="" coords="177,44,142,80,139,77,173,40"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -110,27 +113,41 @@ Collaboration diagram for MazeManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_maze_manager__coll__graph.png" border="0" usemap="#a_maze_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_maze_manager_coll__map" id="a_maze_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="10,153,113,178"/>
-<area shape="rect" href="class_puzzle_interface.html" title=" " alt="" coords="5,79,118,105"/>
-<area shape="poly" title=" " alt="" coords="64,120,64,152,59,152,59,120"/>
-<area shape="rect" title=" " alt="" coords="6,5,117,31"/>
-<area shape="poly" title=" " alt="" coords="64,46,64,79,59,79,59,46"/>
+<area shape="rect" title="Manages the logic for a maze puzzle, including key box activation, resetting, and puzzle completion." alt="" coords="101,183,205,208"/>
+<area shape="rect" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" title=" " alt="" coords="67,45,74,81,89,118,114,154,141,181,137,184,110,157,84,121,69,83,62,47"/>
+<area shape="rect" href="class_button_manager.html" title="Manages the behavior of a button that is used to activate a puzzle. Handles player interactions,..." alt="" coords="98,94,208,120"/>
+<area shape="poly" title=" " alt="" coords="87,40,142,92,138,96,83,44"/>
+<area shape="rect" href="interface_our_game_1_1_puzzle_interface.html" title="Interface for puzzles, defining the basic lifecycle methods." alt="" coords="232,94,344,120"/>
+<area shape="poly" title=" " alt="" coords="275,134,251,161,227,175,203,185,201,180,225,170,247,157,271,131"/>
+<area shape="poly" title=" " alt="" coords="156,135,156,182,150,182,150,135"/>
+<area shape="rect" href="interface_our_game_1_1_puzzle_interface.html" title="Interface for puzzles, defining the basic lifecycle methods." alt="" coords="140,5,312,31"/>
+<area shape="poly" title=" " alt="" coords="208,45,165,95,161,92,204,41"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0a75a398197dd476a1ea6343324e0d7" id="r_ad0a75a398197dd476a1ea6343324e0d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0a75a398197dd476a1ea6343324e0d7">PuzzleStart</a> ()</td></tr>
+<tr class="memdesc:ad0a75a398197dd476a1ea6343324e0d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the puzzle by activating the key box.  <br /></td></tr>
 <tr class="separator:ad0a75a398197dd476a1ea6343324e0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81afbac9083c6cd0ffa995c3118c8544" id="r_a81afbac9083c6cd0ffa995c3118c8544"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81afbac9083c6cd0ffa995c3118c8544">PuzzleReset</a> ()</td></tr>
+<tr class="memdesc:a81afbac9083c6cd0ffa995c3118c8544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the puzzle by deactivating and repositioning the key box.  <br /></td></tr>
 <tr class="separator:a81afbac9083c6cd0ffa995c3118c8544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ab82f21871e8cad7cb69a4c56a4b824" id="r_a4ab82f21871e8cad7cb69a4c56a4b824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ab82f21871e8cad7cb69a4c56a4b824">GetUnlockSignal</a> (int lockID)</td></tr>
+<tr class="memdesc:a4ab82f21871e8cad7cb69a4c56a4b824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles unlocking signals from the puzzle and triggers puzzle clearance.  <br /></td></tr>
+<tr class="separator:a4ab82f21871e8cad7cb69a4c56a4b824"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a643c86ae79700676762ce33a0d3bb157" id="r_a643c86ae79700676762ce33a0d3bb157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a643c86ae79700676762ce33a0d3bb157">PuzzleClear</a> ()</td></tr>
+<tr class="memdesc:a643c86ae79700676762ce33a0d3bb157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the puzzle, fixes the button state, and marks the puzzle as completed.  <br /></td></tr>
 <tr class="separator:a643c86ae79700676762ce33a0d3bb157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_interface_our_game_1_1_puzzle_interface"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_our_game_1_1_puzzle_interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_our_game_1_1_puzzle_interface.html">OurGame.PuzzleInterface</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a2083fd5129b90930f08e39ecdca1c9d9" id="r_a2083fd5129b90930f08e39ecdca1c9d9"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2083fd5129b90930f08e39ecdca1c9d9">keyBox</a></td></tr>
 <tr class="separator:a2083fd5129b90930f08e39ecdca1c9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218757996e8c10f027b1012b797b22f0" id="r_a218757996e8c10f027b1012b797b22f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_button_manager.html">ButtonManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a218757996e8c10f027b1012b797b22f0">buttonManager</a></td></tr>
+<tr class="separator:a218757996e8c10f027b1012b797b22f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -139,6 +156,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aa564f0dc6e3c99176b49a95b60e0f8fc" id="r_aa564f0dc6e3c99176b49a95b60e0f8fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa564f0dc6e3c99176b49a95b60e0f8fc">Update</a> ()</td></tr>
 <tr class="separator:aa564f0dc6e3c99176b49a95b60e0f8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a129705d255d23acbf68d1ad176792a66" id="r_a129705d255d23acbf68d1ad176792a66"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a129705d255d23acbf68d1ad176792a66">ResetBox</a> ()</td></tr>
+<tr class="memdesc:a129705d255d23acbf68d1ad176792a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine to reset the key box to its initial state.  <br /></td></tr>
 <tr class="separator:a129705d255d23acbf68d1ad176792a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -152,7 +170,59 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7a6f5e71e296e37575c96b56b1e98889" id="r_a7a6f5e71e296e37575c96b56b1e98889"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a6f5e71e296e37575c96b56b1e98889">isCleared</a> = false</td></tr>
 <tr class="separator:a7a6f5e71e296e37575c96b56b1e98889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the logic for a maze puzzle, including key box activation, resetting, and puzzle completion. </p>
+<p>Implements PuzzleInterface to handle puzzle lifecycle events such as start, reset, and clear. The puzzle involves activating a key box and handling its state until the puzzle is cleared. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4ab82f21871e8cad7cb69a4c56a4b824" name="a4ab82f21871e8cad7cb69a4c56a4b824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ab82f21871e8cad7cb69a4c56a4b824">&#9670;&#160;</a></span>GetUnlockSignal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MazeManager.GetUnlockSignal </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lockID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles unlocking signals from the puzzle and triggers puzzle clearance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lockID</td><td>The ID of the lock being unlocked (not used in this implementation).</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_our_game_1_1_puzzle_interface.html#a27bff2affc01a16eeb23aff9c39fa961">OurGame.PuzzleInterface</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_maze_manager_a4ab82f21871e8cad7cb69a4c56a4b824_cgraph.png" border="0" usemap="#aclass_maze_manager_a4ab82f21871e8cad7cb69a4c56a4b824_cgraph" alt=""/></div>
+<map name="aclass_maze_manager_a4ab82f21871e8cad7cb69a4c56a4b824_cgraph" id="aclass_maze_manager_a4ab82f21871e8cad7cb69a4c56a4b824_cgraph">
+<area shape="rect" title="Handles unlocking signals from the puzzle and triggers puzzle clearance." alt="" coords="5,5,210,31"/>
+<area shape="rect" href="class_maze_manager.html#a643c86ae79700676762ce33a0d3bb157" title="Clears the puzzle, fixes the button state, and marks the puzzle as completed." alt="" coords="258,5,435,31"/>
+<area shape="poly" title=" " alt="" coords="210,16,242,16,242,21,210,21"/>
+<area shape="rect" href="class_button_manager.html#ad10532db93280a68f2d89f7d3b8e1c57" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="483,5,651,31"/>
+<area shape="poly" title=" " alt="" coords="435,16,467,16,467,21,435,21"/>
+<area shape="rect" href="class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title="Changes the button to its pressed state (green)." alt="" coords="699,5,898,31"/>
+<area shape="poly" title=" " alt="" coords="652,16,684,16,684,21,652,21"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a643c86ae79700676762ce33a0d3bb157" name="a643c86ae79700676762ce33a0d3bb157"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a643c86ae79700676762ce33a0d3bb157">&#9670;&#160;</a></span>PuzzleClear()</h2>
 
@@ -175,16 +245,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Clears the puzzle, fixes the button state, and marks the puzzle as completed. </p>
+
+<p>Implements <a class="el" href="interface_our_game_1_1_puzzle_interface.html#a92cf9f191eaaf30db3284562e7aebdc5">OurGame.PuzzleInterface</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_maze_manager_a643c86ae79700676762ce33a0d3bb157_cgraph.png" border="0" usemap="#aclass_maze_manager_a643c86ae79700676762ce33a0d3bb157_cgraph" alt=""/></div>
+<map name="aclass_maze_manager_a643c86ae79700676762ce33a0d3bb157_cgraph" id="aclass_maze_manager_a643c86ae79700676762ce33a0d3bb157_cgraph">
+<area shape="rect" title="Clears the puzzle, fixes the button state, and marks the puzzle as completed." alt="" coords="5,5,183,31"/>
+<area shape="rect" href="class_button_manager.html#ad10532db93280a68f2d89f7d3b8e1c57" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="231,5,399,31"/>
+<area shape="poly" title=" " alt="" coords="183,16,215,16,215,21,183,21"/>
+<area shape="rect" href="class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title="Changes the button to its pressed state (green)." alt="" coords="447,5,645,31"/>
+<area shape="poly" title=" " alt="" coords="399,16,431,16,431,21,399,21"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_maze_manager_a643c86ae79700676762ce33a0d3bb157_icgraph.png" border="0" usemap="#aclass_maze_manager_a643c86ae79700676762ce33a0d3bb157_icgraph" alt=""/></div>
 <map name="aclass_maze_manager_a643c86ae79700676762ce33a0d3bb157_icgraph" id="aclass_maze_manager_a643c86ae79700676762ce33a0d3bb157_icgraph">
-<area shape="rect" title=" " alt="" coords="512,13,689,38"/>
-<area shape="rect" href="class_maze_box_manager.html#aa1fd54bb0b82bc7ec8de2fdc44461503" title=" " alt="" coords="250,13,464,38"/>
-<area shape="poly" title=" " alt="" coords="496,28,464,28,464,23,496,23"/>
-<area shape="rect" href="class_maze_box_manager.html#a009e1f3e3bffb37ce8397b4249d238d5" title=" " alt="" coords="5,5,202,46"/>
-<area shape="poly" title=" " alt="" coords="234,28,202,28,202,23,234,23"/>
+<area shape="rect" title="Clears the puzzle, fixes the button state, and marks the puzzle as completed." alt="" coords="258,5,435,31"/>
+<area shape="rect" href="class_maze_manager.html#a4ab82f21871e8cad7cb69a4c56a4b824" title="Handles unlocking signals from the puzzle and triggers puzzle clearance." alt="" coords="5,5,210,31"/>
+<area shape="poly" title=" " alt="" coords="242,21,210,21,210,16,242,16"/>
 </map>
 </div>
 
@@ -212,26 +296,18 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resets the puzzle by deactivating and repositioning the key box. </p>
+
+<p>Implements <a class="el" href="interface_our_game_1_1_puzzle_interface.html#a8ae7e3275d1796a4fdfa18b06d39f467">OurGame.PuzzleInterface</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_maze_manager_a81afbac9083c6cd0ffa995c3118c8544_cgraph.png" border="0" usemap="#aclass_maze_manager_a81afbac9083c6cd0ffa995c3118c8544_cgraph" alt=""/></div>
 <map name="aclass_maze_manager_a81afbac9083c6cd0ffa995c3118c8544_cgraph" id="aclass_maze_manager_a81afbac9083c6cd0ffa995c3118c8544_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,187,31"/>
-<area shape="rect" href="class_maze_manager.html#a129705d255d23acbf68d1ad176792a66" title=" " alt="" coords="235,5,399,31"/>
+<area shape="rect" title="Resets the puzzle by deactivating and repositioning the key box." alt="" coords="5,5,187,31"/>
+<area shape="rect" href="class_maze_manager.html#a129705d255d23acbf68d1ad176792a66" title="Coroutine to reset the key box to its initial state." alt="" coords="235,5,399,31"/>
 <area shape="poly" title=" " alt="" coords="187,16,219,16,219,21,187,21"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_maze_manager_a81afbac9083c6cd0ffa995c3118c8544_icgraph.png" border="0" usemap="#aclass_maze_manager_a81afbac9083c6cd0ffa995c3118c8544_icgraph" alt=""/></div>
-<map name="aclass_maze_manager_a81afbac9083c6cd0ffa995c3118c8544_icgraph" id="aclass_maze_manager_a81afbac9083c6cd0ffa995c3118c8544_icgraph">
-<area shape="rect" title=" " alt="" coords="446,5,627,31"/>
-<area shape="rect" href="class_button_manager.html#a67a4fbbb6a922a4b705f75a7231cb676" title=" " alt="" coords="208,5,398,31"/>
-<area shape="poly" title=" " alt="" coords="431,21,399,21,399,16,431,16"/>
-<area shape="rect" href="class_button_manager.html#ac004763936bf3b2e121d7eb9a2f51471" title=" " alt="" coords="5,5,160,31"/>
-<area shape="poly" title=" " alt="" coords="192,21,160,21,160,16,192,16"/>
 </map>
 </div>
 
@@ -259,18 +335,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_maze_manager_ad0a75a398197dd476a1ea6343324e0d7_icgraph.png" border="0" usemap="#aclass_maze_manager_ad0a75a398197dd476a1ea6343324e0d7_icgraph" alt=""/></div>
-<map name="aclass_maze_manager_ad0a75a398197dd476a1ea6343324e0d7_icgraph" id="aclass_maze_manager_ad0a75a398197dd476a1ea6343324e0d7_icgraph">
-<area shape="rect" title=" " alt="" coords="446,5,620,31"/>
-<area shape="rect" href="class_button_manager.html#a67a4fbbb6a922a4b705f75a7231cb676" title=" " alt="" coords="208,5,398,31"/>
-<area shape="poly" title=" " alt="" coords="431,21,398,21,398,16,431,16"/>
-<area shape="rect" href="class_button_manager.html#ac004763936bf3b2e121d7eb9a2f51471" title=" " alt="" coords="5,5,160,31"/>
-<area shape="poly" title=" " alt="" coords="192,21,160,21,160,16,192,16"/>
-</map>
-</div>
+
+<p>Starts the puzzle by activating the key box. </p>
+
+<p>Implements <a class="el" href="interface_our_game_1_1_puzzle_interface.html#ace72fc3436027ce5f173a94985dff5f9">OurGame.PuzzleInterface</a>.</p>
 
 </div>
 </div>
@@ -296,18 +364,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Coroutine to reset the key box to its initial state. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_maze_manager_a129705d255d23acbf68d1ad176792a66_icgraph.png" border="0" usemap="#aclass_maze_manager_a129705d255d23acbf68d1ad176792a66_icgraph" alt=""/></div>
 <map name="aclass_maze_manager_a129705d255d23acbf68d1ad176792a66_icgraph" id="aclass_maze_manager_a129705d255d23acbf68d1ad176792a66_icgraph">
-<area shape="rect" title=" " alt="" coords="675,5,840,31"/>
-<area shape="rect" href="class_maze_manager.html#a81afbac9083c6cd0ffa995c3118c8544" title=" " alt="" coords="446,5,627,31"/>
-<area shape="poly" title=" " alt="" coords="660,21,628,21,628,16,660,16"/>
-<area shape="rect" href="class_button_manager.html#a67a4fbbb6a922a4b705f75a7231cb676" title=" " alt="" coords="208,5,398,31"/>
-<area shape="poly" title=" " alt="" coords="431,21,399,21,399,16,431,16"/>
-<area shape="rect" href="class_button_manager.html#ac004763936bf3b2e121d7eb9a2f51471" title=" " alt="" coords="5,5,160,31"/>
-<area shape="poly" title=" " alt="" coords="192,21,160,21,160,16,192,16"/>
+<area shape="rect" title="Coroutine to reset the key box to its initial state." alt="" coords="235,5,399,31"/>
+<area shape="rect" href="class_maze_manager.html#a81afbac9083c6cd0ffa995c3118c8544" title="Resets the puzzle by deactivating and repositioning the key box." alt="" coords="5,5,187,31"/>
+<area shape="poly" title=" " alt="" coords="219,21,187,21,187,16,219,16"/>
 </map>
 </div>
 
@@ -364,6 +430,20 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a218757996e8c10f027b1012b797b22f0" name="a218757996e8c10f027b1012b797b22f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a218757996e8c10f027b1012b797b22f0">&#9670;&#160;</a></span>buttonManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_button_manager.html">ButtonManager</a> MazeManager.buttonManager</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7a6f5e71e296e37575c96b56b1e98889" name="a7a6f5e71e296e37575c96b56b1e98889"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a6f5e71e296e37575c96b56b1e98889">&#9670;&#160;</a></span>isCleared</h2>
 
@@ -467,7 +547,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>UnityProject/GravitableEscape/Assets/Script/Obstacles/<a class="el" href="_maze_manager_8cs.html">MazeManager.cs</a></li>
+<li>UnityProject/GravitableEscape/Assets/Scripts/Puzzles/<a class="el" href="_maze_manager_8cs.html">MazeManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

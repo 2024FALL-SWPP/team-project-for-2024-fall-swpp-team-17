@@ -1,0 +1,9 @@
+<map id="BoxPuzzleManager.SetPlatesInActive" name="BoxPuzzleManager.SetPlatesInActive">
+<area shape="rect" id="Node000001" title="Deactivates all plates." alt="" coords="509,23,703,64"/>
+<area shape="rect" id="Node000002" href="$class_box_puzzle_manager.html#a80ff41d6ee7125b0a02ca2c45af4331c" title="Coroutine to reset the keyboxes and plates to their initial states." alt="" coords="266,5,461,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="493,34,461,31,462,26,494,29"/>
+<area shape="rect" id="Node000004" href="$class_box_puzzle_manager.html#a6cb4f287e84212455525b00223f165d1" title=" " alt="" coords="281,55,446,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="494,57,447,62,446,57,493,52"/>
+<area shape="rect" id="Node000003" href="$class_box_puzzle_manager.html#aa35a75b3d74fe615c12e270a7c3b0d17" title="Resets the puzzle to its initial state." alt="" coords="5,5,218,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="250,21,218,21,218,16,250,16"/>
+</map>

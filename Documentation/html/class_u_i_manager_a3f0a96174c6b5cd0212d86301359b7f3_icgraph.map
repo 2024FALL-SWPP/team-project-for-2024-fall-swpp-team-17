@@ -1,0 +1,10 @@
+<map id="UIManager.TypeMessage" name="UIManager.TypeMessage">
+<area shape="rect" id="Node000001" title="Displays a message character by character with a typing effect." alt="" coords="707,42,877,68"/>
+<area shape="rect" id="Node000002" href="$class_u_i_manager.html#a071806b73c6620385ce08d55e1b0ebd6" title="Displays a hint message with a typing effect." alt="" coords="485,42,659,68"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="691,58,660,58,660,52,691,52"/>
+<area shape="rect" id="Node000003" href="$class_message_manager.html#ad9d5cc886b60dd807e5781738e553f6d" title="Triggers the UI manager to show a message after a delay." alt="" coords="223,5,437,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="469,45,437,41,438,36,470,40"/>
+<area shape="rect" id="Node000004" href="$class_message_manager.html#a8b6722bd6e44f93dffdce6c3768e3fcc" title=" " alt="" coords="5,42,175,68"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="469,60,437,60,223,60,175,60,175,54,223,55,437,55,469,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="207,43,175,47,175,42,207,38"/>
+</map>

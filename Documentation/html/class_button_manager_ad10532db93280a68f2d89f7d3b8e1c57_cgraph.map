@@ -1,5 +1,5 @@
 <map id="ButtonManager.FixButton" name="ButtonManager.FixButton">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,174,31"/>
-<area shape="rect" id="Node000002" href="$class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title=" " alt="" coords="222,5,420,31"/>
+<area shape="rect" id="Node000001" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="5,5,174,31"/>
+<area shape="rect" id="Node000002" href="$class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title="Changes the button to its pressed state (green)." alt="" coords="222,5,420,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,16,206,16,206,21,174,21"/>
 </map>

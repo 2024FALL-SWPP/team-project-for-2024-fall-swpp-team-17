@@ -1,0 +1,21 @@
+<map id="GameManager.SaveLifeInfo" name="GameManager.SaveLifeInfo">
+<area shape="rect" id="Node000001" title="Saves the player&#39;s life value to PlayerPrefs." alt="" coords="764,92,947,118"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#a7c66210a567726606e06becf23291f17" title="Initializes the player&#39;s life when a new scene is loaded." alt="" coords="538,19,716,44"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="797,89,669,48,671,42,799,84"/>
+<area shape="rect" id="Node000004" href="$class_game_manager.html#ab5255a2cd2da2439c7408f227c95cd97" title="Modifies the player&#39;s life and updates the game state accordingly." alt="" coords="542,92,712,118"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="748,108,712,108,712,102,748,102"/>
+<area shape="rect" id="Node000009" href="$class_game_manager.html#a70e634a706de8a549e29c7706b183096" title="Resets the player&#39;s life to its initial value." alt="" coords="544,141,710,167"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="778,124,691,143,690,138,777,119"/>
+<area shape="rect" id="Node000003" href="$class_game_manager.html#a5ccfacd027ad08eeb4ff1f25a7f59c98" title=" " alt="" coords="312,5,449,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="522,29,449,25,450,19,522,23"/>
+<area shape="rect" id="Node000005" href="$class_heavy_object_manager.html#a839526e5f3e96e9c4479d73197f304b8" title="Reduces the player&#39;s life when harmed by the hazard." alt="" coords="271,55,490,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="527,92,469,84,470,78,528,87"/>
+<area shape="rect" id="Node000007" href="$class_spike_manager.html#a1b178464f502d13c4d58027f1f3adea4" title="Reduces the player&#39;s life when harmed by the spike." alt="" coords="292,104,468,130"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="527,112,469,115,469,110,527,107"/>
+<area shape="rect" id="Node000006" href="$class_heavy_object_manager.html#a5561cc646b3ba07e763bdf233281edbd" title="Checks if the player is crushed by this object upon collision. If so, plays a sound and harms the pla..." alt="" coords="5,43,223,84"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="255,68,223,68,223,62,255,63"/>
+<area shape="rect" id="Node000008" href="$class_spike_manager.html#a7764099d65f422f80df8b6f26ad8c3ac" title="Checks for continuous player collisions and applies damage. Plays a sound if the player is stunned by..." alt="" coords="13,108,215,134"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="276,121,215,122,215,117,276,116"/>
+<area shape="rect" id="Node000010" href="$class_u_i_manager.html#aaf0add6cbe9bcd06ba3c4aee8c0578ec" title="Restarts the current scene." alt="" coords="315,153,446,179"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="529,162,447,166,446,160,529,156"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="LoadScene.LoadNextScene" name="LoadScene.LoadNextScene">
+<area shape="rect" id="Node000001" title=" " alt="" coords="288,13,471,38"/>
+<area shape="rect" id="Node000002" href="$class_load_next_scene_manager.html#a7602df8ce7bfe98a5d85b47ab6550592" title="Detects player collision and triggers the next scene to load." alt="" coords="5,5,240,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,28,240,28,240,23,272,23"/>
+</map>

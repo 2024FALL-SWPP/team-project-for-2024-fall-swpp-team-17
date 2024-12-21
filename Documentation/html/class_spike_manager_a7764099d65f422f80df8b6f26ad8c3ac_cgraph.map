@@ -1,0 +1,17 @@
+<map id="SpikeManager.OnCollisionStay" name="SpikeManager.OnCollisionStay">
+<area shape="rect" id="Node000001" title="Checks for continuous player collisions and applies damage. Plays a sound if the player is stunned by..." alt="" coords="5,55,207,80"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#a58134230a7cde001ebf2b25f1dcd6091" title="Retrieves the current game state." alt="" coords="255,5,451,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,51,269,32,270,37,175,57"/>
+<area shape="rect" id="Node000003" href="$class_spike_manager.html#a1b178464f502d13c4d58027f1f3adea4" title="Reduces the player&#39;s life when harmed by the spike." alt="" coords="265,55,441,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,65,249,65,249,70,207,70"/>
+<area shape="rect" id="Node000007" href="$class_spike_manager.html#a99873bc264e25b1997b9258f6fee0092" title="Determines if the collision is on the pointed side of the spike." alt="" coords="269,104,437,145"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="165,78,254,99,253,104,164,84"/>
+<area shape="rect" id="Node000004" href="$class_game_manager.html#ab5255a2cd2da2439c7408f227c95cd97" title="Modifies the player&#39;s life and updates the game state accordingly." alt="" coords="504,55,673,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="441,65,488,65,488,70,441,70"/>
+<area shape="rect" id="Node000005" href="$class_game_manager.html#a8fc676f0946b9d9f8b0c39f098319e63" title="Handles the player&#39;s state transitions after taking damage." alt="" coords="725,31,923,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="673,56,710,52,710,58,673,62"/>
+<area shape="rect" id="Node000006" href="$class_game_manager.html#af4120cbddadc7a402fadec9eae4e0014" title="Saves the player&#39;s life value to PlayerPrefs." alt="" coords="733,80,915,106"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="673,74,717,79,717,84,673,79"/>
+<area shape="rect" id="Node000008" href="$interface_our_game_1_1_i_my_collision.html#a6e63b5ca91ede64330b17a6d174d157e" title=" " alt="" coords="499,104,677,145"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="438,122,483,122,483,128,438,128"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="GameManager.ModifyLife" name="GameManager.ModifyLife">
+<area shape="rect" id="Node000001" title="Modifies the player&#39;s life and updates the game state accordingly." alt="" coords="5,31,175,56"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#a8fc676f0946b9d9f8b0c39f098319e63" title="Handles the player&#39;s state transitions after taking damage." alt="" coords="223,5,420,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,32,207,28,207,33,175,37"/>
+<area shape="rect" id="Node000003" href="$class_game_manager.html#af4120cbddadc7a402fadec9eae4e0014" title="Saves the player&#39;s life value to PlayerPrefs." alt="" coords="230,55,412,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,50,215,54,214,59,175,55"/>
+</map>

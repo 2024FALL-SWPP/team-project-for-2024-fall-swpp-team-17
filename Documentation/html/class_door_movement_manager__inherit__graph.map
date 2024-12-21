@@ -1,5 +1,5 @@
 <map id="DoorMovementManager" name="DoorMovementManager">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,166,105"/>
+<area shape="rect" id="Node000001" title="Manages the movement of a door, allowing it to slide open or close in a specified direction." alt="" coords="5,79,166,105"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="30,5,141,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,46,88,79,83,79,83,46"/>
 </map>

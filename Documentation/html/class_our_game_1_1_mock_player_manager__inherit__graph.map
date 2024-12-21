@@ -1,0 +1,17 @@
+<map id="OurGame.MockPlayerManager" name="OurGame.MockPlayerManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="123,226,324,252"/>
+<area shape="rect" id="Node000002" href="$class_player_manager.html" title="Handles the player&#39;s movement, jumping, animations, life status, and gravity adjustments." alt="" coords="169,153,278,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,194,226,226,221,226,221,194"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="168,79,279,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="226,120,226,152,221,152,221,120"/>
+<area shape="rect" id="Node000004" href="$interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="28,79,144,105"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="106,115,159,176,211,224,207,228,155,180,102,119"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="124,110,201,150,199,154,122,115"/>
+<area shape="rect" id="Node000005" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="5,5,167,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="89,46,89,79,83,79,83,46"/>
+<area shape="rect" id="Node000006" href="$interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="302,79,443,105"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="353,118,292,180,239,228,236,224,288,176,350,114"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="335,114,250,154,248,150,333,109"/>
+<area shape="rect" id="Node000007" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="290,5,455,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="375,46,375,79,370,79,370,46"/>
+</map>

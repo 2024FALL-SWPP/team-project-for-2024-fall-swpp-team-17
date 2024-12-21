@@ -1,0 +1,7 @@
+<map id="BoxPuzzleManager.SetBoxAtStartPos" name="BoxPuzzleManager.SetBoxAtStartPos">
+<area shape="rect" id="Node000001" title="Resets all keyboxes to their initial positions." alt="" coords="509,5,702,46"/>
+<area shape="rect" id="Node000002" href="$class_box_puzzle_manager.html#a80ff41d6ee7125b0a02ca2c45af4331c" title="Coroutine to reset the keyboxes and plates to their initial states." alt="" coords="266,13,461,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="494,28,461,28,461,23,494,23"/>
+<area shape="rect" id="Node000003" href="$class_box_puzzle_manager.html#aa35a75b3d74fe615c12e270a7c3b0d17" title="Resets the puzzle to its initial state." alt="" coords="5,13,218,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="250,28,218,28,218,23,250,23"/>
+</map>

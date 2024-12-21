@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keybox_0',['keyBox',['../class_maze_manager.html#a2083fd5129b90930f08e39ecdca1c9d9',1,'MazeManager']]]
+  ['jumpforce_0',['jumpForce',['../class_player_manager.html#a8e25afb7c2402e4e3ab85b3fd1428bda',1,'PlayerManager']]]
 ];

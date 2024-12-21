@@ -1,0 +1,15 @@
+<map id="HeavyObjectManager.OnCollisionEnter" name="HeavyObjectManager.OnCollisionEnter">
+<area shape="rect" id="Node000001" title="Checks if the player is crushed by this object upon collision. If so, plays a sound and harms the pla..." alt="" coords="5,51,223,92"/>
+<area shape="rect" id="Node000002" href="$class_heavy_object_manager.html#a839526e5f3e96e9c4479d73197f304b8" title="Reduces the player&#39;s life when harmed by the hazard." alt="" coords="271,32,490,58"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,58,255,55,255,60,223,63"/>
+<area shape="rect" id="Node000006" href="$class_heavy_object_manager.html#a3df3351513516f79bc78fc30eb9c7d0b" title="Determines if the collision indicates the player is being crushed by the object." alt="" coords="275,83,486,108"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="223,79,260,82,259,87,223,84"/>
+<area shape="rect" id="Node000003" href="$class_game_manager.html#ab5255a2cd2da2439c7408f227c95cd97" title="Modifies the player&#39;s life and updates the game state accordingly." alt="" coords="542,29,712,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="491,41,527,41,527,46,491,46"/>
+<area shape="rect" id="Node000004" href="$class_game_manager.html#a8fc676f0946b9d9f8b0c39f098319e63" title="Handles the player&#39;s state transitions after taking damage." alt="" coords="764,5,962,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="712,31,749,27,749,32,712,36"/>
+<area shape="rect" id="Node000005" href="$class_game_manager.html#af4120cbddadc7a402fadec9eae4e0014" title="Saves the player&#39;s life value to PlayerPrefs." alt="" coords="772,55,954,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="712,49,756,53,756,59,712,54"/>
+<area shape="rect" id="Node000007" href="$interface_our_game_1_1_i_my_collision.html#a6e63b5ca91ede64330b17a6d174d157e" title=" " alt="" coords="538,79,716,120"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="486,95,523,95,522,100,486,100"/>
+</map>

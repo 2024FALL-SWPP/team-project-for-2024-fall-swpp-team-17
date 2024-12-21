@@ -1,0 +1,5 @@
+<map id="UIManager.LoadMenu" name="UIManager.LoadMenu">
+<area shape="rect" id="Node000001" title="Loads the main menu scene." alt="" coords="5,5,154,31"/>
+<area shape="rect" id="Node000002" href="$class_load_scene.html#a45d9de0fa9857a055b4510d4f50b87b5" title=" " alt="" coords="202,5,345,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,16,186,16,186,21,154,21"/>
+</map>

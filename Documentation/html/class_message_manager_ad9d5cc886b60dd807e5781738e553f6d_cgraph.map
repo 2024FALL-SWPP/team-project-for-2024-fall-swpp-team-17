@@ -1,0 +1,7 @@
+<map id="MessageManager.CallUIManagerAfterDelay" name="MessageManager.CallUIManagerAfterDelay">
+<area shape="rect" id="Node000001" title="Triggers the UI manager to show a message after a delay." alt="" coords="5,5,220,46"/>
+<area shape="rect" id="Node000002" href="$class_u_i_manager.html#a071806b73c6620385ce08d55e1b0ebd6" title="Displays a hint message with a typing effect." alt="" coords="268,13,442,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,23,252,23,252,28,220,28"/>
+<area shape="rect" id="Node000003" href="$class_u_i_manager.html#a3f0a96174c6b5cd0212d86301359b7f3" title="Displays a message character by character with a typing effect." alt="" coords="490,13,659,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="443,23,475,23,475,28,443,28"/>
+</map>

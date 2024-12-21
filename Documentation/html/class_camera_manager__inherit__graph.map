@@ -1,5 +1,7 @@
 <map id="CameraManager" name="CameraManager">
-<area shape="rect" id="Node000001" title=" " alt="" coords="140,153,257,178"/>
+<area shape="rect" id="Node000001" title="This class manages camera movement and rotation. In most cases it follows the player and rotates usin..." alt="" coords="140,153,257,178"/>
+<area shape="rect" id="Node000007" href="$class_our_game_1_1_mock_camera_manager.html" title=" " alt="" coords="94,226,303,252"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="201,194,201,226,196,226,196,194"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,117,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,110,176,150,174,154,97,115"/>
 <area shape="rect" id="Node000003" href="$interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="140,79,256,105"/>

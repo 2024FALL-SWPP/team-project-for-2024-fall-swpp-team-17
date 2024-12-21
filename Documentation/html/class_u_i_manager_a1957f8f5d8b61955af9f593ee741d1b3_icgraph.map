@@ -1,0 +1,5 @@
+<map id="UIManager.Pause" name="UIManager.Pause">
+<area shape="rect" id="Node000001" title="Pauses the game and shows the pause menu." alt="" coords="184,5,309,31"/>
+<area shape="rect" id="Node000002" href="$class_u_i_manager.html#a6e2db9f2d98e70ccc4864d3af73f1b9e" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,21,136,21,136,16,168,16"/>
+</map>

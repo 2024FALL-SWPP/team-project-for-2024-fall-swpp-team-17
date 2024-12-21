@@ -1,0 +1,9 @@
+<map id="HeavyObjectManager.HarmPlayer" name="HeavyObjectManager.HarmPlayer">
+<area shape="rect" id="Node000001" title="Reduces the player&#39;s life when harmed by the hazard." alt="" coords="5,31,225,56"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#ab5255a2cd2da2439c7408f227c95cd97" title="Modifies the player&#39;s life and updates the game state accordingly." alt="" coords="273,31,442,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,41,257,41,257,46,225,46"/>
+<area shape="rect" id="Node000003" href="$class_game_manager.html#a8fc676f0946b9d9f8b0c39f098319e63" title="Handles the player&#39;s state transitions after taking damage." alt="" coords="490,5,687,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="442,32,474,28,475,33,443,37"/>
+<area shape="rect" id="Node000004" href="$class_game_manager.html#af4120cbddadc7a402fadec9eae4e0014" title="Saves the player&#39;s life value to PlayerPrefs." alt="" coords="498,55,680,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="443,50,482,54,482,59,442,55"/>
+</map>

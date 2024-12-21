@@ -1,5 +1,5 @@
 <map id="ButtonManager.OnCollisionStay" name="ButtonManager.OnCollisionStay">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,5,212,31"/>
-<area shape="rect" id="Node000002" href="$class_button_manager.html#a5e126b58b145ca5a0a3bcecc1c7c5568" title=" " alt="" coords="260,5,465,31"/>
+<area shape="rect" id="Node000002" href="$class_button_manager.html#a5e126b58b145ca5a0a3bcecc1c7c5568" title="Determines if the player is standing on the button (upward collision)." alt="" coords="260,5,465,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,16,244,16,244,21,212,21"/>
 </map>

@@ -1,0 +1,17 @@
+<map id="OurGame.MockCameraManager" name="OurGame.MockCameraManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="119,226,328,252"/>
+<area shape="rect" id="Node000002" href="$class_camera_manager.html" title="This class manages camera movement and rotation. In most cases it follows the player and rotates usin..." alt="" coords="165,153,282,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,194,226,226,221,226,221,194"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="168,79,279,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="226,120,226,152,221,152,221,120"/>
+<area shape="rect" id="Node000004" href="$interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="28,79,144,105"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="105,115,155,176,209,224,206,228,151,180,100,119"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="124,110,201,150,199,154,122,115"/>
+<area shape="rect" id="Node000005" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="5,5,167,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="89,46,89,79,83,79,83,46"/>
+<area shape="rect" id="Node000006" href="$interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="302,79,443,105"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="354,118,296,180,240,228,237,224,292,176,351,115"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="335,114,250,154,248,150,333,109"/>
+<area shape="rect" id="Node000007" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="290,5,455,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="375,46,375,79,370,79,370,46"/>
+</map>

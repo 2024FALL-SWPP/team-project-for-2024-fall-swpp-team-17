@@ -87,16 +87,20 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_wormhole_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">WormholeManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the behavior of a wormhole in the game. When the player collides with the wormhole, it triggers a teleportation effect to a target position.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for WormholeManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_wormhole_manager__inherit__graph.png" border="0" usemap="#a_wormhole_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_wormhole_manager_inherit__map" id="a_wormhole_manager_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,79,135,105"/>
+<area shape="rect" title="Manages the behavior of a wormhole in the game. When the player collides with the wormhole,..." alt="" coords="5,79,135,105"/>
 <area shape="rect" title=" " alt="" coords="14,5,126,31"/>
 <area shape="poly" title=" " alt="" coords="73,46,73,79,67,79,67,46"/>
 </map>
@@ -106,38 +110,51 @@ Collaboration diagram for WormholeManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_wormhole_manager__coll__graph.png" border="0" usemap="#a_wormhole_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_wormhole_manager_coll__map" id="a_wormhole_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="1337,10,1466,36"/>
-<area shape="rect" title=" " alt="" coords="242,122,354,148"/>
-<area shape="poly" title=" " alt="" coords="318,108,349,76,392,41,442,14,470,6,498,3,1140,3,1244,6,1337,13,1336,19,1243,12,1140,8,499,8,471,11,444,19,395,46,353,80,322,112"/>
-<area shape="rect" href="class_game_manager.html" title=" " alt="" coords="1085,230,1192,256"/>
-<area shape="poly" title=" " alt="" coords="370,136,570,152,818,173,925,187,1062,215,1102,227,1101,232,1061,220,924,193,817,179,570,157,369,141"/>
-<area shape="rect" href="class_camera_manager.html" title=" " alt="" coords="1343,323,1460,349"/>
-<area shape="poly" title=" " alt="" coords="345,113,416,92,457,84,498,81,1140,81,1166,83,1191,90,1236,112,1277,144,1313,182,1342,223,1367,262,1397,322,1392,324,1362,265,1338,226,1308,186,1273,148,1233,116,1189,95,1165,89,1140,87,499,87,458,90,418,97,347,118"/>
-<area shape="rect" href="class_input_manager.html" title="This class handles mouse location input. It fetches mouse&#39;s x, y location and CameraManager,..." alt="" coords="450,274,550,300"/>
-<area shape="poly" title=" " alt="" coords="331,155,483,271,480,276,327,159"/>
-<area shape="rect" href="class_player_manager.html" title="This class handles movement(+ jump), life, blinking(when revived)" alt="" coords="758,221,867,246"/>
-<area shape="poly" title=" " alt="" coords="369,145,759,220,758,226,368,151"/>
-<area shape="poly" title=" " alt="" coords="1165,218,1383,34,1386,38,1169,222"/>
-<area shape="poly" title=" " alt="" coords="1165,264,1189,283,1217,299,1281,320,1343,330,1342,335,1279,325,1215,304,1186,287,1162,268"/>
-<area shape="poly" title=" " alt="" coords="1369,316,1342,299,1312,284,1250,264,1192,252,1193,247,1252,259,1314,279,1344,294,1372,312"/>
-<area shape="rect" href="interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="240,290,356,316"/>
-<area shape="poly" title=" " alt="" coords="328,323,361,346,402,370,449,389,499,396,1140,396,1203,391,1265,378,1366,347,1367,352,1267,384,1204,396,1140,401,498,401,448,394,400,375,358,351,325,327"/>
-<area shape="poly" title=" " alt="" coords="372,294,449,288,450,293,372,300"/>
-<area shape="poly" title=" " alt="" coords="348,282,429,259,519,245,609,237,758,231,758,236,610,242,520,250,430,264,349,287"/>
-<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="5,290,167,316"/>
-<area shape="poly" title=" " alt="" coords="182,300,239,300,239,305,182,305"/>
-<area shape="rect" href="interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="430,444,570,470"/>
-<area shape="poly" title=" " alt="" coords="586,469,729,484,817,489,913,489,1014,483,1116,470,1216,448,1312,415,1336,401,1357,383,1389,348,1393,351,1361,387,1339,405,1314,420,1217,453,1117,475,1014,489,913,494,817,494,728,489,585,474"/>
-<area shape="poly" title=" " alt="" coords="539,435,608,390,643,360,674,325,682,307,684,291,686,274,698,257,726,240,758,232,759,237,728,245,702,261,691,276,689,291,687,309,678,328,647,363,611,394,542,439"/>
-<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="216,444,380,470"/>
-<area shape="poly" title=" " alt="" coords="396,455,429,455,429,460,396,460"/>
-<area shape="poly" title=" " alt="" coords="566,298,630,310,700,320,884,333,1065,338,1342,335,1342,341,1065,343,883,338,700,325,630,316,565,304"/>
-<area shape="poly" title=" " alt="" coords="566,283,620,278,675,267,699,256,757,241,759,246,701,261,677,272,620,283,566,288"/>
-<area shape="poly" title=" " alt="" coords="883,233,1085,238,1085,244,882,238"/>
-<area shape="rect" href="interface_our_game_1_1_i_player_manager.html" title="Interface of PlayerManager." alt="" coords="444,323,556,349"/>
-<area shape="poly" title=" " alt="" coords="571,324,624,310,674,286,686,272,690,264,699,256,727,243,758,236,759,241,729,248,701,261,694,267,690,275,678,290,626,315,572,329"/>
-<area shape="rect" href="class_our_game_1_1_subject.html" title=" " alt="" coords="700,270,925,311"/>
-<area shape="poly" title=" " alt="" coords="941,275,1061,258,1084,253,1085,258,1062,263,941,280"/>
+<area shape="rect" title="Manages the behavior of a wormhole in the game. When the player collides with the wormhole,..." alt="" coords="1190,154,1319,179"/>
+<area shape="rect" title=" " alt="" coords="32,202,143,227"/>
+<area shape="poly" title=" " alt="" coords="100,187,131,134,178,74,208,46,241,24,277,8,317,3,993,3,1045,5,1086,13,1123,29,1168,57,1194,79,1217,105,1248,152,1244,155,1213,109,1191,83,1164,61,1121,34,1084,18,1044,10,993,8,317,8,279,13,244,28,211,50,182,77,135,137,104,189"/>
+<area shape="rect" href="class_game_manager.html" title="Manages the core game logic, including game state transitions, life management, and wormhole effects...." alt="" coords="939,272,1045,298"/>
+<area shape="poly" title=" " alt="" coords="147,195,219,180,304,171,376,168,499,172,779,208,848,212,879,216,916,228,951,248,978,270,975,274,948,252,914,233,877,221,848,217,778,213,499,178,376,173,304,177,219,185,148,200"/>
+<area shape="rect" href="class_camera_manager.html" title="This class manages camera movement and rotation. In most cases it follows the player and rotates usin..." alt="" coords="1196,511,1313,537"/>
+<area shape="poly" title=" " alt="" coords="101,241,137,335,190,455,222,511,254,557,286,589,302,597,317,600,993,600,1060,593,1126,576,1183,555,1226,535,1229,540,1185,559,1127,581,1061,598,993,605,317,605,300,602,283,593,250,561,217,513,186,457,132,337,96,243"/>
+<area shape="rect" href="class_input_manager.html" title="Manages mouse input for camera and player rotation. Tracks mouse movement to update yaw and pitch val..." alt="" coords="268,360,368,386"/>
+<area shape="poly" title=" " alt="" coords="106,240,142,291,167,317,195,339,231,356,268,365,267,370,229,361,192,344,163,321,138,294,102,243"/>
+<area shape="rect" href="class_player_manager.html" title="Handles the player&#39;s movement, jumping, animations, life status, and gravity adjustments." alt="" coords="612,272,720,298"/>
+<area shape="poly" title=" " alt="" coords="134,231,175,246,220,257,328,273,436,282,611,284,611,290,436,287,327,279,218,263,174,251,132,236"/>
+<area shape="rect" href="class_u_i_manager.html" title="Manages the game&#39;s user interface elements, including health bar updates, pause menu,..." alt="" coords="1212,227,1297,253"/>
+<area shape="poly" title=" " alt="" coords="114,190,152,163,201,135,257,113,287,106,317,104,993,104,1045,109,1085,123,1167,172,1237,225,1234,229,1165,177,1082,128,1044,114,993,109,317,109,288,112,259,118,203,140,155,168,118,194"/>
+<area shape="rect" href="class_load_scene.html" title="Manages scene loading and transitions within the game. Provides methods for loading specific scenes,..." alt="" coords="442,43,528,69"/>
+<area shape="poly" title=" " alt="" coords="100,186,137,134,162,107,192,86,224,71,257,61,325,49,389,46,442,49,442,54,389,52,326,54,258,66,226,76,195,90,166,111,141,137,105,189"/>
+<area shape="rect" href="class_gravity_manager.html" title="Manages gravity for the entire game by allowing the gravity direction to be rotated...." alt="" coords="609,223,723,249"/>
+<area shape="poly" title=" " alt="" coords="148,230,219,244,327,252,434,251,609,240,609,245,435,257,327,257,219,249,147,235"/>
+<area shape="poly" title=" " alt="" coords="1020,261,1068,231,1139,200,1205,178,1207,183,1141,205,1070,236,1023,265"/>
+<area shape="poly" title=" " alt="" coords="1041,302,1118,336,1168,362,1199,399,1224,441,1252,510,1247,512,1219,443,1195,402,1164,366,1116,341,1038,307"/>
+<area shape="poly" title=" " alt="" coords="1061,291,1113,292,1165,284,1203,270,1234,251,1236,256,1205,274,1167,290,1113,297,1061,297"/>
+<area shape="rect" href="interface_our_game_1_1_i_life_manager.html" title="Interface for managing the player&#39;s life, including health modifications." alt="" coords="618,387,714,413"/>
+<area shape="poly" title=" " alt="" coords="729,385,818,362,914,327,969,296,972,301,916,332,819,367,730,390"/>
+<area shape="poly" title=" " alt="" coords="1219,504,1147,451,1067,381,1028,337,1000,300,1004,297,1033,334,1071,377,1151,446,1223,500"/>
+<area shape="rect" href="interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="260,640,376,666"/>
+<area shape="poly" title=" " alt="" coords="392,666,540,688,635,696,738,699,846,695,955,682,1063,657,1115,640,1165,619,1191,602,1214,579,1244,536,1248,539,1218,583,1195,606,1167,624,1117,645,1064,662,956,687,846,701,738,704,634,701,540,693,392,671"/>
+<area shape="poly" title=" " alt="" coords="351,629,393,598,441,556,488,506,527,448,534,429,537,411,533,376,533,343,539,326,551,309,579,291,611,283,612,288,581,296,555,313,544,329,538,344,539,376,542,411,540,430,532,451,492,509,445,560,396,602,354,634"/>
+<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="7,640,168,666"/>
+<area shape="poly" title=" " alt="" coords="184,651,259,651,259,656,184,656"/>
+<area shape="rect" href="interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="248,440,388,466"/>
+<area shape="poly" title=" " alt="" coords="361,471,400,487,442,501,497,513,554,517,737,526,919,529,1196,524,1196,529,919,534,737,532,553,523,496,518,441,507,398,492,359,476"/>
+<area shape="poly" title=" " alt="" coords="403,448,436,442,469,432,500,418,527,397,535,387,538,376,539,354,539,332,543,320,552,309,580,291,611,284,612,289,582,296,555,313,547,323,544,333,544,355,544,377,540,389,531,401,503,422,471,437,437,447,404,453"/>
+<area shape="poly" title=" " alt="" coords="404,460,587,476,698,482,813,485,924,482,1024,473,1107,454,1139,441,1164,426,1184,407,1201,385,1226,335,1241,288,1249,253,1254,254,1246,290,1231,337,1205,388,1188,410,1168,430,1142,446,1109,459,1025,478,924,488,813,490,698,488,587,482,404,466"/>
+<area shape="poly" title=" " alt="" coords="365,432,528,363,535,351,539,338,537,312,537,285,541,271,552,258,578,241,608,233,610,239,580,246,555,262,546,274,542,286,543,311,544,338,540,353,531,367,367,437"/>
+<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="5,440,170,466"/>
+<area shape="poly" title=" " alt="" coords="185,451,247,451,247,456,185,456"/>
+<area shape="poly" title=" " alt="" coords="384,386,554,423,737,453,919,480,1196,515,1195,520,918,485,736,459,553,428,383,392"/>
+<area shape="poly" title=" " alt="" coords="383,372,456,363,493,352,528,337,535,331,539,324,544,316,552,308,581,295,611,288,612,293,583,300,555,313,548,319,544,326,539,334,531,341,495,357,457,368,384,377"/>
+<area shape="poly" title=" " alt="" coords="736,283,938,283,938,288,736,288"/>
+<area shape="poly" title=" " alt="" coords="1197,251,1069,272,1046,277,1045,271,1069,267,1196,246"/>
+<area shape="poly" title=" " alt="" coords="544,52,700,51,896,53,1071,63,1133,73,1168,86,1179,98,1184,111,1185,137,1183,163,1186,177,1192,191,1209,210,1230,225,1227,229,1206,214,1188,193,1181,178,1178,163,1179,136,1179,112,1174,101,1164,90,1131,78,1071,68,896,58,700,56,544,57"/>
+<area shape="poly" title=" " alt="" coords="738,240,823,250,915,264,940,269,939,274,914,269,822,255,738,245"/>
+<area shape="rect" href="class_our_game_1_1_subject.html" title=" " alt="" coords="219,194,417,235"/>
+<area shape="poly" title=" " alt="" coords="433,219,609,230,609,235,433,224"/>
+<area shape="rect" href="class_our_game_1_1_subject.html" title=" " alt="" coords="553,322,779,363"/>
+<area shape="poly" title=" " alt="" coords="793,324,914,303,943,296,944,301,915,308,794,329"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -152,12 +169,19 @@ Public Attributes</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a0fcd9691a53acf28adc3e6258f63afca" id="r_a0fcd9691a53acf28adc3e6258f63afca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fcd9691a53acf28adc3e6258f63afca">Start</a> ()</td></tr>
 <tr class="separator:a0fcd9691a53acf28adc3e6258f63afca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd44daf88fb80ad521df17f52068c3f7" id="r_afd44daf88fb80ad521df17f52068c3f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd44daf88fb80ad521df17f52068c3f7">Update</a> ()</td></tr>
-<tr class="separator:afd44daf88fb80ad521df17f52068c3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5d6a5110598363f9acaffa075ef66fb" id="r_ac5d6a5110598363f9acaffa075ef66fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5d6a5110598363f9acaffa075ef66fb">OnCollisionEnter</a> (Collision collision)</td></tr>
+<tr class="memdesc:ac5d6a5110598363f9acaffa075ef66fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers the wormhole effect when the player collides with the wormhole.  <br /></td></tr>
 <tr class="separator:ac5d6a5110598363f9acaffa075ef66fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa1985b0706bd1b919c14792ddc6bf72b" id="r_aa1985b0706bd1b919c14792ddc6bf72b"><td class="memItemLeft" align="right" valign="top">AudioSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1985b0706bd1b919c14792ddc6bf72b">wormholl</a></td></tr>
+<tr class="separator:aa1985b0706bd1b919c14792ddc6bf72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the behavior of a wormhole in the game. When the player collides with the wormhole, it triggers a teleportation effect to a target position. </p>
+<p>This class interacts with the <a class="el" href="class_game_manager.html" title="Manages the core game logic, including game state transitions, life management, and wormhole effects....">GameManager</a> to handle teleportation logic. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac5d6a5110598363f9acaffa075ef66fb" name="ac5d6a5110598363f9acaffa075ef66fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac5d6a5110598363f9acaffa075ef66fb">&#9670;&#160;</a></span>OnCollisionEnter()</h2>
 
@@ -180,15 +204,23 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Triggers the wormhole effect when the player collides with the wormhole. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>The collision event data.</td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_wormhole_manager_ac5d6a5110598363f9acaffa075ef66fb_cgraph.png" border="0" usemap="#aclass_wormhole_manager_ac5d6a5110598363f9acaffa075ef66fb_cgraph" alt=""/></div>
 <map name="aclass_wormhole_manager_ac5d6a5110598363f9acaffa075ef66fb_cgraph" id="aclass_wormhole_manager_ac5d6a5110598363f9acaffa075ef66fb_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,205,46"/>
-<area shape="rect" href="class_game_manager.html#af309d006c0dd25e85cb855a2dae8aac0" title="This function is called by WormholeManager when player is close enough to the wormhole...." alt="" coords="253,13,446,38"/>
+<area shape="rect" title="Triggers the wormhole effect when the player collides with the wormhole." alt="" coords="5,5,205,46"/>
+<area shape="rect" href="class_game_manager.html#af309d006c0dd25e85cb855a2dae8aac0" title="Called by WormholeManager when the player is close to the wormhole. Triggers the wormhole animation a..." alt="" coords="253,13,446,38"/>
 <area shape="poly" title=" " alt="" coords="205,23,237,23,237,28,205,28"/>
-<area shape="rect" href="class_camera_manager.html#aacf72257506310c470e2f601639e13bb" title="Sets wormhole position so that the camera can spiral towards that position." alt="" coords="494,13,692,38"/>
+<area shape="rect" href="class_camera_manager.html#aacf72257506310c470e2f601639e13bb" title="Sets the wormhole&#39;s position for spiral motion." alt="" coords="494,13,692,38"/>
 <area shape="poly" title=" " alt="" coords="446,23,478,23,478,28,446,28"/>
 </map>
 </div>
@@ -206,31 +238,6 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">void WormholeManager.Start </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afd44daf88fb80ad521df17f52068c3f7" name="afd44daf88fb80ad521df17f52068c3f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd44daf88fb80ad521df17f52068c3f7">&#9670;&#160;</a></span>Update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WormholeManager.Update </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -274,8 +281,30 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="aa1985b0706bd1b919c14792ddc6bf72b" name="aa1985b0706bd1b919c14792ddc6bf72b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1985b0706bd1b919c14792ddc6bf72b">&#9670;&#160;</a></span>wormholl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioSource WormholeManager.wormholl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>UnityProject/GravitableEscape/Assets/Script/Obstacles/<a class="el" href="_wormhole_manager_8cs.html">WormholeManager.cs</a></li>
+<li>UnityProject/GravitableEscape/Assets/Scripts/Obstacles/<a class="el" href="_wormhole_manager_8cs.html">WormholeManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

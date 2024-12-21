@@ -1,0 +1,7 @@
+<map id="GameManager.Start" name="GameManager.Start">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,143,31"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#a7c66210a567726606e06becf23291f17" title="Initializes the player&#39;s life when a new scene is loaded." alt="" coords="191,5,369,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,16,175,16,175,21,143,21"/>
+<area shape="rect" id="Node000003" href="$class_game_manager.html#af4120cbddadc7a402fadec9eae4e0014" title="Saves the player&#39;s life value to PlayerPrefs." alt="" coords="417,5,599,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="369,16,401,16,401,21,369,21"/>
+</map>

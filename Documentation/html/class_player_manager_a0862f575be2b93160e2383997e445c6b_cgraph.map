@@ -1,7 +1,7 @@
 <map id="PlayerManager.FixedUpdate" name="PlayerManager.FixedUpdate">
-<area shape="rect" id="Node000001" title="Moving player is here to prevent going through walls." alt="" coords="5,5,191,31"/>
-<area shape="rect" id="Node000002" href="$class_player_manager.html#a40a736c40d713cbdcfbf4af83bd05ff8" title="Check if there are obstacles and move player in the moveDirection." alt="" coords="239,5,419,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,191,31"/>
+<area shape="rect" id="Node000002" href="$class_player_manager.html#a40a736c40d713cbdcfbf4af83bd05ff8" title="Moves the player in the specified direction, checking for obstacles." alt="" coords="239,5,419,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,16,223,16,223,21,191,21"/>
-<area shape="rect" id="Node000003" href="$class_player_manager.html#ad0d47351e1d65ae1307367b62bbdf328" title="Checks if there is an obstacle from origin, in direction, within distance." alt="" coords="467,5,668,31"/>
+<area shape="rect" id="Node000003" href="$class_player_manager.html#ad0d47351e1d65ae1307367b62bbdf328" title="Checks for obstacles in the player&#39;s path using raycasts." alt="" coords="467,5,668,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="419,16,451,16,451,21,419,21"/>
 </map>

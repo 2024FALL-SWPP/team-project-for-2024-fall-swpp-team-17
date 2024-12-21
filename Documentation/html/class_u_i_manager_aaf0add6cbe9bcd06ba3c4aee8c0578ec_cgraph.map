@@ -1,0 +1,9 @@
+<map id="UIManager.Restart" name="UIManager.Restart">
+<area shape="rect" id="Node000001" title="Restarts the current scene." alt="" coords="5,31,137,56"/>
+<area shape="rect" id="Node000002" href="$class_load_scene.html#ad7772d4c3aa1d00969cc1263ec7aefee" title=" " alt="" coords="185,5,353,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,32,169,28,169,34,138,38"/>
+<area shape="rect" id="Node000003" href="$class_game_manager.html#a70e634a706de8a549e29c7706b183096" title="Resets the player&#39;s life to its initial value." alt="" coords="186,55,352,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,49,171,53,171,58,137,54"/>
+<area shape="rect" id="Node000004" href="$class_game_manager.html#af4120cbddadc7a402fadec9eae4e0014" title="Saves the player&#39;s life value to PlayerPrefs." alt="" coords="401,55,583,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="352,65,385,65,385,70,352,70"/>
+</map>

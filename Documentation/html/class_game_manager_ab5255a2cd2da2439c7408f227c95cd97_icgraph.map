@@ -1,0 +1,11 @@
+<map id="GameManager.ModifyLife" name="GameManager.ModifyLife">
+<area shape="rect" id="Node000001" title="Modifies the player&#39;s life and updates the game state accordingly." alt="" coords="538,42,707,68"/>
+<area shape="rect" id="Node000002" href="$class_heavy_object_manager.html#a839526e5f3e96e9c4479d73197f304b8" title="Reduces the player&#39;s life when harmed by the hazard." alt="" coords="271,16,490,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="522,47,490,43,491,38,523,41"/>
+<area shape="rect" id="Node000004" href="$class_spike_manager.html#a1b178464f502d13c4d58027f1f3adea4" title="Reduces the player&#39;s life when harmed by the spike." alt="" coords="292,66,468,92"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="523,68,469,73,469,68,522,62"/>
+<area shape="rect" id="Node000003" href="$class_heavy_object_manager.html#a5561cc646b3ba07e763bdf233281edbd" title="Checks if the player is crushed by this object upon collision. If so, plays a sound and harms the pla..." alt="" coords="5,5,223,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="255,30,223,29,223,24,255,24"/>
+<area shape="rect" id="Node000005" href="$class_spike_manager.html#a7764099d65f422f80df8b6f26ad8c3ac" title="Checks for continuous player collisions and applies damage. Plays a sound if the player is stunned by..." alt="" coords="13,70,215,96"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="276,83,215,84,215,79,276,78"/>
+</map>

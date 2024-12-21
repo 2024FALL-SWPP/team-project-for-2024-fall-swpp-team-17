@@ -92,12 +92,15 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">StageClearManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the logic for clearing a stage, including opening doors when the player triggers the stage-clear condition.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for StageClearManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stage_clear_manager__inherit__graph.png" border="0" usemap="#a_stage_clear_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_stage_clear_manager_inherit__map" id="a_stage_clear_manager_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,79,142,105"/>
+<area shape="rect" title="Manages the logic for clearing a stage, including opening doors when the player triggers the stage&#45;cl..." alt="" coords="5,79,142,105"/>
 <area shape="rect" title=" " alt="" coords="18,5,129,31"/>
 <area shape="poly" title=" " alt="" coords="76,46,76,79,71,79,71,46"/>
 </map>
@@ -107,10 +110,10 @@ Collaboration diagram for StageClearManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stage_clear_manager__coll__graph.png" border="0" usemap="#a_stage_clear_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_stage_clear_manager_coll__map" id="a_stage_clear_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,184,142,210"/>
+<area shape="rect" title="Manages the logic for clearing a stage, including opening doors when the player triggers the stage&#45;cl..." alt="" coords="5,184,142,210"/>
 <area shape="rect" title=" " alt="" coords="12,5,124,31"/>
 <area shape="poly" title=" " alt="" coords="72,47,76,184,70,184,66,47"/>
-<area shape="rect" href="class_door_movement_manager.html" title=" " alt="" coords="89,80,250,106"/>
+<area shape="rect" href="class_door_movement_manager.html" title="Manages the movement of a door, allowing it to slide open or close in a specified direction." alt="" coords="89,80,250,106"/>
 <area shape="poly" title=" " alt="" coords="99,38,154,78,151,82,95,42"/>
 <area shape="poly" title=" " alt="" coords="150,119,87,185,83,182,146,116"/>
 </map>
@@ -127,11 +130,11 @@ Public Attributes</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a930713131e91687187865bf8349e8721" id="r_a930713131e91687187865bf8349e8721"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a930713131e91687187865bf8349e8721">Start</a> ()</td></tr>
 <tr class="separator:a930713131e91687187865bf8349e8721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a424e7792b5d131c4a36327db08e5d109" id="r_a424e7792b5d131c4a36327db08e5d109"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a424e7792b5d131c4a36327db08e5d109">Update</a> ()</td></tr>
-<tr class="separator:a424e7792b5d131c4a36327db08e5d109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cb942efa5bc1b3c63666783beb39ee6" id="r_a8cb942efa5bc1b3c63666783beb39ee6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cb942efa5bc1b3c63666783beb39ee6">DoorOpen</a> ()</td></tr>
+<tr class="memdesc:a8cb942efa5bc1b3c63666783beb39ee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens both doors by triggering their movement logic.  <br /></td></tr>
 <tr class="separator:a8cb942efa5bc1b3c63666783beb39ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71b7cb582f22af7e0461d17544631bf1" id="r_a71b7cb582f22af7e0461d17544631bf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71b7cb582f22af7e0461d17544631bf1">OnCollisionEnter</a> (Collision collision)</td></tr>
+<tr class="memdesc:a71b7cb582f22af7e0461d17544631bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detects collision with the player to trigger stage clearing and door opening.  <br /></td></tr>
 <tr class="separator:a71b7cb582f22af7e0461d17544631bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -139,7 +142,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a3cb2b5fb5b70308fbbebf4eacf0dfad8" id="r_a3cb2b5fb5b70308fbbebf4eacf0dfad8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cb2b5fb5b70308fbbebf4eacf0dfad8">stageCleared</a> = false</td></tr>
 <tr class="separator:a3cb2b5fb5b70308fbbebf4eacf0dfad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the logic for clearing a stage, including opening doors when the player triggers the stage-clear condition. </p>
+<p>This script interacts with <a class="el" href="class_door_movement_manager.html" title="Manages the movement of a door, allowing it to slide open or close in a specified direction.">DoorMovementManager</a> to handle door movements upon stage completion. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8cb942efa5bc1b3c63666783beb39ee6" name="a8cb942efa5bc1b3c63666783beb39ee6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8cb942efa5bc1b3c63666783beb39ee6">&#9670;&#160;</a></span>DoorOpen()</h2>
 
@@ -162,13 +168,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Opens both doors by triggering their movement logic. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stage_clear_manager_a8cb942efa5bc1b3c63666783beb39ee6_cgraph.png" border="0" usemap="#aclass_stage_clear_manager_a8cb942efa5bc1b3c63666783beb39ee6_cgraph" alt=""/></div>
 <map name="aclass_stage_clear_manager_a8cb942efa5bc1b3c63666783beb39ee6_cgraph" id="aclass_stage_clear_manager_a8cb942efa5bc1b3c63666783beb39ee6_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,204,38"/>
-<area shape="rect" href="class_door_movement_manager.html#a341ac301612133329f29d5ded4069587" title=" " alt="" coords="252,5,443,46"/>
+<area shape="rect" title="Opens both doors by triggering their movement logic." alt="" coords="5,13,204,38"/>
+<area shape="rect" href="class_door_movement_manager.html#a341ac301612133329f29d5ded4069587" title="Starts the door&#39;s movement in the appropriate horizontal direction." alt="" coords="252,5,443,46"/>
 <area shape="poly" title=" " alt="" coords="204,23,236,23,236,28,204,28"/>
 </map>
 </div>
@@ -177,8 +185,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stage_clear_manager_a8cb942efa5bc1b3c63666783beb39ee6_icgraph.png" border="0" usemap="#aclass_stage_clear_manager_a8cb942efa5bc1b3c63666783beb39ee6_icgraph" alt=""/></div>
 <map name="aclass_stage_clear_manager_a8cb942efa5bc1b3c63666783beb39ee6_icgraph" id="aclass_stage_clear_manager_a8cb942efa5bc1b3c63666783beb39ee6_icgraph">
-<area shape="rect" title=" " alt="" coords="260,13,458,38"/>
-<area shape="rect" href="class_stage_clear_manager.html#a71b7cb582f22af7e0461d17544631bf1" title=" " alt="" coords="5,5,212,46"/>
+<area shape="rect" title="Opens both doors by triggering their movement logic." alt="" coords="260,13,458,38"/>
+<area shape="rect" href="class_stage_clear_manager.html#a71b7cb582f22af7e0461d17544631bf1" title="Detects collision with the player to trigger stage clearing and door opening." alt="" coords="5,5,212,46"/>
 <area shape="poly" title=" " alt="" coords="244,28,212,28,212,23,244,23"/>
 </map>
 </div>
@@ -207,15 +215,23 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Detects collision with the player to trigger stage clearing and door opening. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>The collision event data.</td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stage_clear_manager_a71b7cb582f22af7e0461d17544631bf1_cgraph.png" border="0" usemap="#aclass_stage_clear_manager_a71b7cb582f22af7e0461d17544631bf1_cgraph" alt=""/></div>
 <map name="aclass_stage_clear_manager_a71b7cb582f22af7e0461d17544631bf1_cgraph" id="aclass_stage_clear_manager_a71b7cb582f22af7e0461d17544631bf1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,212,46"/>
-<area shape="rect" href="class_stage_clear_manager.html#a8cb942efa5bc1b3c63666783beb39ee6" title=" " alt="" coords="260,13,458,38"/>
+<area shape="rect" title="Detects collision with the player to trigger stage clearing and door opening." alt="" coords="5,5,212,46"/>
+<area shape="rect" href="class_stage_clear_manager.html#a8cb942efa5bc1b3c63666783beb39ee6" title="Opens both doors by triggering their movement logic." alt="" coords="260,13,458,38"/>
 <area shape="poly" title=" " alt="" coords="212,23,244,23,244,28,212,28"/>
-<area shape="rect" href="class_door_movement_manager.html#a341ac301612133329f29d5ded4069587" title=" " alt="" coords="506,5,697,46"/>
+<area shape="rect" href="class_door_movement_manager.html#a341ac301612133329f29d5ded4069587" title="Starts the door&#39;s movement in the appropriate horizontal direction." alt="" coords="506,5,697,46"/>
 <area shape="poly" title=" " alt="" coords="459,23,491,23,491,28,459,28"/>
 </map>
 </div>
@@ -233,31 +249,6 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">void StageClearManager.Start </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a424e7792b5d131c4a36327db08e5d109" name="a424e7792b5d131c4a36327db08e5d109"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a424e7792b5d131c4a36327db08e5d109">&#9670;&#160;</a></span>Update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void StageClearManager.Update </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -324,7 +315,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>UnityProject/GravitableEscape/Assets/Script/<a class="el" href="_stage_clear_manager_8cs.html">StageClearManager.cs</a></li>
+<li>UnityProject/GravitableEscape/Assets/Scripts/SceneManaging/<a class="el" href="_stage_clear_manager_8cs.html">StageClearManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,0 +1,5 @@
+<map id="HeavyObjectSpawner.SpawnBoxAbovePlayer" name="HeavyObjectSpawner.SpawnBoxAbovePlayer">
+<area shape="rect" id="Node000001" title="Spawns a box above the player&#39;s current position. If a box already exists, it is destroyed before cre..." alt="" coords="247,5,438,46"/>
+<area shape="rect" id="Node000002" href="$class_heavy_object_spawner.html#a5ecfb6e4a6a7d3a42b875d26f189243b" title=" " alt="" coords="5,13,199,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,28,199,28,199,23,231,23"/>
+</map>

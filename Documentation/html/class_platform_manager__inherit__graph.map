@@ -1,0 +1,5 @@
+<map id="PlatformManager" name="PlatformManager">
+<area shape="rect" id="Node000001" title="Manages the activation and visual state of platform groups. Toggles between active,..." alt="" coords="5,79,126,105"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="10,5,121,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,46,68,79,63,79,63,46"/>
+</map>

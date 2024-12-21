@@ -1,0 +1,5 @@
+<map id="GameManager.InitializeLife" name="GameManager.InitializeLife">
+<area shape="rect" id="Node000001" title="Initializes the player&#39;s life when a new scene is loaded." alt="" coords="191,5,369,31"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#a5ccfacd027ad08eeb4ff1f25a7f59c98" title=" " alt="" coords="5,5,143,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,21,143,21,143,16,175,16"/>
+</map>

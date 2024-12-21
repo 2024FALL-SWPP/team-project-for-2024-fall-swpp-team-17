@@ -1,0 +1,5 @@
+<map id="LockManager.Unlock" name="LockManager.Unlock">
+<area shape="rect" id="Node000001" title="Unlocks the lock and sends an unlock signal to the puzzle interface." alt="" coords="5,13,149,38"/>
+<area shape="rect" id="Node000002" href="$interface_our_game_1_1_puzzle_interface.html#a27bff2affc01a16eeb23aff9c39fa961" title=" " alt="" coords="197,5,373,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,23,181,23,181,28,149,28"/>
+</map>

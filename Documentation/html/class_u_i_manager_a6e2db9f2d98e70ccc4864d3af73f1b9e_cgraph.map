@@ -1,0 +1,9 @@
+<map id="UIManager.Update" name="UIManager.Update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,136,60"/>
+<area shape="rect" id="Node000002" href="$class_u_i_manager.html#a1957f8f5d8b61955af9f593ee741d1b3" title="Pauses the game and shows the pause menu." alt="" coords="217,5,342,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,36,201,26,202,32,136,41"/>
+<area shape="rect" id="Node000004" href="$class_u_i_manager.html#aa49bf9260868364a7a0a72c37e1d006a" title="Smoothly updates the health bar to the target value." alt="" coords="184,55,375,96"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,54,169,58,168,63,136,59"/>
+<area shape="rect" id="Node000003" href="$class_game_manager.html#a7979fca811638424b6778a6c223a66ba" title="Pauses the game by setting the game state to Paused." alt="" coords="423,5,569,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,16,408,16,408,21,343,21"/>
+</map>

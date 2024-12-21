@@ -1,0 +1,11 @@
+<map id="PlatformManager.GroupAToggle" name="PlatformManager.GroupAToggle">
+<area shape="rect" id="Node000001" title="Toggles the states of platform group A cyclically." alt="" coords="5,42,210,68"/>
+<area shape="rect" id="Node000002" href="$class_platform_manager.html#a5c6c79a8679e1e826933ddfca5a16af3" title="Sets the visual and collision state of a platform group." alt="" coords="258,35,450,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,52,242,52,242,58,210,58"/>
+<area shape="rect" id="Node000003" href="$class_platform_manager.html#a8c9d448d283b866414b3ab0be47ec437" title="Updates the visual state of a platform based on the alpha value." alt="" coords="498,5,715,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="450,41,482,37,483,43,451,46"/>
+<area shape="rect" id="Node000005" href="$class_platform_manager.html#a89e047462afc9f77832f0af30cb999c1" title="Enables or disables the collider of a platform." alt="" coords="513,70,700,96"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="451,63,498,68,497,74,450,68"/>
+<area shape="rect" id="Node000004" href="$class_platform_manager.html#ae84b9da0d04d1d07d4cb2b9d1044f97d" title="Sets the alpha transparency of a platform&#39;s material." alt="" coords="763,13,940,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="716,23,748,23,748,28,716,28"/>
+</map>

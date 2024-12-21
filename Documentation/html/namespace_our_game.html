@@ -93,6 +93,9 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_our_game_1_1_collision_wrapper.html">CollisionWrapper</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps Unity's Collision object for testing purposes.  <a href="class_our_game_1_1_collision_wrapper.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_game_over_observer.html">GameOverObserver</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_game_state_observer.html">GameStateObserver</a></td></tr>
@@ -100,25 +103,49 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_gravity_observer.html">GravityObserver</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_our_game_1_1_hazard_manager.html">HazardManager</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class of hazards, which can harm the player(i.e. decrease its life)  <a href="class_our_game_1_1_hazard_manager.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for hazards that can harm the player.  <a href="class_our_game_1_1_hazard_manager.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_i_player_manager.html">IPlayerManager</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface of <a class="el" href="class_player_manager.html" title="This class handles movement(+ jump), life, blinking(when revived)">PlayerManager</a>.  <a href="interface_our_game_1_1_i_player_manager.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_i_life_manager.html">ILifeManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for managing the player's life, including health modifications.  <a href="interface_our_game_1_1_i_life_manager.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_i_my_collision.html">IMyCollision</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for accessing collision data.  <a href="interface_our_game_1_1_i_my_collision.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_our_game_1_1_mock_camera_manager.html">MockCameraManager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_our_game_1_1_mock_collision.html">MockCollision</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock implementation of <a class="el" href="interface_our_game_1_1_i_my_collision.html" title="Interface for accessing collision data.">IMyCollision</a> for testing.  <a href="class_our_game_1_1_mock_collision.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_our_game_1_1_mock_player_manager.html">MockPlayerManager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_our_game_1_1_mock_u_i_manager.html">MockUIManager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_our_game_1_1_my_contact_point.html">MyContactPoint</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a contact point during a collision.  <a href="struct_our_game_1_1_my_contact_point.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_observer.html">Observer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface to be used when making the actual <a class="el" href="interface_our_game_1_1_observer.html" title="Interface to be used when making the actual Observer interface.">Observer</a> interface.  <a href="interface_our_game_1_1_observer.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base interface for creating observer interfaces.  <a href="interface_our_game_1_1_observer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_puzzle_interface.html">PuzzleInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for puzzles, defining the basic lifecycle methods.  <a href="interface_our_game_1_1_puzzle_interface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_our_game_1_1_subject.html">Subject</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The subject to notify observers (e.g. gravity change, gamestate change, etc)  <a href="class_our_game_1_1_subject.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic subject class to notify observers of specific events or data changes.  <a href="class_our_game_1_1_subject.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ac2fb4c10a621ef417bdcb35196c3511a" id="r_ac2fb4c10a621ef417bdcb35196c3511a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a> { <a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511aac9dbb2b7c84159b632d71e512eba8428">Playing</a>
+<tr class="memitem:ac2fb4c10a621ef417bdcb35196c3511a" id="r_ac2fb4c10a621ef417bdcb35196c3511a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a> { <br />
+&#160;&#160;<a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511aac9dbb2b7c84159b632d71e512eba8428">Playing</a>
+, <a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511aae99180abf47a8b3a856e0bcb2656990a">Paused</a>
 , <a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511aa00633340d48861e0e4a96e06103ee3dd">WormholeEffect</a>
-, <a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511aa39ed73949319329361607ea6e8fb856c">Fainted</a>
+, <a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511aabea19ac2642c7d0bb6e3572c9a8f7a41">Gameover</a>
+, <br />
+&#160;&#160;<a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511aa27e9c0d7972e999a5bbe094c4cede584">Stun</a>
+, <a class="el" href="#ac2fb4c10a621ef417bdcb35196c3511aa608ff442e5491bad46bc86c5f16c6655">Revived</a>
+<br />
  }</td></tr>
-<tr class="memdesc:ac2fb4c10a621ef417bdcb35196c3511a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The global state of the whole game <a class="el" href="class_game_manager.html">GameManager</a> holds the state and observers get notified when it is changed.  <a href="#ac2fb4c10a621ef417bdcb35196c3511a">More...</a><br /></td></tr>
+<tr class="memdesc:ac2fb4c10a621ef417bdcb35196c3511a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the global state of the game. The <a class="el" href="class_game_manager.html" title="Manages the core game logic, including game state transitions, life management, and wormhole effects....">GameManager</a> tracks the state, and observers are notified when it changes.  <a href="#ac2fb4c10a621ef417bdcb35196c3511a">More...</a><br /></td></tr>
 <tr class="separator:ac2fb4c10a621ef417bdcb35196c3511a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -134,11 +161,14 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The global state of the whole game <a class="el" href="class_game_manager.html">GameManager</a> holds the state and observers get notified when it is changed. </p>
+<p>Represents the global state of the game. The <a class="el" href="class_game_manager.html" title="Manages the core game logic, including game state transitions, life management, and wormhole effects....">GameManager</a> tracks the state, and observers are notified when it changes. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac2fb4c10a621ef417bdcb35196c3511aac9dbb2b7c84159b632d71e512eba8428" name="ac2fb4c10a621ef417bdcb35196c3511aac9dbb2b7c84159b632d71e512eba8428"></a>Playing&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2fb4c10a621ef417bdcb35196c3511aae99180abf47a8b3a856e0bcb2656990a" name="ac2fb4c10a621ef417bdcb35196c3511aae99180abf47a8b3a856e0bcb2656990a"></a>Paused&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac2fb4c10a621ef417bdcb35196c3511aa00633340d48861e0e4a96e06103ee3dd" name="ac2fb4c10a621ef417bdcb35196c3511aa00633340d48861e0e4a96e06103ee3dd"></a>WormholeEffect&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac2fb4c10a621ef417bdcb35196c3511aa39ed73949319329361607ea6e8fb856c" name="ac2fb4c10a621ef417bdcb35196c3511aa39ed73949319329361607ea6e8fb856c"></a>Fainted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2fb4c10a621ef417bdcb35196c3511aabea19ac2642c7d0bb6e3572c9a8f7a41" name="ac2fb4c10a621ef417bdcb35196c3511aabea19ac2642c7d0bb6e3572c9a8f7a41"></a>Gameover&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2fb4c10a621ef417bdcb35196c3511aa27e9c0d7972e999a5bbe094c4cede584" name="ac2fb4c10a621ef417bdcb35196c3511aa27e9c0d7972e999a5bbe094c4cede584"></a>Stun&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2fb4c10a621ef417bdcb35196c3511aa608ff442e5491bad46bc86c5f16c6655" name="ac2fb4c10a621ef417bdcb35196c3511aa608ff442e5491bad46bc86c5f16c6655"></a>Revived&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

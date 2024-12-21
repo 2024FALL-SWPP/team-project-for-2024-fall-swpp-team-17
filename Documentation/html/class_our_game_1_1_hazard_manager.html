@@ -96,18 +96,20 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract class of hazards, which can harm the player(i.e. decrease its life)  
+<p>Abstract base class for hazards that can harm the player.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for OurGame.HazardManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_our_game_1_1_hazard_manager__inherit__graph.png" border="0" usemap="#a_our_game_8_hazard_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_our_game_8_hazard_manager_inherit__map" id="a_our_game_8_hazard_manager_inherit__map">
-<area shape="rect" title="Abstract class of hazards, which can harm the player(i.e. decrease its life)" alt="" coords="5,79,179,105"/>
-<area shape="rect" href="class_spike_manager.html" title=" " alt="" coords="40,153,144,178"/>
-<area shape="poly" title=" " alt="" coords="95,120,95,152,89,152,89,120"/>
-<area shape="rect" title=" " alt="" coords="36,5,148,31"/>
-<area shape="poly" title=" " alt="" coords="95,46,95,79,89,79,89,46"/>
+<area shape="rect" title="Abstract base class for hazards that can harm the player." alt="" coords="67,79,240,105"/>
+<area shape="rect" href="class_heavy_object_manager.html" title="Manages the behavior of heavy objects that can harm the player when crushed underneath." alt="" coords="5,153,153,178"/>
+<area shape="poly" title=" " alt="" coords="132,117,93,154,90,150,128,114"/>
+<area shape="rect" href="class_spike_manager.html" title="Manages the behavior of spike hazards in the game. Ensures spikes stay in a fixed position and handle..." alt="" coords="176,153,280,178"/>
+<area shape="poly" title=" " alt="" coords="179,114,218,150,214,154,175,117"/>
+<area shape="rect" title=" " alt="" coords="98,5,209,31"/>
+<area shape="poly" title=" " alt="" coords="156,46,156,79,151,79,151,46"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -115,7 +117,7 @@ Collaboration diagram for OurGame.HazardManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_our_game_1_1_hazard_manager__coll__graph.png" border="0" usemap="#a_our_game_8_hazard_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_our_game_8_hazard_manager_coll__map" id="a_our_game_8_hazard_manager_coll__map">
-<area shape="rect" title="Abstract class of hazards, which can harm the player(i.e. decrease its life)" alt="" coords="5,79,179,105"/>
+<area shape="rect" title="Abstract base class for hazards that can harm the player." alt="" coords="5,79,179,105"/>
 <area shape="rect" title=" " alt="" coords="36,5,148,31"/>
 <area shape="poly" title=" " alt="" coords="95,46,95,79,89,79,89,46"/>
 </map>
@@ -123,8 +125,8 @@ Collaboration diagram for OurGame.HazardManager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a330c5b0b801ec862fff669da21f19543" id="r_a330c5b0b801ec862fff669da21f19543"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a330c5b0b801ec862fff669da21f19543">HarmPlayer</a> (<a class="el" href="interface_our_game_1_1_i_player_manager.html">IPlayerManager</a> player)</td></tr>
-<tr class="separator:a330c5b0b801ec862fff669da21f19543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4324e615c5444e0abd6c10783d1b95d2" id="r_a4324e615c5444e0abd6c10783d1b95d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4324e615c5444e0abd6c10783d1b95d2">HarmPlayer</a> (<a class="el" href="interface_our_game_1_1_i_life_manager.html">ILifeManager</a> gameManager)</td></tr>
+<tr class="separator:a4324e615c5444e0abd6c10783d1b95d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -132,10 +134,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aa0699cd1f73c2b776efa3238af551dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract class of hazards, which can harm the player(i.e. decrease its life) </p>
+<div class="textblock"><p>Abstract base class for hazards that can harm the player. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a330c5b0b801ec862fff669da21f19543" name="a330c5b0b801ec862fff669da21f19543"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a330c5b0b801ec862fff669da21f19543">&#9670;&#160;</a></span>HarmPlayer()</h2>
+<a id="a4324e615c5444e0abd6c10783d1b95d2" name="a4324e615c5444e0abd6c10783d1b95d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4324e615c5444e0abd6c10783d1b95d2">&#9670;&#160;</a></span>HarmPlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,7 +148,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void OurGame.HazardManager.HarmPlayer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="interface_our_game_1_1_i_player_manager.html">IPlayerManager</a></td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="interface_our_game_1_1_i_life_manager.html">ILifeManager</a></td>          <td class="paramname"><span class="paramname"><em>gameManager</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -183,7 +185,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>UnityProject/GravitableEscape/Assets/Script/<a class="el" href="_game_core_8cs.html">GameCore.cs</a></li>
+<li>UnityProject/GravitableEscape/Assets/Scripts/<a class="el" href="_game_core_8cs.html">GameCore.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

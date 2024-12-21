@@ -1,0 +1,7 @@
+<map id="LockManager.SetLockID" name="LockManager.SetLockID">
+<area shape="rect" id="Node000001" title="Assigns a unique ID to the lock." alt="" coords="473,5,637,31"/>
+<area shape="rect" id="Node000002" href="$class_box_puzzle_manager.html#ad84b322c3f8448d15befac8ef2e5c389" title="Assigns unique IDs to each lock in the puzzle." alt="" coords="219,5,425,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="457,21,426,21,426,16,457,16"/>
+<area shape="rect" id="Node000003" href="$class_box_puzzle_manager.html#a6cb4f287e84212455525b00223f165d1" title=" " alt="" coords="5,5,171,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="203,21,171,21,171,16,203,16"/>
+</map>
