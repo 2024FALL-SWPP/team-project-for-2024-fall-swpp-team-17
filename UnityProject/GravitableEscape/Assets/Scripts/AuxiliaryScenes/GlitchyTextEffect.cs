@@ -1,6 +1,11 @@
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Adds a glitchy visual effect to a TextMeshProUGUI component. 
+/// Periodically manipulates text color, style, and position to simulate glitches.
+/// This is used in Title, Menu scene's "GRAVITABLE ESCAPE" text to add glitchy effect
+/// </summary>
 public class GlitchyTextEffect : MonoBehaviour
 {
     public TextMeshProUGUI textMeshPro;

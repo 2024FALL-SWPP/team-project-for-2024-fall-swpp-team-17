@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the player's movement and animations during the ending sequence.
+/// Handles toggling between left and right movements and switches animation controllers dynamically.
+/// </summary>
 public class EndingPlayermove : MonoBehaviour
 {
     public RuntimeAnimatorController endingController;

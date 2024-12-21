@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This class is used to spawn shooting stars in the title, Menu scene
+/// </summary>
 public class SpawnShootingStars : MonoBehaviour
 {
-
     public GameObject shootingStarPrefab;
     private float spawnInterval = 4.0f; // Time between spawns
     private static SpawnShootingStars instance;

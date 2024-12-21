@@ -4,6 +4,16 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 
+/// <summary>
+/// Handles sprite changes for a UI button based on user interactions.
+/// Implements hover, click, and release states using defined sprites.
+/// </summary>
+/// <remarks>
+/// Requires an <see cref="Image"/> component and three sprites:
+/// - <see cref="defaultSprite"/>: Default button state.
+/// - <see cref="activeSprite"/>: Hover/active button state.
+/// - <see cref="pushedSprite"/>: Clicked button state.
+/// </remarks>
 public class ButtonsPlayMode
 {
     private const int StartSceneIndex = 2; // First index of the scene to test

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This script is used to save audio when scene switches from Title to Menu
+/// </summary>
 public class KeepAudio : MonoBehaviour
 {
 

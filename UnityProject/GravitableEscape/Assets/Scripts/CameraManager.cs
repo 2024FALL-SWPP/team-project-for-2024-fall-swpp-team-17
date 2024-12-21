@@ -8,42 +8,41 @@ using UnityEngine.UIElements;
 
 /// <summary>
 /// This class manages camera movement and rotation.
-/// In most cases it follows the player and roates using mouse input.
-/// It has some special effects like spiraling towards wormhole.
+/// In most cases it follows the player and rotates using mouse input.
+/// It has some special effects like spiraling towards a wormhole.
 /// </summary>
 public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
 {
-    Transform player; // target to follow. Player in our case
-    private float distance = 15f; // distance to target
-    private float targetDistance = 15f;
-    float height = 5f; // height from target
-    Quaternion gravityRot, targetGravityRot;
-    InputManager inputManager;
-    GameManager gameManager;
-    Vector3 targetPosition;
-    GameState gameState;
-    Transform wormhole = null;
-    Vector3 boundsMin, boundsMax;
-    public float corridors_z_min, corridors_z_max;
+    Transform player; // Target to follow, which is the player in this case
+    private float distance = 15f; // Default distance from the player
+    private float targetDistance = 15f; // Target distance for smooth transitions
+    float height = 5f; // Height offset for the camera relative to the player
+    Quaternion gravityRot, targetGravityRot; // Current and target gravity rotation
+    InputManager inputManager; // Reference to the input manager for controls
+    GameManager gameManager; // Reference to the game manager for state control
+    Vector3 targetPosition; // Camera's target position
+    GameState gameState; // Current game state
+    Transform wormhole = null; // Reference to the wormhole's position
+    Vector3 boundsMin, boundsMax; // Camera movement boundaries
+    public float corridors_z_min, corridors_z_max; // Z-axis bounds for corridors
 
-    private AudioSource bgmAudioSource; // bgm audio source
-    private bool isbgmPlaying = true;
+    private AudioSource bgmAudioSource; // Background music audio source
+    private bool isbgmPlaying = true; // Tracks whether the BGM is playing
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
-        inputManager = FindObjectOfType<InputManager>();
-        gameManager = FindObjectOfType<GameManager>();
-        gravityRot = Quaternion.identity;
-        targetGravityRot = Quaternion.identity;
-        bgmAudioSource = GetComponent<AudioSource>();
-        boundsMin = new Vector3(-15f, -15f, corridors_z_min);
-        boundsMax = new Vector3(15f, 15f, corridors_z_max);
+        player = GameObject.FindWithTag("Player").transform; // Locate the player object
+        inputManager = FindObjectOfType<InputManager>(); // Find the input manager in the scene
+        gameManager = FindObjectOfType<GameManager>(); // Find the game manager in the scene
+        gravityRot = Quaternion.identity; // Initialize gravity rotation
+        targetGravityRot = Quaternion.identity; // Initialize target gravity rotation
+        bgmAudioSource = GetComponent<AudioSource>(); // Get the audio source for BGM
+        boundsMin = new Vector3(-15f, -15f, corridors_z_min); // Minimum bounds for camera
+        boundsMax = new Vector3(15f, 15f, corridors_z_max); // Maximum bounds for camera
     }
 
-
     /// <summary>
-    /// Checks gameState and does appropriate camera movement
+    /// Updates the camera's position and behavior based on the game state.
     /// </summary>
     void LateUpdate()
     {
@@ -52,137 +51,140 @@ public class CameraManager : MonoBehaviour, GravityObserver, GameStateObserver
             case GameState.Playing:
             case GameState.Stun:
             case GameState.Revived:
-                ScrollDistance();
-                RotateCamera();
-                FollowPlayer();
-                ShiftToFront();
-                transform.position = targetPosition;
+                ScrollDistance(); // Adjust distance based on mouse scroll
+                RotateCamera(); // Rotate camera based on input and gravity
+                FollowPlayer(); // Update the target position to follow the player
+                ShiftToFront(); // Ensure the camera stays within corridor bounds
+                transform.position = targetPosition; // Update the camera's position
                 break;
             case GameState.WormholeEffect:
-                SpiralTowardsWormhole();
+                SpiralTowardsWormhole(); // Handle special effect for wormhole
                 break;
             case GameState.Gameover:
-                GameOverCameraMove();
-                break;
-            default:
+                GameOverCameraMove(); // Handle camera movement during game over
                 break;
         }
-
     }
+
     /// <summary>
-    /// This function is called when the game enters the gameover state
+    /// Adjusts the camera position to circle around the player during the game over state.
     /// </summary>
     void GameOverCameraMove()
     {
-        float radius = 15.0f;
-        float speed = 1.5f;
-        float angle = Time.time * speed;
-        Vector3 offset = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle)) * radius;
-        gravityRot = targetGravityRot;
-        transform.position = player.position + gravityRot * offset + gravityRot * new Vector3(0, 10, 0);
-        transform.LookAt(player, -Physics.gravity);
+        float radius = 15.0f; // Radius of the circular motion
+        float speed = 1.5f; // Speed of the circular motion
+        float angle = Time.time * speed; // Calculate angle over time
+        Vector3 offset = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle)) * radius; // Offset for circular motion
+        gravityRot = targetGravityRot; // Align gravity rotation
+        transform.position = player.position + gravityRot * offset + gravityRot * new Vector3(0, 10, 0); // Calculate position
+        transform.LookAt(player, -Physics.gravity); // Orient the camera towards the player
     }
 
     /// <summary>
-    /// This function alters distance to reflect mouse scroll input
+    /// Updates the distance from the player based on scroll input.
     /// </summary>
     void ScrollDistance()
     {
         if (inputManager.scrollInput != 0)
         {
-            targetDistance = Mathf.Clamp(distance - inputManager.scrollInput * 10f, 5f, 25f);
+            targetDistance = Mathf.Clamp(distance - inputManager.scrollInput * 10f, 5f, 25f); // Clamp the target distance
         }
-        distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * 10f);
-    }
-
-    void RotateCamera()
-    {
-        gravityRot = Quaternion.Slerp(gravityRot, targetGravityRot, Time.deltaTime * 10);
-        transform.rotation = gravityRot * Quaternion.Euler(inputManager.pitch, inputManager.yaw, 0);
-    }
-
-    void FollowPlayer()
-    {
-        targetPosition = player.position - transform.forward * distance + transform.up * height;
+        distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * 10f); // Smoothly transition to the target distance
     }
 
     /// <summary>
-    /// When the camera is outside the corridor, this function shifts the camera to be in front of the wall, so that the camera can see the player.
+    /// Rotates the camera based on input and gravity.
+    /// </summary>
+    void RotateCamera()
+    {
+        gravityRot = Quaternion.Slerp(gravityRot, targetGravityRot, Time.deltaTime * 10); // Smooth gravity rotation
+        transform.rotation = gravityRot * Quaternion.Euler(inputManager.pitch, inputManager.yaw, 0); // Apply input rotation
+    }
+
+    /// <summary>
+    /// Updates the target position to follow the player.
+    /// </summary>
+    void FollowPlayer()
+    {
+        targetPosition = player.position - transform.forward * distance + transform.up * height; // Calculate target position
+    }
+
+    /// <summary>
+    /// Ensures the camera remains within corridor bounds.
     /// </summary>
     void ShiftToFront()
     {
         targetPosition = new Vector3(
-            Mathf.Clamp(targetPosition.x, boundsMin.x, boundsMax.x),
-            Mathf.Clamp(targetPosition.y, boundsMin.y, boundsMax.y),
-            Mathf.Clamp(targetPosition.z, boundsMin.z, boundsMax.z)
+            Mathf.Clamp(targetPosition.x, boundsMin.x, boundsMax.x), // Clamp X
+            Mathf.Clamp(targetPosition.y, boundsMin.y, boundsMax.y), // Clamp Y
+            Mathf.Clamp(targetPosition.z, boundsMin.z, boundsMax.z) // Clamp Z
         );
     }
 
-    float spiralAngle = 0.0f, spiralRadius, distanceToWormhole;
-    float spiralSpeed = 15.0f;
-    float spiralRadiusDenom = 25.0f;
-    float moveSpeedNum = 2.5f;
-    float minRad = 0.5f;
-    float moveSpeed = 10.0f;
+    float spiralAngle = 0.0f, spiralRadius, distanceToWormhole; // Variables for spiral motion
+    float spiralSpeed = 15.0f; // Speed of spiral motion
+    float spiralRadiusDenom = 25.0f; // Denominator for spiral radius calculation
+    float moveSpeedNum = 2.5f; // Speed of movement towards wormhole
+    float minRad = 0.5f; // Minimum spiral radius
+    float moveSpeed = 10.0f; // Movement speed
 
     /// <summary>
-    /// Updates camera's position to spiral towards the wormhole.
+    /// Moves the camera in a spiral motion towards the wormhole.
     /// </summary>
     private void SpiralTowardsWormhole()
     {
         if (Vector3.Distance(transform.position, wormhole.position) > 1f)
         {
-            spiralAngle += spiralSpeed * Time.deltaTime;
-            distanceToWormhole = Vector3.Distance(transform.position, wormhole.position);
-            spiralRadius = Mathf.Min(minRad, distanceToWormhole / spiralRadiusDenom);
-            Vector3 spiralOffest = new Vector3(
+            spiralAngle += spiralSpeed * Time.deltaTime; // Update spiral angle
+            distanceToWormhole = Vector3.Distance(transform.position, wormhole.position); // Calculate distance to wormhole
+            spiralRadius = Mathf.Min(minRad, distanceToWormhole / spiralRadiusDenom); // Calculate spiral radius
+            Vector3 spiralOffset = new Vector3(
                 Mathf.Cos(spiralAngle) * spiralRadius,
                 Mathf.Sin(spiralAngle) * spiralRadius,
-                0);
+                0); // Calculate spiral offset
 
-            transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime) + spiralOffest;
-            moveSpeed = moveSpeedNum;
-
-            transform.LookAt(wormhole);
+            transform.position = Vector3.Lerp(transform.position, wormhole.position, moveSpeed * Time.deltaTime) + spiralOffset; // Move camera
+            moveSpeed = moveSpeedNum; // Set movement speed
+            transform.LookAt(wormhole); // Orient the camera towards the wormhole
         }
         else
         {
-            gameManager.exitWormhole();
+            gameManager.exitWormhole(); // Exit wormhole effect
         }
     }
 
     /// <summary>
-    /// Sets wormhole position so that the camera can spiral towards that position
+    /// Sets the wormhole's position for spiral motion.
     /// </summary>
     /// <param name="wh">Transform of the wormhole</param>
     public void SetWormhole(Transform wh)
     {
-        wormhole = wh;
+        wormhole = wh; // Assign wormhole transform
     }
 
     public void OnNotify<GravityObserver>(Quaternion rot)
     {
-        targetGravityRot = targetGravityRot * rot;
+        targetGravityRot = targetGravityRot * rot; // Update target gravity rotation
     }
 
     public void OnNotify<GameStateObserver>(GameState gs)
     {
-        gameState = gs;
+        gameState = gs; // Update game state
     }
 
     /// <summary>
-    /// Turns on/off bgm
+    /// Toggles the background music on or off.
     /// </summary>
     public void ToggleBGM()
     {
         if (isbgmPlaying)
         {
-            bgmAudioSource.Pause();
+            bgmAudioSource.Pause(); // Pause the music
         }
         else
         {
-            bgmAudioSource.Play();
+            bgmAudioSource.Play(); // Play the music
         }
-        isbgmPlaying = !isbgmPlaying;
+        isbgmPlaying = !isbgmPlaying; // Toggle play state
     }
 }

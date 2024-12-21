@@ -3,24 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using OurGame;
 
+/// <summary>
+/// Manages the logic for a box puzzle, including the activation of boxes, locks, and plates.
+/// Handles puzzle progression, resetting, and clearing.
+/// </summary>
+/// <remarks>
+/// This class implements <see cref="PuzzleInterface"/> and provides functionality for:
+/// - Tracking the positions of keyboxes and resetting them.
+/// - Activating locks and plates based on player interaction.
+/// - Clearing the puzzle and triggering corresponding visual effects.
+/// </remarks>
 public class BoxPuzzleManager : MonoBehaviour, PuzzleInterface
 {
-    public GameObject[] keyboxes;
+    public GameObject[] keyboxes; // Array of keyboxes involved in the puzzle
+    public GameObject[] locks; // Array of locks to be unlocked
+    public GameObject[] plates; // Array of plates to activate upon unlocking
 
-    public GameObject[] locks;
+    private Vector3[] startPoses = new Vector3[7]; // Initial positions of the keyboxes
+    private Vector3 targetRot = new Vector3(0f, 90f, 0f); // Rotation for puzzle clear effect
+    private float rotationSpeed = 30f; // Speed of rotation when the puzzle is cleared
+    private bool isCleared = false; // Indicates if the puzzle is cleared
+    private int unlockCount = 0; // Tracks the number of locks unlocked
 
-    public GameObject[] plates;
+    public ButtonManager buttonManager; // Reference to the button manager
 
-    private Vector3[] startPoses = new Vector3[7];
-    private Vector3 targetRot = new Vector3(0f, 90f, 0f);
-    private float rotationSpeed = 30f;
-    private bool isCleared = false;
-
-    private int unlockCount = 0;
-
-    public ButtonManager buttonManager;
-
-    // Start is called before the first frame update
     void Start()
     {
         buttonManager = GameObject.Find("Button").GetComponent<ButtonManager>();
@@ -30,21 +36,28 @@ public class BoxPuzzleManager : MonoBehaviour, PuzzleInterface
         SetPlatesInActive();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isCleared)
         {
+            // Rotate the puzzle object upon clearing
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRot), rotationSpeed * Time.deltaTime);
         }
     }
 
+    /// <summary>
+    /// Receives a signal to unlock a specific lock and activates its corresponding plate.
+    /// </summary>
+    /// <param name="lockID">The ID of the lock to unlock.</param>
     public void GetUnlockSignal(int lockID)
     {
         plates[lockID].SetActive(true);
         IncreaseUnlockCount();
     }
 
+    /// <summary>
+    /// Assigns unique IDs to each lock in the puzzle.
+    /// </summary>
     void SetLockIDs()
     {
         int lockID = 0;
@@ -56,6 +69,9 @@ public class BoxPuzzleManager : MonoBehaviour, PuzzleInterface
         }
     }
 
+    /// <summary>
+    /// Activates all keyboxes in the puzzle.
+    /// </summary>
     void SetBoxesActive()
     {
         foreach (GameObject box in keyboxes)
@@ -64,6 +80,9 @@ public class BoxPuzzleManager : MonoBehaviour, PuzzleInterface
         }
     }
 
+    /// <summary>
+    /// Records the initial positions of all keyboxes.
+    /// </summary>
     void GetBoxPosition()
     {
         for (int index = 0; index < 7; index++)
@@ -72,6 +91,9 @@ public class BoxPuzzleManager : MonoBehaviour, PuzzleInterface
         }
     }
 
+    /// <summary>
+    /// Resets all keyboxes to their initial positions.
+    /// </summary>
     void SetBoxAtStartPos()
     {
         for (int index = 0; index < 7; index++)
@@ -80,6 +102,9 @@ public class BoxPuzzleManager : MonoBehaviour, PuzzleInterface
         }
     }
 
+    /// <summary>
+    /// Deactivates all keyboxes.
+    /// </summary>
     void SetBoxesInActive()
     {
         foreach (GameObject box in keyboxes)
@@ -88,6 +113,9 @@ public class BoxPuzzleManager : MonoBehaviour, PuzzleInterface
         }
     }
 
+    /// <summary>
+    /// Deactivates all plates.
+    /// </summary>
     void SetPlatesInActive()
     {
         foreach (GameObject plate in plates)
@@ -96,6 +124,9 @@ public class BoxPuzzleManager : MonoBehaviour, PuzzleInterface
         }
     }
 
+    /// <summary>
+    /// Increments the unlock count and clears the puzzle if all locks are unlocked.
+    /// </summary>
     void IncreaseUnlockCount()
     {
         unlockCount++;
@@ -105,22 +136,34 @@ public class BoxPuzzleManager : MonoBehaviour, PuzzleInterface
         }
     }
 
+    /// <summary>
+    /// Starts the puzzle by activating all keyboxes.
+    /// </summary>
     public void PuzzleStart()
     {
         SetBoxesActive();
     }
 
+    /// <summary>
+    /// Resets the puzzle to its initial state.
+    /// </summary>
     public void PuzzleReset()
     {
         StartCoroutine(ResetBox());
     }
 
+    /// <summary>
+    /// Clears the puzzle and fixes the button state.
+    /// </summary>
     public void PuzzleClear()
     {
         buttonManager.FixButton();
         isCleared = true;
     }
 
+    /// <summary>
+    /// Coroutine to reset the keyboxes and plates to their initial states.
+    /// </summary>
     private IEnumerator ResetBox()
     {
         SetBoxesInActive();

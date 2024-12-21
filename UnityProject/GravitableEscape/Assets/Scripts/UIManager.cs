@@ -6,52 +6,57 @@ using UnityEngine.UI;
 using OurGame;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Manages the game's user interface elements, including health bar updates, pause menu, game over screen, 
+/// hint messages, and gravity information display. It observes game state changes to update the UI accordingly.
+/// </summary>
 public class UIManager : MonoBehaviour, GameStateObserver
 {
-    public Slider healthBar;
-    private GameManager gameManager;
-    private GameState gameState;
-    public TextMeshProUGUI gameOverText;
-    public Button pauseButton;
-    public TextMeshProUGUI hintMessageText;
-    private Coroutine typingCoroutine;
-    public GameObject menu;
-    public GameObject hintMessagebox;
-    public Button restartButton;
-    public Button mainMenuButton;
-    public LoadScene loadScene;
-
-    public GameObject gravityDirectionMessage;
+    public Slider healthBar; // Health bar slider to display player health
+    private GameManager gameManager; // Reference to the GameManager
+    private GameState gameState; // Tracks the current game state
+    public TextMeshProUGUI gameOverText; // Text element for the game over message
+    public Button pauseButton; // Pause button reference
+    public TextMeshProUGUI hintMessageText; // Text element for hint messages
+    private Coroutine typingCoroutine; // Coroutine for typing effect in hint messages
+    public GameObject menu; // Pause menu UI object
+    public GameObject hintMessagebox; // Hint message background UI object
+    public Button restartButton; // Restart button in the game over menu
+    public Button mainMenuButton; // Main menu button in the game over menu
+    public LoadScene loadScene; // LoadScene component for scene transitions
+    public GameObject gravityDirectionMessage; // UI element for displaying gravity directions (1, 2, 3)
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        healthBar.value = gameManager.Life;
-        gameOverText.gameObject.SetActive(false);
-        restartButton.gameObject.SetActive(false);
-        mainMenuButton.gameObject.SetActive(false);
-        pauseButton.gameObject.SetActive(true);
-        menu.SetActive(false);
+        gameManager = FindObjectOfType<GameManager>(); // Find GameManager in the scene
+        healthBar.value = gameManager.Life; // Initialize health bar value
+        gameOverText.gameObject.SetActive(false); // Hide game over text initially
+        restartButton.gameObject.SetActive(false); // Hide restart button initially
+        mainMenuButton.gameObject.SetActive(false); // Hide main menu button initially
+        pauseButton.gameObject.SetActive(true); // Show pause button
+        menu.SetActive(false); // Hide the pause menu initially
 
         if (hintMessageText != null)
         {
-            hintMessageText.gameObject.SetActive(false);
+            hintMessageText.gameObject.SetActive(false); // Hide hint message text initially
         }
-        hintMessagebox.gameObject.SetActive(false);
+        hintMessagebox.gameObject.SetActive(false); // Hide hint message box initially
 
         if (gravityDirectionMessage != null)
         {
-            gravityDirectionMessage.SetActive(false);
+            gravityDirectionMessage.SetActive(false); // Hide gravity direction message initially
         }
     }
 
     void Update()
     {
+        // Smoothly update the health bar if the life value changes
         if (healthBar.value != gameManager.Life)
         {
             StartCoroutine(SmoothHealthBarUpdate(gameManager.Life));
         }
 
+        // Pause the game when the P key is pressed
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (gameState != GameState.Paused)
@@ -62,10 +67,9 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// smooth health bar update, not concrete
+    /// Smoothly updates the health bar to the target value.
     /// </summary>
-    /// <param name="targetValue"></param>
-    /// <returns></returns>
+    /// <param name="targetValue">Target value to update the health bar to.</param>
     private IEnumerator SmoothHealthBarUpdate(float targetValue)
     {
         float currentValue = healthBar.value;
@@ -79,39 +83,33 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// gameovertext SetActive to true when Gameover
+    /// Handles UI updates based on the game state.
     /// </summary>
-    /// <typeparam name="GameStateObserver"></typeparam>
-    /// <param name="gs">global game state after modification</param>
+    /// <param name="gs">The updated game state.</param>
     public void OnNotify<GameStateObserver>(GameState gs)
     {
         gameState = gs;
         switch (gs)
         {
             case GameState.Gameover:
-                gameOverText.gameObject.SetActive(true);
-                restartButton.gameObject.SetActive(true);
-                mainMenuButton.gameObject.SetActive(true);
-                pauseButton.gameObject.SetActive(false);
-                HideMessage();
+                gameOverText.gameObject.SetActive(true); // Show game over text
+                restartButton.gameObject.SetActive(true); // Show restart button
+                mainMenuButton.gameObject.SetActive(true); // Show main menu button
+                pauseButton.gameObject.SetActive(false); // Hide pause button
+                HideMessage(); // Hide hint messages
                 break;
             default:
-
                 break;
         }
     }
 
-
     /// <summary>
-    /// Displays hint message with a typing effect, based on player position.
+    /// Displays a hint message with a typing effect.
     /// </summary>
-    /// <param name="message">message for a specific zone</param>
+    /// <param name="message">The message to display.</param>
     public void ShowMessage(string message)
     {
-        if (hintMessageText == null)
-        {
-            return;
-        }
+        if (hintMessageText == null) return;
 
         if (typingCoroutine != null)
         {
@@ -122,7 +120,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// Hides hint message based on player position.
+    /// Hides the hint message.
     /// </summary>
     public void HideMessage()
     {
@@ -134,7 +132,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// Triggers typing effect.
+    /// Displays a message character by character with a typing effect.
     /// </summary>
     private IEnumerator TypeMessage(string message)
     {
@@ -150,7 +148,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// Shows gravity information 1, 2, 3 on screen.
+    /// Shows gravity directions (1, 2, 3) on the screen.
     /// </summary>
     public void ShowGravityDirections()
     {
@@ -161,7 +159,7 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// Hides gravity information 1, 2, 3 on screen.
+    /// Hides gravity directions from the screen.
     /// </summary>
     public void HideGravityDirections()
     {
@@ -172,46 +170,45 @@ public class UIManager : MonoBehaviour, GameStateObserver
     }
 
     /// <summary>
-    /// This function is envoked when pause button is clicked in the UI
+    /// Pauses the game and shows the pause menu.
     /// </summary>
     public void Pause()
     {
-        gameManager.Pause(); // change gameState in gameManager, gameState of UIManager is changed when OnNotify is called
+        gameManager.Pause(); // Notify GameManager to change the game state
         if (Time.timeScale == 1)
         {
-            Time.timeScale = 0;
-            menu.SetActive(true);
+            Time.timeScale = 0; // Pause the game
+            menu.SetActive(true); // Show the pause menu
         }
-        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(null); // Clear button selection
     }
 
     /// <summary>
-    /// This function is envoked when resume button is clicked after pause in the UI
+    /// Resumes the game and hides the pause menu.
     /// </summary>
     public void Resume()
     {
         gameManager.Resume();
-        Time.timeScale = 1;
-        menu.SetActive(false);
+        Time.timeScale = 1; // Resume the game
+        menu.SetActive(false); // Hide the pause menu
     }
 
     /// <summary>
-    /// This function is envoked when restart button is clicked after pause in the UI
+    /// Restarts the current scene.
     /// </summary>
     public void Restart()
     {
-        Time.timeScale = 1;
-        gameManager.ResetLife();
-        loadScene.ReloadScene();
+        Time.timeScale = 1; // Resume time if paused
+        gameManager.ResetLife(); // Reset player life
+        loadScene.ReloadScene(); // Reload the current scene
     }
 
     /// <summary>
-    /// This function is envoked when menu button is clicked after pause in the UI
+    /// Loads the main menu scene.
     /// </summary>
     public void LoadMenu()
     {
-        Time.timeScale = 1;
-        loadScene.LoadTitle();
+        Time.timeScale = 1; // Resume time if paused
+        loadScene.LoadTitle(); // Load the title menu scene
     }
 }
-

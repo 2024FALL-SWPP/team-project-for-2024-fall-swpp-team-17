@@ -2,6 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Handles sprite changes for a UI button based on user interactions.
+/// Implements hover, click, and release states using defined sprites.
+/// </summary>
+/// <remarks>
+/// Requires an <see cref="Image"/> component and three sprites:
+/// - <see cref="defaultSprite"/>: Default button state.
+/// - <see cref="activeSprite"/>: Hover/active button state.
+/// - <see cref="pushedSprite"/>: Clicked button state.
+/// </remarks>
 public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
     public Sprite defaultSprite;  // Default state sprite
