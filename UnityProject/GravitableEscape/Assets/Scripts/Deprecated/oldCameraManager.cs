@@ -51,7 +51,6 @@ public class oldCameraManager : MonoBehaviour
     }
 
     private Vector3 savedSphericalCoordinates;
-    private bool isShiftPressedLastFrame = false;
     private float targetDistance = 15.0f;
     private void UpdateCameraPosition()
     {
