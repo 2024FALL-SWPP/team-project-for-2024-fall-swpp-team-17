@@ -362,14 +362,4 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         yield return new WaitForSeconds(1.5f); // Even though gameState is stil Stun, want player to stand up little earlier
         animator.SetBool("Faint_b", false); // reset faint
     }
-
-    /// <summary>
-    /// Returns player's position.
-    /// </summary>
-    /// <returns></returns>
-    public Vector3 GetPlayerPos()
-    {
-        return transform.position;
-    }
-
 }
