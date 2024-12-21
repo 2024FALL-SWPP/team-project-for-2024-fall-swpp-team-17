@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MessageManager : MonoBehaviour
 {
-    private PlayerManager playerManager;
-    private GameManager gameManager;
+    private Transform player;
     private UIManager uiManager;
 
     [System.Serializable]
@@ -26,14 +25,13 @@ public class MessageManager : MonoBehaviour
 
     public float gravityMessageStartZ;
     public float gravityMessageEndZ;
-    public bool isMessageRequiredScene;
+    private bool isMessageRequiredScene;
 
     void Start()
     {
         isMessageRequiredScene = SceneManager.GetActiveScene().name == "Tutorial";
 
-        playerManager = FindObjectOfType<PlayerManager>();
-        gameManager = FindObjectOfType<GameManager>();
+        player = GameObject.Find("Player").transform;
         uiManager = FindObjectOfType<UIManager>();
 
         // Optional validation to ensure all zones have valid bounds
@@ -53,7 +51,7 @@ public class MessageManager : MonoBehaviour
             return;
         }
 
-        Vector3 playerPosition = playerManager.GetPlayerPos();
+        Vector3 playerPosition = player.position;
         float playerZ = playerPosition.z;
 
         string newMessage = null;

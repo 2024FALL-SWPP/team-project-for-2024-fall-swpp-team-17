@@ -204,9 +204,10 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         }
         return false;
     }
+
     // BLINK
     /// <summary>
-    /// Make player blink translucent, opaque to show that player revived
+    /// Make player blink translucent, opaque to show that the player revived
     /// </summary>
     void Blink()
     {
@@ -255,7 +256,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         foreach (Renderer renderer in renderers)
         {
             Material material = renderer.material;
-            material.SetFloat("_Mode", 0); // Opaque ���
+            material.SetFloat("_Mode", 0); // Opaque
             material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
             material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
             material.SetInt("_ZWrite", 1);
@@ -350,7 +351,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
                 break;
             case GameState.Revived:
                 revivedTime = Time.time;
-                // animator.SetBool("Faint_b", false);
                 break;
             default:
                 gameObject.SetActive(true);
@@ -362,7 +362,6 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
         yield return new WaitForSeconds(1.5f); // Even though gameState is stil Stun, want player to stand up little earlier
         animator.SetBool("Faint_b", false); // reset faint
     }
-
 
     /// <summary>
     /// Returns player's position.
