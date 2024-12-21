@@ -1,7 +1,7 @@
 <map id="PlayerManager.Blink" name="PlayerManager.Blink">
-<area shape="rect" id="Node000001" title="Make player blink translucent, opaque to show that player revived." alt="" coords="5,46,146,72"/>
-<area shape="rect" id="Node000002" href="$class_player_manager.html#a21c84b51229c3d1ef22ac9eb012152fb" title=" " alt="" coords="194,5,378,46"/>
+<area shape="rect" id="Node000001" title="Handles blinking effects when the player is revived." alt="" coords="5,46,146,72"/>
+<area shape="rect" id="Node000002" href="$class_player_manager.html#a21c84b51229c3d1ef22ac9eb012152fb" title="Restores the player&#39;s materials to opaque." alt="" coords="194,5,378,46"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,45,178,40,179,45,146,51"/>
-<area shape="rect" id="Node000003" href="$class_player_manager.html#a679429196e9711ac69b307c6956a0078" title=" " alt="" coords="194,71,378,111"/>
+<area shape="rect" id="Node000003" href="$class_player_manager.html#a679429196e9711ac69b307c6956a0078" title="Makes the player&#39;s materials translucent." alt="" coords="194,71,378,111"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,67,179,72,178,77,146,72"/>
 </map>

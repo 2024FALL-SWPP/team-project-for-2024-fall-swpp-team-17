@@ -1,0 +1,5 @@
+<map id="UIManager.OnNotify&lt; GameStateObserver &gt;" name="UIManager.OnNotify&lt; GameStateObserver &gt;">
+<area shape="rect" id="Node000001" title="Handles UI updates based on the game state." alt="" coords="5,5,170,46"/>
+<area shape="rect" id="Node000002" href="$class_u_i_manager.html#a5b0b9c5ccef6041ee103625fa45c5f20" title="Hides the hint message." alt="" coords="218,13,386,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,23,202,23,202,28,170,28"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="KeepAudio" name="KeepAudio">
+<area shape="rect" id="Node000001" title="This script is used to save audio when scene switches from Title to Menu." alt="" coords="19,79,103,105"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,46,64,79,58,79,58,46"/>
+</map>

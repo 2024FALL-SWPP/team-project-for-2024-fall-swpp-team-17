@@ -93,12 +93,15 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">ButtonManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the behavior of a button that is used to activate a puzzle. Handles player interactions, button states, and puzzle activation or resetting.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ButtonManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_button_manager__inherit__graph.png" border="0" usemap="#a_button_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_button_manager_inherit__map" id="a_button_manager_inherit__map">
-<area shape="rect" title=" " alt="" coords="6,79,116,105"/>
+<area shape="rect" title="Manages the behavior of a button that is used to activate a puzzle. Handles player interactions,..." alt="" coords="6,79,116,105"/>
 <area shape="rect" title=" " alt="" coords="5,5,117,31"/>
 <area shape="poly" title=" " alt="" coords="64,46,64,79,58,79,58,46"/>
 </map>
@@ -108,26 +111,24 @@ Collaboration diagram for ButtonManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_button_manager__coll__graph.png" border="0" usemap="#a_button_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_button_manager_coll__map" id="a_button_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="12,244,121,270"/>
+<area shape="rect" title="Manages the behavior of a button that is used to activate a puzzle. Handles player interactions,..." alt="" coords="89,94,198,120"/>
 <area shape="rect" title=" " alt="" coords="5,5,117,31"/>
-<area shape="poly" title=" " alt="" coords="64,47,69,244,63,244,59,47"/>
-<area shape="rect" href="class_puzzle_interface.html" title=" " alt="" coords="82,80,194,106"/>
-<area shape="poly" title=" " alt="" coords="87,40,128,78,124,82,83,44"/>
-<area shape="rect" href="class_maze_manager.html" title=" " alt="" coords="84,155,187,181"/>
-<area shape="poly" title=" " alt="" coords="119,195,78,245,74,242,114,192"/>
-<area shape="poly" title=" " alt="" coords="140,122,139,155,133,155,135,121"/>
+<area shape="poly" title=" " alt="" coords="85,41,134,92,130,95,81,44"/>
+<area shape="rect" href="interface_our_game_1_1_puzzle_interface.html" title="Interface for puzzles, defining the basic lifecycle methods." alt="" coords="140,5,312,31"/>
+<area shape="poly" title=" " alt="" coords="206,44,157,95,153,92,202,41"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad10532db93280a68f2d89f7d3b8e1c57" id="r_ad10532db93280a68f2d89f7d3b8e1c57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad10532db93280a68f2d89f7d3b8e1c57">FixButton</a> ()</td></tr>
+<tr class="memdesc:ad10532db93280a68f2d89f7d3b8e1c57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixes the button in its pressed state and disables further interaction.  <br /></td></tr>
 <tr class="separator:ad10532db93280a68f2d89f7d3b8e1c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a46f4e4d288836a48f592a291887e38c1" id="r_a46f4e4d288836a48f592a291887e38c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_maze_manager.html">MazeManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46f4e4d288836a48f592a291887e38c1">mazeManager</a></td></tr>
-<tr class="separator:a46f4e4d288836a48f592a291887e38c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a56f7800c1a8f53a6a001d3ad11269" id="r_a39a56f7800c1a8f53a6a001d3ad11269"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39a56f7800c1a8f53a6a001d3ad11269">puzzle</a></td></tr>
+<tr class="separator:a39a56f7800c1a8f53a6a001d3ad11269"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -136,16 +137,20 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ac004763936bf3b2e121d7eb9a2f51471" id="r_ac004763936bf3b2e121d7eb9a2f51471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac004763936bf3b2e121d7eb9a2f51471">Update</a> ()</td></tr>
 <tr class="separator:ac004763936bf3b2e121d7eb9a2f51471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67a4fbbb6a922a4b705f75a7231cb676" id="r_a67a4fbbb6a922a4b705f75a7231cb676"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67a4fbbb6a922a4b705f75a7231cb676">EnoughPress</a> ()</td></tr>
+<tr class="memdesc:a67a4fbbb6a922a4b705f75a7231cb676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles logic when the button has been pressed long enough. Starts the puzzle on the first activation or resets it on subsequent activations.  <br /></td></tr>
 <tr class="separator:a67a4fbbb6a922a4b705f75a7231cb676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73d55c77d64587380f4d59fb3d91fadd" id="r_a73d55c77d64587380f4d59fb3d91fadd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73d55c77d64587380f4d59fb3d91fadd">OnCollisionStay</a> (Collision collision)</td></tr>
 <tr class="separator:a73d55c77d64587380f4d59fb3d91fadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a679b81a2d1ea11c3a9310e4a2bc04ebe" id="r_a679b81a2d1ea11c3a9310e4a2bc04ebe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a679b81a2d1ea11c3a9310e4a2bc04ebe">OnCollisionExit</a> (Collision collision)</td></tr>
 <tr class="separator:a679b81a2d1ea11c3a9310e4a2bc04ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e126b58b145ca5a0a3bcecc1c7c5568" id="r_a5e126b58b145ca5a0a3bcecc1c7c5568"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e126b58b145ca5a0a3bcecc1c7c5568">IsPlayerUpward</a> (Collision collision)</td></tr>
+<tr class="memdesc:a5e126b58b145ca5a0a3bcecc1c7c5568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the player is standing on the button (upward collision).  <br /></td></tr>
 <tr class="separator:a5e126b58b145ca5a0a3bcecc1c7c5568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afacefe24686fdaa986dec861e038c0bd" id="r_afacefe24686fdaa986dec861e038c0bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afacefe24686fdaa986dec861e038c0bd">ButtonPressed</a> ()</td></tr>
+<tr class="memdesc:afacefe24686fdaa986dec861e038c0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the button to its pressed state (green).  <br /></td></tr>
 <tr class="separator:afacefe24686fdaa986dec861e038c0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a949ede3b70d94bcf67a3ee43aa889ad3" id="r_a949ede3b70d94bcf67a3ee43aa889ad3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a949ede3b70d94bcf67a3ee43aa889ad3">ButtonReleased</a> ()</td></tr>
+<tr class="memdesc:a949ede3b70d94bcf67a3ee43aa889ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the button to its released state (red).  <br /></td></tr>
 <tr class="separator:a949ede3b70d94bcf67a3ee43aa889ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -168,8 +173,18 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a52a6eaa4666cb4c73370fd31e99d689f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac168e5d6d60141567fb4cce75f8a7f79" id="r_ac168e5d6d60141567fb4cce75f8a7f79"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac168e5d6d60141567fb4cce75f8a7f79">greenButton</a></td></tr>
 <tr class="separator:ac168e5d6d60141567fb4cce75f8a7f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6143c0452ff9b134f31cc7baaa66a006" id="r_a6143c0452ff9b134f31cc7baaa66a006"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_our_game_1_1_puzzle_interface.html">PuzzleInterface</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6143c0452ff9b134f31cc7baaa66a006">puzzleInterface</a></td></tr>
+<tr class="separator:a6143c0452ff9b134f31cc7baaa66a006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the behavior of a button that is used to activate a puzzle. Handles player interactions, button states, and puzzle activation or resetting. </p>
+<p>The button:</p><ul>
+<li>Changes appearance when pressed (red/green states).</li>
+<li>Triggers the puzzle to start on the first long press.</li>
+<li>Resets the puzzle on subsequent long presses.</li>
+<li>Disables interaction once the puzzle is cleared. </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afacefe24686fdaa986dec861e038c0bd" name="afacefe24686fdaa986dec861e038c0bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afacefe24686fdaa986dec861e038c0bd">&#9670;&#160;</a></span>ButtonPressed()</h2>
 
@@ -192,20 +207,28 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Changes the button to its pressed state (green). </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_button_manager_afacefe24686fdaa986dec861e038c0bd_icgraph.png" border="0" usemap="#aclass_button_manager_afacefe24686fdaa986dec861e038c0bd_icgraph" alt=""/></div>
 <map name="aclass_button_manager_afacefe24686fdaa986dec861e038c0bd_icgraph" id="aclass_button_manager_afacefe24686fdaa986dec861e038c0bd_icgraph">
-<area shape="rect" title=" " alt="" coords="728,38,927,64"/>
-<area shape="rect" href="class_button_manager.html#ad10532db93280a68f2d89f7d3b8e1c57" title=" " alt="" coords="512,13,680,38"/>
-<area shape="poly" title=" " alt="" coords="712,41,681,38,681,32,713,36"/>
-<area shape="rect" href="class_button_manager.html#ac004763936bf3b2e121d7eb9a2f51471" title=" " alt="" coords="519,62,673,88"/>
-<area shape="poly" title=" " alt="" coords="713,66,674,70,674,64,713,60"/>
-<area shape="rect" href="class_maze_box_manager.html#aa1fd54bb0b82bc7ec8de2fdc44461503" title=" " alt="" coords="250,13,464,38"/>
-<area shape="poly" title=" " alt="" coords="496,28,464,28,464,23,496,23"/>
-<area shape="rect" href="class_maze_box_manager.html#a009e1f3e3bffb37ce8397b4249d238d5" title=" " alt="" coords="5,5,202,46"/>
-<area shape="poly" title=" " alt="" coords="234,28,202,28,202,23,234,23"/>
+<area shape="rect" title="Changes the button to its pressed state (green)." alt="" coords="978,66,1176,92"/>
+<area shape="rect" href="class_button_manager.html#ad10532db93280a68f2d89f7d3b8e1c57" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="761,41,930,66"/>
+<area shape="poly" title=" " alt="" coords="962,69,930,66,931,60,962,64"/>
+<area shape="rect" href="class_button_manager.html#ac004763936bf3b2e121d7eb9a2f51471" title=" " alt="" coords="768,90,923,116"/>
+<area shape="poly" title=" " alt="" coords="963,94,924,98,923,92,962,88"/>
+<area shape="rect" href="class_box_puzzle_manager.html#ab366091116b8524b23525479eee07795" title="Clears the puzzle and fixes the button state." alt="" coords="505,16,713,41"/>
+<area shape="poly" title=" " alt="" coords="746,46,713,42,714,37,746,40"/>
+<area shape="rect" href="class_maze_manager.html#a643c86ae79700676762ce33a0d3bb157" title="Clears the puzzle, fixes the button state, and marks the puzzle as completed." alt="" coords="520,66,698,92"/>
+<area shape="poly" title=" " alt="" coords="746,67,699,72,698,67,746,62"/>
+<area shape="rect" href="class_box_puzzle_manager.html#ab99d3507f40cff3d527f48069006a76b" title="Increments the unlock count and clears the puzzle if all locks are unlocked." alt="" coords="261,5,448,46"/>
+<area shape="poly" title=" " alt="" coords="489,30,449,29,449,24,489,24"/>
+<area shape="rect" href="class_box_puzzle_manager.html#a26affbe20fafa44c13278458d0a21bdc" title="Receives a signal to unlock a specific lock and activates its corresponding plate." alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="246,28,205,28,205,23,246,23"/>
+<area shape="rect" href="class_maze_manager.html#a4ab82f21871e8cad7cb69a4c56a4b824" title="Handles unlocking signals from the puzzle and triggers puzzle clearance." alt="" coords="253,70,457,96"/>
+<area shape="poly" title=" " alt="" coords="505,83,457,84,457,79,505,78"/>
 </map>
 </div>
 
@@ -233,12 +256,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Changes the button to its released state (red). </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_button_manager_a949ede3b70d94bcf67a3ee43aa889ad3_icgraph.png" border="0" usemap="#aclass_button_manager_a949ede3b70d94bcf67a3ee43aa889ad3_icgraph" alt=""/></div>
 <map name="aclass_button_manager_a949ede3b70d94bcf67a3ee43aa889ad3_icgraph" id="aclass_button_manager_a949ede3b70d94bcf67a3ee43aa889ad3_icgraph">
-<area shape="rect" title=" " alt="" coords="208,5,413,31"/>
+<area shape="rect" title="Changes the button to its released state (red)." alt="" coords="208,5,413,31"/>
 <area shape="rect" href="class_button_manager.html#ac004763936bf3b2e121d7eb9a2f51471" title=" " alt="" coords="5,5,160,31"/>
 <area shape="poly" title=" " alt="" coords="193,21,160,21,160,16,193,16"/>
 </map>
@@ -268,18 +293,18 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Handles logic when the button has been pressed long enough. Starts the puzzle on the first activation or resets it on subsequent activations. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_button_manager_a67a4fbbb6a922a4b705f75a7231cb676_cgraph.png" border="0" usemap="#aclass_button_manager_a67a4fbbb6a922a4b705f75a7231cb676_cgraph" alt=""/></div>
 <map name="aclass_button_manager_a67a4fbbb6a922a4b705f75a7231cb676_cgraph" id="aclass_button_manager_a67a4fbbb6a922a4b705f75a7231cb676_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,196,56"/>
-<area shape="rect" href="class_maze_manager.html#a81afbac9083c6cd0ffa995c3118c8544" title=" " alt="" coords="244,5,425,31"/>
-<area shape="poly" title=" " alt="" coords="196,31,228,27,228,32,196,36"/>
-<area shape="rect" href="class_maze_manager.html#ad0a75a398197dd476a1ea6343324e0d7" title=" " alt="" coords="247,55,422,80"/>
-<area shape="poly" title=" " alt="" coords="196,51,232,54,231,60,196,56"/>
-<area shape="rect" href="class_maze_manager.html#a129705d255d23acbf68d1ad176792a66" title=" " alt="" coords="473,5,637,31"/>
-<area shape="poly" title=" " alt="" coords="426,16,457,16,457,21,426,21"/>
+<area shape="rect" title="Handles logic when the button has been pressed long enough. Starts the puzzle on the first activation..." alt="" coords="5,46,196,72"/>
+<area shape="rect" href="interface_our_game_1_1_puzzle_interface.html#a8ae7e3275d1796a4fdfa18b06d39f467" title=" " alt="" coords="244,5,420,46"/>
+<area shape="poly" title=" " alt="" coords="194,43,228,38,229,43,195,48"/>
+<area shape="rect" href="interface_our_game_1_1_puzzle_interface.html#ace72fc3436027ce5f173a94985dff5f9" title=" " alt="" coords="244,71,420,111"/>
+<area shape="poly" title=" " alt="" coords="197,70,229,74,228,79,196,75"/>
 </map>
 </div>
 <div class="dynheader">
@@ -287,7 +312,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_button_manager_a67a4fbbb6a922a4b705f75a7231cb676_icgraph.png" border="0" usemap="#aclass_button_manager_a67a4fbbb6a922a4b705f75a7231cb676_icgraph" alt=""/></div>
 <map name="aclass_button_manager_a67a4fbbb6a922a4b705f75a7231cb676_icgraph" id="aclass_button_manager_a67a4fbbb6a922a4b705f75a7231cb676_icgraph">
-<area shape="rect" title=" " alt="" coords="208,5,398,31"/>
+<area shape="rect" title="Handles logic when the button has been pressed long enough. Starts the puzzle on the first activation..." alt="" coords="208,5,398,31"/>
 <area shape="rect" href="class_button_manager.html#ac004763936bf3b2e121d7eb9a2f51471" title=" " alt="" coords="5,5,160,31"/>
 <area shape="poly" title=" " alt="" coords="192,21,160,21,160,16,192,16"/>
 </map>
@@ -317,13 +342,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Fixes the button in its pressed state and disables further interaction. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_button_manager_ad10532db93280a68f2d89f7d3b8e1c57_cgraph.png" border="0" usemap="#aclass_button_manager_ad10532db93280a68f2d89f7d3b8e1c57_cgraph" alt=""/></div>
 <map name="aclass_button_manager_ad10532db93280a68f2d89f7d3b8e1c57_cgraph" id="aclass_button_manager_ad10532db93280a68f2d89f7d3b8e1c57_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,174,31"/>
-<area shape="rect" href="class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title=" " alt="" coords="222,5,420,31"/>
+<area shape="rect" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="5,5,174,31"/>
+<area shape="rect" href="class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title="Changes the button to its pressed state (green)." alt="" coords="222,5,420,31"/>
 <area shape="poly" title=" " alt="" coords="174,16,206,16,206,21,174,21"/>
 </map>
 </div>
@@ -332,11 +359,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_button_manager_ad10532db93280a68f2d89f7d3b8e1c57_icgraph.png" border="0" usemap="#aclass_button_manager_ad10532db93280a68f2d89f7d3b8e1c57_icgraph" alt=""/></div>
 <map name="aclass_button_manager_ad10532db93280a68f2d89f7d3b8e1c57_icgraph" id="aclass_button_manager_ad10532db93280a68f2d89f7d3b8e1c57_icgraph">
-<area shape="rect" title=" " alt="" coords="512,13,680,38"/>
-<area shape="rect" href="class_maze_box_manager.html#aa1fd54bb0b82bc7ec8de2fdc44461503" title=" " alt="" coords="250,13,464,38"/>
-<area shape="poly" title=" " alt="" coords="496,28,464,28,464,23,496,23"/>
-<area shape="rect" href="class_maze_box_manager.html#a009e1f3e3bffb37ce8397b4249d238d5" title=" " alt="" coords="5,5,202,46"/>
-<area shape="poly" title=" " alt="" coords="234,28,202,28,202,23,234,23"/>
+<area shape="rect" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="761,42,930,68"/>
+<area shape="rect" href="class_box_puzzle_manager.html#ab366091116b8524b23525479eee07795" title="Clears the puzzle and fixes the button state." alt="" coords="505,16,713,41"/>
+<area shape="poly" title=" " alt="" coords="746,46,713,43,714,37,746,41"/>
+<area shape="rect" href="class_maze_manager.html#a643c86ae79700676762ce33a0d3bb157" title="Clears the puzzle, fixes the button state, and marks the puzzle as completed." alt="" coords="520,66,698,92"/>
+<area shape="poly" title=" " alt="" coords="746,68,699,73,698,67,746,62"/>
+<area shape="rect" href="class_box_puzzle_manager.html#ab99d3507f40cff3d527f48069006a76b" title="Increments the unlock count and clears the puzzle if all locks are unlocked." alt="" coords="261,5,448,46"/>
+<area shape="poly" title=" " alt="" coords="489,30,449,29,449,24,489,24"/>
+<area shape="rect" href="class_box_puzzle_manager.html#a26affbe20fafa44c13278458d0a21bdc" title="Receives a signal to unlock a specific lock and activates its corresponding plate." alt="" coords="5,5,205,46"/>
+<area shape="poly" title=" " alt="" coords="246,28,205,28,205,23,246,23"/>
+<area shape="rect" href="class_maze_manager.html#a4ab82f21871e8cad7cb69a4c56a4b824" title="Handles unlocking signals from the puzzle and triggers puzzle clearance." alt="" coords="253,70,457,96"/>
+<area shape="poly" title=" " alt="" coords="505,83,457,84,457,79,505,78"/>
 </map>
 </div>
 
@@ -364,12 +397,21 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Determines if the player is standing on the button (upward collision). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>The collision data.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the player is above the button, otherwise false.</dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_button_manager_a5e126b58b145ca5a0a3bcecc1c7c5568_icgraph.png" border="0" usemap="#aclass_button_manager_a5e126b58b145ca5a0a3bcecc1c7c5568_icgraph" alt=""/></div>
 <map name="aclass_button_manager_a5e126b58b145ca5a0a3bcecc1c7c5568_icgraph" id="aclass_button_manager_a5e126b58b145ca5a0a3bcecc1c7c5568_icgraph">
-<area shape="rect" title=" " alt="" coords="260,5,465,31"/>
+<area shape="rect" title="Determines if the player is standing on the button (upward collision)." alt="" coords="260,5,465,31"/>
 <area shape="rect" href="class_button_manager.html#a73d55c77d64587380f4d59fb3d91fadd" title=" " alt="" coords="5,5,212,31"/>
 <area shape="poly" title=" " alt="" coords="244,21,212,21,212,16,244,16"/>
 </map>
@@ -430,7 +472,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="class_button_manager_a73d55c77d64587380f4d59fb3d91fadd_cgraph.png" border="0" usemap="#aclass_button_manager_a73d55c77d64587380f4d59fb3d91fadd_cgraph" alt=""/></div>
 <map name="aclass_button_manager_a73d55c77d64587380f4d59fb3d91fadd_cgraph" id="aclass_button_manager_a73d55c77d64587380f4d59fb3d91fadd_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,212,31"/>
-<area shape="rect" href="class_button_manager.html#a5e126b58b145ca5a0a3bcecc1c7c5568" title=" " alt="" coords="260,5,465,31"/>
+<area shape="rect" href="class_button_manager.html#a5e126b58b145ca5a0a3bcecc1c7c5568" title="Determines if the player is standing on the button (upward collision)." alt="" coords="260,5,465,31"/>
 <area shape="poly" title=" " alt="" coords="212,16,244,16,244,21,212,21"/>
 </map>
 </div>
@@ -490,18 +532,16 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="class_button_manager_ac004763936bf3b2e121d7eb9a2f51471_cgraph.png" border="0" usemap="#aclass_button_manager_ac004763936bf3b2e121d7eb9a2f51471_cgraph" alt=""/></div>
 <map name="aclass_button_manager_ac004763936bf3b2e121d7eb9a2f51471_cgraph" id="aclass_button_manager_ac004763936bf3b2e121d7eb9a2f51471_cgraph">
 <area shape="rect" title=" " alt="" coords="5,55,160,80"/>
-<area shape="rect" href="class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title=" " alt="" coords="211,5,410,31"/>
+<area shape="rect" href="class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title="Changes the button to its pressed state (green)." alt="" coords="211,5,410,31"/>
 <area shape="poly" title=" " alt="" coords="145,51,232,32,233,38,146,57"/>
-<area shape="rect" href="class_button_manager.html#a949ede3b70d94bcf67a3ee43aa889ad3" title=" " alt="" coords="208,55,413,80"/>
+<area shape="rect" href="class_button_manager.html#a949ede3b70d94bcf67a3ee43aa889ad3" title="Changes the button to its released state (red)." alt="" coords="208,55,413,80"/>
 <area shape="poly" title=" " alt="" coords="160,65,192,65,192,70,160,70"/>
-<area shape="rect" href="class_button_manager.html#a67a4fbbb6a922a4b705f75a7231cb676" title=" " alt="" coords="215,104,406,130"/>
+<area shape="rect" href="class_button_manager.html#a67a4fbbb6a922a4b705f75a7231cb676" title="Handles logic when the button has been pressed long enough. Starts the puzzle on the first activation..." alt="" coords="215,104,406,130"/>
 <area shape="poly" title=" " alt="" coords="146,78,233,97,232,103,145,84"/>
-<area shape="rect" href="class_maze_manager.html#a81afbac9083c6cd0ffa995c3118c8544" title=" " alt="" coords="461,79,642,104"/>
-<area shape="poly" title=" " alt="" coords="406,104,445,100,446,105,406,109"/>
-<area shape="rect" href="class_maze_manager.html#ad0a75a398197dd476a1ea6343324e0d7" title=" " alt="" coords="464,128,639,154"/>
-<area shape="poly" title=" " alt="" coords="406,124,449,128,449,133,406,129"/>
-<area shape="rect" href="class_maze_manager.html#a129705d255d23acbf68d1ad176792a66" title=" " alt="" coords="690,79,855,104"/>
-<area shape="poly" title=" " alt="" coords="643,89,675,89,675,94,643,94"/>
+<area shape="rect" href="interface_our_game_1_1_puzzle_interface.html#a8ae7e3275d1796a4fdfa18b06d39f467" title=" " alt="" coords="461,63,637,104"/>
+<area shape="poly" title=" " alt="" coords="406,101,445,95,446,101,406,106"/>
+<area shape="rect" href="interface_our_game_1_1_puzzle_interface.html#ace72fc3436027ce5f173a94985dff5f9" title=" " alt="" coords="461,128,637,169"/>
+<area shape="poly" title=" " alt="" coords="406,127,446,132,445,138,406,132"/>
 </map>
 </div>
 
@@ -640,20 +680,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a46f4e4d288836a48f592a291887e38c1" name="a46f4e4d288836a48f592a291887e38c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46f4e4d288836a48f592a291887e38c1">&#9670;&#160;</a></span>mazeManager</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_maze_manager.html">MazeManager</a> ButtonManager.mazeManager</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aeea5f9721a48f6e152f0ab77e3bb1346" name="aeea5f9721a48f6e152f0ab77e3bb1346"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeea5f9721a48f6e152f0ab77e3bb1346">&#9670;&#160;</a></span>pressTime</h2>
 
@@ -665,6 +691,42 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">float ButtonManager.pressTime = 1f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39a56f7800c1a8f53a6a001d3ad11269" name="a39a56f7800c1a8f53a6a001d3ad11269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39a56f7800c1a8f53a6a001d3ad11269">&#9670;&#160;</a></span>puzzle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject ButtonManager.puzzle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6143c0452ff9b134f31cc7baaa66a006" name="a6143c0452ff9b134f31cc7baaa66a006"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6143c0452ff9b134f31cc7baaa66a006">&#9670;&#160;</a></span>puzzleInterface</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interface_our_game_1_1_puzzle_interface.html">PuzzleInterface</a> ButtonManager.puzzleInterface</td>
         </tr>
       </table>
   </td>
@@ -721,7 +783,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>UnityProject/GravitableEscape/Assets/Script/Obstacles/<a class="el" href="_button_manager_8cs.html">ButtonManager.cs</a></li>
+<li>UnityProject/GravitableEscape/Assets/Scripts/Puzzles/<a class="el" href="_button_manager_8cs.html">ButtonManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,5 +1,5 @@
 <map id="CameraManager.RotateCamera" name="CameraManager.RotateCamera">
-<area shape="rect" id="Node000001" title=" " alt="" coords="241,5,446,31"/>
-<area shape="rect" id="Node000002" href="$class_camera_manager.html#abf863525e8696a70ffbc4d35ae251276" title="Checks gameState and does appropriate camera movement." alt="" coords="5,5,193,31"/>
+<area shape="rect" id="Node000001" title="Rotates the camera based on input and gravity." alt="" coords="241,5,446,31"/>
+<area shape="rect" id="Node000002" href="$class_camera_manager.html#abf863525e8696a70ffbc4d35ae251276" title="Updates the camera&#39;s position and behavior based on the game state." alt="" coords="5,5,193,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,21,193,21,193,16,225,16"/>
 </map>

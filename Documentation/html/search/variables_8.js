@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['jumpforce_0',['jumpForce',['../class_player_manager.html#a8e25afb7c2402e4e3ab85b3fd1428bda',1,'PlayerManager']]]
+  ['inactivealpha_0',['inactiveAlpha',['../class_platform_manager.html#a9e5ab7d63c77824fe513874a1f55c79c',1,'PlatformManager']]],
+  ['inactiveinterval_1',['inactiveInterval',['../class_platform_manager.html#a07283e73e6654aa190bc1272e7c00d4c',1,'PlatformManager']]],
+  ['initgravity_2',['initGravity',['../class_gravity_manager.html#ae39541dfc68a1d18b71c16242ecead41',1,'GravityManager']]],
+  ['initialvelocity_3',['initialVelocity',['../class_player_float.html#aaa099866f0f2e8a24fef3df45194830a',1,'PlayerFloat']]],
+  ['inputmanager_4',['inputManager',['../class_camera_manager.html#afee69812bda5cab45c1fe625818563f8',1,'CameraManager.inputManager'],['../class_player_manager.html#a9994d44af9d22d90b2bb949fccfe12ea',1,'PlayerManager.inputManager']]],
+  ['instance_5',['instance',['../class_keep_audio.html#aa2a0aabe85d306c76cadd4ddf1c61b58',1,'KeepAudio.instance'],['../class_spawn_shooting_stars.html#a1e2863a162e96223b5b6e8eb6eb2739a',1,'SpawnShootingStars.instance']]],
+  ['isbgmplaying_6',['isbgmPlaying',['../class_camera_manager.html#ad1aaa43ce06d34b80bbf20691aa509fc',1,'CameraManager']]],
+  ['iscleared_7',['isCleared',['../class_box_puzzle_manager.html#ae242255a7780f4c28d0f2a0b7a42a82b',1,'BoxPuzzleManager.isCleared'],['../class_button_manager.html#a0bcbcc3804e245e1c3ef5061b8d259bb',1,'ButtonManager.isCleared'],['../class_maze_manager.html#a7a6f5e71e296e37575c96b56b1e98889',1,'MazeManager.isCleared']]],
+  ['isdelaytriggered_8',['isDelayTriggered',['../class_message_manager.html#ac4c2691add8b814dd506cd9937158aa2',1,'MessageManager']]],
+  ['isglitching_9',['isGlitching',['../class_glitchy_text_effect.html#a6ca1827057c65eb983617c3e4127777f',1,'GlitchyTextEffect']]],
+  ['isground_10',['isGround',['../class_player_manager.html#a2e8ba695265323e197d71df1494b81d9',1,'PlayerManager']]],
+  ['isgroupaactive_11',['isGroupAActive',['../class_platform_manager.html#a7bd422838f805cb34b825a6085d47dd8',1,'PlatformManager']]],
+  ['isgroupbactive_12',['isGroupBActive',['../class_platform_manager.html#a6f6347c61796d1bc4a1081dd07df5d5a',1,'PlatformManager']]],
+  ['ismessagerequiredscene_13',['isMessageRequiredScene',['../class_message_manager.html#a9a3814dab87172efd2e13e34bacc2756',1,'MessageManager']]],
+  ['ismoving_14',['isMoving',['../class_ending_playermove.html#aa66d85bab38702d63db547589b521ff3',1,'EndingPlayermove.isMoving'],['../class_door_movement_manager.html#a120a9ed19d229d646524b9d6472f720c',1,'DoorMovementManager.isMoving']]],
+  ['ismovingleft_15',['isMovingLeft',['../class_ending_playermove.html#a5d7721be5a9ad74a8c2630b727ef69ae',1,'EndingPlayermove']]],
+  ['ispressed_16',['isPressed',['../class_button_manager.html#a345dc38636e2259cb04fb02eefc6124b',1,'ButtonManager']]],
+  ['istransparent_17',['isTransparent',['../class_player_manager.html#a22d51684353dfa72f9ef627f623e193e',1,'PlayerManager']]],
+  ['isunlocked_18',['isUnlocked',['../class_lock_manager.html#a8a89a5a061434d1cfc59bb10326b71a6',1,'LockManager']]]
 ];

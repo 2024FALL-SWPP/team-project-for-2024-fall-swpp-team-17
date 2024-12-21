@@ -1,0 +1,5 @@
+<map id="PlayerFloat.OnMouseDown" name="PlayerFloat.OnMouseDown">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,187,31"/>
+<area shape="rect" id="Node000002" href="$class_player_float.html#a1c337105f3aa3fb5287d2ac0039c0264" title=" " alt="" coords="235,5,444,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,16,219,16,219,21,187,21"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="BoxPuzzleManager.PuzzleClear" name="BoxPuzzleManager.PuzzleClear">
+<area shape="rect" id="Node000001" title="Clears the puzzle and fixes the button state." alt="" coords="5,5,214,31"/>
+<area shape="rect" id="Node000002" href="$class_button_manager.html#ad10532db93280a68f2d89f7d3b8e1c57" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="262,5,430,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,16,246,16,246,21,214,21"/>
+<area shape="rect" id="Node000003" href="$class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title="Changes the button to its pressed state (green)." alt="" coords="478,5,676,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="430,16,462,16,462,21,430,21"/>
+</map>

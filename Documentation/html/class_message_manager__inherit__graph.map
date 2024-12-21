@@ -1,0 +1,5 @@
+<map id="MessageManager" name="MessageManager">
+<area shape="rect" id="Node000001" title="Manages in&#45;game messages used in the Tutorial Scene displayed to the player based on their position i..." alt="" coords="5,79,130,105"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="12,5,123,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,46,70,79,65,79,65,46"/>
+</map>

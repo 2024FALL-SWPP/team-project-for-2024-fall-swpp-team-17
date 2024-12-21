@@ -1,0 +1,5 @@
+<map id="BoxPuzzleManager.PuzzleStart" name="BoxPuzzleManager.PuzzleStart">
+<area shape="rect" id="Node000001" title="Starts the puzzle by activating all keyboxes." alt="" coords="5,13,211,38"/>
+<area shape="rect" id="Node000002" href="$class_box_puzzle_manager.html#af0c7d67758843537e18d5ae33207961c" title="Activates all keyboxes in the puzzle." alt="" coords="259,5,453,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,23,243,23,243,28,211,28"/>
+</map>

@@ -1,7 +1,7 @@
 <map id="MazeManager" name="MazeManager">
-<area shape="rect" id="Node000001" title=" " alt="" coords="10,153,113,178"/>
-<area shape="rect" id="Node000002" href="$class_puzzle_interface.html" title=" " alt="" coords="5,79,118,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,120,64,152,59,152,59,120"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="6,5,117,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="64,46,64,79,59,79,59,46"/>
+<area shape="rect" id="Node000001" title="Manages the logic for a maze puzzle, including key box activation, resetting, and puzzle completion." alt="" coords="77,79,181,105"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,40,119,77,116,80,81,44"/>
+<area shape="rect" id="Node000003" href="$interface_our_game_1_1_puzzle_interface.html" title="Interface for puzzles, defining the basic lifecycle methods." alt="" coords="141,5,253,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,44,142,80,139,77,173,40"/>
 </map>

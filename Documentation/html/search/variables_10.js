@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['targetdistance_0',['targetDistance',['../class_camera_manager.html#a03d4f10a0449e63d359f7a005fb2fe05',1,'CameraManager']]],
-  ['targetgravityrot_1',['targetGravityRot',['../class_camera_manager.html#afa1e0dc649cdd2122522b9814c0b51d8',1,'CameraManager.targetGravityRot'],['../class_player_manager.html#a52a7f35ffa52f982409dc3beef7726d5',1,'PlayerManager.targetGravityRot']]],
-  ['targetpos_2',['targetPos',['../class_door_movement_manager.html#aa9823a8f176103f4c7dd710ad2940ce9',1,'DoorMovementManager.targetPos'],['../class_wormhole_manager.html#a1be83e0301b9580356aa7531f34b8414',1,'WormholeManager.targetPos']]],
-  ['targetposition_3',['targetPosition',['../class_camera_manager.html#a5b24deb161190e4c4cb345469f893f12',1,'CameraManager']]],
-  ['targetrot_4',['targetRot',['../class_maze_manager.html#a144e2a23b53507123b16d6c7fca6e95b',1,'MazeManager']]],
-  ['timer_5',['timer',['../class_button_manager.html#ae57a0e16999edfb9a2359af820191cd6',1,'ButtonManager']]]
+  ['rb_0',['rb',['../class_player_manager.html#a2e069c69a0e186d5404c3bfce4199443',1,'PlayerManager']]],
+  ['redbutton_1',['redButton',['../class_button_manager.html#a52a6eaa4666cb4c73370fd31e99d689f',1,'ButtonManager']]],
+  ['renderers_2',['renderers',['../class_player_manager.html#a88dd9a8ae8dbaa4a2fc8ad830b6d43ac',1,'PlayerManager']]],
+  ['restartbutton_3',['restartButton',['../class_u_i_manager.html#a9a54f1c353b97a205e85f6bf233711fd',1,'UIManager']]],
+  ['revived_4',['revived',['../class_player_manager.html#aead38fd2bf480547f937272910515288',1,'PlayerManager']]],
+  ['revivedtime_5',['revivedTime',['../class_player_manager.html#a48b71b8cda3ca4cb36b5f0acba9ccc87',1,'PlayerManager']]],
+  ['rightdoormanager_6',['rightDoorManager',['../class_stage_clear_manager.html#a0cd4c6541e5a6d789f1a25074dab950a',1,'StageClearManager']]],
+  ['righttargetposition_7',['rightTargetPosition',['../class_ending_playermove.html#a03d572ad9de7e29ba943d27a66b845ec',1,'EndingPlayermove']]],
+  ['rotationspeed_8',['rotationSpeed',['../class_box_puzzle_manager.html#a00f3c31bb4a3dbd08f62cdec4fb923d8',1,'BoxPuzzleManager.rotationSpeed'],['../class_maze_manager.html#a3d58083351c532d0d9923725d17e549c',1,'MazeManager.rotationSpeed']]],
+  ['rotationvelocity_9',['rotationVelocity',['../class_player_float.html#a1837b17063e49741dc3576d12cd4a749',1,'PlayerFloat']]]
 ];

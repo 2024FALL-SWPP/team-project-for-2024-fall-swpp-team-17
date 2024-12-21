@@ -1,0 +1,9 @@
+<map id="MazeManager.GetUnlockSignal" name="MazeManager.GetUnlockSignal">
+<area shape="rect" id="Node000001" title="Handles unlocking signals from the puzzle and triggers puzzle clearance." alt="" coords="5,5,210,31"/>
+<area shape="rect" id="Node000002" href="$class_maze_manager.html#a643c86ae79700676762ce33a0d3bb157" title="Clears the puzzle, fixes the button state, and marks the puzzle as completed." alt="" coords="258,5,435,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,16,242,16,242,21,210,21"/>
+<area shape="rect" id="Node000003" href="$class_button_manager.html#ad10532db93280a68f2d89f7d3b8e1c57" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="483,5,651,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="435,16,467,16,467,21,435,21"/>
+<area shape="rect" id="Node000004" href="$class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title="Changes the button to its pressed state (green)." alt="" coords="699,5,898,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="652,16,684,16,684,21,652,21"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="LockManager" name="LockManager">
+<area shape="rect" id="Node000001" title="Manages the behavior of a lock within a puzzle. Handles unlocking logic when the correct key collides..." alt="" coords="94,94,193,120"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,41,134,92,130,95,81,44"/>
+<area shape="rect" id="Node000003" href="$interface_our_game_1_1_puzzle_interface.html" title="Interface for puzzles, defining the basic lifecycle methods." alt="" coords="140,5,312,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="206,44,157,95,153,92,202,41"/>
+</map>

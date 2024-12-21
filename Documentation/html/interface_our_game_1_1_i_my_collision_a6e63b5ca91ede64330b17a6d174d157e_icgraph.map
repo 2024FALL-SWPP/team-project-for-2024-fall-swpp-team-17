@@ -1,0 +1,11 @@
+<map id="OurGame.IMyCollision.GetContacts" name="OurGame.IMyCollision.GetContacts">
+<area shape="rect" id="Node000001" title=" " alt="" coords="529,35,707,75"/>
+<area shape="rect" id="Node000002" href="$class_spike_manager.html#a99873bc264e25b1997b9258f6fee0092" title="Determines if the collision is on the pointed side of the spike." alt="" coords="292,5,460,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="513,45,460,39,461,33,514,40"/>
+<area shape="rect" id="Node000004" href="$class_heavy_object_manager.html#a3df3351513516f79bc78fc30eb9c7d0b" title="Determines if the collision indicates the player is being crushed by the object." alt="" coords="271,70,481,96"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="514,70,482,73,481,68,513,64"/>
+<area shape="rect" id="Node000003" href="$class_spike_manager.html#a7764099d65f422f80df8b6f26ad8c3ac" title="Checks for continuous player collisions and applies damage. Plays a sound if the player is stunned by..." alt="" coords="13,13,215,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="276,28,215,28,215,23,276,23"/>
+<area shape="rect" id="Node000005" href="$class_heavy_object_manager.html#a5561cc646b3ba07e763bdf233281edbd" title="Checks if the player is crushed by this object upon collision. If so, plays a sound and harms the pla..." alt="" coords="5,63,223,103"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="255,86,223,86,223,80,255,80"/>
+</map>

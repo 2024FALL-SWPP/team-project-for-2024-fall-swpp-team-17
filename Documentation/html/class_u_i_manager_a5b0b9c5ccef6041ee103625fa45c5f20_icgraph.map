@@ -1,0 +1,7 @@
+<map id="UIManager.HideMessage" name="UIManager.HideMessage">
+<area shape="rect" id="Node000001" title="Hides the hint message." alt="" coords="223,42,391,68"/>
+<area shape="rect" id="Node000002" href="$class_u_i_manager.html#a536c23f54fd789811248a065d1c06b8f" title="Handles UI updates based on the game state." alt="" coords="8,5,172,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,44,172,39,173,34,207,39"/>
+<area shape="rect" id="Node000003" href="$class_message_manager.html#a8b6722bd6e44f93dffdce6c3768e3fcc" title=" " alt="" coords="5,70,175,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,71,176,75,175,69,207,65"/>
+</map>

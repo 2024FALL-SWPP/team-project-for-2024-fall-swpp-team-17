@@ -1,5 +1,5 @@
 <map id="PlayerManager.MovePlayer" name="PlayerManager.MovePlayer">
-<area shape="rect" id="Node000001" title="Check if there are obstacles and move player in the moveDirection." alt="" coords="239,5,419,31"/>
-<area shape="rect" id="Node000002" href="$class_player_manager.html#a0862f575be2b93160e2383997e445c6b" title="Moving player is here to prevent going through walls." alt="" coords="5,5,191,31"/>
+<area shape="rect" id="Node000001" title="Moves the player in the specified direction, checking for obstacles." alt="" coords="239,5,419,31"/>
+<area shape="rect" id="Node000002" href="$class_player_manager.html#a0862f575be2b93160e2383997e445c6b" title=" " alt="" coords="5,5,191,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,21,191,21,191,16,223,16"/>
 </map>

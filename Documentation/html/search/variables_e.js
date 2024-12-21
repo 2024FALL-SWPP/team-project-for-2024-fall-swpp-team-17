@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['rb_0',['rb',['../class_spike_manager.html#a867637146abe1aff7d822bdee3f57d37',1,'SpikeManager.rb'],['../class_player_manager.html#a2e069c69a0e186d5404c3bfce4199443',1,'PlayerManager.rb']]],
-  ['redbutton_1',['redButton',['../class_button_manager.html#a52a6eaa4666cb4c73370fd31e99d689f',1,'ButtonManager']]],
-  ['renderers_2',['renderers',['../class_player_manager.html#a88dd9a8ae8dbaa4a2fc8ad830b6d43ac',1,'PlayerManager']]],
-  ['revived_3',['revived',['../class_player_manager.html#aead38fd2bf480547f937272910515288',1,'PlayerManager']]],
-  ['rightdoormanager_4',['rightDoorManager',['../class_stage_clear_manager.html#a0cd4c6541e5a6d789f1a25074dab950a',1,'StageClearManager']]],
-  ['rigidbodies_5',['rigidbodies',['../class_gravity_manager.html#a14a8c64fcd335893897a265b4436f28e',1,'GravityManager']]],
-  ['rotationspeed_6',['rotationSpeed',['../class_maze_manager.html#a3d58083351c532d0d9923725d17e549c',1,'MazeManager']]]
+  ['observers_0',['observers',['../class_our_game_1_1_subject.html#a3dcc2e0346e990ec624b91efe7db095f',1,'OurGame::Subject']]],
+  ['originalbold_1',['originalBold',['../class_glitchy_text_effect.html#af75c74c17b421713953c92e4c4677bf3',1,'GlitchyTextEffect']]],
+  ['originalcolor_2',['originalColor',['../class_glitchy_text_effect.html#a2d664c2deb50f7ddd6cd48b64e302867',1,'GlitchyTextEffect']]],
+  ['originalposition_3',['originalPosition',['../class_glitchy_text_effect.html#afb6be2997069d3299e54d7ee9793483e',1,'GlitchyTextEffect']]],
+  ['originaltext_4',['originalText',['../class_glitchy_text_effect.html#aa4b2bf075b420bbf982ed24d24fad74a',1,'GlitchyTextEffect']]]
 ];

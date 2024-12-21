@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['initgravity_0',['initGravity',['../class_gravity_manager.html#ae39541dfc68a1d18b71c16242ecead41',1,'GravityManager']]],
-  ['inputmanager_1',['inputManager',['../class_camera_manager.html#afee69812bda5cab45c1fe625818563f8',1,'CameraManager.inputManager'],['../class_player_manager.html#a9994d44af9d22d90b2bb949fccfe12ea',1,'PlayerManager.inputManager']]],
-  ['iscleared_2',['isCleared',['../class_button_manager.html#a0bcbcc3804e245e1c3ef5061b8d259bb',1,'ButtonManager.isCleared'],['../class_maze_box_manager.html#aa3c47b854ff5e93b2d2dce486ba4d844',1,'MazeBoxManager.isCleared'],['../class_maze_manager.html#a7a6f5e71e296e37575c96b56b1e98889',1,'MazeManager.isCleared']]],
-  ['isground_3',['isGround',['../class_player_manager.html#a2e8ba695265323e197d71df1494b81d9',1,'PlayerManager']]],
-  ['ismoving_4',['isMoving',['../class_door_movement_manager.html#a120a9ed19d229d646524b9d6472f720c',1,'DoorMovementManager']]],
-  ['ispressed_5',['isPressed',['../class_button_manager.html#a345dc38636e2259cb04fb02eefc6124b',1,'ButtonManager']]],
-  ['istransparent_6',['isTransparent',['../class_player_manager.html#a22d51684353dfa72f9ef627f623e193e',1,'PlayerManager']]],
-  ['isupward_7',['isUpward',['../class_spike_manager.html#af60e6deb430caff86a4d134e2a26f1bc',1,'SpikeManager']]]
+  ['hasmessageshown_0',['hasMessageShown',['../class_message_manager.html#afdd9c64fe0babbb39e006b237141542a',1,'MessageManager']]],
+  ['hasplayedsound_1',['hasPlayedSound',['../class_heavy_object_manager.html#a648b853fce911e9e5039813ca6d55515',1,'HeavyObjectManager']]],
+  ['healthbar_2',['healthBar',['../class_u_i_manager.html#a669c6922c48858598d40b51aa8f568a9',1,'UIManager']]],
+  ['height_3',['height',['../class_camera_manager.html#a59294b6c234ef35f4e3a1400f516b6b2',1,'CameraManager.height'],['../class_player_manager.html#addf53521ccf5370d289658d92595230d',1,'PlayerManager.height']]],
+  ['heightdifference_4',['heightDifference',['../class_button_manager.html#a4cc67587b4a1f0418554872b4c1bd5f8',1,'ButtonManager']]],
+  ['hintmessagebox_5',['hintMessagebox',['../class_u_i_manager.html#a835a42b375e44027298f6f7fba7f65fe',1,'UIManager']]],
+  ['hintmessagetext_6',['hintMessageText',['../class_u_i_manager.html#aa520549597596a2dd5235f69fd27aeca',1,'UIManager']]]
 ];

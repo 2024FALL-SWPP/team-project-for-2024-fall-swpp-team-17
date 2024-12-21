@@ -1,0 +1,5 @@
+<map id="UIManager.ShowMessage" name="UIManager.ShowMessage">
+<area shape="rect" id="Node000001" title="Displays a hint message with a typing effect." alt="" coords="5,5,180,31"/>
+<area shape="rect" id="Node000002" href="$class_u_i_manager.html#a3f0a96174c6b5cd0212d86301359b7f3" title="Displays a message character by character with a typing effect." alt="" coords="228,5,397,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,16,212,16,212,21,180,21"/>
+</map>

@@ -85,6 +85,7 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -93,16 +94,20 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>This class manages the gravity of the overall game. When number keys 1, 2, 3 are pushed, it rotates the gravity of the scene appropriately. Objects that need to change direction to align with gravity (player, camera, etc.) are notified via observer pattern.  
+<p>Manages gravity for the entire game by allowing the gravity direction to be rotated. Gravity can be changed using number keys (1, 2, 3), and observers such as the player and camera are notified of changes via the observer pattern.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GravityManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_gravity_manager__inherit__graph.png" border="0" usemap="#a_gravity_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_gravity_manager_inherit__map" id="a_gravity_manager_inherit__map">
-<area shape="rect" title="This class manages the gravity of the overall game. When number keys 1, 2, 3 are pushed,..." alt="" coords="5,79,119,105"/>
-<area shape="rect" title=" " alt="" coords="6,5,118,31"/>
-<area shape="poly" title=" " alt="" coords="65,46,65,79,59,79,59,46"/>
+<area shape="rect" title="Manages gravity for the entire game by allowing the gravity direction to be rotated...." alt="" coords="79,153,192,178"/>
+<area shape="rect" title=" " alt="" coords="5,79,117,105"/>
+<area shape="poly" title=" " alt="" coords="86,114,125,150,121,154,83,117"/>
+<area shape="rect" href="interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="140,79,280,105"/>
+<area shape="poly" title=" " alt="" coords="189,117,150,154,146,150,185,114"/>
+<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="128,5,292,31"/>
+<area shape="poly" title=" " alt="" coords="213,46,213,79,208,79,208,46"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -110,45 +115,57 @@ Collaboration diagram for GravityManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_gravity_manager__coll__graph.png" border="0" usemap="#a_gravity_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_gravity_manager_coll__map" id="a_gravity_manager_coll__map">
-<area shape="rect" title="This class manages the gravity of the overall game. When number keys 1, 2, 3 are pushed,..." alt="" coords="94,109,207,135"/>
-<area shape="rect" title=" " alt="" coords="5,13,117,38"/>
-<area shape="poly" title=" " alt="" coords="85,48,141,107,137,110,81,52"/>
-<area shape="rect" href="class_our_game_1_1_subject.html" title=" " alt="" coords="140,5,339,46"/>
-<area shape="poly" title=" " alt="" coords="213,59,163,111,160,107,209,55"/>
+<area shape="rect" title="Manages gravity for the entire game by allowing the gravity direction to be rotated...." alt="" coords="553,55,667,80"/>
+<area shape="rect" title=" " alt="" coords="262,5,374,31"/>
+<area shape="poly" title=" " alt="" coords="390,24,530,46,555,51,554,57,529,51,389,29"/>
+<area shape="rect" href="interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="248,55,388,80"/>
+<area shape="poly" title=" " alt="" coords="404,65,553,65,553,70,404,70"/>
+<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="5,55,170,80"/>
+<area shape="poly" title=" " alt="" coords="185,65,247,65,247,70,185,70"/>
+<area shape="rect" href="class_our_game_1_1_subject.html" title=" " alt="" coords="219,104,417,145"/>
+<area shape="poly" title=" " alt="" coords="432,104,529,85,558,78,559,84,530,90,433,109"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0ee5ce8871285ca79690b1b889efd0ed" id="r_a0ee5ce8871285ca79690b1b889efd0ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ee5ce8871285ca79690b1b889efd0ed">OnNotify&lt; GameStateObserver &gt;</a> (<a class="el" href="namespace_our_game.html#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a> gs)</td></tr>
+<tr class="memdesc:a0ee5ce8871285ca79690b1b889efd0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the current game state when notified by a subject.  <br /></td></tr>
+<tr class="separator:a0ee5ce8871285ca79690b1b889efd0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_interface_our_game_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_our_game_1_1_observer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_our_game_1_1_observer.html">OurGame.Observer&lt; GameState &gt;</a></td></tr>
+<tr class="memitem:a876e900a5f763c7fe7dd74de8f4efe55 inherit pub_methods_interface_our_game_1_1_observer" id="r_a876e900a5f763c7fe7dd74de8f4efe55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_observer.html#a876e900a5f763c7fe7dd74de8f4efe55">OnNotify&lt; Observer &gt;</a> (NotifyType data)</td></tr>
+<tr class="separator:a876e900a5f763c7fe7dd74de8f4efe55 inherit pub_methods_interface_our_game_1_1_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ae39541dfc68a1d18b71c16242ecead41" id="r_ae39541dfc68a1d18b71c16242ecead41"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae39541dfc68a1d18b71c16242ecead41">initGravity</a> = new Vector3(0, -35f, 0)</td></tr>
 <tr class="separator:ae39541dfc68a1d18b71c16242ecead41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1fa28bd209c79bd5bdd03e61d57b67" id="r_a7f1fa28bd209c79bd5bdd03e61d57b67"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f1fa28bd209c79bd5bdd03e61d57b67">lastChangeTime</a> = -100f</td></tr>
+<tr class="separator:a7f1fa28bd209c79bd5bdd03e61d57b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:abbd06a3c850bd25676c1f61b2594139e" id="r_abbd06a3c850bd25676c1f61b2594139e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbd06a3c850bd25676c1f61b2594139e">Start</a> ()</td></tr>
 <tr class="separator:abbd06a3c850bd25676c1f61b2594139e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab5971324cdb527d6d809819bf9a92be" id="r_aab5971324cdb527d6d809819bf9a92be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab5971324cdb527d6d809819bf9a92be">Update</a> ()</td></tr>
-<tr class="memdesc:aab5971324cdb527d6d809819bf9a92be"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks if every rigidbody object is at rest, and if so, alters gravity according to the input key.  <br /></td></tr>
+<tr class="memdesc:aab5971324cdb527d6d809819bf9a92be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the game is in a state where gravity changes are allowed (Playing or Revived). Listens for key inputs to alter gravity direction.  <br /></td></tr>
 <tr class="separator:aab5971324cdb527d6d809819bf9a92be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81de2fa0a53574ebdf91b13d9269bcf5" id="r_a81de2fa0a53574ebdf91b13d9269bcf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81de2fa0a53574ebdf91b13d9269bcf5">RotateAngle</a> (int angle)</td></tr>
-<tr class="memdesc:a81de2fa0a53574ebdf91b13d9269bcf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function rotates this object, Physics.gravity, camera, player.  <br /></td></tr>
+<tr class="memdesc:a81de2fa0a53574ebdf91b13d9269bcf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the gravity by the specified angle and notifies all registered observers.  <br /></td></tr>
 <tr class="separator:a81de2fa0a53574ebdf91b13d9269bcf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33c1d1eee3dd22f27b8d5c67cf26d139" id="r_a33c1d1eee3dd22f27b8d5c67cf26d139"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33c1d1eee3dd22f27b8d5c67cf26d139">AllRest</a> ()</td></tr>
-<tr class="memdesc:a33c1d1eee3dd22f27b8d5c67cf26d139"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks whether all rigidbodies are at rest.  <br /></td></tr>
-<tr class="separator:a33c1d1eee3dd22f27b8d5c67cf26d139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a14a8c64fcd335893897a265b4436f28e" id="r_a14a8c64fcd335893897a265b4436f28e"><td class="memItemLeft" align="right" valign="top">Rigidbody[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14a8c64fcd335893897a265b4436f28e">rigidbodies</a></td></tr>
-<tr class="separator:a14a8c64fcd335893897a265b4436f28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b271f8b1889cb499f9752fa39ea512" id="r_ac9b271f8b1889cb499f9752fa39ea512"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_our_game.html#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9b271f8b1889cb499f9752fa39ea512">gameState</a></td></tr>
+<tr class="separator:ac9b271f8b1889cb499f9752fa39ea512"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f38f176b7ff5763efd325840f2f9486" id="r_a9f38f176b7ff5763efd325840f2f9486"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_our_game_1_1_subject.html">Subject</a>&lt; <a class="el" href="interface_our_game_1_1_gravity_observer.html">GravityObserver</a>, Quaternion &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f38f176b7ff5763efd325840f2f9486">gravityChange</a></td></tr>
 <tr class="separator:a9f38f176b7ff5763efd325840f2f9486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class manages the gravity of the overall game. When number keys 1, 2, 3 are pushed, it rotates the gravity of the scene appropriately. Objects that need to change direction to align with gravity (player, camera, etc.) are notified via observer pattern. </p>
+<div class="textblock"><p>Manages gravity for the entire game by allowing the gravity direction to be rotated. Gravity can be changed using number keys (1, 2, 3), and observers such as the player and camera are notified of changes via the observer pattern. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a33c1d1eee3dd22f27b8d5c67cf26d139" name="a33c1d1eee3dd22f27b8d5c67cf26d139"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33c1d1eee3dd22f27b8d5c67cf26d139">&#9670;&#160;</a></span>AllRest()</h2>
+<a id="a0ee5ce8871285ca79690b1b889efd0ed" name="a0ee5ce8871285ca79690b1b889efd0ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee5ce8871285ca79690b1b889efd0ed">&#9670;&#160;</a></span>OnNotify&lt; GameStateObserver &gt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,31 +174,26 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool GravityManager.AllRest </td>
+          <td class="memname">void GravityManager.OnNotify&lt; <a class="el" href="interface_our_game_1_1_game_state_observer.html">GameStateObserver</a> &gt; </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespace_our_game.html#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a></td>          <td class="paramname"><span class="paramname"><em>gs</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>This function checks whether all rigidbodies are at rest. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if all rigidbodies are at rest, false if not</dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_gravity_manager_a33c1d1eee3dd22f27b8d5c67cf26d139_icgraph.png" border="0" usemap="#aclass_gravity_manager_a33c1d1eee3dd22f27b8d5c67cf26d139_icgraph" alt=""/></div>
-<map name="aclass_gravity_manager_a33c1d1eee3dd22f27b8d5c67cf26d139_icgraph" id="aclass_gravity_manager_a33c1d1eee3dd22f27b8d5c67cf26d139_icgraph">
-<area shape="rect" title="This function checks whether all rigidbodies are at rest." alt="" coords="212,5,371,31"/>
-<area shape="rect" href="class_gravity_manager.html#aab5971324cdb527d6d809819bf9a92be" title="This function checks if every rigidbody object is at rest, and if so, alters gravity according to the..." alt="" coords="5,5,164,31"/>
-<area shape="poly" title=" " alt="" coords="196,21,164,21,164,16,196,16"/>
-</map>
-</div>
+<p>Updates the current game state when notified by a subject. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gs</td><td>The new game state.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -208,10 +220,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>This function rotates this object, Physics.gravity, camera, player. </p>
+<p>Rotates the gravity by the specified angle and notifies all registered observers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">angle</td><td>angle to rotate</td></tr>
+    <tr><td class="paramname">angle</td><td>The angle (in degrees) to rotate gravity by.</td></tr>
   </table>
   </dd>
 </dl>
@@ -220,8 +232,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_gravity_manager_a81de2fa0a53574ebdf91b13d9269bcf5_icgraph.png" border="0" usemap="#aclass_gravity_manager_a81de2fa0a53574ebdf91b13d9269bcf5_icgraph" alt=""/></div>
 <map name="aclass_gravity_manager_a81de2fa0a53574ebdf91b13d9269bcf5_icgraph" id="aclass_gravity_manager_a81de2fa0a53574ebdf91b13d9269bcf5_icgraph">
-<area shape="rect" title="This function rotates this object, Physics.gravity, camera, player." alt="" coords="212,5,400,31"/>
-<area shape="rect" href="class_gravity_manager.html#aab5971324cdb527d6d809819bf9a92be" title="This function checks if every rigidbody object is at rest, and if so, alters gravity according to the..." alt="" coords="5,5,164,31"/>
+<area shape="rect" title="Rotates the gravity by the specified angle and notifies all registered observers." alt="" coords="212,5,400,31"/>
+<area shape="rect" href="class_gravity_manager.html#aab5971324cdb527d6d809819bf9a92be" title="Checks if the game is in a state where gravity changes are allowed (Playing or Revived)...." alt="" coords="5,5,164,31"/>
 <area shape="poly" title=" " alt="" coords="196,21,164,21,164,16,196,16"/>
 </map>
 </div>
@@ -276,23 +288,43 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>This function checks if every rigidbody object is at rest, and if so, alters gravity according to the input key. </p>
+<p>Checks if the game is in a state where gravity changes are allowed (Playing or Revived). Listens for key inputs to alter gravity direction. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_gravity_manager_aab5971324cdb527d6d809819bf9a92be_cgraph.png" border="0" usemap="#aclass_gravity_manager_aab5971324cdb527d6d809819bf9a92be_cgraph" alt=""/></div>
 <map name="aclass_gravity_manager_aab5971324cdb527d6d809819bf9a92be_cgraph" id="aclass_gravity_manager_aab5971324cdb527d6d809819bf9a92be_cgraph">
-<area shape="rect" title="This function checks if every rigidbody object is at rest, and if so, alters gravity according to the..." alt="" coords="5,31,164,56"/>
-<area shape="rect" href="class_gravity_manager.html#a33c1d1eee3dd22f27b8d5c67cf26d139" title="This function checks whether all rigidbodies are at rest." alt="" coords="226,5,386,31"/>
-<area shape="poly" title=" " alt="" coords="164,32,210,26,211,32,164,37"/>
-<area shape="rect" href="class_gravity_manager.html#a81de2fa0a53574ebdf91b13d9269bcf5" title="This function rotates this object, Physics.gravity, camera, player." alt="" coords="212,55,400,80"/>
-<area shape="poly" title=" " alt="" coords="164,49,196,53,196,58,164,55"/>
+<area shape="rect" title="Checks if the game is in a state where gravity changes are allowed (Playing or Revived)...." alt="" coords="5,5,164,31"/>
+<area shape="rect" href="class_gravity_manager.html#a81de2fa0a53574ebdf91b13d9269bcf5" title="Rotates the gravity by the specified angle and notifies all registered observers." alt="" coords="212,5,400,31"/>
+<area shape="poly" title=" " alt="" coords="164,16,196,16,196,21,164,21"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac9b271f8b1889cb499f9752fa39ea512" name="ac9b271f8b1889cb499f9752fa39ea512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b271f8b1889cb499f9752fa39ea512">&#9670;&#160;</a></span>gameState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_our_game.html#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a> GravityManager.gameState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9f38f176b7ff5763efd325840f2f9486" name="a9f38f176b7ff5763efd325840f2f9486"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f38f176b7ff5763efd325840f2f9486">&#9670;&#160;</a></span>gravityChange</h2>
 
@@ -329,30 +361,22 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a14a8c64fcd335893897a265b4436f28e" name="a14a8c64fcd335893897a265b4436f28e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14a8c64fcd335893897a265b4436f28e">&#9670;&#160;</a></span>rigidbodies</h2>
+<a id="a7f1fa28bd209c79bd5bdd03e61d57b67" name="a7f1fa28bd209c79bd5bdd03e61d57b67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1fa28bd209c79bd5bdd03e61d57b67">&#9670;&#160;</a></span>lastChangeTime</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Rigidbody [] GravityManager.rigidbodies</td>
+          <td class="memname">float GravityManager.lastChangeTime = -100f</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>UnityProject/GravitableEscape/Assets/Script/<a class="el" href="_gravity_manager_8cs.html">GravityManager.cs</a></li>
+<li>UnityProject/GravitableEscape/Assets/Scripts/<a class="el" href="_gravity_manager_8cs.html">GravityManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

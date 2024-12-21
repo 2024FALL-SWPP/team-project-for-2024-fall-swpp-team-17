@@ -85,6 +85,7 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -92,14 +93,23 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">UIManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the game's user interface elements, including health bar updates, pause menu, game over screen, hint messages, and gravity information display. It observes game state changes to update the UI accordingly.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for UIManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_u_i_manager__inherit__graph.png" border="0" usemap="#a_u_i_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_u_i_manager_inherit__map" id="a_u_i_manager_inherit__map">
-<area shape="rect" title=" " alt="" coords="18,79,104,105"/>
-<area shape="rect" title=" " alt="" coords="5,5,117,31"/>
-<area shape="poly" title=" " alt="" coords="64,46,64,79,58,79,58,46"/>
+<area shape="rect" title="Manages the game&#39;s user interface elements, including health bar updates, pause menu,..." alt="" coords="93,153,178,178"/>
+<area shape="rect" href="class_our_game_1_1_mock_u_i_manager.html" title=" " alt="" coords="47,226,224,252"/>
+<area shape="poly" title=" " alt="" coords="138,194,138,226,133,226,133,194"/>
+<area shape="rect" title=" " alt="" coords="5,79,117,105"/>
+<area shape="poly" title=" " alt="" coords="86,114,125,150,121,154,83,117"/>
+<area shape="rect" href="interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="140,79,280,105"/>
+<area shape="poly" title=" " alt="" coords="189,117,150,154,146,150,185,114"/>
+<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="128,5,292,31"/>
+<area shape="poly" title=" " alt="" coords="213,46,213,79,208,79,208,46"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -107,33 +117,106 @@ Collaboration diagram for UIManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_u_i_manager__coll__graph.png" border="0" usemap="#a_u_i_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_u_i_manager_coll__map" id="a_u_i_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,333,91,358"/>
-<area shape="rect" title=" " alt="" coords="22,80,133,106"/>
-<area shape="poly" title=" " alt="" coords="77,122,52,333,47,332,72,121"/>
-<area shape="rect" href="class_player_manager.html" title="This class handles movement(+ jump), life, blinking(when revived)" alt="" coords="147,244,256,270"/>
-<area shape="poly" title=" " alt="" coords="84,121,92,150,105,180,120,199,139,216,177,241,174,246,136,220,116,203,100,182,87,152,79,122"/>
-<area shape="rect" href="class_input_manager.html" title="This class handles mouse location input. It fetches mouse&#39;s x, y location and CameraManager,..." alt="" coords="115,155,216,181"/>
-<area shape="poly" title=" " alt="" coords="105,114,153,153,149,157,102,118"/>
-<area shape="poly" title=" " alt="" coords="168,280,71,334,68,330,166,275"/>
-<area shape="rect" href="interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="176,80,293,106"/>
-<area shape="poly" title=" " alt="" coords="243,121,246,168,244,195,237,221,219,245,215,242,232,219,239,194,241,168,238,122"/>
-<area shape="poly" title=" " alt="" coords="215,119,178,157,175,153,211,116"/>
-<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="154,5,315,31"/>
-<area shape="poly" title=" " alt="" coords="237,46,237,80,232,80,232,46"/>
-<area shape="rect" href="interface_our_game_1_1_i_player_manager.html" title="Interface of PlayerManager." alt="" coords="290,155,403,181"/>
-<area shape="poly" title=" " alt="" coords="319,192,273,222,229,246,226,241,271,218,317,188"/>
-<area shape="rect" href="interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="427,155,568,181"/>
-<area shape="poly" title=" " alt="" coords="442,188,244,246,242,241,440,183"/>
-<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="415,80,580,106"/>
-<area shape="poly" title=" " alt="" coords="500,121,500,155,495,155,495,121"/>
-<area shape="poly" title=" " alt="" coords="155,195,153,208,155,219,165,231,178,241,174,246,161,235,150,221,147,208,149,194"/>
+<area shape="rect" title="Manages the game&#39;s user interface elements, including health bar updates, pause menu,..." alt="" coords="623,267,709,293"/>
+<area shape="rect" href="class_game_manager.html" title="Manages the core game logic, including game state transitions, life management, and wormhole effects...." alt="" coords="939,248,1045,274"/>
+<area shape="poly" title=" " alt="" coords="724,288,814,296,864,296,914,290,964,272,966,277,915,295,865,301,814,302,723,293"/>
+<area shape="rect" title=" " alt="" coords="32,228,143,254"/>
+<area shape="poly" title=" " alt="" coords="158,223,219,213,308,203,378,197,412,199,448,205,486,216,531,234,543,243,555,252,589,265,624,272,622,278,588,270,552,257,540,247,528,238,485,221,446,210,412,204,378,203,308,208,219,219,159,228"/>
+<area shape="poly" title=" " alt="" coords="103,214,149,155,181,126,218,103,262,86,301,76,336,72,370,72,441,82,530,93,642,100,732,106,774,114,817,127,864,147,916,176,938,193,957,212,984,246,980,250,953,215,934,197,913,181,861,152,815,132,773,119,731,111,642,105,529,99,440,87,370,77,336,77,302,81,264,91,220,108,184,130,152,159,107,217"/>
+<area shape="rect" href="class_camera_manager.html" title="This class manages camera movement and rotation. In most cases it follows the player and rotates usin..." alt="" coords="1190,248,1307,274"/>
+<area shape="poly" title=" " alt="" coords="97,213,126,154,148,119,173,85,203,53,237,27,275,9,317,3,993,3,1019,5,1044,11,1089,34,1129,66,1163,105,1192,147,1216,187,1244,247,1240,249,1211,189,1188,149,1159,109,1125,70,1086,38,1042,16,1018,10,993,8,317,8,276,14,240,32,206,57,177,88,152,122,131,157,102,215"/>
+<area shape="rect" href="class_input_manager.html" title="Manages mouse input for camera and player rotation. Tracks mouse movement to update yaw and pitch val..." alt="" coords="268,444,368,470"/>
+<area shape="poly" title=" " alt="" coords="99,268,113,304,133,346,160,388,195,423,231,442,269,451,267,456,229,447,192,427,156,391,128,349,108,306,94,270"/>
+<area shape="rect" href="class_player_manager.html" title="Handles the player&#39;s movement, jumping, animations, life status, and gravity adjustments." alt="" coords="612,394,720,420"/>
+<area shape="poly" title=" " alt="" coords="106,266,126,294,152,326,184,356,220,379,252,389,295,397,402,405,516,407,611,406,611,411,516,413,402,411,294,402,251,394,218,384,180,360,148,330,122,297,102,269"/>
+<area shape="rect" href="class_gravity_manager.html" title="Manages gravity for the entire game by allowing the gravity direction to be rotated...." alt="" coords="609,331,723,357"/>
+<area shape="poly" title=" " alt="" coords="158,252,219,264,609,332,608,337,219,269,157,258"/>
+<area shape="rect" href="class_load_scene.html" title="Manages scene loading and transitions within the game. Provides methods for loading specific scenes,..." alt="" coords="275,228,361,254"/>
+<area shape="poly" title=" " alt="" coords="159,239,274,239,274,244,159,244"/>
+<area shape="rect" href="interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="248,118,388,144"/>
+<area shape="poly" title=" " alt="" coords="404,133,479,144,510,153,531,165,540,176,544,188,544,210,544,232,547,243,555,253,570,264,587,271,623,278,622,283,585,276,567,268,551,257,543,245,539,233,539,210,539,188,535,178,528,169,508,158,478,149,404,139"/>
+<area shape="poly" title=" " alt="" coords="404,130,529,132,654,130,709,130,779,137,904,160,1025,190,1209,245,1208,251,1024,195,903,165,778,143,709,136,654,135,529,137,404,135"/>
+<area shape="poly" title=" " alt="" coords="353,151,387,179,419,214,428,229,432,242,436,254,444,268,465,292,484,308,531,343,543,356,555,367,583,381,612,392,611,397,581,386,552,372,539,360,528,347,481,312,461,296,439,271,431,256,427,243,423,231,415,218,384,183,350,155"/>
+<area shape="poly" title=" " alt="" coords="386,146,423,161,461,180,499,204,531,234,541,253,543,271,545,287,555,304,581,321,610,333,608,338,578,326,551,307,540,289,538,272,536,255,527,238,496,208,459,184,421,166,384,151"/>
+<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="5,26,170,52"/>
+<area shape="poly" title=" " alt="" coords="137,55,285,115,283,120,135,60"/>
+<area shape="poly" title=" " alt="" coords="923,268,709,280,709,275,923,263"/>
+<area shape="poly" title=" " alt="" coords="1051,276,1069,279,1117,283,1166,279,1201,272,1202,277,1166,284,1117,288,1069,284,1050,281"/>
+<area shape="rect" href="interface_our_game_1_1_i_life_manager.html" title="Interface for managing the player&#39;s life, including health modifications." alt="" coords="618,152,714,178"/>
+<area shape="poly" title=" " alt="" coords="730,168,819,182,868,194,916,210,949,227,976,246,973,250,946,231,914,214,867,199,818,187,729,173"/>
+<area shape="poly" title=" " alt="" coords="1174,264,1045,264,1045,259,1174,259"/>
+<area shape="rect" href="interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="260,524,376,550"/>
+<area shape="poly" title=" " alt="" coords="392,531,517,520,681,500,864,466,955,444,1044,417,1108,398,1134,386,1164,366,1188,343,1209,318,1238,273,1243,276,1214,321,1192,347,1168,370,1137,391,1110,403,1046,423,957,449,865,472,682,505,518,525,392,536"/>
+<area shape="poly" title=" " alt="" coords="368,516,628,418,630,423,370,521"/>
+<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="7,524,168,550"/>
+<area shape="poly" title=" " alt="" coords="184,535,259,535,259,540,184,540"/>
+<area shape="poly" title=" " alt="" coords="384,460,487,464,620,462,768,449,842,437,914,420,1008,387,1098,346,1173,304,1225,273,1228,277,1175,309,1100,350,1010,392,915,426,843,442,769,455,621,467,487,469,384,465"/>
+<area shape="poly" title=" " alt="" coords="384,452,454,447,529,438,618,417,619,423,530,443,455,452,384,457"/>
+<area shape="poly" title=" " alt="" coords="736,406,778,404,824,397,870,384,913,363,937,343,957,319,983,274,987,276,962,322,941,347,916,368,872,389,825,402,779,409,736,412"/>
+<area shape="poly" title=" " alt="" coords="738,345,824,340,870,331,914,318,949,297,976,273,980,277,952,301,916,323,871,337,825,345,738,350"/>
+<area shape="rect" href="class_our_game_1_1_subject.html" title=" " alt="" coords="219,329,417,370"/>
+<area shape="poly" title=" " alt="" coords="433,345,609,342,609,348,433,350"/>
+<area shape="rect" href="class_our_game_1_1_subject.html" title=" " alt="" coords="553,202,779,243"/>
+<area shape="poly" title=" " alt="" coords="795,229,915,243,938,247,938,252,914,248,794,234"/>
+<area shape="poly" title=" " alt="" coords="377,245,623,273,623,278,376,250"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a536c23f54fd789811248a065d1c06b8f" id="r_a536c23f54fd789811248a065d1c06b8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a536c23f54fd789811248a065d1c06b8f">OnNotify&lt; GameStateObserver &gt;</a> (<a class="el" href="namespace_our_game.html#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a> gs)</td></tr>
+<tr class="memdesc:a536c23f54fd789811248a065d1c06b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles UI updates based on the game state.  <br /></td></tr>
+<tr class="separator:a536c23f54fd789811248a065d1c06b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a071806b73c6620385ce08d55e1b0ebd6" id="r_a071806b73c6620385ce08d55e1b0ebd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a071806b73c6620385ce08d55e1b0ebd6">ShowMessage</a> (string message)</td></tr>
+<tr class="memdesc:a071806b73c6620385ce08d55e1b0ebd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a hint message with a typing effect.  <br /></td></tr>
+<tr class="separator:a071806b73c6620385ce08d55e1b0ebd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b0b9c5ccef6041ee103625fa45c5f20" id="r_a5b0b9c5ccef6041ee103625fa45c5f20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b0b9c5ccef6041ee103625fa45c5f20">HideMessage</a> ()</td></tr>
+<tr class="memdesc:a5b0b9c5ccef6041ee103625fa45c5f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides the hint message.  <br /></td></tr>
+<tr class="separator:a5b0b9c5ccef6041ee103625fa45c5f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac79a2f58ab9dbde2cbb016e427043c2f" id="r_ac79a2f58ab9dbde2cbb016e427043c2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac79a2f58ab9dbde2cbb016e427043c2f">ShowGravityDirections</a> ()</td></tr>
+<tr class="memdesc:ac79a2f58ab9dbde2cbb016e427043c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows gravity directions (1, 2, 3) on the screen.  <br /></td></tr>
+<tr class="separator:ac79a2f58ab9dbde2cbb016e427043c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82064e62a1b00081547029a4938b9174" id="r_a82064e62a1b00081547029a4938b9174"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82064e62a1b00081547029a4938b9174">HideGravityDirections</a> ()</td></tr>
+<tr class="memdesc:a82064e62a1b00081547029a4938b9174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides gravity directions from the screen.  <br /></td></tr>
+<tr class="separator:a82064e62a1b00081547029a4938b9174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1957f8f5d8b61955af9f593ee741d1b3" id="r_a1957f8f5d8b61955af9f593ee741d1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1957f8f5d8b61955af9f593ee741d1b3">Pause</a> ()</td></tr>
+<tr class="memdesc:a1957f8f5d8b61955af9f593ee741d1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the game and shows the pause menu.  <br /></td></tr>
+<tr class="separator:a1957f8f5d8b61955af9f593ee741d1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14ba377aeafd27e782d3f25107b39e1a" id="r_a14ba377aeafd27e782d3f25107b39e1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14ba377aeafd27e782d3f25107b39e1a">Resume</a> ()</td></tr>
+<tr class="memdesc:a14ba377aeafd27e782d3f25107b39e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes the game and hides the pause menu.  <br /></td></tr>
+<tr class="separator:a14ba377aeafd27e782d3f25107b39e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf0add6cbe9bcd06ba3c4aee8c0578ec" id="r_aaf0add6cbe9bcd06ba3c4aee8c0578ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf0add6cbe9bcd06ba3c4aee8c0578ec">Restart</a> ()</td></tr>
+<tr class="memdesc:aaf0add6cbe9bcd06ba3c4aee8c0578ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restarts the current scene.  <br /></td></tr>
+<tr class="separator:aaf0add6cbe9bcd06ba3c4aee8c0578ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93972cb3cdfa00a0efd29581a51f5bbd" id="r_a93972cb3cdfa00a0efd29581a51f5bbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93972cb3cdfa00a0efd29581a51f5bbd">LoadMenu</a> ()</td></tr>
+<tr class="memdesc:a93972cb3cdfa00a0efd29581a51f5bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the main menu scene.  <br /></td></tr>
+<tr class="separator:a93972cb3cdfa00a0efd29581a51f5bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_interface_our_game_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_our_game_1_1_observer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_our_game_1_1_observer.html">OurGame.Observer&lt; GameState &gt;</a></td></tr>
+<tr class="memitem:a876e900a5f763c7fe7dd74de8f4efe55 inherit pub_methods_interface_our_game_1_1_observer" id="r_a876e900a5f763c7fe7dd74de8f4efe55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_observer.html#a876e900a5f763c7fe7dd74de8f4efe55">OnNotify&lt; Observer &gt;</a> (NotifyType data)</td></tr>
+<tr class="separator:a876e900a5f763c7fe7dd74de8f4efe55 inherit pub_methods_interface_our_game_1_1_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2b10d662d9ecb106b45fe6f7476e17af" id="r_a2b10d662d9ecb106b45fe6f7476e17af"><td class="memItemLeft" align="right" valign="top">TextMeshProUGUI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b10d662d9ecb106b45fe6f7476e17af">lifeText</a></td></tr>
-<tr class="separator:a2b10d662d9ecb106b45fe6f7476e17af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a669c6922c48858598d40b51aa8f568a9" id="r_a669c6922c48858598d40b51aa8f568a9"><td class="memItemLeft" align="right" valign="top">Slider&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a669c6922c48858598d40b51aa8f568a9">healthBar</a></td></tr>
+<tr class="separator:a669c6922c48858598d40b51aa8f568a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de2906f49e0c2dfd6c0f18ab6b7feed" id="r_a9de2906f49e0c2dfd6c0f18ab6b7feed"><td class="memItemLeft" align="right" valign="top">TextMeshProUGUI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9de2906f49e0c2dfd6c0f18ab6b7feed">gameOverText</a></td></tr>
+<tr class="separator:a9de2906f49e0c2dfd6c0f18ab6b7feed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9aab956d6a993d71434cd15f78af40" id="r_aec9aab956d6a993d71434cd15f78af40"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec9aab956d6a993d71434cd15f78af40">pauseButton</a></td></tr>
+<tr class="separator:aec9aab956d6a993d71434cd15f78af40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa520549597596a2dd5235f69fd27aeca" id="r_aa520549597596a2dd5235f69fd27aeca"><td class="memItemLeft" align="right" valign="top">TextMeshProUGUI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa520549597596a2dd5235f69fd27aeca">hintMessageText</a></td></tr>
+<tr class="separator:aa520549597596a2dd5235f69fd27aeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2f824979f2de5b1045c4edb8510976" id="r_a9b2f824979f2de5b1045c4edb8510976"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b2f824979f2de5b1045c4edb8510976">menu</a></td></tr>
+<tr class="separator:a9b2f824979f2de5b1045c4edb8510976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a835a42b375e44027298f6f7fba7f65fe" id="r_a835a42b375e44027298f6f7fba7f65fe"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a835a42b375e44027298f6f7fba7f65fe">hintMessagebox</a></td></tr>
+<tr class="separator:a835a42b375e44027298f6f7fba7f65fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a54f1c353b97a205e85f6bf233711fd" id="r_a9a54f1c353b97a205e85f6bf233711fd"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a54f1c353b97a205e85f6bf233711fd">restartButton</a></td></tr>
+<tr class="separator:a9a54f1c353b97a205e85f6bf233711fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81462422ee2e0fc1e6361b4299d6c427" id="r_a81462422ee2e0fc1e6361b4299d6c427"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81462422ee2e0fc1e6361b4299d6c427">mainMenuButton</a></td></tr>
+<tr class="separator:a81462422ee2e0fc1e6361b4299d6c427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa1a94e3647498ed17fb988e53a7daf" id="r_a8fa1a94e3647498ed17fb988e53a7daf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_load_scene.html">LoadScene</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fa1a94e3647498ed17fb988e53a7daf">loadScene</a></td></tr>
+<tr class="separator:a8fa1a94e3647498ed17fb988e53a7daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2ecaf27dc095a51c1af8f2b4a97d5e" id="r_a0c2ecaf27dc095a51c1af8f2b4a97d5e"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c2ecaf27dc095a51c1af8f2b4a97d5e">gravityDirectionMessage</a></td></tr>
+<tr class="separator:a0c2ecaf27dc095a51c1af8f2b4a97d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -141,13 +224,442 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a2bd6b48b13b9e14e6292e4b713f59584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e2db9f2d98e70ccc4864d3af73f1b9e" id="r_a6e2db9f2d98e70ccc4864d3af73f1b9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e2db9f2d98e70ccc4864d3af73f1b9e">Update</a> ()</td></tr>
 <tr class="separator:a6e2db9f2d98e70ccc4864d3af73f1b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa49bf9260868364a7a0a72c37e1d006a" id="r_aa49bf9260868364a7a0a72c37e1d006a"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa49bf9260868364a7a0a72c37e1d006a">SmoothHealthBarUpdate</a> (float targetValue)</td></tr>
+<tr class="memdesc:aa49bf9260868364a7a0a72c37e1d006a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smoothly updates the health bar to the target value.  <br /></td></tr>
+<tr class="separator:aa49bf9260868364a7a0a72c37e1d006a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f0a96174c6b5cd0212d86301359b7f3" id="r_a3f0a96174c6b5cd0212d86301359b7f3"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f0a96174c6b5cd0212d86301359b7f3">TypeMessage</a> (string message)</td></tr>
+<tr class="memdesc:a3f0a96174c6b5cd0212d86301359b7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message character by character with a typing effect.  <br /></td></tr>
+<tr class="separator:a3f0a96174c6b5cd0212d86301359b7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a031048d8fe9c75b8dc79953c238414a1" id="r_a031048d8fe9c75b8dc79953c238414a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_manager.html">PlayerManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a031048d8fe9c75b8dc79953c238414a1">playerManager</a></td></tr>
-<tr class="separator:a031048d8fe9c75b8dc79953c238414a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66a4d1158148d742e4e948589c57582" id="r_ae66a4d1158148d742e4e948589c57582"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66a4d1158148d742e4e948589c57582">gameManager</a></td></tr>
+<tr class="separator:ae66a4d1158148d742e4e948589c57582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127803146ddfeb0afaef7e6355441461" id="r_a127803146ddfeb0afaef7e6355441461"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_our_game.html#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a127803146ddfeb0afaef7e6355441461">gameState</a></td></tr>
+<tr class="separator:a127803146ddfeb0afaef7e6355441461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac256f813f590e0df1435e8bf65efa354" id="r_ac256f813f590e0df1435e8bf65efa354"><td class="memItemLeft" align="right" valign="top">Coroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac256f813f590e0df1435e8bf65efa354">typingCoroutine</a></td></tr>
+<tr class="separator:ac256f813f590e0df1435e8bf65efa354"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the game's user interface elements, including health bar updates, pause menu, game over screen, hint messages, and gravity information display. It observes game state changes to update the UI accordingly. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a82064e62a1b00081547029a4938b9174" name="a82064e62a1b00081547029a4938b9174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82064e62a1b00081547029a4938b9174">&#9670;&#160;</a></span>HideGravityDirections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UIManager.HideGravityDirections </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hides gravity directions from the screen. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a82064e62a1b00081547029a4938b9174_icgraph.png" border="0" usemap="#aclass_u_i_manager_a82064e62a1b00081547029a4938b9174_icgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a82064e62a1b00081547029a4938b9174_icgraph" id="aclass_u_i_manager_a82064e62a1b00081547029a4938b9174_icgraph">
+<area shape="rect" title="Hides gravity directions from the screen." alt="" coords="223,5,439,31"/>
+<area shape="rect" href="class_message_manager.html#a8b6722bd6e44f93dffdce6c3768e3fcc" title=" " alt="" coords="5,5,175,31"/>
+<area shape="poly" title=" " alt="" coords="207,21,175,21,175,16,207,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5b0b9c5ccef6041ee103625fa45c5f20" name="a5b0b9c5ccef6041ee103625fa45c5f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b0b9c5ccef6041ee103625fa45c5f20">&#9670;&#160;</a></span>HideMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UIManager.HideMessage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hides the hint message. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a5b0b9c5ccef6041ee103625fa45c5f20_icgraph.png" border="0" usemap="#aclass_u_i_manager_a5b0b9c5ccef6041ee103625fa45c5f20_icgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a5b0b9c5ccef6041ee103625fa45c5f20_icgraph" id="aclass_u_i_manager_a5b0b9c5ccef6041ee103625fa45c5f20_icgraph">
+<area shape="rect" title="Hides the hint message." alt="" coords="223,42,391,68"/>
+<area shape="rect" href="class_u_i_manager.html#a536c23f54fd789811248a065d1c06b8f" title="Handles UI updates based on the game state." alt="" coords="8,5,172,46"/>
+<area shape="poly" title=" " alt="" coords="207,44,172,39,173,34,207,39"/>
+<area shape="rect" href="class_message_manager.html#a8b6722bd6e44f93dffdce6c3768e3fcc" title=" " alt="" coords="5,70,175,96"/>
+<area shape="poly" title=" " alt="" coords="207,71,176,75,175,69,207,65"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a93972cb3cdfa00a0efd29581a51f5bbd" name="a93972cb3cdfa00a0efd29581a51f5bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93972cb3cdfa00a0efd29581a51f5bbd">&#9670;&#160;</a></span>LoadMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UIManager.LoadMenu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the main menu scene. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a93972cb3cdfa00a0efd29581a51f5bbd_cgraph.png" border="0" usemap="#aclass_u_i_manager_a93972cb3cdfa00a0efd29581a51f5bbd_cgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a93972cb3cdfa00a0efd29581a51f5bbd_cgraph" id="aclass_u_i_manager_a93972cb3cdfa00a0efd29581a51f5bbd_cgraph">
+<area shape="rect" title="Loads the main menu scene." alt="" coords="5,5,154,31"/>
+<area shape="rect" href="class_load_scene.html#a45d9de0fa9857a055b4510d4f50b87b5" title=" " alt="" coords="202,5,345,31"/>
+<area shape="poly" title=" " alt="" coords="154,16,186,16,186,21,154,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a536c23f54fd789811248a065d1c06b8f" name="a536c23f54fd789811248a065d1c06b8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a536c23f54fd789811248a065d1c06b8f">&#9670;&#160;</a></span>OnNotify&lt; GameStateObserver &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UIManager.OnNotify&lt; <a class="el" href="interface_our_game_1_1_game_state_observer.html">GameStateObserver</a> &gt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_our_game.html#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a></td>          <td class="paramname"><span class="paramname"><em>gs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles UI updates based on the game state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gs</td><td>The updated game state.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a536c23f54fd789811248a065d1c06b8f_cgraph.png" border="0" usemap="#aclass_u_i_manager_a536c23f54fd789811248a065d1c06b8f_cgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a536c23f54fd789811248a065d1c06b8f_cgraph" id="aclass_u_i_manager_a536c23f54fd789811248a065d1c06b8f_cgraph">
+<area shape="rect" title="Handles UI updates based on the game state." alt="" coords="5,5,170,46"/>
+<area shape="rect" href="class_u_i_manager.html#a5b0b9c5ccef6041ee103625fa45c5f20" title="Hides the hint message." alt="" coords="218,13,386,38"/>
+<area shape="poly" title=" " alt="" coords="170,23,202,23,202,28,170,28"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1957f8f5d8b61955af9f593ee741d1b3" name="a1957f8f5d8b61955af9f593ee741d1b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1957f8f5d8b61955af9f593ee741d1b3">&#9670;&#160;</a></span>Pause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UIManager.Pause </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pauses the game and shows the pause menu. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a1957f8f5d8b61955af9f593ee741d1b3_cgraph.png" border="0" usemap="#aclass_u_i_manager_a1957f8f5d8b61955af9f593ee741d1b3_cgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a1957f8f5d8b61955af9f593ee741d1b3_cgraph" id="aclass_u_i_manager_a1957f8f5d8b61955af9f593ee741d1b3_cgraph">
+<area shape="rect" title="Pauses the game and shows the pause menu." alt="" coords="5,5,131,31"/>
+<area shape="rect" href="class_game_manager.html#a7979fca811638424b6778a6c223a66ba" title="Pauses the game by setting the game state to Paused." alt="" coords="179,5,325,31"/>
+<area shape="poly" title=" " alt="" coords="131,16,163,16,163,21,131,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a1957f8f5d8b61955af9f593ee741d1b3_icgraph.png" border="0" usemap="#aclass_u_i_manager_a1957f8f5d8b61955af9f593ee741d1b3_icgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a1957f8f5d8b61955af9f593ee741d1b3_icgraph" id="aclass_u_i_manager_a1957f8f5d8b61955af9f593ee741d1b3_icgraph">
+<area shape="rect" title="Pauses the game and shows the pause menu." alt="" coords="184,5,309,31"/>
+<area shape="rect" href="class_u_i_manager.html#a6e2db9f2d98e70ccc4864d3af73f1b9e" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" title=" " alt="" coords="168,21,136,21,136,16,168,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf0add6cbe9bcd06ba3c4aee8c0578ec" name="aaf0add6cbe9bcd06ba3c4aee8c0578ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf0add6cbe9bcd06ba3c4aee8c0578ec">&#9670;&#160;</a></span>Restart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UIManager.Restart </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restarts the current scene. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_aaf0add6cbe9bcd06ba3c4aee8c0578ec_cgraph.png" border="0" usemap="#aclass_u_i_manager_aaf0add6cbe9bcd06ba3c4aee8c0578ec_cgraph" alt=""/></div>
+<map name="aclass_u_i_manager_aaf0add6cbe9bcd06ba3c4aee8c0578ec_cgraph" id="aclass_u_i_manager_aaf0add6cbe9bcd06ba3c4aee8c0578ec_cgraph">
+<area shape="rect" title="Restarts the current scene." alt="" coords="5,31,137,56"/>
+<area shape="rect" href="class_load_scene.html#ad7772d4c3aa1d00969cc1263ec7aefee" title=" " alt="" coords="185,5,353,31"/>
+<area shape="poly" title=" " alt="" coords="137,32,169,28,169,34,138,38"/>
+<area shape="rect" href="class_game_manager.html#a70e634a706de8a549e29c7706b183096" title="Resets the player&#39;s life to its initial value." alt="" coords="186,55,352,80"/>
+<area shape="poly" title=" " alt="" coords="138,49,171,53,171,58,137,54"/>
+<area shape="rect" href="class_game_manager.html#af4120cbddadc7a402fadec9eae4e0014" title="Saves the player&#39;s life value to PlayerPrefs." alt="" coords="401,55,583,80"/>
+<area shape="poly" title=" " alt="" coords="352,65,385,65,385,70,352,70"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14ba377aeafd27e782d3f25107b39e1a" name="a14ba377aeafd27e782d3f25107b39e1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14ba377aeafd27e782d3f25107b39e1a">&#9670;&#160;</a></span>Resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UIManager.Resume </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resumes the game and hides the pause menu. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a14ba377aeafd27e782d3f25107b39e1a_cgraph.png" border="0" usemap="#aclass_u_i_manager_a14ba377aeafd27e782d3f25107b39e1a_cgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a14ba377aeafd27e782d3f25107b39e1a_cgraph" id="aclass_u_i_manager_a14ba377aeafd27e782d3f25107b39e1a_cgraph">
+<area shape="rect" title="Resumes the game and hides the pause menu." alt="" coords="5,5,143,31"/>
+<area shape="rect" href="class_game_manager.html#a59e6dd8d370a45a4eecd4b1fee7da4b3" title="Resumes the game by setting the game state to Playing." alt="" coords="191,5,349,31"/>
+<area shape="poly" title=" " alt="" coords="143,16,175,16,175,21,143,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac79a2f58ab9dbde2cbb016e427043c2f" name="ac79a2f58ab9dbde2cbb016e427043c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac79a2f58ab9dbde2cbb016e427043c2f">&#9670;&#160;</a></span>ShowGravityDirections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UIManager.ShowGravityDirections </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shows gravity directions (1, 2, 3) on the screen. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_ac79a2f58ab9dbde2cbb016e427043c2f_icgraph.png" border="0" usemap="#aclass_u_i_manager_ac79a2f58ab9dbde2cbb016e427043c2f_icgraph" alt=""/></div>
+<map name="aclass_u_i_manager_ac79a2f58ab9dbde2cbb016e427043c2f_icgraph" id="aclass_u_i_manager_ac79a2f58ab9dbde2cbb016e427043c2f_icgraph">
+<area shape="rect" title="Shows gravity directions (1, 2, 3) on the screen." alt="" coords="223,5,445,31"/>
+<area shape="rect" href="class_message_manager.html#a8b6722bd6e44f93dffdce6c3768e3fcc" title=" " alt="" coords="5,5,175,31"/>
+<area shape="poly" title=" " alt="" coords="207,21,175,21,175,16,207,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a071806b73c6620385ce08d55e1b0ebd6" name="a071806b73c6620385ce08d55e1b0ebd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a071806b73c6620385ce08d55e1b0ebd6">&#9670;&#160;</a></span>ShowMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UIManager.ShowMessage </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays a hint message with a typing effect. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message to display.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a071806b73c6620385ce08d55e1b0ebd6_cgraph.png" border="0" usemap="#aclass_u_i_manager_a071806b73c6620385ce08d55e1b0ebd6_cgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a071806b73c6620385ce08d55e1b0ebd6_cgraph" id="aclass_u_i_manager_a071806b73c6620385ce08d55e1b0ebd6_cgraph">
+<area shape="rect" title="Displays a hint message with a typing effect." alt="" coords="5,5,180,31"/>
+<area shape="rect" href="class_u_i_manager.html#a3f0a96174c6b5cd0212d86301359b7f3" title="Displays a message character by character with a typing effect." alt="" coords="228,5,397,31"/>
+<area shape="poly" title=" " alt="" coords="180,16,212,16,212,21,180,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a071806b73c6620385ce08d55e1b0ebd6_icgraph.png" border="0" usemap="#aclass_u_i_manager_a071806b73c6620385ce08d55e1b0ebd6_icgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a071806b73c6620385ce08d55e1b0ebd6_icgraph" id="aclass_u_i_manager_a071806b73c6620385ce08d55e1b0ebd6_icgraph">
+<area shape="rect" title="Displays a hint message with a typing effect." alt="" coords="485,42,659,68"/>
+<area shape="rect" href="class_message_manager.html#ad9d5cc886b60dd807e5781738e553f6d" title="Triggers the UI manager to show a message after a delay." alt="" coords="223,5,437,46"/>
+<area shape="poly" title=" " alt="" coords="469,45,437,41,438,36,470,40"/>
+<area shape="rect" href="class_message_manager.html#a8b6722bd6e44f93dffdce6c3768e3fcc" title=" " alt="" coords="5,42,175,68"/>
+<area shape="poly" title=" " alt="" coords="469,60,437,60,223,60,175,60,175,54,223,55,437,55,469,55"/>
+<area shape="poly" title=" " alt="" coords="207,43,175,47,175,42,207,38"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa49bf9260868364a7a0a72c37e1d006a" name="aa49bf9260868364a7a0a72c37e1d006a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa49bf9260868364a7a0a72c37e1d006a">&#9670;&#160;</a></span>SmoothHealthBarUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator UIManager.SmoothHealthBarUpdate </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>targetValue</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Smoothly updates the health bar to the target value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetValue</td><td>Target value to update the health bar to.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_aa49bf9260868364a7a0a72c37e1d006a_icgraph.png" border="0" usemap="#aclass_u_i_manager_aa49bf9260868364a7a0a72c37e1d006a_icgraph" alt=""/></div>
+<map name="aclass_u_i_manager_aa49bf9260868364a7a0a72c37e1d006a_icgraph" id="aclass_u_i_manager_aa49bf9260868364a7a0a72c37e1d006a_icgraph">
+<area shape="rect" title="Smoothly updates the health bar to the target value." alt="" coords="184,5,375,46"/>
+<area shape="rect" href="class_u_i_manager.html#a6e2db9f2d98e70ccc4864d3af73f1b9e" title=" " alt="" coords="5,13,136,38"/>
+<area shape="poly" title=" " alt="" coords="168,28,136,28,136,23,168,23"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a2bd6b48b13b9e14e6292e4b713f59584" name="a2bd6b48b13b9e14e6292e4b713f59584"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2bd6b48b13b9e14e6292e4b713f59584">&#9670;&#160;</a></span>Start()</h2>
 
@@ -173,6 +685,48 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3f0a96174c6b5cd0212d86301359b7f3" name="a3f0a96174c6b5cd0212d86301359b7f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f0a96174c6b5cd0212d86301359b7f3">&#9670;&#160;</a></span>TypeMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator UIManager.TypeMessage </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays a message character by character with a typing effect. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a3f0a96174c6b5cd0212d86301359b7f3_icgraph.png" border="0" usemap="#aclass_u_i_manager_a3f0a96174c6b5cd0212d86301359b7f3_icgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a3f0a96174c6b5cd0212d86301359b7f3_icgraph" id="aclass_u_i_manager_a3f0a96174c6b5cd0212d86301359b7f3_icgraph">
+<area shape="rect" title="Displays a message character by character with a typing effect." alt="" coords="707,42,877,68"/>
+<area shape="rect" href="class_u_i_manager.html#a071806b73c6620385ce08d55e1b0ebd6" title="Displays a hint message with a typing effect." alt="" coords="485,42,659,68"/>
+<area shape="poly" title=" " alt="" coords="691,58,660,58,660,52,691,52"/>
+<area shape="rect" href="class_message_manager.html#ad9d5cc886b60dd807e5781738e553f6d" title="Triggers the UI manager to show a message after a delay." alt="" coords="223,5,437,46"/>
+<area shape="poly" title=" " alt="" coords="469,45,437,41,438,36,470,40"/>
+<area shape="rect" href="class_message_manager.html#a8b6722bd6e44f93dffdce6c3768e3fcc" title=" " alt="" coords="5,42,175,68"/>
+<area shape="poly" title=" " alt="" coords="469,60,437,60,223,60,175,60,175,54,223,55,437,55,469,55"/>
+<area shape="poly" title=" " alt="" coords="207,43,175,47,175,42,207,38"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a6e2db9f2d98e70ccc4864d3af73f1b9e" name="a6e2db9f2d98e70ccc4864d3af73f1b9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e2db9f2d98e70ccc4864d3af73f1b9e">&#9670;&#160;</a></span>Update()</h2>
 
@@ -195,26 +749,26 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_u_i_manager_a6e2db9f2d98e70ccc4864d3af73f1b9e_cgraph.png" border="0" usemap="#aclass_u_i_manager_a6e2db9f2d98e70ccc4864d3af73f1b9e_cgraph" alt=""/></div>
+<map name="aclass_u_i_manager_a6e2db9f2d98e70ccc4864d3af73f1b9e_cgraph" id="aclass_u_i_manager_a6e2db9f2d98e70ccc4864d3af73f1b9e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,136,60"/>
+<area shape="rect" href="class_u_i_manager.html#a1957f8f5d8b61955af9f593ee741d1b3" title="Pauses the game and shows the pause menu." alt="" coords="217,5,342,31"/>
+<area shape="poly" title=" " alt="" coords="136,36,201,26,202,32,136,41"/>
+<area shape="rect" href="class_u_i_manager.html#aa49bf9260868364a7a0a72c37e1d006a" title="Smoothly updates the health bar to the target value." alt="" coords="184,55,375,96"/>
+<area shape="poly" title=" " alt="" coords="136,54,169,58,168,63,136,59"/>
+<area shape="rect" href="class_game_manager.html#a7979fca811638424b6778a6c223a66ba" title="Pauses the game by setting the game state to Paused." alt="" coords="423,5,569,31"/>
+<area shape="poly" title=" " alt="" coords="343,16,408,16,408,21,343,21"/>
+</map>
+</div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2b10d662d9ecb106b45fe6f7476e17af" name="a2b10d662d9ecb106b45fe6f7476e17af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b10d662d9ecb106b45fe6f7476e17af">&#9670;&#160;</a></span>lifeText</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TextMeshProUGUI UIManager.lifeText</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a031048d8fe9c75b8dc79953c238414a1" name="a031048d8fe9c75b8dc79953c238414a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a031048d8fe9c75b8dc79953c238414a1">&#9670;&#160;</a></span>playerManager</h2>
+<a id="ae66a4d1158148d742e4e948589c57582" name="ae66a4d1158148d742e4e948589c57582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66a4d1158148d742e4e948589c57582">&#9670;&#160;</a></span>gameManager</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +777,191 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_player_manager.html">PlayerManager</a> UIManager.playerManager</td>
+          <td class="memname"><a class="el" href="class_game_manager.html">GameManager</a> UIManager.gameManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9de2906f49e0c2dfd6c0f18ab6b7feed" name="a9de2906f49e0c2dfd6c0f18ab6b7feed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de2906f49e0c2dfd6c0f18ab6b7feed">&#9670;&#160;</a></span>gameOverText</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextMeshProUGUI UIManager.gameOverText</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a127803146ddfeb0afaef7e6355441461" name="a127803146ddfeb0afaef7e6355441461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a127803146ddfeb0afaef7e6355441461">&#9670;&#160;</a></span>gameState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_our_game.html#ac2fb4c10a621ef417bdcb35196c3511a">GameState</a> UIManager.gameState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c2ecaf27dc095a51c1af8f2b4a97d5e" name="a0c2ecaf27dc095a51c1af8f2b4a97d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2ecaf27dc095a51c1af8f2b4a97d5e">&#9670;&#160;</a></span>gravityDirectionMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject UIManager.gravityDirectionMessage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a669c6922c48858598d40b51aa8f568a9" name="a669c6922c48858598d40b51aa8f568a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a669c6922c48858598d40b51aa8f568a9">&#9670;&#160;</a></span>healthBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Slider UIManager.healthBar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a835a42b375e44027298f6f7fba7f65fe" name="a835a42b375e44027298f6f7fba7f65fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a835a42b375e44027298f6f7fba7f65fe">&#9670;&#160;</a></span>hintMessagebox</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject UIManager.hintMessagebox</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa520549597596a2dd5235f69fd27aeca" name="aa520549597596a2dd5235f69fd27aeca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa520549597596a2dd5235f69fd27aeca">&#9670;&#160;</a></span>hintMessageText</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextMeshProUGUI UIManager.hintMessageText</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8fa1a94e3647498ed17fb988e53a7daf" name="a8fa1a94e3647498ed17fb988e53a7daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fa1a94e3647498ed17fb988e53a7daf">&#9670;&#160;</a></span>loadScene</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_load_scene.html">LoadScene</a> UIManager.loadScene</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81462422ee2e0fc1e6361b4299d6c427" name="a81462422ee2e0fc1e6361b4299d6c427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81462422ee2e0fc1e6361b4299d6c427">&#9670;&#160;</a></span>mainMenuButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button UIManager.mainMenuButton</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b2f824979f2de5b1045c4edb8510976" name="a9b2f824979f2de5b1045c4edb8510976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b2f824979f2de5b1045c4edb8510976">&#9670;&#160;</a></span>menu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject UIManager.menu</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec9aab956d6a993d71434cd15f78af40" name="aec9aab956d6a993d71434cd15f78af40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9aab956d6a993d71434cd15f78af40">&#9670;&#160;</a></span>pauseButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button UIManager.pauseButton</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a54f1c353b97a205e85f6bf233711fd" name="a9a54f1c353b97a205e85f6bf233711fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a54f1c353b97a205e85f6bf233711fd">&#9670;&#160;</a></span>restartButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button UIManager.restartButton</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac256f813f590e0df1435e8bf65efa354" name="ac256f813f590e0df1435e8bf65efa354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac256f813f590e0df1435e8bf65efa354">&#9670;&#160;</a></span>typingCoroutine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Coroutine UIManager.typingCoroutine</td>
         </tr>
       </table>
   </td>
@@ -236,7 +974,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>UnityProject/GravitableEscape/Assets/Script/<a class="el" href="_u_i_manager_8cs.html">UIManager.cs</a></li>
+<li>UnityProject/GravitableEscape/Assets/Scripts/<a class="el" href="_u_i_manager_8cs.html">UIManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

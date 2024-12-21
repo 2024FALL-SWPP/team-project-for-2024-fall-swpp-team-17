@@ -1,0 +1,5 @@
+<map id="UIManager.SmoothHealthBarUpdate" name="UIManager.SmoothHealthBarUpdate">
+<area shape="rect" id="Node000001" title="Smoothly updates the health bar to the target value." alt="" coords="184,5,375,46"/>
+<area shape="rect" id="Node000002" href="$class_u_i_manager.html#a6e2db9f2d98e70ccc4864d3af73f1b9e" title=" " alt="" coords="5,13,136,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,28,136,28,136,23,168,23"/>
+</map>

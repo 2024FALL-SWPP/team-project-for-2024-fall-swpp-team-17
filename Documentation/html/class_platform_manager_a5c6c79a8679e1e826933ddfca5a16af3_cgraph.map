@@ -1,0 +1,9 @@
+<map id="PlatformManager.SetPlatformGroup" name="PlatformManager.SetPlatformGroup">
+<area shape="rect" id="Node000001" title="Sets the visual and collision state of a platform group." alt="" coords="5,35,198,75"/>
+<area shape="rect" id="Node000002" href="$class_platform_manager.html#a8c9d448d283b866414b3ab0be47ec437" title="Updates the visual state of a platform based on the alpha value." alt="" coords="246,5,463,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,41,230,37,230,43,198,46"/>
+<area shape="rect" id="Node000004" href="$class_platform_manager.html#a89e047462afc9f77832f0af30cb999c1" title="Enables or disables the collider of a platform." alt="" coords="261,70,448,96"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="198,63,245,68,245,74,198,68"/>
+<area shape="rect" id="Node000003" href="$class_platform_manager.html#ae84b9da0d04d1d07d4cb2b9d1044f97d" title="Sets the alpha transparency of a platform&#39;s material." alt="" coords="511,13,687,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,23,495,23,495,28,464,28"/>
+</map>

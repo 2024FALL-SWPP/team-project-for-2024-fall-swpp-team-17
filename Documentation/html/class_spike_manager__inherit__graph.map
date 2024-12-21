@@ -1,6 +1,6 @@
 <map id="SpikeManager" name="SpikeManager">
-<area shape="rect" id="Node000001" title=" " alt="" coords="10,153,114,178"/>
-<area shape="rect" id="Node000002" href="$class_our_game_1_1_hazard_manager.html" title="Abstract class of hazards, which can harm the player(i.e. decrease its life)" alt="" coords="5,79,119,105"/>
+<area shape="rect" id="Node000001" title="Manages the behavior of spike hazards in the game. Ensures spikes stay in a fixed position and handle..." alt="" coords="10,153,114,178"/>
+<area shape="rect" id="Node000002" href="$class_our_game_1_1_hazard_manager.html" title="Abstract base class for hazards that can harm the player." alt="" coords="5,79,119,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,120,65,152,59,152,59,120"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="6,5,118,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,46,65,79,59,79,59,46"/>

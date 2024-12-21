@@ -1,0 +1,11 @@
+<map id="BoxPuzzleManager.GetUnlockSignal" name="BoxPuzzleManager.GetUnlockSignal">
+<area shape="rect" id="Node000001" title="Receives a signal to unlock a specific lock and activates its corresponding plate." alt="" coords="5,5,205,46"/>
+<area shape="rect" id="Node000002" href="$class_box_puzzle_manager.html#ab99d3507f40cff3d527f48069006a76b" title="Increments the unlock count and clears the puzzle if all locks are unlocked." alt="" coords="253,5,440,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,23,237,23,237,28,205,28"/>
+<area shape="rect" id="Node000003" href="$class_box_puzzle_manager.html#ab366091116b8524b23525479eee07795" title="Clears the puzzle and fixes the button state." alt="" coords="488,13,696,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,23,472,23,472,28,441,28"/>
+<area shape="rect" id="Node000004" href="$class_button_manager.html#ad10532db93280a68f2d89f7d3b8e1c57" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="744,13,913,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="697,23,729,23,729,28,697,28"/>
+<area shape="rect" id="Node000005" href="$class_button_manager.html#afacefe24686fdaa986dec861e038c0bd" title="Changes the button to its pressed state (green)." alt="" coords="961,13,1159,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="913,23,945,23,945,28,913,28"/>
+</map>

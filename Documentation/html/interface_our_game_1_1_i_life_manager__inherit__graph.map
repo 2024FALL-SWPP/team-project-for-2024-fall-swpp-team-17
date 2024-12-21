@@ -1,0 +1,5 @@
+<map id="OurGame.ILifeManager" name="OurGame.ILifeManager">
+<area shape="rect" id="Node000001" title="Interface for managing the player&#39;s life, including health modifications." alt="" coords="5,5,162,31"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html" title="Manages the core game logic, including game state transitions, life management, and wormhole effects...." alt="" coords="30,79,137,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,46,86,79,81,79,81,46"/>
+</map>

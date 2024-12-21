@@ -85,7 +85,6 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -94,20 +93,16 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>This class handles mouse location input. It fetches mouse's x, y location and <a class="el" href="class_camera_manager.html">CameraManager</a>, <a class="el" href="class_player_manager.html" title="This class handles movement(+ jump), life, blinking(when revived)">PlayerManager</a> uses this script's yaw, pitch to.  
+<p>Manages mouse input for camera and player rotation. Tracks mouse movement to update yaw and pitch values, which are used by other components like <a class="el" href="class_camera_manager.html" title="This class manages camera movement and rotation. In most cases it follows the player and rotates usin...">CameraManager</a> and <a class="el" href="class_player_manager.html" title="Handles the player&#39;s movement, jumping, animations, life status, and gravity adjustments.">PlayerManager</a>.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for InputManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_input_manager__inherit__graph.png" border="0" usemap="#a_input_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_input_manager_inherit__map" id="a_input_manager_inherit__map">
-<area shape="rect" title="This class handles mouse location input. It fetches mouse&#39;s x, y location and CameraManager,..." alt="" coords="79,153,179,178"/>
-<area shape="rect" title=" " alt="" coords="5,79,117,105"/>
-<area shape="poly" title=" " alt="" coords="85,114,119,150,116,154,81,118"/>
-<area shape="rect" href="interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="140,79,256,105"/>
-<area shape="poly" title=" " alt="" coords="178,117,143,154,139,150,175,114"/>
-<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="118,5,279,31"/>
-<area shape="poly" title=" " alt="" coords="201,46,201,79,196,79,196,46"/>
+<area shape="rect" title="Manages mouse input for camera and player rotation. Tracks mouse movement to update yaw and pitch val..." alt="" coords="11,79,111,105"/>
+<area shape="rect" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" title=" " alt="" coords="64,46,64,79,58,79,58,46"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -115,25 +110,12 @@ Collaboration diagram for InputManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_input_manager__coll__graph.png" border="0" usemap="#a_input_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_input_manager_coll__map" id="a_input_manager_coll__map">
-<area shape="rect" title="This class handles mouse location input. It fetches mouse&#39;s x, y location and CameraManager,..." alt="" coords="79,153,179,178"/>
-<area shape="rect" title=" " alt="" coords="5,79,117,105"/>
-<area shape="poly" title=" " alt="" coords="85,114,119,150,116,154,81,118"/>
-<area shape="rect" href="interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="140,79,256,105"/>
-<area shape="poly" title=" " alt="" coords="178,117,143,154,139,150,175,114"/>
-<area shape="rect" href="interface_our_game_1_1_observer.html" title=" " alt="" coords="118,5,279,31"/>
-<area shape="poly" title=" " alt="" coords="201,46,201,79,196,79,196,46"/>
+<area shape="rect" title="Manages mouse input for camera and player rotation. Tracks mouse movement to update yaw and pitch val..." alt="" coords="11,79,111,105"/>
+<area shape="rect" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" title=" " alt="" coords="64,46,64,79,58,79,58,46"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a5c1b7abc112c745de77e69cd7233835d" id="r_a5c1b7abc112c745de77e69cd7233835d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c1b7abc112c745de77e69cd7233835d">OnNotify&lt; GravityObserver &gt;</a> (Quaternion rot)</td></tr>
-<tr class="memdesc:a5c1b7abc112c745de77e69cd7233835d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets pitch, yaw to 0 when gravity changes.  <br /></td></tr>
-<tr class="separator:a5c1b7abc112c745de77e69cd7233835d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_interface_our_game_1_1_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_our_game_1_1_observer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_our_game_1_1_observer.html">OurGame.Observer&lt; Quaternion &gt;</a></td></tr>
-<tr class="memitem:a876e900a5f763c7fe7dd74de8f4efe55 inherit pub_methods_interface_our_game_1_1_observer" id="r_a876e900a5f763c7fe7dd74de8f4efe55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_our_game_1_1_observer.html#a876e900a5f763c7fe7dd74de8f4efe55">OnNotify&lt; Observer &gt;</a> (NotifyType data)</td></tr>
-<tr class="separator:a876e900a5f763c7fe7dd74de8f4efe55 inherit pub_methods_interface_our_game_1_1_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7df077dbc3b9edcef0efb5ee62f81e77" id="r_a7df077dbc3b9edcef0efb5ee62f81e77"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7df077dbc3b9edcef0efb5ee62f81e77">yaw</a></td></tr>
@@ -152,8 +134,10 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:abdacab7858b320b8ea7403ebb19460c0" id="r_abdacab7858b320b8ea7403ebb19460c0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdacab7858b320b8ea7403ebb19460c0">mouseSensitivity</a> = 200f</td></tr>
-<tr class="separator:abdacab7858b320b8ea7403ebb19460c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd16b7a920db7ade864445c06bf76006" id="r_abd16b7a920db7ade864445c06bf76006"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd16b7a920db7ade864445c06bf76006">xSensitivity</a> = 100f</td></tr>
+<tr class="separator:abd16b7a920db7ade864445c06bf76006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5abf33af0a0b3a51e9399f9420af3116" id="r_a5abf33af0a0b3a51e9399f9420af3116"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5abf33af0a0b3a51e9399f9420af3116">ySensitivity</a> = 100f</td></tr>
+<tr class="separator:a5abf33af0a0b3a51e9399f9420af3116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f315aa7490f22a07384899bc7d4d4c3" id="r_a2f315aa7490f22a07384899bc7d4d4c3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f315aa7490f22a07384899bc7d4d4c3">mouseX</a></td></tr>
 <tr class="separator:a2f315aa7490f22a07384899bc7d4d4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30508544b20fbff7e5c30945c19148e7" id="r_a30508544b20fbff7e5c30945c19148e7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30508544b20fbff7e5c30945c19148e7">mouseY</a></td></tr>
@@ -164,47 +148,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8119b013bffa24da4b2619048c4315bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class handles mouse location input. It fetches mouse's x, y location and <a class="el" href="class_camera_manager.html">CameraManager</a>, <a class="el" href="class_player_manager.html" title="This class handles movement(+ jump), life, blinking(when revived)">PlayerManager</a> uses this script's yaw, pitch to. </p>
+<div class="textblock"><p>Manages mouse input for camera and player rotation. Tracks mouse movement to update yaw and pitch values, which are used by other components like <a class="el" href="class_camera_manager.html" title="This class manages camera movement and rotation. In most cases it follows the player and rotates usin...">CameraManager</a> and <a class="el" href="class_player_manager.html" title="Handles the player&#39;s movement, jumping, animations, life status, and gravity adjustments.">PlayerManager</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5c1b7abc112c745de77e69cd7233835d" name="a5c1b7abc112c745de77e69cd7233835d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c1b7abc112c745de77e69cd7233835d">&#9670;&#160;</a></span>OnNotify&lt; GravityObserver &gt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void InputManager.OnNotify&lt; <a class="el" href="interface_our_game_1_1_gravity_observer.html">GravityObserver</a> &gt; </td>
-          <td>(</td>
-          <td class="paramtype">Quaternion</td>          <td class="paramname"><span class="paramname"><em>rot</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resets pitch, yaw to 0 when gravity changes. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">GravityObserver</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rot</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a5ea91a2053e03c49da58ee3a56628763" name="a5ea91a2053e03c49da58ee3a56628763"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ea91a2053e03c49da58ee3a56628763">&#9670;&#160;</a></span>Start()</h2>
 
@@ -256,28 +201,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="abdacab7858b320b8ea7403ebb19460c0" name="abdacab7858b320b8ea7403ebb19460c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdacab7858b320b8ea7403ebb19460c0">&#9670;&#160;</a></span>mouseSensitivity</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float InputManager.mouseSensitivity = 200f</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a2f315aa7490f22a07384899bc7d4d4c3" name="a2f315aa7490f22a07384899bc7d4d4c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f315aa7490f22a07384899bc7d4d4c3">&#9670;&#160;</a></span>mouseX</h2>
 
@@ -394,6 +317,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="abd16b7a920db7ade864445c06bf76006" name="abd16b7a920db7ade864445c06bf76006"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd16b7a920db7ade864445c06bf76006">&#9670;&#160;</a></span>xSensitivity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float InputManager.xSensitivity = 100f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7df077dbc3b9edcef0efb5ee62f81e77" name="a7df077dbc3b9edcef0efb5ee62f81e77"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7df077dbc3b9edcef0efb5ee62f81e77">&#9670;&#160;</a></span>yaw</h2>
 
@@ -408,8 +353,30 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a5abf33af0a0b3a51e9399f9420af3116" name="a5abf33af0a0b3a51e9399f9420af3116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5abf33af0a0b3a51e9399f9420af3116">&#9670;&#160;</a></span>ySensitivity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float InputManager.ySensitivity = 100f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>UnityProject/GravitableEscape/Assets/Script/<a class="el" href="_input_manager_8cs.html">InputManager.cs</a></li>
+<li>UnityProject/GravitableEscape/Assets/Scripts/<a class="el" href="_input_manager_8cs.html">InputManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

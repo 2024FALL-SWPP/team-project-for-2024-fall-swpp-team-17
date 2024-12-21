@@ -1,0 +1,5 @@
+<map id="SpawnShootingStars.SpawnShootingStar" name="SpawnShootingStars.SpawnShootingStar">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,193,46"/>
+<area shape="rect" id="Node000002" href="$class_spawn_shooting_stars.html#a4d3110989a6350ac6675864c1d3ec5e9" title=" " alt="" coords="241,5,458,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,23,225,23,225,28,193,28"/>
+</map>

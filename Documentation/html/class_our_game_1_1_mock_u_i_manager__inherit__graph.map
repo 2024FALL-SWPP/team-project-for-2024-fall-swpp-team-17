@@ -1,0 +1,12 @@
+<map id="OurGame.MockUIManager" name="OurGame.MockUIManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="82,226,259,252"/>
+<area shape="rect" id="Node000002" href="$class_u_i_manager.html" title="Manages the game&#39;s user interface elements, including health bar updates, pause menu,..." alt="" coords="88,153,173,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,191,166,225,161,227,142,193"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,79,117,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,114,121,150,117,154,81,117"/>
+<area shape="rect" id="Node000004" href="$interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="140,79,280,105"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="206,120,176,227,171,225,201,119"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="187,117,145,154,142,150,184,113"/>
+<area shape="rect" id="Node000005" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="128,5,292,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="213,46,213,79,208,79,208,46"/>
+</map>

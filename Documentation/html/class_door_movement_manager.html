@@ -92,12 +92,15 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">DoorMovementManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the movement of a door, allowing it to slide open or close in a specified direction.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DoorMovementManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_door_movement_manager__inherit__graph.png" border="0" usemap="#a_door_movement_manager_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_door_movement_manager_inherit__map" id="a_door_movement_manager_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,79,166,105"/>
+<area shape="rect" title="Manages the movement of a door, allowing it to slide open or close in a specified direction." alt="" coords="5,79,166,105"/>
 <area shape="rect" title=" " alt="" coords="30,5,141,31"/>
 <area shape="poly" title=" " alt="" coords="88,46,88,79,83,79,83,46"/>
 </map>
@@ -107,7 +110,7 @@ Collaboration diagram for DoorMovementManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_door_movement_manager__coll__graph.png" border="0" usemap="#a_door_movement_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_door_movement_manager_coll__map" id="a_door_movement_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,79,166,105"/>
+<area shape="rect" title="Manages the movement of a door, allowing it to slide open or close in a specified direction." alt="" coords="5,79,166,105"/>
 <area shape="rect" title=" " alt="" coords="30,5,141,31"/>
 <area shape="poly" title=" " alt="" coords="88,46,88,79,83,79,83,46"/>
 </map>
@@ -116,12 +119,11 @@ Collaboration diagram for DoorMovementManager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a341ac301612133329f29d5ded4069587" id="r_a341ac301612133329f29d5ded4069587"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a341ac301612133329f29d5ded4069587">StartMoving</a> ()</td></tr>
+<tr class="memdesc:a341ac301612133329f29d5ded4069587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the door's movement in the appropriate horizontal direction.  <br /></td></tr>
 <tr class="separator:a341ac301612133329f29d5ded4069587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a87ed428a853f892f79619d9c90bcaf01" id="r_a87ed428a853f892f79619d9c90bcaf01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87ed428a853f892f79619d9c90bcaf01">Start</a> ()</td></tr>
-<tr class="separator:a87ed428a853f892f79619d9c90bcaf01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a562f75e91604a3ef938d2007e603d237" id="r_a562f75e91604a3ef938d2007e603d237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a562f75e91604a3ef938d2007e603d237">Update</a> ()</td></tr>
 <tr class="separator:a562f75e91604a3ef938d2007e603d237"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -138,32 +140,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a120a9ed19d229d646524b9d6472f720c" id="r_a120a9ed19d229d646524b9d6472f720c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a120a9ed19d229d646524b9d6472f720c">isMoving</a> = false</td></tr>
 <tr class="separator:a120a9ed19d229d646524b9d6472f720c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a87ed428a853f892f79619d9c90bcaf01" name="a87ed428a853f892f79619d9c90bcaf01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87ed428a853f892f79619d9c90bcaf01">&#9670;&#160;</a></span>Start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DoorMovementManager.Start </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the movement of a door, allowing it to slide open or close in a specified direction. </p>
+<p>The door moves in a horizontal direction (left or right) based on its current position and stops when it reaches the target position. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a341ac301612133329f29d5ded4069587" name="a341ac301612133329f29d5ded4069587"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a341ac301612133329f29d5ded4069587">&#9670;&#160;</a></span>StartMoving()</h2>
 
@@ -186,15 +166,17 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Starts the door's movement in the appropriate horizontal direction. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_door_movement_manager_a341ac301612133329f29d5ded4069587_icgraph.png" border="0" usemap="#aclass_door_movement_manager_a341ac301612133329f29d5ded4069587_icgraph" alt=""/></div>
 <map name="aclass_door_movement_manager_a341ac301612133329f29d5ded4069587_icgraph" id="aclass_door_movement_manager_a341ac301612133329f29d5ded4069587_icgraph">
-<area shape="rect" title=" " alt="" coords="506,5,697,46"/>
-<area shape="rect" href="class_stage_clear_manager.html#a8cb942efa5bc1b3c63666783beb39ee6" title=" " alt="" coords="260,13,458,38"/>
+<area shape="rect" title="Starts the door&#39;s movement in the appropriate horizontal direction." alt="" coords="506,5,697,46"/>
+<area shape="rect" href="class_stage_clear_manager.html#a8cb942efa5bc1b3c63666783beb39ee6" title="Opens both doors by triggering their movement logic." alt="" coords="260,13,458,38"/>
 <area shape="poly" title=" " alt="" coords="490,28,458,28,458,23,490,23"/>
-<area shape="rect" href="class_stage_clear_manager.html#a71b7cb582f22af7e0461d17544631bf1" title=" " alt="" coords="5,5,212,46"/>
+<area shape="rect" href="class_stage_clear_manager.html#a71b7cb582f22af7e0461d17544631bf1" title="Detects collision with the player to trigger stage clearing and door opening." alt="" coords="5,5,212,46"/>
 <area shape="poly" title=" " alt="" coords="244,28,212,28,212,23,244,23"/>
 </map>
 </div>
@@ -338,7 +320,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>UnityProject/GravitableEscape/Assets/Script/Obstacles/<a class="el" href="_door_movement_manager_8cs.html">DoorMovementManager.cs</a></li>
+<li>UnityProject/GravitableEscape/Assets/Scripts/SceneManaging/<a class="el" href="_door_movement_manager_8cs.html">DoorMovementManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,0 +1,5 @@
+<map id="UIManager.Resume" name="UIManager.Resume">
+<area shape="rect" id="Node000001" title="Resumes the game and hides the pause menu." alt="" coords="5,5,143,31"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#a59e6dd8d370a45a4eecd4b1fee7da4b3" title="Resumes the game by setting the game state to Playing." alt="" coords="191,5,349,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,16,175,16,175,21,143,21"/>
+</map>

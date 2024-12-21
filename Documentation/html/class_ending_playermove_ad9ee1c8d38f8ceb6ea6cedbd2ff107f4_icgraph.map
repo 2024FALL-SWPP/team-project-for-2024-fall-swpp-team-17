@@ -1,0 +1,7 @@
+<map id="EndingPlayermove.SetArrivalRotation" name="EndingPlayermove.SetArrivalRotation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="467,5,658,46"/>
+<area shape="rect" id="Node000002" href="$class_ending_playermove.html#a89d3bea49603aab46102be70b80778e3" title=" " alt="" coords="230,5,419,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="451,28,420,28,420,23,451,23"/>
+<area shape="rect" id="Node000003" href="$class_ending_playermove.html#a79ef74e2ca4f1138e9c59f517d38b21a" title=" " alt="" coords="5,13,182,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="214,28,182,28,182,23,214,23"/>
+</map>

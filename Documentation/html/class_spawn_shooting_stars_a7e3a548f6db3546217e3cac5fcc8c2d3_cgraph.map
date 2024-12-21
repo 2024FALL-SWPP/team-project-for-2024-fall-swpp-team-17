@@ -1,0 +1,9 @@
+<map id="SpawnShootingStars.Start" name="SpawnShootingStars.Start">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,46,181,72"/>
+<area shape="rect" id="Node000002" href="$class_spawn_shooting_stars.html#aa47eee1e26b1eb20fb811f0410809870" title=" " alt="" coords="229,5,416,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,44,213,39,214,44,182,49"/>
+<area shape="rect" id="Node000003" href="$class_spawn_shooting_stars.html#acf120bd355074fe7b98308c4493d3eaa" title=" " alt="" coords="229,71,416,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,69,214,73,213,78,181,74"/>
+<area shape="rect" id="Node000004" href="$class_spawn_shooting_stars.html#a4d3110989a6350ac6675864c1d3ec5e9" title=" " alt="" coords="464,71,681,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="417,88,449,88,449,94,417,94"/>
+</map>

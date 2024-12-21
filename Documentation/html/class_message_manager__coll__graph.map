@@ -1,0 +1,49 @@
+<map id="MessageManager" name="MessageManager">
+<area shape="rect" id="Node000001" title="Manages in&#45;game messages used in the Tutorial Scene displayed to the player based on their position i..." alt="" coords="939,80,1063,106"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="32,202,143,228"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,190,162,159,218,133,304,109,378,92,444,81,506,75,636,73,803,73,859,71,915,73,942,77,941,82,914,79,859,77,803,79,636,78,507,81,445,86,379,97,306,114,220,139,164,164,118,194"/>
+<area shape="rect" id="Node000003" href="$class_u_i_manager.html" title="Manages the game&#39;s user interface elements, including health bar updates, pause menu,..." alt="" coords="623,203,709,229"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="125,192,169,172,218,157,276,150,334,148,393,151,449,158,551,179,626,200,625,205,549,184,448,163,392,156,334,153,276,155,220,163,171,177,127,197"/>
+<area shape="rect" id="Node000006" href="$class_game_manager.html" title="Manages the core game logic, including game state transitions, life management, and wormhole effects...." alt="" coords="948,346,1054,372"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="159,221,418,259,667,297,915,340,948,346,947,351,914,345,666,303,417,264,158,227"/>
+<area shape="rect" id="Node000008" href="$class_camera_manager.html" title="This class manages camera movement and rotation. In most cases it follows the player and rotates usin..." alt="" coords="1208,346,1325,372"/>
+<area shape="poly" id="edge10_Node000008_Node000002" title=" " alt="" coords="100,187,131,134,178,74,208,46,241,24,277,8,317,3,1002,3,1034,6,1063,15,1091,29,1115,47,1159,94,1194,150,1222,208,1242,264,1265,345,1260,346,1237,266,1217,210,1189,152,1155,97,1112,51,1088,33,1061,20,1033,11,1002,8,317,8,279,13,244,28,211,50,182,77,135,137,104,189"/>
+<area shape="rect" id="Node000011" href="$class_input_manager.html" title="Manages mouse input for camera and player rotation. Tracks mouse movement to update yaw and pitch val..." alt="" coords="268,338,368,364"/>
+<area shape="poly" id="edge15_Node000011_Node000002" title=" " alt="" coords="113,237,160,281,189,304,220,323,268,340,267,345,218,328,186,308,156,285,109,241"/>
+<area shape="rect" id="Node000012" href="$class_player_manager.html" title="Handles the player&#39;s movement, jumping, animations, life status, and gravity adjustments." alt="" coords="612,386,720,412"/>
+<area shape="poly" id="edge18_Node000012_Node000002" title=" " alt="" coords="100,241,116,282,141,329,176,374,197,393,220,408,251,419,294,424,401,425,516,416,611,404,612,409,516,421,401,430,294,430,250,424,218,413,194,397,172,377,137,331,112,284,95,243"/>
+<area shape="rect" id="Node000013" href="$class_gravity_manager.html" title="Manages gravity for the entire game by allowing the gravity direction to be rotated...." alt="" coords="609,336,723,362"/>
+<area shape="poly" id="edge24_Node000013_Node000002" title=" " alt="" coords="103,240,121,273,147,311,180,347,220,374,263,391,301,400,336,403,369,401,440,387,529,373,609,360,609,365,530,379,441,393,370,406,336,408,300,406,262,396,218,378,177,351,143,314,117,276,99,243"/>
+<area shape="rect" id="Node000016" href="$class_load_scene.html" title="Manages scene loading and transitions within the game. Provides methods for loading specific scenes,..." alt="" coords="275,172,361,198"/>
+<area shape="poly" id="edge29_Node000016_Node000002" title=" " alt="" coords="158,203,274,188,275,193,159,208"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="724,218,768,218,816,214,866,204,913,186,939,169,960,147,990,105,994,108,964,150,942,173,916,191,868,209,817,219,768,224,724,223"/>
+<area shape="poly" id="edge22_Node000006_Node000003" title=" " alt="" coords="725,222,839,243,916,262,941,280,963,302,994,344,989,347,959,306,938,284,914,266,838,248,724,228"/>
+<area shape="rect" id="Node000004" href="$interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="248,499,388,525"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="339,486,378,436,415,375,422,352,423,333,426,313,439,293,482,260,530,238,579,224,622,217,623,222,581,229,532,243,484,265,443,296,431,315,428,333,427,353,420,377,382,439,343,489"/>
+<area shape="poly" id="edge13_Node000008_Node000004" title=" " alt="" coords="404,521,554,535,667,543,716,542,778,535,848,521,918,501,1051,454,1163,406,1239,370,1241,374,1165,411,1053,459,920,506,849,526,779,540,716,548,666,548,553,540,404,526"/>
+<area shape="poly" id="edge20_Node000012_Node000004" title=" " alt="" coords="403,515,436,512,468,506,500,495,528,478,537,465,539,451,541,436,552,421,580,405,611,397,612,403,582,410,555,425,546,438,544,452,542,467,531,482,502,500,470,511,436,518,404,520"/>
+<area shape="poly" id="edge25_Node000013_Node000004" title=" " alt="" coords="375,491,452,458,491,435,527,407,535,399,538,390,543,380,552,371,579,358,609,350,610,355,581,363,555,376,547,383,543,392,539,401,531,411,494,439,454,462,377,496"/>
+<area shape="rect" id="Node000005" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="5,499,170,525"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="185,509,247,509,247,515,185,515"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="966,340,914,312,883,302,858,297,833,292,802,281,777,266,701,232,703,227,780,262,804,277,834,287,859,292,884,297,916,307,969,335"/>
+<area shape="poly" id="edge16_Node000008_Node000006" title=" " alt="" coords="1069,356,1208,356,1208,361,1069,361"/>
+<area shape="rect" id="Node000007" href="$interface_our_game_1_1_i_life_manager.html" title="Interface for managing the player&#39;s life, including health modifications." alt="" coords="618,435,714,461"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="729,437,817,420,914,395,973,370,975,375,916,400,819,425,730,442"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="1209,378,1184,383,1136,387,1087,383,1046,375,1047,370,1087,378,1136,382,1184,378,1208,373"/>
+<area shape="rect" id="Node000009" href="$interface_our_game_1_1_gravity_observer.html" title=" " alt="" coords="260,599,376,625"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="392,607,520,599,689,581,877,549,971,527,1062,499,1125,477,1151,465,1182,445,1224,406,1254,370,1258,374,1228,410,1186,449,1154,469,1127,482,1064,504,973,532,878,554,690,587,521,605,392,613"/>
+<area shape="poly" id="edge19_Node000012_Node000009" title=" " alt="" coords="391,595,426,583,463,566,498,545,527,517,535,505,538,493,537,470,538,445,542,433,552,421,579,404,611,396,612,401,581,409,555,425,547,435,543,446,543,469,543,494,540,507,531,520,501,549,466,571,428,588,392,600"/>
+<area shape="rect" id="Node000010" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="7,599,168,625"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="184,609,259,609,259,615,184,615"/>
+<area shape="poly" id="edge14_Node000008_Node000011" title=" " alt="" coords="382,343,400,335,415,324,427,306,430,287,425,250,420,212,425,193,440,175,457,163,480,154,534,142,599,137,670,137,809,151,915,171,968,187,1019,207,1116,256,1196,306,1249,343,1246,347,1193,310,1113,261,1017,212,966,192,914,176,808,156,669,143,599,142,535,147,481,159,460,168,443,179,430,195,425,212,430,249,436,288,432,308,419,327,403,340,384,348"/>
+<area shape="poly" id="edge21_Node000012_Node000011" title=" " alt="" coords="384,357,612,389,611,394,384,362"/>
+<area shape="poly" id="edge17_Node000006_Node000012" title=" " alt="" coords="735,393,821,388,914,376,949,370,950,375,915,382,821,393,736,399"/>
+<area shape="poly" id="edge23_Node000006_Node000013" title=" " alt="" coords="738,352,803,355,947,357,947,362,803,360,738,357"/>
+<area shape="rect" id="Node000014" href="$class_our_game_1_1_subject.html" title=" " alt="" coords="219,273,417,314"/>
+<area shape="poly" id="edge26_Node000013_Node000014" title=" " alt="" coords="433,309,610,338,609,343,432,314"/>
+<area shape="rect" id="Node000015" href="$class_our_game_1_1_subject.html" title=" " alt="" coords="553,485,779,526"/>
+<area shape="poly" id="edge27_Node000006_Node000015" title=" " alt="" coords="793,486,855,469,913,443,937,427,958,407,988,370,992,374,962,411,940,431,916,448,856,474,794,492"/>
+<area shape="poly" id="edge28_Node000003_Node000016" title=" " alt="" coords="377,188,623,210,623,215,377,193"/>
+<area shape="rect" id="Node000017" href="$class_message_manager_1_1_zone.html" title="Represents a zone where a specific message is displayed." alt="" coords="588,94,744,120"/>
+<area shape="poly" id="edge30_Node000001_Node000017" title=" " alt="" coords="760,100,938,93,938,98,760,106"/>
+</map>

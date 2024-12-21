@@ -1,0 +1,6 @@
+<map id="SpawnShootingStars" name="SpawnShootingStars">
+<area shape="rect" id="Node000001" title="This class is used to spawn shooting stars in the title, Menu scene." alt="" coords="5,80,149,106"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="165,86,175,93,167,100,150,103,149,97,165,95,170,93,163,91"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="21,5,133,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,46,80,80,74,80,74,46"/>
+</map>

@@ -1,5 +1,5 @@
 <map id="GameManager.startWormhole" name="GameManager.startWormhole">
-<area shape="rect" id="Node000001" title="This function is called by WormholeManager when player is close enough to the wormhole...." alt="" coords="5,5,199,31"/>
-<area shape="rect" id="Node000002" href="$class_camera_manager.html#aacf72257506310c470e2f601639e13bb" title="Sets wormhole position so that the camera can spiral towards that position." alt="" coords="247,5,445,31"/>
+<area shape="rect" id="Node000001" title="Called by WormholeManager when the player is close to the wormhole. Triggers the wormhole animation a..." alt="" coords="5,5,199,31"/>
+<area shape="rect" id="Node000002" href="$class_camera_manager.html#aacf72257506310c470e2f601639e13bb" title="Sets the wormhole&#39;s position for spiral motion." alt="" coords="247,5,445,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,16,231,16,231,21,199,21"/>
 </map>

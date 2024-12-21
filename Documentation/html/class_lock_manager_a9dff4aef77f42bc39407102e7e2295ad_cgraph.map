@@ -1,0 +1,7 @@
+<map id="LockManager.OnCollisionEnter" name="LockManager.OnCollisionEnter">
+<area shape="rect" id="Node000001" title="Checks for collisions with the key object and unlocks the lock if conditions are met." alt="" coords="5,13,206,38"/>
+<area shape="rect" id="Node000002" href="$class_lock_manager.html#a0e7956fe81424dfbf462c451763d6ce4" title="Unlocks the lock and sends an unlock signal to the puzzle interface." alt="" coords="254,13,397,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,23,238,23,238,28,206,28"/>
+<area shape="rect" id="Node000003" href="$interface_our_game_1_1_puzzle_interface.html#a27bff2affc01a16eeb23aff9c39fa961" title=" " alt="" coords="445,5,621,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,23,429,23,429,28,397,28"/>
+</map>

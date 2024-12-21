@@ -1,0 +1,13 @@
+<map id="BoxPuzzleManager.Start" name="BoxPuzzleManager.Start">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,92,171,118"/>
+<area shape="rect" id="Node000002" href="$class_box_puzzle_manager.html#a64c301b3a5be2eb409ec3fd6ca8cb390" title="Records the initial positions of all keyboxes." alt="" coords="219,5,447,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,89,160,65,218,41,245,33,247,38,220,46,162,70,115,94"/>
+<area shape="rect" id="Node000003" href="$class_box_puzzle_manager.html#a0972e6c8f89e91f29f0b46e0793cbdac" title="Deactivates all keyboxes." alt="" coords="236,55,430,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,92,220,86,221,92,172,98"/>
+<area shape="rect" id="Node000004" href="$class_box_puzzle_manager.html#ad84b322c3f8448d15befac8ef2e5c389" title="Assigns unique IDs to each lock in the puzzle." alt="" coords="230,120,436,146"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,112,215,117,214,122,171,117"/>
+<area shape="rect" id="Node000006" href="$class_box_puzzle_manager.html#a9530ad57e7ad596265b57a6f937ee5b1" title="Deactivates all plates." alt="" coords="236,170,430,210"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="120,116,220,156,240,162,238,167,218,161,118,121"/>
+<area shape="rect" id="Node000005" href="$class_lock_manager.html#a923f2e012e3d3cdfe6c3a1cd040dc639" title="Assigns a unique ID to the lock." alt="" coords="495,120,659,146"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="437,130,479,130,479,136,437,136"/>
+</map>

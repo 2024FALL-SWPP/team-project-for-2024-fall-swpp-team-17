@@ -1,7 +1,5 @@
 <map id="CameraManager.SpiralTowardsWormhole" name="CameraManager.SpiralTowardsWormhole">
-<area shape="rect" id="Node000001" title="Updates camera&#39;s position to spiral towards the wormhole." alt="" coords="5,5,208,46"/>
-<area shape="rect" id="Node000002" href="$class_game_manager.html#ac53809f79e07da77e7d0d21007bd522c" title="This function is called when the animation warping into the wormhole ends." alt="" coords="256,13,444,38"/>
+<area shape="rect" id="Node000001" title="Moves the camera in a spiral motion towards the wormhole." alt="" coords="5,5,208,46"/>
+<area shape="rect" id="Node000002" href="$class_game_manager.html#ac53809f79e07da77e7d0d21007bd522c" title="Ends the wormhole effect and teleports the player to the target position." alt="" coords="256,13,444,38"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,23,240,23,240,28,208,28"/>
-<area shape="rect" id="Node000003" href="$class_player_manager.html#ad179460e0d4c8e8ef72b449b781e99f4" title="Move player to targetPos. Used in wormhole." alt="" coords="492,13,649,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,23,476,23,476,28,444,28"/>
 </map>

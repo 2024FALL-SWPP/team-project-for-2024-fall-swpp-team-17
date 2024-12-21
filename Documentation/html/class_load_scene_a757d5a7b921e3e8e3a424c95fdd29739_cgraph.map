@@ -1,0 +1,5 @@
+<map id="LoadScene.LoadNextScene" name="LoadScene.LoadNextScene">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,189,31"/>
+<area shape="rect" id="Node000002" href="$class_load_scene.html#a40c48b0237713385f04b19f71f5dc13f" title=" " alt="" coords="237,5,445,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,16,221,16,221,21,189,21"/>
+</map>

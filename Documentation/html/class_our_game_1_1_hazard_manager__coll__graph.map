@@ -1,5 +1,5 @@
 <map id="OurGame.HazardManager" name="OurGame.HazardManager">
-<area shape="rect" id="Node000001" title="Abstract class of hazards, which can harm the player(i.e. decrease its life)" alt="" coords="5,79,179,105"/>
+<area shape="rect" id="Node000001" title="Abstract base class for hazards that can harm the player." alt="" coords="5,79,179,105"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="36,5,148,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,46,95,79,89,79,89,46"/>
 </map>

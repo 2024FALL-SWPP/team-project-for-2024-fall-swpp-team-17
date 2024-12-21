@@ -1,7 +1,13 @@
 <map id="ButtonManager.FixButton" name="ButtonManager.FixButton">
-<area shape="rect" id="Node000001" title=" " alt="" coords="512,13,680,38"/>
-<area shape="rect" id="Node000002" href="$class_maze_box_manager.html#aa1fd54bb0b82bc7ec8de2fdc44461503" title=" " alt="" coords="250,13,464,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="496,28,464,28,464,23,496,23"/>
-<area shape="rect" id="Node000003" href="$class_maze_box_manager.html#a009e1f3e3bffb37ce8397b4249d238d5" title=" " alt="" coords="5,5,202,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,28,202,28,202,23,234,23"/>
+<area shape="rect" id="Node000001" title="Fixes the button in its pressed state and disables further interaction." alt="" coords="761,42,930,68"/>
+<area shape="rect" id="Node000002" href="$class_box_puzzle_manager.html#ab366091116b8524b23525479eee07795" title="Clears the puzzle and fixes the button state." alt="" coords="505,16,713,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="746,46,713,43,714,37,746,41"/>
+<area shape="rect" id="Node000005" href="$class_maze_manager.html#a643c86ae79700676762ce33a0d3bb157" title="Clears the puzzle, fixes the button state, and marks the puzzle as completed." alt="" coords="520,66,698,92"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="746,68,699,73,698,67,746,62"/>
+<area shape="rect" id="Node000003" href="$class_box_puzzle_manager.html#ab99d3507f40cff3d527f48069006a76b" title="Increments the unlock count and clears the puzzle if all locks are unlocked." alt="" coords="261,5,448,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="489,30,449,29,449,24,489,24"/>
+<area shape="rect" id="Node000004" href="$class_box_puzzle_manager.html#a26affbe20fafa44c13278458d0a21bdc" title="Receives a signal to unlock a specific lock and activates its corresponding plate." alt="" coords="5,5,205,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="246,28,205,28,205,23,246,23"/>
+<area shape="rect" id="Node000006" href="$class_maze_manager.html#a4ab82f21871e8cad7cb69a4c56a4b824" title="Handles unlocking signals from the puzzle and triggers puzzle clearance." alt="" coords="253,70,457,96"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="505,83,457,84,457,79,505,78"/>
 </map>

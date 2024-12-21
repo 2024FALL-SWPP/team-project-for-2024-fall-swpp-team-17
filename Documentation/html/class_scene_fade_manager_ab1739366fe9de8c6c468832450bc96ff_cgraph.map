@@ -1,0 +1,5 @@
+<map id="SceneFadeManager.FadeIn" name="SceneFadeManager.FadeIn">
+<area shape="rect" id="Node000001" title="Gradually fades in the scene by decreasing the alpha of the fade image." alt="" coords="5,5,186,31"/>
+<area shape="rect" id="Node000002" href="$class_scene_fade_manager.html#aa813e61c95d205418437dee7ecad83fd" title="Sets the alpha transparency of the fade image." alt="" coords="234,5,427,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,16,218,16,218,21,186,21"/>
+</map>

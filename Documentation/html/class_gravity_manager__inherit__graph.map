@@ -1,5 +1,9 @@
 <map id="GravityManager" name="GravityManager">
-<area shape="rect" id="Node000001" title="This class manages the gravity of the overall game. When number keys 1, 2, 3 are pushed,..." alt="" coords="5,79,119,105"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="6,5,118,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,46,65,79,59,79,59,46"/>
+<area shape="rect" id="Node000001" title="Manages gravity for the entire game by allowing the gravity direction to be rotated...." alt="" coords="79,153,192,178"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,117,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,114,125,150,121,154,83,117"/>
+<area shape="rect" id="Node000003" href="$interface_our_game_1_1_game_state_observer.html" title=" " alt="" coords="140,79,280,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,117,150,154,146,150,185,114"/>
+<area shape="rect" id="Node000004" href="$interface_our_game_1_1_observer.html" title=" " alt="" coords="128,5,292,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="213,46,213,79,208,79,208,46"/>
 </map>

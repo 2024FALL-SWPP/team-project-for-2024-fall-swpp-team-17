@@ -1,0 +1,14 @@
+<map id="PlatformManager.SetAlpha" name="PlatformManager.SetAlpha">
+<area shape="rect" id="Node000001" title="Sets the alpha transparency of a platform&#39;s material." alt="" coords="964,31,1140,56"/>
+<area shape="rect" id="Node000002" href="$class_platform_manager.html#a8c9d448d283b866414b3ab0be47ec437" title="Updates the visual state of a platform based on the alpha value." alt="" coords="698,23,916,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="948,46,916,46,916,41,948,41"/>
+<area shape="rect" id="Node000003" href="$class_platform_manager.html#a5c6c79a8679e1e826933ddfca5a16af3" title="Sets the visual and collision state of a platform group." alt="" coords="458,23,650,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="683,46,651,46,651,41,683,41"/>
+<area shape="rect" id="Node000004" href="$class_platform_manager.html#a1b3e17be37ea55e6120ce2f8e55b74f5" title="Toggles the states of platform group A cyclically." alt="" coords="205,5,410,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="442,35,410,31,410,26,443,29"/>
+<area shape="rect" id="Node000006" href="$class_platform_manager.html#a9574eaf6e93d1c2b8862138ff2816aea" title="Toggles the states of platform group B cyclically." alt="" coords="205,55,410,80"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="443,57,411,60,410,55,442,52"/>
+<area shape="rect" id="Node000005" href="$class_platform_manager.html#aba295fca640d4a02abaf5d452fdff9bf" title=" " alt="" coords="5,31,157,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="190,34,158,38,157,32,189,29"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="189,58,157,54,158,49,190,52"/>
+</map>

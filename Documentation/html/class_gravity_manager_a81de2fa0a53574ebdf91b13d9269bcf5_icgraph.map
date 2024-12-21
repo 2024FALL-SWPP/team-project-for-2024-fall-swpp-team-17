@@ -1,5 +1,5 @@
 <map id="GravityManager.RotateAngle" name="GravityManager.RotateAngle">
-<area shape="rect" id="Node000001" title="This function rotates this object, Physics.gravity, camera, player." alt="" coords="212,5,400,31"/>
-<area shape="rect" id="Node000002" href="$class_gravity_manager.html#aab5971324cdb527d6d809819bf9a92be" title="This function checks if every rigidbody object is at rest, and if so, alters gravity according to the..." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="Node000001" title="Rotates the gravity by the specified angle and notifies all registered observers." alt="" coords="212,5,400,31"/>
+<area shape="rect" id="Node000002" href="$class_gravity_manager.html#aab5971324cdb527d6d809819bf9a92be" title="Checks if the game is in a state where gravity changes are allowed (Playing or Revived)...." alt="" coords="5,5,164,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,21,164,21,164,16,196,16"/>
 </map>

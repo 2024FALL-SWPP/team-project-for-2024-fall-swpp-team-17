@@ -1,0 +1,7 @@
+<map id="EndingPlayermove.MoveAndPlayEnding" name="EndingPlayermove.MoveAndPlayEnding">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,27,195,68"/>
+<area shape="rect" id="Node000002" href="$class_ending_playermove.html#aa771707ae6e11c111e3910b9678d691f" title=" " alt="" coords="243,5,435,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,33,227,29,227,35,195,39"/>
+<area shape="rect" id="Node000003" href="$class_ending_playermove.html#ad9ee1c8d38f8ceb6ea6cedbd2ff107f4" title=" " alt="" coords="243,55,434,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,56,228,60,228,65,195,61"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="GameManager.GetGameState" name="GameManager.GetGameState">
+<area shape="rect" id="Node000001" title="Retrieves the current game state." alt="" coords="255,5,451,31"/>
+<area shape="rect" id="Node000002" href="$class_spike_manager.html#a7764099d65f422f80df8b6f26ad8c3ac" title="Checks for continuous player collisions and applies damage. Plays a sound if the player is stunned by..." alt="" coords="5,5,207,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,21,207,21,207,16,239,16"/>
+</map>
