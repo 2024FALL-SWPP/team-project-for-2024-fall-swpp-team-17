@@ -165,7 +165,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     bool ObstacleInPath()
     {
         float d = moveSpeed * Time.fixedDeltaTime;
-        float[] distances = new float[] { d * 10, d * 5, d * 5 };
+        float[] distances = new float[] { d * 6, d * 3, d * 3 };
         Vector3 footPosition = transform.position - transform.up * height * 1.4f;
         Vector3 lowerPosition1 = transform.position - transform.up * height * 1.0f;
         Vector3 lowerPosition2 = transform.position - transform.up * height * 0.5f;
