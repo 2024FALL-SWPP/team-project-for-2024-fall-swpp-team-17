@@ -1,6 +1,6 @@
 # Team17 Gravitable Escape🧑‍🚀
 
-**Seoul National University - Principles and Practice of Software Development (SWPP)**  
+**Seoul National University - Principles and Practice of Software Development (SWPP)**
 
 ---
 
@@ -15,10 +15,8 @@ You will navigate through stages, avoid hazards, solve puzzles, and explore crea
 
 ### Features:
 - **Gravity Control**: Rotate gravity to maneuver through obstacles.
-- **Dynamic Obstacles**: Avoid hazards like spikes, heavy objects, and traps.
+- **Dynamic Obstacles**: Avoid hazards like spikes, heavy objects, wormholes.
 - **Interactive Puzzles**: Solve box and maze puzzles to progress.
-- **Wormhole Travel**: Experience visually immersive effects when teleporting.
-- **Life Management**: Collect energy, avoid damage, and survive till the end.
 
 ---
 
@@ -66,6 +64,7 @@ To locate it:
 ## 📧 Contact
 
 For issues, feedback, or questions, feel free to open an issue on this repository or contact us via email.
+
 Enjoy playing the game! 🎉
 
 ---
