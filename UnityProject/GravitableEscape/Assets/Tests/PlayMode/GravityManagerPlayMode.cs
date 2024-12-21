@@ -14,8 +14,8 @@ public class GravityManagerPlayModeTests
     [SetUp]
     public void Setup()
     {
-        // Load the "Test" scene
-        SceneManager.LoadScene("Test");
+        // Load the "Tutorial" scene
+        SceneManager.LoadScene("Tutorial");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -46,7 +46,7 @@ public class GravityManagerPlayModeTests
         foreach (var testCase in testCases)
         {
             // Reload the scene for each test case
-            SceneManager.LoadScene("Test");
+            SceneManager.LoadScene("Tutorial");
             yield return new WaitForSeconds(1f); // Allow time for the scene to load
 
             // Fetch objects again after reloading the scene

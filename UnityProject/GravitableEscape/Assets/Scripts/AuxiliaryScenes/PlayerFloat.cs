@@ -1,5 +1,8 @@
 using UnityEngine;
-
+/// <summary>
+/// This class controls player movement in the Title Scene.
+/// The player floats around the scene and bounces back when it collides with the boundaries.
+/// </summary>
 public class PlayerFloat : MonoBehaviour
 {
     private Vector3 boundsMin = new Vector3(-80f, -50f, 100f); // Minimum bounds

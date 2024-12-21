@@ -13,8 +13,8 @@ public class GameManagerPlayMode
     [UnitySetUp]
     public IEnumerator Setup()
     {
-        // Load the "Test" scene
-        SceneManager.LoadScene("Test"); // Replace "Test" with your scene's actual name
+        // Load the "Tutorial" scene
+        SceneManager.LoadScene("Tutorial");
         yield return null; // Wait one frame for the scene to load
 
         // Find the GameManager in the loaded scene
@@ -26,7 +26,7 @@ public class GameManagerPlayMode
     public IEnumerator Teardown()
     {
         // Optionally unload the scene after tests
-        SceneManager.UnloadSceneAsync("Test");
+        SceneManager.UnloadSceneAsync("Tutorial");
         yield return null;
     }
 

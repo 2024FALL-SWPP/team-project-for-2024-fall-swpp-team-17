@@ -13,7 +13,7 @@ public class EndingPlayermove : MonoBehaviour
 
     private Vector3 leftTargetPosition;
     private Vector3 rightTargetPosition;
-    // Start is called before the first frame update
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -24,7 +24,6 @@ public class EndingPlayermove : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 150, 0);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && !isMoving)

@@ -43,28 +43,14 @@ public class GlitchyTextEffect : MonoBehaviour
 
     private System.Collections.IEnumerator GlitchCoroutine()
     {
-        // isGlitching = true;
-        // textMeshPro.color = originalColor;
-        // yield return new WaitForSeconds(1f);
-        // Vector3 randomOffset = new Vector3(-30f, 0f, 0f);
-        // textRectTransform.localPosition = originalPosition + new Vector3(-40f, 0f, 0f);
-        // textMeshPro.color = originalColor;
-        // yield return new WaitForSeconds(1f);
-        // textRectTransform.localPosition = originalPosition;
-        // yield return new WaitForSeconds(1f);
-        // textRectTransform.localPosition = originalPosition + new Vector3(30f, 0f, 0f);
-
-
         isGlitching = true;
         textMeshPro.color = transparent;
         yield return new WaitForSeconds(0.03f);
-        //textRectTransform.localPosition = originalPosition + new Vector3(-10f, 0f, 0f);
         textMeshPro.fontStyle = FontStyles.Italic;
         textMeshPro.color = originalColor;
         yield return new WaitForSeconds(0.09f);
         textMeshPro.color = transparent;
         yield return new WaitForSeconds(0.07f);
-        //textRectTransform.localPosition = originalPosition + new Vector3(15f, 0f, 0f);
         textMeshPro.color = originalColor;
         yield return new WaitForSeconds(0.05f);
         textMeshPro.color = transparent;
@@ -77,20 +63,17 @@ public class GlitchyTextEffect : MonoBehaviour
 
         textMeshPro.color = transparent;
         yield return new WaitForSeconds(0.03f);
-        //textRectTransform.localPosition = originalPosition + new Vector3(10f, 0f, 0f);
         textMeshPro.fontStyle = FontStyles.Italic;
         textMeshPro.color = originalColor;
         yield return new WaitForSeconds(0.09f);
         textMeshPro.color = transparent;
         yield return new WaitForSeconds(0.07f);
-        //textRectTransform.localPosition = originalPosition + new Vector3(-5f, 0f, 0f);
         textMeshPro.fontStyle = FontStyles.Normal;
         textMeshPro.color = originalColor;
         yield return new WaitForSeconds(0.05f);
         textMeshPro.color = transparent;
         yield return new WaitForSeconds(0.03f);
-        textRectTransform.localPosition = originalPosition + new Vector3(3f, 0f, 0f);
-        //textMeshPro.fontStyle = FontStyles.Italic;
+        textMeshPro.fontStyle = FontStyles.Italic;
         textMeshPro.color = originalColor;
         yield return new WaitForSeconds(0.05f);
         textMeshPro.color = transparent;
