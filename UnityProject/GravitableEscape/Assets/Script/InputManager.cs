@@ -8,7 +8,7 @@ using UnityEngine;
 /// It fetches mouse's x, y location and updates yaw, pitch. 
 /// CameraManager, PlayerManager uses this script's yaw, pitch to calculate its rotation. 
 /// </summary>
-public class InputManager : MonoBehaviour, GravityObserver
+public class InputManager : MonoBehaviour
 {
     private float xSensitivity = 100f;
     private float ySensitivity = 100f;
@@ -22,7 +22,6 @@ public class InputManager : MonoBehaviour, GravityObserver
         pitch = 0;
         mouseX = 0;
         mouseY = 0;
-        //Cursor.lockState = CursorLockMode.Locked; // Don't show mouse
     }
 
     // Update is called once per frame
@@ -48,16 +47,5 @@ public class InputManager : MonoBehaviour, GravityObserver
         }
 
         scrollInput = Input.GetAxis("Mouse ScrollWheel");
-    }
-
-    /// <summary>
-    /// Resets pitch, yaw to 0 when gravity changes
-    /// </summary>
-    /// <typeparam name="GravityObserver"></typeparam>
-    /// <param name="rot"></param>
-    public void OnNotify<GravityObserver>(Quaternion rot)
-    {
-        // yaw = 0;
-        // pitch = 0;
     }
 }

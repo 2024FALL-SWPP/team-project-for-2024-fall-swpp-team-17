@@ -21,11 +21,9 @@ public class GravityManager : MonoBehaviour, GameStateObserver
         rigidbodies = FindObjectsOfType<Rigidbody>();
         CameraManager cameraManager = FindObjectOfType<CameraManager>();
         PlayerManager playerManager = FindObjectOfType<PlayerManager>();
-        InputManager inputManager = FindObjectOfType<InputManager>();
         gravityChange = new Subject<GravityObserver, Quaternion>();
         gravityChange.AddObserver(playerManager);
         gravityChange.AddObserver(cameraManager);
-        gravityChange.AddObserver(inputManager);
         Physics.gravity = initGravity;
     }
     /// <summary>
