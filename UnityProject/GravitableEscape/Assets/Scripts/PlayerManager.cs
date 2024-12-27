@@ -245,7 +245,7 @@ public class PlayerManager : MonoBehaviour, GravityObserver, GameStateObserver
     /// <param name="collision">Collision details.</param>
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("Wall"))
         {
             if (!isGround)
             {
